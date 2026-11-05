@@ -1,13 +1,17 @@
 """File hashing.
 
-xxh64 is the MOGUL file ID. It is taken over the audio packets only
-(ffmpeg copies the audio stream out with no container, tags or
-header frames), so it stays the same when tags are added, changed or
-stripped, and when the file is renamed. A real re-encode gives a
-different ID.
+Two hashes are taken over the audio packets only (ffmpeg copies the
+audio stream out with no container, tags or header frames), so they stay
+the same when tags are added, changed or stripped, and when the file is
+renamed. A real re-encode changes them.
 
-The other hashes are taken over the whole file, exactly as it sits
-on disk.
+  xxh64         identifies the media: the MOGUL ID and the HASH8 in
+                filenames. Fast but not secure.
+  audio_blake3  confirms the media: a secure hash of the same audio,
+                checked before anything counts as a duplicate.
+
+The other hashes (blake3, sha256, sha512, ...) are taken over the whole
+file exactly as it sits on disk, and identify that exact file.
 """
 
 import hashlib
@@ -53,6 +57,20 @@ def _new(name):
 
 def audio_xxh64(path):
     """xxh64 of the first audio stream's packets, as 16 lowercase hex chars."""
+    return audio_hashes(path)["xxh64"]
+
+
+def audio_hashes(path):
+    """Hashes of the first audio stream's packets, in one read:
+
+        xxh64         the media ID (16 hex chars). Fast, short, used in
+                      filenames. Not secure: it can be faked on purpose.
+        audio_blake3  a secure hash of the same audio data. Used to confirm
+                      two files really have the same audio before anything
+                      is treated as a duplicate.
+    """
+    if _blake3 is None:
+        raise HashError("Python package 'blake3' is missing (pip install blake3)")
     cmd = [
         "ffmpeg", "-nostdin", "-v", "error",
         "-i", path,
@@ -63,6 +81,7 @@ def audio_xxh64(path):
     except FileNotFoundError:
         raise HashError("ffmpeg not found (sudo apt install ffmpeg)")
     h = xxhash.xxh64()
+    b = _blake3.blake3()
     total = 0
     while True:
         chunk = proc.stdout.read(CHUNK)
@@ -70,6 +89,7 @@ def audio_xxh64(path):
             break
         total += len(chunk)
         h.update(chunk)
+        b.update(chunk)
     err = proc.stderr.read().decode(errors="replace").strip()
     proc.wait()
     if proc.returncode != 0:
@@ -78,7 +98,25 @@ def audio_xxh64(path):
         raise HashError(f"ffmpeg could not read the audio ({first})")
     if total == 0:
         raise HashError("no audio data found")
-    return h.hexdigest()
+    return {"xxh64": h.hexdigest(), "audio_blake3": b.hexdigest()}
+
+
+def audio_match(entry_hashes, audio):
+    """Compare a catalog entry's hashes with freshly computed audio hashes.
+
+    Returns:
+      "confirmed"   xxh64 and audio_blake3 both match
+      "unconfirmed" xxh64 matches, entry has no audio_blake3 yet (older entry)
+      "collision"   xxh64 matches but audio_blake3 does NOT: different audio
+                    with the same xxh64 (freak accident or a faked file)
+      None          xxh64 doesn't match
+    """
+    if entry_hashes.get("xxh64") != audio["xxh64"]:
+        return None
+    known = entry_hashes.get("audio_blake3")
+    if not known:
+        return "unconfirmed"
+    return "confirmed" if known == audio["audio_blake3"] else "collision"
 
 
 def whole_file_xxh64(path):

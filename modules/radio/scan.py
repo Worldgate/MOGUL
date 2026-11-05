@@ -191,8 +191,9 @@ def run(args, config):
 
         # 2. hashes
         try:
-            xxh = hashing.audio_xxh64(path)
-            hashes = {"xxh64": xxh}
+            audio = hashing.audio_hashes(path)
+            xxh = audio["xxh64"]
+            hashes = dict(audio)
             hashes.update(hashing.file_hashes(path, hash_names))
         except (hashing.HashError, OSError) as e:
             report["problems"].append({"file": rel, "problem": str(e)})
@@ -200,7 +201,24 @@ def run(args, config):
             continue
 
         # 3. already in the catalog?
-        matches = index.get(xxh, [])
+        #    xxh64 finds candidates; audio_blake3 confirms them.
+        matches, collisions = [], []
+        for p, e in index.get(xxh, []):
+            result = hashing.audio_match(e["physical"]["hashes"], audio)
+            if result in ("confirmed", "unconfirmed"):
+                matches.append((p, e))
+            elif result == "collision":
+                collisions.append((p, e))
+        if collisions:
+            report["warnings"].append({
+                "file": rel,
+                "warning": "COLLISION: same xxh64 as a cataloged file but different audio "
+                           "(audio_blake3 differs). Added as its own entry; check it by hand.",
+                "xxh64": xxh,
+                "other": [e["naming"]["filename"] for _, e in collisions],
+            })
+            print(f"{tag} WARNING  {rel}: same xxh64 as {collisions[0][1]['naming']['filename']} "
+                  f"but DIFFERENT audio (collision or faked file), check by hand")
         if matches:
             first_hash = hash_names[0] if hash_names else None
             same_file = any(

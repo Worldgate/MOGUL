@@ -103,6 +103,7 @@ else yet.
       "physical": {
         "hashes": {
           "xxh64": "4dc4c7e1a2b3f00e",
+          "audio_blake3": "...",
           "blake3": "...",
           "sha256": "...",
           "sha512": "..."
@@ -140,6 +141,23 @@ else yet.
 
 ## Hashing
 
+- Three roles:
+  | Hash | Covers | Job |
+  |---|---|---|
+  | `xxh64` | audio only | **identifies the media**: the ID and the HASH8 in filenames |
+  | `audio_blake3` | audio only | **confirms the media**: secure, checked before anything counts as a duplicate |
+  | `blake3`, `sha256`, `sha512` | whole file | **identify the exact file**, byte for byte |
+- xxh64 is fast but not secure: a file can be crafted to match it on purpose
+  (poisoning). So xxh64 finds candidates and `audio_blake3` confirms them
+  (`hashing.audio_match()` → confirmed / unconfirmed / collision).
+  Both audio hashes come from one ffmpeg read.
+- Entries made before audio_blake3 existed are "unconfirmed" (treated as a
+  match by xxh64 alone) until `radio verify` or an import fills it in.
+- **Collision** (same xxh64, different audio_blake3): never moved or treated
+  as a duplicate. Scan adds it as its own entry with a WARNING; import
+  SKIPs it; verify flags it.
+- Mavrick strips tags himself with TagScanner before importing (stripping
+  gives him the same whole-file hash every time). MOGUL doesn't strip tags.
 - **`xxh64` is the file ID.** Use the full 16-hex-character value, always
   stored as a quoted lowercase hex string (never a number, since JavaScript
   can't hold 64-bit integers exactly).
@@ -193,6 +211,7 @@ modules/radio/
   naming.py           filename pattern parsing
   scan.py             the radio scanner
   importer.py         the radio importer (move, rename, sort, dupes)
+  verify.py           checks the library against the catalog
 tools/                standalone helpers (parsetest.py, fpdigest.py)
 examples/             sample JSON
 ```
@@ -211,7 +230,8 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - Results per file:
   - **ADDED**: new audio, written to its month file (saved after each
     file, so Ctrl-C keeps progress).
-  - **DUPLICATE**: same xxh64 already cataloged. Not added. Flagged
+  - **DUPLICATE**: same audio (xxh64, confirmed by audio_blake3) already
+    cataloged. Not added. Flagged
     "DIFFERENT DATE" when the catalog has it under another date.
   - **ALREADY**: the same file scanned before (same xxh64, filename and
     first whole-file hash).
@@ -266,6 +286,21 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - Not built yet: undo, and choosing *which* copy to keep by quality
   (right now the first one scanned wins).
 
+## Radio verify (`mogul.py radio verify`)
+
+- Walks the radio library, re-hashes every file and matches it to its
+  catalog entry by audio hashes (never by name). Moves nothing.
+- Results: **OK**; **FILLED** (missing audio_blake3 added); **FOUND**
+  (entry not marked imported, file is in the right folder → marked
+  imported); **CHANGED** (same audio, whole file differs since scan, e.g.
+  tags edited; `--update` records new whole-file hashes, size, mtime);
+  **MISPLACED** (wrong folder/name, left alone); **EXTRA** (second library
+  file with the same audio); **COLLISION**; **UNKNOWN** (not in catalog);
+  **BAD** (unreadable audio); then **MISSING** (entries marked imported
+  whose file wasn't found).
+- `--dry-run` writes nothing. Report: `mogul_reports/radio-verify_*.json`.
+- Run it after an import, and now and then as a health check of the NAS.
+
 ## Radio specifics
 
 ### Incoming filenames
@@ -314,6 +349,16 @@ banner name.
   `O&A 1998-07-01 -- Listed as 1998-06-31`. Date is a guess; on the
   bounty list for anyone who can prove the real date.
 - `O&A 1998-06-27` is a Saturday, which may be legit.
+
+## Not built yet
+
+- Undo for imports (the import reports have every from → to).
+- Fixing MISPLACED files automatically.
+- Recording other copies' whole-file hashes on an entry ("also seen as"),
+  so someone else's tagged copy matches by full-file hash too.
+- Quality views from the catalog (best copy per date, dates with only
+  low-bitrate copies). No judging during import: every distinct recording
+  is kept.
 
 ## File checks (planned)
 

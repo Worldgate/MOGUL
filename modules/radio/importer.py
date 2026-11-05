@@ -196,13 +196,31 @@ def run(args, config):
         filename = os.path.basename(path)
 
         try:
-            xxh = hashing.audio_xxh64(path)
+            audio = hashing.audio_hashes(path)
+            xxh = audio["xxh64"]
         except (hashing.HashError, OSError) as e:
             report["skipped"].append({"file": rel, "reason": f"can't read audio: {e}"})
             print(f"{tag} SKIP      {rel}: can't read audio")
             continue
 
-        matches = index.get(xxh, [])
+        # xxh64 finds candidates; audio_blake3 confirms them.
+        matches, collisions = [], []
+        for p, e in index.get(xxh, []):
+            result = hashing.audio_match(e["physical"]["hashes"], audio)
+            if result in ("confirmed", "unconfirmed"):
+                matches.append((p, e))
+            elif result == "collision":
+                collisions.append((p, e))
+        if collisions and not matches:
+            report["skipped"].append({
+                "file": rel,
+                "reason": "COLLISION: same xxh64 as a cataloged file but different audio "
+                          "(audio_blake3 differs). Not moved; check it by hand.",
+                "xxh64": xxh,
+            })
+            print(f"{tag} SKIP      {rel}: same xxh64 but DIFFERENT audio (collision or faked file), not moved")
+            continue
+
         if not matches:
             report["skipped"].append({"file": rel, "reason": "not in the catalog (scan it first)"})
             print(f"{tag} SKIP      {rel}: not in the catalog (run scan first)")
@@ -218,6 +236,10 @@ def run(args, config):
         is_source = (entry["naming"].get("original_filename") == filename
                      and entry["physical"].get("size") == size)
         already_in_library = bool((entry.get("status") or {}).get("imported")) or xxh in done_this_run
+
+        # older entries made before audio_blake3 existed: fill it in now
+        if is_source and not entry["physical"]["hashes"].get("audio_blake3"):
+            entry["physical"]["hashes"]["audio_blake3"] = audio["audio_blake3"]
 
         # Same audio as a catalog entry, but not the exact file the entry was
         # made from, and that entry isn't in the library yet. If the original
