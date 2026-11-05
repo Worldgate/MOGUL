@@ -36,6 +36,11 @@ library = "mogul_library/radio"
 # Nothing is ever deleted.
 dupes = "mogul_dupes/radio"
 
+# true: a duplicate gets the same folder and name as the library file it
+# matches (keeping its own extension), with (2), (3)... if there's more
+# than one. false: it keeps its original name and subfolder.
+rename_dupes = true
+
 # Folder layout inside the library, and the filename (the extension
 # is added automatically). Tokens:
 #   {show} {code} {yyyy} {mm} {dd} {month_name}

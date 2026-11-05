@@ -109,15 +109,14 @@ def safe_move(src, dst):
     os.unlink(src)
 
 
-def free_dupe_path(dupes_root, rel):
-    """Where to put a duplicate. Keeps its original name and subfolder;
-    adds (2), (3), ... if that spot is taken."""
-    dst = os.path.join(dupes_root, rel)
-    if not os.path.exists(dst):
+def free_path(dst, claimed):
+    """dst if it's free, otherwise dst with (2), (3), ... added before the
+    extension. 'claimed' holds paths already used this run (for dry runs)."""
+    if not os.path.exists(dst) and dst not in claimed:
         return dst
     base, ext = os.path.splitext(dst)
     i = 2
-    while os.path.exists(f"{base} ({i}){ext}"):
+    while os.path.exists(f"{base} ({i}){ext}") or f"{base} ({i}){ext}" in claimed:
         i += 1
     return f"{base} ({i}){ext}"
 
@@ -142,6 +141,7 @@ def run(args, config):
     dupes_root = config.resolve(radio_cfg.get("dupes", "mogul_dupes/radio"))
     folder_t = radio_cfg.get("folder_template", "{show}/{yyyy}/{mm}")
     name_t = radio_cfg.get("filename_template", "{yyyy}-{mm}-{dd}_{code}_{HASH8}")
+    rename_dupes = radio_cfg.get("rename_dupes", True)
     incoming = os.path.abspath(os.path.expanduser(args.path)) if args.path \
         else os.path.join(config.incoming, "radio")
     json_root = config.json_store
@@ -189,6 +189,34 @@ def run(args, config):
             pass
     width = len(str(len(files)))
     t0 = time.time()
+
+    def move_dupe(path, rel, tag, xxh, entry, same_as, note=""):
+        """Move a duplicate into the dupes folder. With rename_dupes on, it
+        gets the same folder and name as the library file it matches (its own
+        extension kept), e.g. dupes/Opie and Anthony/1998/06/1998-06-26_O&A_796DDEEE.mp3
+        Otherwise it keeps its original name and subfolder."""
+        if rename_dupes and same_as:
+            base = os.path.splitext(same_as)[0]
+            ext = os.path.splitext(path)[1].lower()
+            dst = os.path.join(target_folder(dupes_root, folder_t, entry), base + ext)
+        else:
+            dst = os.path.join(dupes_root, rel)
+        dst = free_path(dst, claimed)
+        claimed.add(dst)
+        try:
+            if not args.dry_run:
+                safe_move(path, dst)
+        except OSError as e:
+            report["errors"].append({"file": rel, "error": str(e)})
+            print(f"{tag} ERROR     {rel}: {e}")
+            return False
+        report["duplicates"].append({
+            "from": rel, "to": os.path.relpath(dst, dupes_root),
+            "xxh64": xxh, "same_as": same_as,
+        })
+        print(f"{tag} DUPLICATE {rel} -> dupes/{os.path.relpath(dst, dupes_root)}"
+              f"  (same as {same_as}{note})")
+        return True
 
     for i, path in enumerate(files, 1):
         rel = os.path.relpath(path, incoming)
@@ -262,24 +290,8 @@ def run(args, config):
 
         # ------------------------------------------------ duplicate copy
         if already_in_library:
-            dst = free_dupe_path(dupes_root, rel)
-            while dst in claimed:
-                base, ext = os.path.splitext(dst)
-                dst = f"{base}_{len(claimed)}{ext}"
-            claimed.add(dst)
             where = done_this_run.get(xxh) or entry["naming"].get("filename")
-            try:
-                if not args.dry_run:
-                    safe_move(path, dst)
-            except OSError as e:
-                report["errors"].append({"file": rel, "error": str(e)})
-                print(f"{tag} ERROR     {rel}: {e}")
-                continue
-            report["duplicates"].append({
-                "from": rel, "to": os.path.relpath(dst, dupes_root),
-                "xxh64": xxh, "same_as": where,
-            })
-            print(f"{tag} DUPLICATE {rel} -> dupes/{os.path.relpath(dst, dupes_root)}")
+            move_dupe(path, rel, tag, xxh, entry, where)
             continue
 
         # ------------------------------------------------ import
@@ -306,23 +318,11 @@ def run(args, config):
             # Already in the library (e.g. an earlier import was interrupted
             # before the catalog was saved). Treat the incoming copy as a dupe.
             lib_name = os.path.basename(candidate)
-            ddst = free_dupe_path(dupes_root, rel)
-            claimed.add(ddst)
-            try:
-                if not args.dry_run:
-                    safe_move(path, ddst)
-            except OSError as e:
-                report["errors"].append({"file": rel, "error": str(e)})
-                print(f"{tag} ERROR     {rel}: {e}")
+            if not move_dupe(path, rel, tag, xxh, entry, lib_name, ", already in the library"):
                 continue
             entry["naming"]["filename"] = lib_name
             entry.setdefault("status", {})["imported"] = stamp
             done_this_run[xxh] = lib_name
-            report["duplicates"].append({
-                "from": rel, "to": os.path.relpath(ddst, dupes_root),
-                "xxh64": xxh, "same_as": lib_name,
-            })
-            print(f"{tag} DUPLICATE {rel} -> dupes/ (already in library as {lib_name})")
         else:
             claimed.add(dst)
             try:
@@ -354,23 +354,7 @@ def run(args, config):
             report["skipped"].append({"file": rel, "reason": "its original wasn't imported, left in place"})
             print(f"{tag} SKIP      {rel}: its original wasn't imported")
             continue
-        dst = free_dupe_path(dupes_root, rel)
-        while dst in claimed:
-            base, ext = os.path.splitext(dst)
-            dst = f"{base}_{len(claimed)}{ext}"
-        claimed.add(dst)
-        try:
-            if not args.dry_run:
-                safe_move(path, dst)
-        except OSError as e:
-            report["errors"].append({"file": rel, "error": str(e)})
-            print(f"{tag} ERROR     {rel}: {e}")
-            continue
-        report["duplicates"].append({
-            "from": rel, "to": os.path.relpath(dst, dupes_root),
-            "xxh64": xxh, "same_as": done_this_run[xxh],
-        })
-        print(f"{tag} DUPLICATE {rel} -> dupes/{os.path.relpath(dst, dupes_root)}")
+        move_dupe(path, rel, tag, xxh, entry, done_this_run[xxh])
 
     if not args.dry_run:
         remove_empty_folders(incoming)

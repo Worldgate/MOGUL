@@ -260,7 +260,7 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   renamed and sorted. Run `scan` first; only cataloged files move.
 - Settings in `mogul.toml` `[radio]`:
   - `library` (default `mogul_library/radio`, meant to point at the NAS)
-  - `dupes` (default `mogul_dupes/radio`)
+  - `dupes` (default `mogul_dupes/radio`), `rename_dupes` (default true)
   - `folder_template = "{show}/{yyyy}/{mm}"`
   - `filename_template = "{yyyy}-{mm}-{dd}_{code}_{HASH8}"` (extension added)
   - Tokens: `{show} {code} {yyyy} {mm} {dd} {month_name} {HASH8} {hash8}`.
@@ -272,8 +272,12 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   - **IMPORT**: it's the exact file the catalog entry was made from
     (original filename + size) and the entry isn't in the library yet.
   - **DUPLICATE**: same audio as something already in the library or
-    imported this run → moved to `dupes`, keeping its original name and
-    subfolder (adds ` (2)` etc. if taken). Never deleted.
+    imported this run → moved to `dupes`. Never deleted. With
+    `rename_dupes = true` (default) it gets the same folder and name as the
+    library file it matches, keeping its own extension, plus ` (2)`, ` (3)`
+    for more copies: `dupes/Opie and Anthony/1998/06/1998-06-26_O&A_7494A5EA (2).mp3`.
+    With `false` it keeps its original name and subfolder. The console line
+    and report say which library file it's the same as.
   - **WAIT**: a copy whose original is also in incoming; handled as a
     duplicate after the original imports.
   - **SKIP**: not in the catalog, unreadable, or the catalog entry was made
