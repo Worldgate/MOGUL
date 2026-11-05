@@ -1,9 +1,35 @@
 # MOGUL settings
+#
+# Folder paths can be absolute ("/mnt/nas/..."), start with "~",
+# or be relative. Relative paths are relative to the folder this
+# file is in.
 
 [core]
-json_store = "~/mogul/mogul_data"
+# Where new files are dropped, one subfolder per media type
+# (mogul_incoming/radio, later mogul_incoming/audiobooks, ...).
+incoming = "mogul_incoming"
+
+# Where the catalog JSON files live. This is the source of truth:
+# back it up.
+json_store = "mogul_json"
+
+# Where each scan writes its report (what was added, duplicates,
+# problems).
+reports = "mogul_reports"
+
+# Hashes to store for every file. xxh64 is always included: it is
+# the file ID, taken over the audio data only. The others are taken
+# over the whole file. Choices: blake3, sha256, sha512, sha1, md5
+hashes = ["blake3", "sha256", "sha512"]
 
 [radio]
+# File types the radio scanner picks up.
+extensions = ["mp3", "ogg", "oga", "opus", "m4a", "aac", "flac", "wma", "wav", "mka"]
+
+# Store the short acoustic fingerprint digest for each file.
+# Needs fpcalc (sudo apt install libchromaprint-tools).
+fingerprint = true
+
 # How incoming filenames look.
 #   {code}  show code from the list below
 #   {yyyy} {mm} {dd}  air date

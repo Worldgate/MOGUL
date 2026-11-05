@@ -1,0 +1,14 @@
+# Media and catalog data stay off GitHub
+mogul_incoming/
+mogul_json/
+mogul_reports/
+
+# Secrets (API keys etc.) go in here, never in mogul.toml
+secrets.toml
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

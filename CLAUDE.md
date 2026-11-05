@@ -52,11 +52,17 @@ else yet.
 - **JSON is the source of truth. SQLite is a disposable index** rebuilt from
   the JSON. Anything done by hand (corrections, verified dates) must be saved
   in JSON, or a database rebuild will lose it.
-- **One JSON file per show per month.** Folder is undecided; current idea:
-  `<json_store>/radio/<show>/<yyyy>/<mm> - <Month name>.json`
-  e.g. `.../radio/Opie and Anthony/1998/07 - July.json`
-  (Mavrick is wary of calling this folder a "cache", since it must be backed
-  up, not regenerated.)
+- **One JSON file per show per month:**
+  `mogul_json/radio/<show>/<yyyy>/<mm> - <Month name>.json`
+  e.g. `mogul_json/radio/Opie and Anthony/1999/09 - September.json`
+  This folder must be backed up, not regenerated (don't call it a "cache").
+- Folders (set in `mogul.toml` under `[core]`, relative to that file):
+  - `mogul_incoming/<media type>/` where new files are dropped
+  - `mogul_json/` the catalog
+  - `mogul_reports/` one report per scan
+  All three are in `.gitignore`. Media and catalog data never go to GitHub.
+- **No API keys or secrets in the repo.** When they're needed, they go in
+  `secrets.toml` (already in `.gitignore`) or environment variables.
 - Write JSON safely: write to a temp file, then rename over the old one.
 - No file paths stored in the JSON. Location is worked out from the naming
   fields; where a file sits during a scan is working state only.
@@ -68,6 +74,7 @@ else yet.
   "header": {
     "schema": "mogul.radio.month",
     "schema_version": 1,
+    "media_type": "radio",
     "show": "Opie and Anthony",
     "code": "O&A",
     "year": 1998,
@@ -99,6 +106,7 @@ else yet.
         },
         "size": 241927168,
         "duration": 15120.404,
+        "container": "MPEG Audio",
         "codec": "mp3",
         "bitrate": 128000,
         "bitrate_mode": "CBR",
@@ -109,6 +117,7 @@ else yet.
       },
       "fingerprint": {
         "algorithm": "chromaprint",
+        "digest_version": 1,
         "digest": "545c212ed43ca02e...",
         "digest_minutes": 40
       }
@@ -132,9 +141,11 @@ else yet.
   stored as a quoted lowercase hex string (never a number, since JavaScript
   can't hold 64-bit integers exactly).
 - Mavrick picked xxhash64 partly because nobody else uses it for media IDs.
-- Intent: the ID should be taken over the **audio frames only**, so it
-  survives tag edits, renames and MKA round trips. (Tested: MP3 → MKA → MP3
-  keeps the hash.)
+- The ID is taken over the **audio packets only**:
+  `ffmpeg -i FILE -map 0:a:0 -c copy -f data -` piped into xxh64. No
+  container, tags or Xing/Info header frame. Tested: same ID after ID3v2
+  retag, ID3v1 tag added, OGG comment retag; different ID after a re-encode.
+  (Mavrick also tested MP3 → MKA → MP3 keeps it.)
 - Also stored: `blake3`, `sha256`, `sha512` (cheap at radio file sizes,
   under ~200 MB).
 - **No CRC32.**
@@ -161,6 +172,58 @@ else yet.
 - Internet Archive auto-generates OGG copies from uploaded MP3s. When both
   exist, keep the MP3. IA's `_files.xml` marks these OGGs as
   `source="derivative"`.
+
+## Code layout
+
+```
+mogul.py              CLI entry point: mogul.py <media type> <action> [options]
+mogul.toml            settings
+requirements.txt      Python packages (xxhash, blake3)
+mogul_core/           shared code
+  config.py           loads mogul.toml, resolves folders
+  hashing.py          audio-only xxh64 + whole-file hashes
+  mediainfo.py        technical details via mediainfo
+  fingerprint.py      chromaprint digest + similarity
+  store.py            safe JSON read/write (temp file + rename)
+modules/radio/
+  __init__.py         radio actions
+  naming.py           filename pattern parsing
+  scan.py             the radio scanner
+tools/                standalone helpers (parsetest.py, fpdigest.py)
+examples/             sample JSON
+```
+
+Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
+`ffmpeg`, `mediainfo`, `fpcalc` (`libchromaprint-tools`).
+
+## Radio scanner (`mogul.py radio scan`)
+
+- Walks `mogul_incoming/radio` and subfolders for the extensions in
+  `[radio] extensions`. Read-only: never moves, renames or deletes.
+- For each file: parse filename → audio xxh64 + whole-file hashes →
+  check catalog → mediainfo → fingerprint digest → add to month JSON.
+- Loads the whole radio catalog first, so duplicates are caught across
+  every month, not just the file's own month.
+- Results per file:
+  - **ADDED**: new audio, written to its month file (saved after each
+    file, so Ctrl-C keeps progress).
+  - **DUPLICATE**: same xxh64 already cataloged. Not added. Flagged
+    "DIFFERENT DATE" when the catalog has it under another date.
+  - **ALREADY**: the same file scanned before (same xxh64, filename and
+    first whole-file hash).
+  - **PROBLEM**: invalid date, unknown show code, name doesn't match the
+    pattern, unreadable audio. Not added.
+- Only hash duplicates count. Different releases of one episode (mp3/ogg/
+  m4a, full vs commercial free, best-of) have different audio data, so
+  each gets its own entry.
+- `--dry-run` writes no catalog JSON (still writes a report).
+  `--no-fingerprint` skips fpcalc. `--path` scans another folder.
+- Every run writes `mogul_reports/radio-scan_<date>_<time>.json` listing
+  added, duplicates (with matches), already cataloged, problems, warnings.
+  The import step (not built yet) will use the catalog to move, rename and
+  sort, and send duplicates to a dupes folder.
+- Test result: mp3 vs IA-style ogg vs m4a of the same audio = 99%
+  fingerprint digest similarity.
 
 ## Radio specifics
 
