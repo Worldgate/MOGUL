@@ -60,7 +60,10 @@ else yet.
   - `mogul_incoming/<media type>/` where new files are dropped
   - `mogul_json/` the catalog
   - `mogul_reports/` one report per scan
-  All three are in `.gitignore`. Media and catalog data never go to GitHub.
+  `mogul_incoming/` and `mogul_reports/` are in `.gitignore`, plus every
+  audio/video extension anywhere in the repo as a safety net. Media never
+  goes to GitHub. **`mogul_json/` is pushed to GitHub on purpose** (the
+  catalog is versioned in git).
 - **No API keys or secrets in the repo.** When they're needed, they go in
   `secrets.toml` (already in `.gitignore`) or environment variables.
 - Write JSON safely: write to a temp file, then rename over the old one.

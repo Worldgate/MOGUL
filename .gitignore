@@ -1,13 +1,34 @@
-# Media and catalog data stay off GitHub
+# --- Media never goes to GitHub ---
+# The drop folder for new files
 mogul_incoming/
-mogul_json/
+
+# Safety net: block audio/video files anywhere in the repo,
+# even if they end up outside mogul_incoming by mistake
+*.mp3
+*.ogg
+*.oga
+*.opus
+*.m4a
+*.m4b
+*.aac
+*.flac
+*.wma
+*.wav
+*.mka
+*.mkv
+*.mp4
+*.avi
+
+# Scan reports are logs, kept on your machine only
 mogul_reports/
 
-# Secrets (API keys etc.) go in here, never in mogul.toml
+# The catalog (mogul_json/) IS pushed to GitHub on purpose.
+
+# --- Secrets: API keys etc. go in here, never in mogul.toml ---
 secrets.toml
 .env
 
-# Python
+# --- Python ---
 __pycache__/
 *.pyc
 .venv/
