@@ -1,0 +1,17 @@
+# mogul.local.toml: settings for THIS machine only.
+#
+# Copy this file to mogul.local.toml and edit it:
+#     cp mogul.local.toml.example mogul.local.toml
+#
+# mogul.local.toml is in .gitignore, so it never goes to GitHub.
+# Put anything here that you don't want public: NAS paths, drive
+# names, folder layouts. Anything set here overrides mogul.toml;
+# anything left out uses the value from mogul.toml.
+
+[core]
+# incoming = "/mnt/nas/mogul_incoming"
+# json_store = "/home/you/MOGUL/mogul_json"
+
+[radio]
+# library = "/mnt/nas/AudioShare/Radio"
+# dupes = "/mnt/nas/AudioShare/Radio_dupes"

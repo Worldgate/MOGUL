@@ -26,7 +26,8 @@ mogul_reports/
 
 # The catalog (mogul_json/) IS pushed to GitHub on purpose.
 
-# --- Secrets: API keys etc. go in here, never in mogul.toml ---
+# --- This machine's settings (NAS paths etc.) and secrets ---
+mogul.local.toml
 secrets.toml
 .env
 

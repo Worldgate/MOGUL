@@ -64,6 +64,11 @@ else yet.
   audio/video extension anywhere in the repo as a safety net. Media never
   goes to GitHub. **`mogul_json/` is pushed to GitHub on purpose** (the
   catalog is versioned in git).
+- **No machine paths in the repo.** The catalog JSON has no paths (checked).
+  Machine-specific settings (NAS paths, drive names) go in
+  `mogul.local.toml`, which is in `.gitignore` and is layered over
+  `mogul.toml` (nested sections merge). Template: `mogul.local.toml.example`.
+  Reports contain full paths but are gitignored.
 - **No API keys or secrets in the repo.** When they're needed, they go in
   `secrets.toml` (already in `.gitignore`) or environment variables.
 - Write JSON safely: write to a temp file, then rename over the old one.
@@ -201,7 +206,7 @@ mogul.py              CLI entry point: mogul.py <media type> <action> [options]
 mogul.toml            settings
 requirements.txt      Python packages (xxhash, blake3)
 mogul_core/           shared code
-  config.py           loads mogul.toml, resolves folders
+  config.py           loads mogul.toml (+ mogul.local.toml), resolves folders
   hashing.py          audio-only xxh64 + whole-file hashes
   mediainfo.py        technical details via mediainfo
   fingerprint.py      chromaprint digest + similarity

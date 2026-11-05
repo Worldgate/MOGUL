@@ -18,12 +18,31 @@ def find_config(explicit=None):
     sys.exit("mogul.toml not found (looked in the current folder and the MOGUL folder)")
 
 
+def merge(base, extra):
+    """Merge settings from extra into base (nested sections merge too)."""
+    for key, value in extra.items():
+        if isinstance(value, dict) and isinstance(base.get(key), dict):
+            merge(base[key], value)
+        else:
+            base[key] = value
+    return base
+
+
 class Config:
+    """Settings from mogul.toml, with mogul.local.toml (if present) layered
+    on top. mogul.local.toml is for anything specific to this machine, like
+    NAS paths. It's in .gitignore, so it never goes to GitHub."""
+
     def __init__(self, path=None):
         self.path = find_config(path)
         self.base = os.path.dirname(self.path)
         with open(self.path, "rb") as f:
             self.data = tomllib.load(f)
+        local = os.path.join(self.base, "mogul.local.toml")
+        self.local_path = local if os.path.isfile(local) and not path else None
+        if self.local_path:
+            with open(self.local_path, "rb") as f:
+                merge(self.data, tomllib.load(f))
         self.core = self.data.get("core", {})
 
     def section(self, name):

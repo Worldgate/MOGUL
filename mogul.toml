@@ -1,5 +1,9 @@
 # MOGUL settings
 #
+# THIS FILE GOES TO GITHUB. Don't put real NAS paths or drive names in
+# it: put those in mogul.local.toml instead (see mogul.local.toml.example).
+# mogul.local.toml never goes to GitHub and overrides anything here.
+#
 # Folder paths can be absolute ("/mnt/nas/..."), start with "~",
 # or be relative. Relative paths are relative to the folder this
 # file is in.
@@ -24,8 +28,8 @@ hashes = ["blake3", "sha256", "sha512"]
 
 [radio]
 # --- Import (mogul.py radio import) ---
-# Where sorted radio files end up. Point this at the NAS, e.g.
-# library = "/mnt/nas/AudioShare/Radio"
+# Where sorted radio files end up. To point it at the NAS, set it in
+# mogul.local.toml, not here.
 library = "mogul_library/radio"
 
 # Where extra copies of files already in the library are moved.
