@@ -81,6 +81,18 @@ def audio_xxh64(path):
     return h.hexdigest()
 
 
+def whole_file_xxh64(path):
+    """xxh64 of the whole file. Used to check copies, not as an ID."""
+    h = xxhash.xxh64()
+    with open(path, "rb") as f:
+        while True:
+            chunk = f.read(CHUNK)
+            if not chunk:
+                break
+            h.update(chunk)
+    return h.hexdigest()
+
+
 def file_hashes(path, names):
     """Whole-file hashes in one read pass. Returns {name: hex}."""
     hashers = {name: _new(name) for name in names}

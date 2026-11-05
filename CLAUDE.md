@@ -192,6 +192,7 @@ modules/radio/
   __init__.py         radio actions
   naming.py           filename pattern parsing
   scan.py             the radio scanner
+  importer.py         the radio importer (move, rename, sort, dupes)
 tools/                standalone helpers (parsetest.py, fpdigest.py)
 examples/             sample JSON
 ```
@@ -227,6 +228,43 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   sort, and send duplicates to a dupes folder.
 - Test result: mp3 vs IA-style ogg vs m4a of the same audio = 99%
   fingerprint digest similarity.
+
+## Radio import (`mogul.py radio import`)
+
+- Moves cataloged files from `mogul_incoming/radio` into the radio library,
+  renamed and sorted. Run `scan` first; only cataloged files move.
+- Settings in `mogul.toml` `[radio]`:
+  - `library` (default `mogul_library/radio`, meant to point at the NAS)
+  - `dupes` (default `mogul_dupes/radio`)
+  - `folder_template = "{show}/{yyyy}/{mm}"`
+  - `filename_template = "{yyyy}-{mm}-{dd}_{code}_{HASH8}"` (extension added)
+  - Tokens: `{show} {code} {yyyy} {mm} {dd} {month_name} {HASH8} {hash8}`.
+    `{HASH8}` = first 8 chars of the xxh64, uppercase.
+  - Example: `Opie and Anthony/1999/09/1999-09-14_O&A_D0DBAAC0.mp3`
+- Name collision (a *different* file already has that name): use the next
+  8-character run of the xxh64 (offset 1, 2, ... 8).
+- Per file:
+  - **IMPORT**: it's the exact file the catalog entry was made from
+    (original filename + size) and the entry isn't in the library yet.
+  - **DUPLICATE**: same audio as something already in the library or
+    imported this run → moved to `dupes`, keeping its original name and
+    subfolder (adds ` (2)` etc. if taken). Never deleted.
+  - **WAIT**: a copy whose original is also in incoming; handled as a
+    duplicate after the original imports.
+  - **SKIP**: not in the catalog, unreadable, or the catalog entry was made
+    from a different copy that isn't here. Left in place.
+- After a move, the entry's `naming.filename` becomes the library name and
+  `status.imported` gets a timestamp. Catalog saved after every file.
+- Moves on the same drive are a rename. Across drives: copy to a `.part`
+  file, check size + whole-file xxh64, rename into place, then delete the
+  source.
+- Empty subfolders left in incoming are removed.
+- `--dry-run` moves nothing and writes no catalog changes. Every run writes
+  `mogul_reports/radio-import_<date>_<time>.json` (from → to for every
+  move, so an undo can be built from it later).
+- `mogul_library/` and `mogul_dupes/` are in `.gitignore`.
+- Not built yet: undo, and choosing *which* copy to keep by quality
+  (right now the first one scanned wins).
 
 ## Radio specifics
 
@@ -276,13 +314,6 @@ banner name.
   `O&A 1998-07-01 -- Listed as 1998-06-31`. Date is a guess; on the
   bounty list for anyone who can prove the real date.
 - `O&A 1998-06-27` is a Saturday, which may be legit.
-
-## Possible future rename scheme (undecided)
-
-`<show>/<yyyy>/<mm>/<yyyy-mm-dd> <code> [<hash8>] <cut><bitrate>.<ext>`
-e.g. `1998-07-21 O&A [9a01bc3f] FS128K.mp3`
-Should be a template in the config so it can be changed and previewed with
-`--dry-run`.
 
 ## File checks (planned)
 

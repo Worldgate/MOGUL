@@ -1,6 +1,8 @@
 # --- Media never goes to GitHub ---
-# The drop folder for new files
+# The drop folder, the sorted library and the dupes (defaults)
 mogul_incoming/
+mogul_library/
+mogul_dupes/
 
 # Safety net: block audio/video files anywhere in the repo,
 # even if they end up outside mogul_incoming by mistake

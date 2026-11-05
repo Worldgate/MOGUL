@@ -29,13 +29,17 @@ class Config:
     def section(self, name):
         return self.data.get(name, {})
 
-    def folder(self, key, default):
-        """Resolve a [core] folder setting to an absolute path."""
-        value = self.core.get(key, default)
+    def resolve(self, value):
+        """Turn a path from the config into an absolute path.
+        Relative paths are relative to the folder mogul.toml is in."""
         value = os.path.expanduser(value)
         if not os.path.isabs(value):
             value = os.path.join(self.base, value)
         return os.path.normpath(value)
+
+    def folder(self, key, default):
+        """Resolve a [core] folder setting to an absolute path."""
+        return self.resolve(self.core.get(key, default))
 
     @property
     def incoming(self):

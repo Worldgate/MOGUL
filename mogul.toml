@@ -23,6 +23,26 @@ reports = "mogul_reports"
 hashes = ["blake3", "sha256", "sha512"]
 
 [radio]
+# --- Import (mogul.py radio import) ---
+# Where sorted radio files end up. Point this at the NAS, e.g.
+# library = "/mnt/nas/AudioShare/Radio"
+library = "mogul_library/radio"
+
+# Where extra copies of files already in the library are moved.
+# Nothing is ever deleted.
+dupes = "mogul_dupes/radio"
+
+# Folder layout inside the library, and the filename (the extension
+# is added automatically). Tokens:
+#   {show} {code} {yyyy} {mm} {dd} {month_name}
+#   {HASH8} first 8 characters of the xxh64, uppercase
+#   {hash8} same, lowercase
+# If two different files would get the same name, the next 8
+# characters of the xxh64 are used instead.
+folder_template = "{show}/{yyyy}/{mm}"
+filename_template = "{yyyy}-{mm}-{dd}_{code}_{HASH8}"
+
+# --- Scan (mogul.py radio scan) ---
 # File types the radio scanner picks up.
 extensions = ["mp3", "ogg", "oga", "opus", "m4a", "aac", "flac", "wma", "wav", "mka"]
 
