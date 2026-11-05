@@ -1,0 +1,75 @@
+{
+  "header": {
+    "schema": "mogul.radio.month",
+    "schema_version": 1,
+    "show": "Opie and Anthony",
+    "code": "O&A",
+    "year": 1998,
+    "month": 7,
+    "created": "2026-11-05T00:40:00-06:00",
+    "updated": "2026-11-05T00:40:00-06:00",
+    "file_count": 2,
+    "mogul_version": "0.1.0"
+  },
+
+  "files": [
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "date": "1998-07-01",
+        "notes": "Listed as 1998-06-31",
+        "extension": "mp3",
+        "filename": "O&A 1998-07-01 -- Listed as 1998-06-31.mp3",
+        "original_filename": "O&A 1998-06-31.mp3",
+        "path": "Opie and Anthony/1998/07/O&A 1998-07-01 -- Listed as 1998-06-31.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "4dc4c7e1a2b3f00e",
+          "blake3": "6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85",
+          "sha256": "d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592",
+          "sha512": "07e547d9586f6a73f73fbac0435ed76951218fb7d0c8d788a309d785436bbb642e93a252a954f23912547d1e8a3b5ed6e1bfd7097821233fa0538f3db854fee6"
+        },
+        "size": 241927168,
+        "duration": 15120.404,
+        "codec": "mp3",
+        "bitrate": 128000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-04T01:12:00Z",
+        "added": "2026-11-05T00:40:00-06:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "date": "1998-07-01",
+        "notes": "Listed as 1998-06-31",
+        "extension": "ogg",
+        "filename": "O&A 1998-07-01 -- Listed as 1998-06-31.ogg",
+        "original_filename": "O&A 1998-06-31.ogg",
+        "path": "Opie and Anthony/1998/07/O&A 1998-07-01 -- Listed as 1998-06-31.ogg"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "e72d0a14c9b85f31",
+          "blake3": "af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262",
+          "sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+          "sha512": "ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff"
+        },
+        "size": 183402511,
+        "duration": 15120.381,
+        "codec": "vorbis",
+        "bitrate": 96000,
+        "bitrate_mode": "VBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-04T01:12:04Z",
+        "added": "2026-11-05T00:40:00-06:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# MOGUL settings
+
+[core]
+json_store = "~/mogul/mogul_data"
+
+[radio]
+# How incoming filenames look.
+#   {code}  show code from the list below
+#   {yyyy} {mm} {dd}  air date
+#   [ ... ] optional part
+#   {notes} anything after " -- "
+incoming_pattern = "{code} {yyyy}-{mm}-{dd}[ -- {notes}]"
+
+# Show codes -> full show names. Add more as needed.
+[radio.shows]
+"O&A" = "Opie and Anthony"
+"R&F" = "Ron and Fez"
+"HSS" = "Howard Stern Show"
