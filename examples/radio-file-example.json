@@ -1,0 +1,87 @@
+{
+  "schema": "mogul.radio.file",
+  "schema_version": 1,
+
+  "id": "4dc4c7e1a2b3f00e",
+
+  "hashes": {
+    "audio_xxh64": "4dc4c7e1a2b3f00e",
+    "file_xxh64": "91be2c0d7a44e135",
+    "md5": "9e107d9d372bb6826bd81d3542a419d6",
+    "sha1": "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12"
+  },
+
+  "fingerprint": {
+    "algorithm": "chromaprint",
+    "algorithm_version": 2,
+    "frames": 27370,
+    "sidecar": "fingerprints/4d/4dc4c7e1a2b3f00e.fp",
+    "index_rule": "value % 16 == 0"
+  },
+
+  "file": {
+    "path": "Opie and Anthony/1998/12/1998-12-10 O&A [4dc4c7e1] 32K.mp3",
+    "original_filename": "O&A 1998-12-10.mp3",
+    "extension": "mp3",
+    "size": 13573747,
+    "mtime": "2026-11-04T04:11:25Z"
+  },
+
+  "source": {
+    "type": "usenet",
+    "detail": null,
+    "verified_against": null
+  },
+
+  "media": {
+    "container": "mp3",
+    "codec": "mp3",
+    "mpeg_version": 2,
+    "layer": 3,
+    "bitrate": 32000,
+    "bitrate_mode": "CBR",
+    "channels": 1,
+    "sample_rate": 22050,
+    "samples_per_frame": 576,
+    "frame_count": 129905,
+    "sample_count": 74825280,
+    "duration": 3393.437
+  },
+
+  "episode": {
+    "show": "Opie and Anthony",
+    "code": "O&A",
+    "date": "1998-12-10",
+    "weekday": "Thu",
+    "date_confidence": "assumed",
+    "era": "WNEW era",
+    "part": null
+  },
+
+  "recording": {
+    "cut": "TO",
+    "cut_confidence": "guessed",
+    "preferred": false,
+    "replaced_by": null,
+    "tags": []
+  },
+
+  "notes": null,
+
+  "issues": [
+    {
+      "type": "low_quality",
+      "detail": "32k mono 22kHz, look for a better copy",
+      "status": "open",
+      "bounty": false,
+      "opened": "2026-11-04T23:56:00-06:00"
+    }
+  ],
+
+  "history": [
+    {"at": "2026-11-04T23:56:00-06:00", "action": "scanned", "by": "mogul 0.1.0"},
+    {"at": "2026-11-04T23:57:10-06:00", "action": "renamed",
+     "from": "O&A 1998-12-10.mp3",
+     "to": "1998-12-10 O&A [4dc4c7e1] 32K.mp3"}
+  ]
+}
