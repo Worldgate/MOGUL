@@ -381,6 +381,14 @@ banner name.
 
 ## Future ideas (not now)
 
+- **CBS/XM split era (O&A, ~2006-2009):** files come as separate feeds,
+  coded `O&A-CBS` and `O&A-XM` in `[radio.shows]` (both map to "Opie and
+  Anthony"; works today, sorts CBS before XM). Plan: a script to merge the
+  two feeds of a day into one file plus a cue sheet, for an MKA with
+  chapters later. Use the fingerprint to find where the feeds overlap so
+  the cut points come out automatically. Keep the original files' hashes
+  in the catalog (marked as merged) so other people's copies still match.
+
 - Per-hash "API" JSON per file, later filled with tags and history (who was
   on the show, etc.). Tags get stripped from files; a "rebuild tags" option
   writes them back when copying to a media player.
