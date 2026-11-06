@@ -1,0 +1,99 @@
+{
+  "header": {
+    "schema": "mogul.radio.month",
+    "schema_version": 1,
+    "media_type": "radio",
+    "show": "Black Phillip Show",
+    "code": "BPS",
+    "year": 2008,
+    "month": 2,
+    "created": "2026-11-06T21:40:17+00:00",
+    "updated": "2026-11-06T21:42:26+00:00",
+    "file_count": 2,
+    "mogul_version": "0.1.0"
+  },
+  "files": [
+    {
+      "naming": {
+        "show": "Black Phillip Show",
+        "code": "BPS",
+        "year": 2008,
+        "month": 2,
+        "day": 9,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-02-09_BPS_9C20A78E.mp3",
+        "original_filename": "BPS 2008-02-09.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "9c20a78e79e85ec0",
+          "audio_blake3": "a1853e72d350ee172e16c1970a8d418f517b1e5df02a5517dcfa27c1c6223979",
+          "blake3": "a1853e72d350ee172e16c1970a8d418f517b1e5df02a5517dcfa27c1c6223979",
+          "sha256": "4f11b6949a7d75b184c08a212b15b9c05d7d3fe7c61b5bad4d79bd0733871116",
+          "sha512": "c79850372ca26b96c314ff619a74a0bcdeafd0424e4f8685c69b60174d389db59248f69190655ccd8ca8fb20e621ecbdbd8564743a06fa8bdfb5bc1d50de083b"
+        },
+        "size": 73484955,
+        "duration": 9185.619,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-06T20:24:32Z",
+        "added": "2026-11-06T21:40:17+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "7c3aa02ef43ca00ed42e202ed43ca026dc38a006d438a02ed428a02ef428a02ef43aa00e543ea02e702ca02e5428a02ad43ca00ef438a02674b82026f028a026d43ca026d438a006f43ca02ef43ca02e503ca026f42ca08ef43ea006743ca02ad63ca006542ca02ef63c200ed42ca026742ca02e743ea02e7428a02e762c80aa743ea02ef43ca0267424200c7438a02ef43ca00ef43ca02e74382026f63ca026703ca02e5438a026d6aca086563ca00e703ca006d028a026f43c202e543c20aef438a026d63ca00ef43c200e502ca026dc1ca02ed43ca026f428a022f43ea086f42c8026f43ca006f43ca00e543ca026d438a026743aa02ed63ca02ef42ca02ef02ea0a6f43ca00a542e202af02aa02af43ca02e502ea02ef42ca026743e202e742ca08ed43ca02cf42ca02ef43ea00e522ea082743e202e543aa00a743ca00e743ca0265434a026542c80a6d62ca026f42ea026f428200ed428a006f428a02ef02ca086f428a02ef42ca0aed428a08ed43e2026f43ca02e7034a00ef42ea026f42ca02ef02ca00e702ca02e542ea886f428202ef038a8a0dc3ca006f42ea0027028a02e543ea0066636802a6474a02b543c802a503ca0ae5428a02ed42ca00ef428a804f438a002742c20a2543ca006743c2006702ca02ef428a026d42c202cd42ca006f42c2026503420ae543ca00e763ca02e7434a02e542ea00ad62ca00ef42c2006f43ca426f42c20267438a08ef42ca02ef43ca026f63c20aef43aa00ed43ea02ad42ca02e503aa02af42ca006dc3ea022f42c802ef42ca022f63ea02eb428a226f42c808ef43ca00e702ea02e702ca02afc38a08e542ea00e502ca02af43ca02e",
+        "digest_minutes": 153
+      },
+      "status": {
+        "imported": "2026-11-06T21:42:25+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Black Phillip Show",
+        "code": "BPS",
+        "year": 2008,
+        "month": 2,
+        "day": 9,
+        "notes": null,
+        "extension": "ogg",
+        "filename": "2008-02-09_BPS_59F2D8CF.ogg",
+        "original_filename": "BPS 2008-02-09.ogg"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "59f2d8cf55b243b3",
+          "audio_blake3": "120d1b654fb553a84e9d77032479a73ad6f1561b504d2a83da2b38616b46485e",
+          "blake3": "0a0a66d69b759aa016a5f163bf1d2f2ab87a15a8aa83f39f2e6daa838d68d450",
+          "sha256": "791d1dd4fb39b435d74bead2a0be5668d47fce88f6bd029f90a6c594e7b0f660",
+          "sha512": "22dade016fe40466cc8a04fc61a580452ebd95945023e420a7092af53fef9f8df55896b7910359ff7350506688116415396ca176fbff764828dc31f8ad31dcfe"
+        },
+        "size": 78174229,
+        "duration": 9185.62,
+        "container": "Ogg",
+        "codec": "vorbis",
+        "bitrate": 96000,
+        "bitrate_mode": "VBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-06T20:24:33Z",
+        "added": "2026-11-06T21:40:32+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "7c3aa02ed43ca08ed42e802ed43ca026fc38a006d438a02ed428a02ef428a02ef43aa00e543ea02e702ca02e5428a02a543ca00ef438a02664b82026f028a026d42ca026d438a006d62ca02ef43ca02e502ca026f42ca08ef43ca006743ca02ad63ca006542ca0aef63c200ed42ca022742ca02c743ea02e7028a02e762c808a743ea02ef43ca026742c200e7438a02ef43ca00ef43ca02e743820a6f63ca026703ca02e5438a026d6a8a086563ca00e503ca006d028a026f43c202e543c20aef438a026d63ca00ef43c2006502ca026dc1ca02ed43ea026f428a022f42ea086f42c8026f43ca006f43ca00e543ca026d438a0267c2aa02ed63ca02ef42ca02ef02e20a6f43ca00a542e202af22aa02af42ca02e502ea02ed42ca026743e200e742ca08ed43ca02cf42ca0aef43ea02e522ea082743e202e543aa00a763ca00e742ca0265434a026542c80a6d62ca02ef42ea026f428202ed428a006f428a02ef02ca006f428a02ef42ca0aed428a00ed43c2026f43ca02e5034a00ef42ea026f42ca02ef02c200e702ea02e542ea886f428202ee438a8a0dc3ca006f42ea0027028a02e543ca0066636a02a6474a02b543c802a503ca0ae5428a02ed42ca00ef42ca824f438a002742c20a2543ca006743c2006702ca02ef42ca026d42c202cd42ea006f42c2026503420ae543ca00e763ca02e7434a02e543ea00af62ca00ef42ca006f43ca426f42c20267438a08ef42ca02ef43ca026f63ca0ae743aa00ed43ea02ad42ca02e502aa02af42ca006dc3ea022f42c802ef42ca022f63ea02eb428a226f42c800ef43ca00e702ea02e702ca02afc38a08e542ea00e502ca00af438a02e",
+        "digest_minutes": 153
+      },
+      "status": {
+        "imported": "2026-11-06T21:42:26+00:00"
+      }
+    }
+  ]
+}
