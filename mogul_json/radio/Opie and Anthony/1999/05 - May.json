@@ -1,0 +1,99 @@
+{
+  "header": {
+    "schema": "mogul.radio.month",
+    "schema_version": 1,
+    "media_type": "radio",
+    "show": "Opie and Anthony",
+    "code": "O&A",
+    "year": 1999,
+    "month": 5,
+    "created": "2026-11-05T21:46:31+00:00",
+    "updated": "2026-11-05T21:54:45+00:00",
+    "file_count": 2,
+    "mogul_version": "0.1.0"
+  },
+  "files": [
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 1999,
+        "month": 5,
+        "day": 5,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "1999-05-05_O&A_1FB1C9EF.mp3",
+        "original_filename": "O&A 1999-05-05.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "1fb1c9efc36c84bb",
+          "audio_blake3": "8829f14f0878bb020f971aa72e5c6da926880209f8a8306a4d4afdd67260434f",
+          "blake3": "8829f14f0878bb020f971aa72e5c6da926880209f8a8306a4d4afdd67260434f",
+          "sha256": "a70b53f8d9e3c16350261710f1dd51bd0b79d286498cb6cfe0c10167d5cb1abe",
+          "sha512": "92a7640772a89365b5661cf14b44cb2a2be501a8efd7f4a095ff9b7b73877df7e495ec9a48114c3ea58cf5e0e2dbeab1fc8e04cfd22757f2d6d31d14275f6ab6"
+        },
+        "size": 1262132,
+        "duration": 315.533,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 32000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-11-05T21:36:44Z",
+        "added": "2026-11-05T21:46:31+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "b474e02ef434a426f4f6a12ed474e026f57cf12e9d36a42e",
+        "digest_minutes": 6
+      },
+      "status": {
+        "imported": "2026-11-05T21:54:45+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 1999,
+        "month": 5,
+        "day": 5,
+        "notes": null,
+        "extension": "ogg",
+        "filename": "1999-05-05_O&A_E1DF1A28.ogg",
+        "original_filename": "O&A 1999-05-05.ogg"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "e1df1a2862001d7c",
+          "audio_blake3": "ff3886fd696f58dd2663082b554b0c2082d34833ca2df1f7b3e8138aa2e96d35",
+          "blake3": "6484ded52f339774ba0b1c7e49964bde171699b7a44315756a38df4ba5c1ba84",
+          "sha256": "df043eb784e667cf70d3870c1689c02a807c016a24faaa5647dacddb22778632",
+          "sha512": "ca9e7092008ed679cc69df7813fe55f74c0395a8aa5ef29fd678b67eb9884b34e4cfddb45b804f53b8d3a518f389b4522b9434105fa0e2017f76dd5c12b5f571"
+        },
+        "size": 1404095,
+        "duration": 315.533,
+        "container": "Ogg",
+        "codec": "vorbis",
+        "bitrate": 56000,
+        "bitrate_mode": "VBR",
+        "channels": 2,
+        "sample_rate": 22050,
+        "mtime": "2026-11-05T21:36:44Z",
+        "added": "2026-11-05T21:46:31+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "b474e02ef434a026f4f6a12ed474e026f57cf56f9c36a62e",
+        "digest_minutes": 6
+      },
+      "status": {
+        "imported": "2026-11-05T21:54:45+00:00"
+      }
+    }
+  ]
+}
