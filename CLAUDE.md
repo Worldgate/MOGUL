@@ -218,6 +218,7 @@ modules/radio/
   scan.py             the radio scanner
   importer.py         the radio importer (move, rename, sort, dupes)
   verify.py           checks the library against the catalog
+  fingerprint_pass.py adds missing fingerprints, several files at once
 tools/                standalone helpers (parsetest.py, fpdigest.py)
 examples/             sample JSON
 ```
@@ -310,6 +311,23 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   whose file wasn't found).
 - `--dry-run` writes nothing. Report: `mogul_reports/radio-verify_*.json`.
 - Run it after an import, and now and then as a health check of the NAS.
+
+## Radio fingerprint (`mogul.py radio fingerprint`)
+
+- Adds the fingerprint digest to every catalog entry that has none (e.g.
+  scanned with `scan --no-fingerprint`, which is much faster for big
+  batches: fingerprinting is CPU work that depends on audio *length*).
+- Finds files through the catalog: imported entries in the library at
+  `<folder_template>/<filename>`; others in `mogul_incoming/radio` by
+  original filename. Only used if the size matches the catalog.
+- Runs several files at once: `--jobs N` (default: CPU cores minus one).
+- If fpcalc fails (usually damaged audio), records
+  `status.fingerprint_failed = {date, error}` and skips it next time;
+  `--retry-failed` tries again. `--dry-run` lists what it would do.
+- Catalog saved after every finished file. Report:
+  `mogul_reports/radio-fingerprint_*.json`.
+- Suggested flow for big batches: `scan --no-fingerprint` → `import` →
+  `fingerprint` (can run overnight).
 
 ## Radio specifics
 

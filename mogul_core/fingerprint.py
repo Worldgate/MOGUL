@@ -28,7 +28,8 @@ def raw_frames(path):
     except FileNotFoundError:
         raise FingerprintError("fpcalc not found (sudo apt install libchromaprint-tools)")
     if proc.returncode != 0:
-        raise FingerprintError(proc.stderr.strip() or "fpcalc failed")
+        lines = [l.strip().removeprefix("ERROR: ") for l in proc.stderr.strip().splitlines() if l.strip()]
+        raise FingerprintError("; ".join(lines) or "fpcalc failed")
     for line in proc.stdout.splitlines():
         if line.startswith("FINGERPRINT="):
             frames = [int(x) for x in line.split("=", 1)[1].strip().split(",") if x]

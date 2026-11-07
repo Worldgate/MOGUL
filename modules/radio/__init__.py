@@ -4,6 +4,7 @@ ACTIONS = {
     "scan": "Catalog new files in mogul_incoming/radio into the JSON files (moves nothing)",
     "import": "Move cataloged files into the radio library, renamed and sorted; extra copies go to dupes",
     "verify": "Check the radio library against the catalog (moves nothing)",
+    "fingerprint": "Add fingerprints to cataloged files that don't have one yet, several at a time",
 }
 
 
@@ -17,6 +18,9 @@ def run(action, args, config):
     if action == "verify":
         from . import verify
         return verify.run(args, config)
+    if action == "fingerprint":
+        from . import fingerprint_pass
+        return fingerprint_pass.run(args, config)
     raise SystemExit(f"radio has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -37,3 +41,10 @@ def add_arguments(action, parser):
         parser.add_argument("--update", action="store_true",
                             help="for files whose tags changed since the scan, record the new "
                                  "whole-file hashes, size and date")
+    elif action == "fingerprint":
+        parser.add_argument("--dry-run", action="store_true",
+                            help="list what would be fingerprinted, change nothing")
+        parser.add_argument("--jobs", type=int, default=0,
+                            help="how many files to work on at once (default: number of CPU cores minus one)")
+        parser.add_argument("--retry-failed", action="store_true",
+                            help="also try files that failed before")

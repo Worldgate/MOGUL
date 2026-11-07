@@ -39,15 +39,20 @@ class Progress:
         self.start = time.time()
 
     def tag(self, i):
-        """Label for file number i (1-based), e.g. '[ 53/194  ~12m05s left]'."""
-        done = self.before[i - 1]
+        """Label for file number i (1-based), e.g. '[ 53/194  ~12m05s left]'.
+        For files handled in order: everything before file i is done."""
+        return self.label(i, self.before[i - 1])
+
+    def label(self, number, done_bytes):
+        """Label for when 'done_bytes' bytes are finished. Used directly when
+        files finish out of order (parallel work)."""
         elapsed = time.time() - self.start
-        if done > 0 and elapsed >= 1:
-            remaining = (self.total - done) * elapsed / done
+        if done_bytes > 0 and elapsed >= 1:
+            remaining = max(self.total - done_bytes, 0) * elapsed / done_bytes
             eta = f"~{fmt_duration(remaining)} left"
         else:
             eta = "estimating..."
-        return f"[{i:>{self.width}}/{self.count}  {eta:>15}]"
+        return f"[{number:>{self.width}}/{self.count}  {eta:>15}]"
 
     def elapsed(self):
         return fmt_duration(time.time() - self.start)
