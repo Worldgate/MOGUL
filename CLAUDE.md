@@ -408,6 +408,16 @@ banner name.
   the cut points come out automatically. Keep the original files' hashes
   in the catalog (marked as merged) so other people's copies still match.
 
+- **Bits / clips (community, via web UI later):** a bit = `{xxh64, start,
+  end, title, tags, by}`. The xxh64 pins the exact audio, so timecodes are
+  right for anyone with that file whatever its name. Use the fingerprint to
+  find the offset between recordings of the same show (mp3/ogg, full/CF) so
+  a bit marked on one copy shows on the others. Bits live in their own JSON
+  files (per show/month), separate from the recording catalog. Overlapping
+  submissions merge into one bit; the count acts as votes ("greatest bits").
+  Same format feeds cue sheets and MKA chapters. Examples Mavrick gave:
+  "Opie and Jimmy fight", "Anthony and Opie fight", Norton telling the
+  "Draggin Wagon" caller to cancel XM, then "wait, don't cancel".
 - Per-hash "API" JSON per file, later filled with tags and history (who was
   on the show, etc.). Tags get stripped from files; a "rebuild tags" option
   writes them back when copying to a media player.
