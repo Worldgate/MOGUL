@@ -25,6 +25,7 @@ import shutil
 import sys
 import time
 
+from mogul_core.progress import Progress
 from mogul_core import VERSION, hashing, store
 
 from . import naming
@@ -218,9 +219,10 @@ def run(args, config):
               f"  (same as {same_as}{note})")
         return True
 
+    progress = Progress(files)
     for i, path in enumerate(files, 1):
         rel = os.path.relpath(path, incoming)
-        tag = f"[{i:>{width}}/{len(files)}]"
+        tag = progress.tag(i)
         filename = os.path.basename(path)
 
         try:
@@ -362,7 +364,7 @@ def run(args, config):
     # ---------------------------------------------------------------- summary
     report["finished"] = store.now()
     print()
-    print(f"Done in {time.time() - t0:.0f}s")
+    print(f"Done in {progress.elapsed()}")
     print(f"  imported:   {len(report['imported'])}")
     print(f"  duplicates: {len(report['duplicates'])}  (moved to the dupes folder)")
     print(f"  skipped:    {len(report['skipped'])}  (left in incoming)")

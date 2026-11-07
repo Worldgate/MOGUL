@@ -211,6 +211,7 @@ mogul_core/           shared code
   mediainfo.py        technical details via mediainfo
   fingerprint.py      chromaprint digest + similarity
   store.py            safe JSON read/write (temp file + rename)
+  progress.py         "[ 53/194  ~12m05s left]" labels, ETA by bytes not file count
 modules/radio/
   __init__.py         radio actions
   naming.py           filename pattern parsing

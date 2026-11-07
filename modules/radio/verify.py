@@ -27,6 +27,7 @@ import os
 import sys
 import time
 
+from mogul_core.progress import Progress
 from mogul_core import VERSION, hashing, store
 
 from .importer import target_folder
@@ -69,9 +70,10 @@ def run(args, config):
     width = len(str(max(len(files), 1)))
     t0 = time.time()
 
+    progress = Progress(files)
     for i, path in enumerate(files, 1):
         rel = os.path.relpath(path, library)
-        tag = f"[{i:>{width}}/{len(files)}]"
+        tag = progress.tag(i)
         name = os.path.basename(path)
 
         try:
@@ -194,7 +196,7 @@ def run(args, config):
 
     report["finished"] = store.now()
     print()
-    print(f"Done in {time.time() - t0:.0f}s")
+    print(f"Done in {progress.elapsed()}")
     labels = [("ok", "ok"), ("filled", "audio_blake3 filled in"), ("found", "found, marked imported"),
               ("changed", "changed since scan (use --update)"), ("updated", "updated"),
               ("misplaced", "misplaced"), ("extra", "extra copies"), ("collision", "COLLISIONS"),

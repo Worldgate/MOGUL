@@ -21,6 +21,7 @@ import shutil
 import sys
 import time
 
+from mogul_core.progress import Progress
 from mogul_core import VERSION, hashing, mediainfo, fingerprint, store
 
 from . import naming
@@ -169,9 +170,10 @@ def run(args, config):
     width = len(str(len(files)))
     t0 = time.time()
 
+    progress = Progress(files)
     for i, path in enumerate(files, 1):
         rel = os.path.relpath(path, incoming)
-        tag = f"[{i:>{width}}/{len(files)}]"
+        tag = progress.tag(i)
         filename = os.path.basename(path)
 
         try:
@@ -315,7 +317,7 @@ def run(args, config):
     report["finished"] = store.now()
     elapsed = time.time() - t0
     print()
-    print(f"Done in {elapsed:.0f}s")
+    print(f"Done in {progress.elapsed()}")
     print(f"  added:             {len(report['added'])}")
     print(f"  duplicates:        {len(report['duplicates'])}"
           + (f"  ({sum(1 for d in report['duplicates'] if d.get('date_conflict'))} with a different date)"
