@@ -100,6 +100,7 @@ else yet.
         "year": 1998,
         "month": 7,
         "day": 1,
+        "part": null,
         "notes": "Listed as 1998-06-31",
         "extension": "mp3",
         "filename": "O&A 1998-07-01 -- Listed as 1998-06-31.mp3",
@@ -265,8 +266,14 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   - `dupes` (default `mogul_dupes/radio`), `rename_dupes` (default true)
   - `folder_template = "{show}/{yyyy}/{mm}"`
   - `filename_template = "{yyyy}-{mm}-{dd}_{code}_{HASH8}"` (extension added)
-  - Tokens: `{show} {code} {yyyy} {mm} {dd} {month_name} {HASH8} {hash8}`.
-    `{HASH8}` = first 8 chars of the xxh64, uppercase.
+  - Tokens: `{show} {code} {yyyy} {mm} {dd} {month_name} {HASH8} {hash8}
+    {part} {notes}`. `{HASH8}` = first 8 chars of the xxh64, uppercase.
+    `{part}` = two digits (01, 02...).
+  - `[ ... ]` in a template = optional: dropped when a token inside is
+    empty. Default filename template is
+    `{yyyy}-{mm}-{dd}_{code}[_pt{part}]_{HASH8}`, so files without a part
+    keep the old names: `2005-03-14_O&A_pt02_DE8CBE6D.mp3` vs
+    `2005-03-15_O&A_D5948F25.mp3`.
   - Example: `Opie and Anthony/1999/09/1999-09-14_O&A_D0DBAAC0.mp3`
 - Name collision (a *different* file already has that name): use the next
   8-character run of the xxh64 (offset 1, 2, ... 8).
@@ -333,16 +340,21 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 
 ### Incoming filenames
 
-Pattern (in `mogul.toml`): `{code} {yyyy}-{mm}-{dd}[ -- {notes}]`
+Pattern (in `mogul.toml`): `{code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]`
 
 - `O&A 1998-07-21.mp3`
 - `O&A 1998-06-26 -- 1st WNEW show.mp3` (everything after ` -- ` is notes)
+- `O&A 2005-03-14_02 -- Optional title.mp3` (part 2 of that day). Stored as
+  `naming.part` (a number, null when absent). For multi-part days (pt1/pt2,
+  hourly blocks); later these get linked as parts of one recording.
+  Older entries have no `part` key: read it with `.get("part")`.
 
 Show codes map to show names in `mogul.toml` under `[radio.shows]`
 (`O&A`, `R&F`, `HSS`, more added as needed).
 
-`tools/parsetest.py` shows how filenames are read and flags problems:
-invalid dates, unknown show codes, names that don't match the pattern.
+`tools/parsetest.py` shows how filenames are read (using the real parser and
+templates) and the library name each would get, and flags problems: invalid
+dates, unknown show codes, names that don't match the pattern.
 
 ### Other filename shapes seen (handle later)
 

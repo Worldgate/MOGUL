@@ -46,10 +46,14 @@ rename_dupes = true
 #   {show} {code} {yyyy} {mm} {dd} {month_name}
 #   {HASH8} first 8 characters of the xxh64, uppercase
 #   {hash8} same, lowercase
+#   {part}  part number, two digits (01, 02...), for multi-part days
+#   {notes} the notes from the original filename
+# Anything in [square brackets] is left out when its token is empty, so
+# "[_pt{part}]" only shows up for files that have a part number.
 # If two different files would get the same name, the next 8
 # characters of the xxh64 are used instead.
 folder_template = "{show}/{yyyy}/{mm}"
-filename_template = "{yyyy}-{mm}-{dd}_{code}_{HASH8}"
+filename_template = "{yyyy}-{mm}-{dd}_{code}[_pt{part}]_{HASH8}"
 
 # --- Scan (mogul.py radio scan) ---
 # File types the radio scanner picks up.
@@ -63,8 +67,9 @@ fingerprint = true
 #   {code}  show code from the list below
 #   {yyyy} {mm} {dd}  air date
 #   [ ... ] optional part
+#   {part}  part number after the date: "O&A 2005-03-14_02.mp3"
 #   {notes} anything after " -- "
-incoming_pattern = "{code} {yyyy}-{mm}-{dd}[ -- {notes}]"
+incoming_pattern = "{code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]"
 
 # Show codes -> full show names. Add more as needed.
 [radio.shows]

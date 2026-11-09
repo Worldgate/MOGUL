@@ -1,22 +1,24 @@
 """Read show, date and notes out of radio filenames.
 
 The pattern comes from mogul.toml, e.g.
-    {code} {yyyy}-{mm}-{dd}[ -- {notes}]
+    {code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]
 which matches
     O&A 1998-07-21.mp3
     O&A 1998-06-26 -- 1st WNEW show.mp3
+    O&A 2005-03-14_02 -- Optional title.mp3     (part 2 of that day)
 """
 
 import datetime
 import re
 
-DEFAULT_PATTERN = "{code} {yyyy}-{mm}-{dd}[ -- {notes}]"
+DEFAULT_PATTERN = "{code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]"
 
 TOKENS = {
     "code": r"(?P<code>.+?)",
     "yyyy": r"(?P<yyyy>\d{4})",
     "mm": r"(?P<mm>\d{1,2})",
     "dd": r"(?P<dd>\d{1,2})",
+    "part": r"(?P<part>\d{1,3})",
     "notes": r"(?P<notes>.+?)",
 }
 
@@ -54,6 +56,8 @@ def parse(filename, regex, shows):
     code = m.group("code")
     year, month, day = int(m.group("yyyy")), int(m.group("mm")), int(m.group("dd"))
     notes = m.groupdict().get("notes")
+    part = m.groupdict().get("part")
+    part = int(part) if part else None
     if notes is not None:
         notes = notes.strip() or None
 
@@ -72,6 +76,7 @@ def parse(filename, regex, shows):
         "year": year,
         "month": month,
         "day": day,
+        "part": part,
         "notes": notes,
         "extension": m.group("ext").lower(),
         "filename": filename,

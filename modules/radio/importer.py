@@ -20,6 +20,7 @@ updated with the new filename and an "imported" time.
 """
 
 import errno
+import re
 import os
 import shutil
 import sys
@@ -43,8 +44,16 @@ def clean(text):
 
 
 def render(template, entry, hash_slice):
-    n = entry["naming"]
+    """Fill in a folder or filename template from a catalog entry.
+
+    Tokens: {show} {code} {yyyy} {mm} {dd} {month_name} {HASH8} {hash8}
+            {part} (two digits, e.g. 02) and {notes}
+    A part in [square brackets] is only kept if every token inside it has a
+    value, so "[_pt{part}]" disappears for files that have no part number.
+    """
     import calendar
+    n = entry["naming"]
+    part = n.get("part")
     values = {
         "show": n["show"],
         "code": n["code"],
@@ -54,12 +63,26 @@ def render(template, entry, hash_slice):
         "month_name": calendar.month_name[n["month"]],
         "hash8": hash_slice.lower(),
         "HASH8": hash_slice.upper(),
+        "part": f"{part:02d}" if part is not None else "",
+        "notes": (n.get("notes") or "").strip(),
     }
-    try:
-        text = template.format(**values)
-    except KeyError as e:
-        sys.exit(f"Unknown token {{{e.args[0]}}} in a radio template in mogul.toml")
-    return text
+
+    def fill(text):
+        def token(m):
+            name = m.group(1)
+            if name not in values:
+                sys.exit(f"Unknown token {{{name}}} in a radio template in mogul.toml")
+            return values[name]
+        return re.sub(r"\{([A-Za-z0-9_]+)\}", token, text)
+
+    def optional(m):
+        inner = m.group(1)
+        names = re.findall(r"\{([A-Za-z0-9_]+)\}", inner)
+        if any(not values.get(nm) for nm in names if nm in values):
+            return ""
+        return fill(inner)
+
+    return fill(re.sub(r"\[([^\[\]]*)\]", optional, template))
 
 
 def target_folder(library, folder_template, entry):
