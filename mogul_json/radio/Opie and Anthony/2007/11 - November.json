@@ -8,47 +8,11 @@
     "year": 2007,
     "month": 11,
     "created": "2026-11-07T19:07:00+00:00",
-    "updated": "2026-11-07T20:27:50+00:00",
-    "file_count": 40,
+    "updated": "2026-11-11T20:23:06+00:00",
+    "file_count": 44,
     "mogul_version": "0.1.0"
   },
   "files": [
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2007,
-        "month": 11,
-        "day": 1,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2007-11-01_O&A_BA4A0786.mp3",
-        "original_filename": "O&A 2007-11-01.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "ba4a078609475428",
-          "audio_blake3": "38cbfb2ca11dcce842fa778c0cbde6581c75693d96a6ce8740ae4320acb1d70e",
-          "blake3": "38cbfb2ca11dcce842fa778c0cbde6581c75693d96a6ce8740ae4320acb1d70e",
-          "sha256": "f947efaee055c443dc4e1244d7af0c9ad5ef0c4b5d72a4d0427789a8b3306795",
-          "sha512": "3a8343afc45608ddfdd105f7acc77ac14ee418d7b6077e3d50e4a1729f57ed98975e84ff4ba2bc514e8fda8350b78202057b63425c57f1f7c6924194dab0a092"
-        },
-        "size": 93898272,
-        "duration": 11737.284,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-07T16:44:43Z",
-        "added": "2026-11-07T19:07:00+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T20:25:58+00:00"
-      }
-    },
     {
       "naming": {
         "show": "Opie and Anthony",
@@ -83,6 +47,42 @@
       "fingerprint": null,
       "status": {
         "imported": "2026-11-07T20:26:01+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 1,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-01_O&A_BA4A0786.mp3",
+        "original_filename": "O&A 2007-11-01.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "ba4a078609475428",
+          "audio_blake3": "38cbfb2ca11dcce842fa778c0cbde6581c75693d96a6ce8740ae4320acb1d70e",
+          "blake3": "38cbfb2ca11dcce842fa778c0cbde6581c75693d96a6ce8740ae4320acb1d70e",
+          "sha256": "f947efaee055c443dc4e1244d7af0c9ad5ef0c4b5d72a4d0427789a8b3306795",
+          "sha512": "3a8343afc45608ddfdd105f7acc77ac14ee418d7b6077e3d50e4a1729f57ed98975e84ff4ba2bc514e8fda8350b78202057b63425c57f1f7c6924194dab0a092"
+        },
+        "size": 93898272,
+        "duration": 11737.284,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-07T16:44:43Z",
+        "added": "2026-11-07T19:07:00+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-07T20:25:58+00:00"
       }
     },
     {
@@ -165,42 +165,6 @@
         "month": 11,
         "day": 5,
         "notes": null,
-        "extension": "mp3",
-        "filename": "2007-11-05_O&A_D56BCB68.mp3",
-        "original_filename": "O&A 2007-11-05.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "d56bcb6895057786",
-          "audio_blake3": "8bb21813a731a4d9fa27469072ae9ac897c0b70acd6c17662c57e9c176089488",
-          "blake3": "8bb21813a731a4d9fa27469072ae9ac897c0b70acd6c17662c57e9c176089488",
-          "sha256": "d4da1bb636ad770210c98488acfbda5071d5f1734f87c4ab068da0d499aa0102",
-          "sha512": "224c59438591a83d468479d017c050604669de784abcddd6c867505e01485ad3670b0e9c44fc7c6b625ed79751ea8e07bf4a6f4d4502f4b023ecb813131d3a69"
-        },
-        "size": 121605120,
-        "duration": 15200.64,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-07T16:44:45Z",
-        "added": "2026-11-07T19:07:14+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T20:26:09+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2007,
-        "month": 11,
-        "day": 5,
-        "notes": null,
         "extension": "ogg",
         "filename": "2007-11-05_O&A_8C62C971.ogg",
         "original_filename": "O&A 2007-11-05.ogg"
@@ -227,6 +191,42 @@
       "fingerprint": null,
       "status": {
         "imported": "2026-11-07T20:26:13+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 5,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-05_O&A_D56BCB68.mp3",
+        "original_filename": "O&A 2007-11-05.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "d56bcb6895057786",
+          "audio_blake3": "8bb21813a731a4d9fa27469072ae9ac897c0b70acd6c17662c57e9c176089488",
+          "blake3": "8bb21813a731a4d9fa27469072ae9ac897c0b70acd6c17662c57e9c176089488",
+          "sha256": "d4da1bb636ad770210c98488acfbda5071d5f1734f87c4ab068da0d499aa0102",
+          "sha512": "224c59438591a83d468479d017c050604669de784abcddd6c867505e01485ad3670b0e9c44fc7c6b625ed79751ea8e07bf4a6f4d4502f4b023ecb813131d3a69"
+        },
+        "size": 121605120,
+        "duration": 15200.64,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-07T16:44:45Z",
+        "added": "2026-11-07T19:07:14+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-07T20:26:09+00:00"
       }
     },
     {
@@ -525,42 +525,6 @@
         "month": 11,
         "day": 12,
         "notes": null,
-        "extension": "mp3",
-        "filename": "2007-11-12_O&A_8C522092.mp3",
-        "original_filename": "O&A 2007-11-12.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "8c522092c51099a4",
-          "audio_blake3": "2409ea8c09989c4e57e09aee4e095f56a432d05a074ce6ac26e5c256ac8d5d1c",
-          "blake3": "2409ea8c09989c4e57e09aee4e095f56a432d05a074ce6ac26e5c256ac8d5d1c",
-          "sha256": "03196eeca29f3050b9a996702ac772732e12817e85eafcc9b8814d7b7338795d",
-          "sha512": "3e9d685a8ee298381d1968cb531cea5465de7688650196b3b218ecd80083963e54c8101d4ded011543069df1a8e81054ff6f93a646194023e1529e0cc15f8896"
-        },
-        "size": 109944640,
-        "duration": 13743.08,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-07T16:44:52Z",
-        "added": "2026-11-07T19:07:51+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T20:26:39+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2007,
-        "month": 11,
-        "day": 12,
-        "notes": null,
         "extension": "ogg",
         "filename": "2007-11-12_O&A_76688FB0.ogg",
         "original_filename": "O&A 2007-11-12.ogg"
@@ -587,6 +551,42 @@
       "fingerprint": null,
       "status": {
         "imported": "2026-11-07T20:26:42+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 12,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-12_O&A_8C522092.mp3",
+        "original_filename": "O&A 2007-11-12.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "8c522092c51099a4",
+          "audio_blake3": "2409ea8c09989c4e57e09aee4e095f56a432d05a074ce6ac26e5c256ac8d5d1c",
+          "blake3": "2409ea8c09989c4e57e09aee4e095f56a432d05a074ce6ac26e5c256ac8d5d1c",
+          "sha256": "03196eeca29f3050b9a996702ac772732e12817e85eafcc9b8814d7b7338795d",
+          "sha512": "3e9d685a8ee298381d1968cb531cea5465de7688650196b3b218ecd80083963e54c8101d4ded011543069df1a8e81054ff6f93a646194023e1529e0cc15f8896"
+        },
+        "size": 109944640,
+        "duration": 13743.08,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-07T16:44:52Z",
+        "added": "2026-11-07T19:07:51+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-07T20:26:39+00:00"
       }
     },
     {
@@ -741,42 +741,6 @@
         "month": 11,
         "day": 15,
         "notes": null,
-        "extension": "mp3",
-        "filename": "2007-11-15_O&A_E9E06479.mp3",
-        "original_filename": "O&A 2007-11-15.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "e9e06479cdaa712f",
-          "audio_blake3": "4bf1f33004fb2883d421de5213341ca601b844ab7f1e5660318f143bb38c2a3b",
-          "blake3": "4bf1f33004fb2883d421de5213341ca601b844ab7f1e5660318f143bb38c2a3b",
-          "sha256": "f0a0bc678041cab4028177c5557cab4cbe08b942bd703cf713168d012a0fdf8a",
-          "sha512": "74e05de089951a0579f293df0314fa2b8d894cddde3f085e0aa0def64ef1dace4d02e9b3043e9cf115431e8443197b0cf867f277842ac67b3da7db2aceaf647d"
-        },
-        "size": 66719867,
-        "duration": 8339.983,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-07T16:44:56Z",
-        "added": "2026-11-07T19:08:10+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T20:26:55+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2007,
-        "month": 11,
-        "day": 15,
-        "notes": null,
         "extension": "ogg",
         "filename": "2007-11-15_O&A_D834E6CA.ogg",
         "original_filename": "O&A 2007-11-15.ogg"
@@ -811,34 +775,34 @@
         "code": "O&A",
         "year": 2007,
         "month": 11,
-        "day": 16,
+        "day": 15,
         "notes": null,
         "extension": "mp3",
-        "filename": "2007-11-16_O&A_91401AB9.mp3",
-        "original_filename": "O&A 2007-11-16.mp3"
+        "filename": "2007-11-15_O&A_E9E06479.mp3",
+        "original_filename": "O&A 2007-11-15.mp3"
       },
       "physical": {
         "hashes": {
-          "xxh64": "91401ab97c177cb7",
-          "audio_blake3": "b903ce78e267a6365d3f10030cbca4f34c3968f4360766f62f58541330c07bf0",
-          "blake3": "b903ce78e267a6365d3f10030cbca4f34c3968f4360766f62f58541330c07bf0",
-          "sha256": "271295b4e34175dbbe1a4d50979844b356f987d7fe2d87915828b49d27d49124",
-          "sha512": "8abae47c719ab477059eee3390edd08c3e55bb7bb1c6ede87cd7a4e59429c3a456e3e6da8e7fb8ead5524b136faf9a4f00b504f67fa069f67ac410fb9a906658"
+          "xxh64": "e9e06479cdaa712f",
+          "audio_blake3": "4bf1f33004fb2883d421de5213341ca601b844ab7f1e5660318f143bb38c2a3b",
+          "blake3": "4bf1f33004fb2883d421de5213341ca601b844ab7f1e5660318f143bb38c2a3b",
+          "sha256": "f0a0bc678041cab4028177c5557cab4cbe08b942bd703cf713168d012a0fdf8a",
+          "sha512": "74e05de089951a0579f293df0314fa2b8d894cddde3f085e0aa0def64ef1dace4d02e9b3043e9cf115431e8443197b0cf867f277842ac67b3da7db2aceaf647d"
         },
-        "size": 130430433,
-        "duration": 16303.804,
+        "size": 66719867,
+        "duration": 8339.983,
         "container": "MPEG Audio",
         "codec": "mp3",
         "bitrate": 64000,
         "bitrate_mode": "CBR",
         "channels": 1,
         "sample_rate": 44100,
-        "mtime": "2026-11-07T16:44:57Z",
-        "added": "2026-11-07T19:08:17+00:00"
+        "mtime": "2026-11-07T16:44:56Z",
+        "added": "2026-11-07T19:08:10+00:00"
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-07T20:27:00+00:00"
+        "imported": "2026-11-07T20:26:55+00:00"
       }
     },
     {
@@ -883,34 +847,34 @@
         "code": "O&A",
         "year": 2007,
         "month": 11,
-        "day": 19,
+        "day": 16,
         "notes": null,
         "extension": "mp3",
-        "filename": "2007-11-19_O&A_9695F750.mp3",
-        "original_filename": "O&A 2007-11-19.mp3"
+        "filename": "2007-11-16_O&A_91401AB9.mp3",
+        "original_filename": "O&A 2007-11-16.mp3"
       },
       "physical": {
         "hashes": {
-          "xxh64": "9695f750035eeeed",
-          "audio_blake3": "65ed642a8555a702b0c3f30dd399325b93ebcc486f94531aa5b1106a617d68aa",
-          "blake3": "65ed642a8555a702b0c3f30dd399325b93ebcc486f94531aa5b1106a617d68aa",
-          "sha256": "56e7724a57735fb1ad2136e0b5c1c1a2297398bda1454e097a3f5e1ffb6a5051",
-          "sha512": "1ad9f05f88d058ca65bc7f2aa1bc183c7a8cf064a257c460b561ecc7da0b44b4a675450842ea43968cb0c4d255cecdfc53277ba48917891075d6b779605498ac"
+          "xxh64": "91401ab97c177cb7",
+          "audio_blake3": "b903ce78e267a6365d3f10030cbca4f34c3968f4360766f62f58541330c07bf0",
+          "blake3": "b903ce78e267a6365d3f10030cbca4f34c3968f4360766f62f58541330c07bf0",
+          "sha256": "271295b4e34175dbbe1a4d50979844b356f987d7fe2d87915828b49d27d49124",
+          "sha512": "8abae47c719ab477059eee3390edd08c3e55bb7bb1c6ede87cd7a4e59429c3a456e3e6da8e7fb8ead5524b136faf9a4f00b504f67fa069f67ac410fb9a906658"
         },
-        "size": 128070800,
-        "duration": 16008.85,
+        "size": 130430433,
+        "duration": 16303.804,
         "container": "MPEG Audio",
         "codec": "mp3",
         "bitrate": 64000,
         "bitrate_mode": "CBR",
         "channels": 1,
         "sample_rate": 44100,
-        "mtime": "2026-11-07T16:44:59Z",
-        "added": "2026-11-07T19:08:25+00:00"
+        "mtime": "2026-11-07T16:44:57Z",
+        "added": "2026-11-07T19:08:17+00:00"
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-07T20:27:06+00:00"
+        "imported": "2026-11-07T20:27:00+00:00"
       }
     },
     {
@@ -955,34 +919,34 @@
         "code": "O&A",
         "year": 2007,
         "month": 11,
-        "day": 20,
+        "day": 19,
         "notes": null,
         "extension": "mp3",
-        "filename": "2007-11-20_O&A_DB71CA80.mp3",
-        "original_filename": "O&A 2007-11-20.mp3"
+        "filename": "2007-11-19_O&A_9695F750.mp3",
+        "original_filename": "O&A 2007-11-19.mp3"
       },
       "physical": {
         "hashes": {
-          "xxh64": "db71ca804b6236da",
-          "audio_blake3": "d14c6994239b7e6ce61fc1f44afe44c60c6b516d90fe0f5a8440805b45546d47",
-          "blake3": "d14c6994239b7e6ce61fc1f44afe44c60c6b516d90fe0f5a8440805b45546d47",
-          "sha256": "abe0240bdf6fcd19c377bdf17502fb32d2866365f0e71bfdc829fe17efb1cf8a",
-          "sha512": "3a82b4258b5b4dfcea25987f1fba21ae5bc8bb87cd8df629dfb8dbe5a40bb221a93fa06173575e668734ff55c105a786c007ed611a89a7a49986a5ce1112f0dc"
+          "xxh64": "9695f750035eeeed",
+          "audio_blake3": "65ed642a8555a702b0c3f30dd399325b93ebcc486f94531aa5b1106a617d68aa",
+          "blake3": "65ed642a8555a702b0c3f30dd399325b93ebcc486f94531aa5b1106a617d68aa",
+          "sha256": "56e7724a57735fb1ad2136e0b5c1c1a2297398bda1454e097a3f5e1ffb6a5051",
+          "sha512": "1ad9f05f88d058ca65bc7f2aa1bc183c7a8cf064a257c460b561ecc7da0b44b4a675450842ea43968cb0c4d255cecdfc53277ba48917891075d6b779605498ac"
         },
-        "size": 112542560,
-        "duration": 14067.82,
+        "size": 128070800,
+        "duration": 16008.85,
         "container": "MPEG Audio",
         "codec": "mp3",
         "bitrate": 64000,
         "bitrate_mode": "CBR",
         "channels": 1,
         "sample_rate": 44100,
-        "mtime": "2026-11-07T16:45:00Z",
-        "added": "2026-11-07T19:08:32+00:00"
+        "mtime": "2026-11-07T16:44:59Z",
+        "added": "2026-11-07T19:08:25+00:00"
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-07T20:27:13+00:00"
+        "imported": "2026-11-07T20:27:06+00:00"
       }
     },
     {
@@ -1027,34 +991,34 @@
         "code": "O&A",
         "year": 2007,
         "month": 11,
-        "day": 21,
+        "day": 20,
         "notes": null,
         "extension": "mp3",
-        "filename": "2007-11-21_O&A_9BB8658A.mp3",
-        "original_filename": "O&A 2007-11-21.mp3"
+        "filename": "2007-11-20_O&A_DB71CA80.mp3",
+        "original_filename": "O&A 2007-11-20.mp3"
       },
       "physical": {
         "hashes": {
-          "xxh64": "9bb8658adba4b218",
-          "audio_blake3": "d54a252a591bd28c9ee4148e0721884001dcbcb8d3bd1ac084837b89e35e10ae",
-          "blake3": "d54a252a591bd28c9ee4148e0721884001dcbcb8d3bd1ac084837b89e35e10ae",
-          "sha256": "fbad4a9e94ab7d0f8d40bf3bbf170a64dff348328cfe4fe0792f6bc55b9e13e1",
-          "sha512": "236a198d95c781a3a6bfb9b84dd0c0b5ef13a060e7e5b09080fdf7ae4f5c2e615e8b8cf2242f14da8b5aea435f82f92297f2e4ba9676b507cafd8cd487b5ec04"
+          "xxh64": "db71ca804b6236da",
+          "audio_blake3": "d14c6994239b7e6ce61fc1f44afe44c60c6b516d90fe0f5a8440805b45546d47",
+          "blake3": "d14c6994239b7e6ce61fc1f44afe44c60c6b516d90fe0f5a8440805b45546d47",
+          "sha256": "abe0240bdf6fcd19c377bdf17502fb32d2866365f0e71bfdc829fe17efb1cf8a",
+          "sha512": "3a82b4258b5b4dfcea25987f1fba21ae5bc8bb87cd8df629dfb8dbe5a40bb221a93fa06173575e668734ff55c105a786c007ed611a89a7a49986a5ce1112f0dc"
         },
-        "size": 100993984,
-        "duration": 12624.248,
+        "size": 112542560,
+        "duration": 14067.82,
         "container": "MPEG Audio",
         "codec": "mp3",
         "bitrate": 64000,
         "bitrate_mode": "CBR",
         "channels": 1,
         "sample_rate": 44100,
-        "mtime": "2026-11-07T16:45:01Z",
-        "added": "2026-11-07T19:08:40+00:00"
+        "mtime": "2026-11-07T16:45:00Z",
+        "added": "2026-11-07T19:08:32+00:00"
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-07T20:27:18+00:00"
+        "imported": "2026-11-07T20:27:13+00:00"
       }
     },
     {
@@ -1091,6 +1055,190 @@
       "fingerprint": null,
       "status": {
         "imported": "2026-11-07T20:27:21+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 21,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-21_O&A_9BB8658A.mp3",
+        "original_filename": "O&A 2007-11-21.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "9bb8658adba4b218",
+          "audio_blake3": "d54a252a591bd28c9ee4148e0721884001dcbcb8d3bd1ac084837b89e35e10ae",
+          "blake3": "d54a252a591bd28c9ee4148e0721884001dcbcb8d3bd1ac084837b89e35e10ae",
+          "sha256": "fbad4a9e94ab7d0f8d40bf3bbf170a64dff348328cfe4fe0792f6bc55b9e13e1",
+          "sha512": "236a198d95c781a3a6bfb9b84dd0c0b5ef13a060e7e5b09080fdf7ae4f5c2e615e8b8cf2242f14da8b5aea435f82f92297f2e4ba9676b507cafd8cd487b5ec04"
+        },
+        "size": 100993984,
+        "duration": 12624.248,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-07T16:45:01Z",
+        "added": "2026-11-07T19:08:40+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-07T20:27:18+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 23,
+        "part": null,
+        "notes": null,
+        "extension": "ogg",
+        "filename": "2007-11-23_O&A_9A46F7D0.ogg",
+        "original_filename": "O&A 2007-11-23.ogg"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "9a46f7d0f7601735",
+          "audio_blake3": "62750b14ac71db72f6e839cede9eb6d4464e22454f5cd23e574dc39381e5b1a1",
+          "blake3": "3a65003e12a61f19bb425af6bf3f0ea3300a253e388cd22d9f7bd98f4a1ee90c",
+          "sha256": "5ecf940d6a3b7c07e2764378d917866d7a0129386293cd7e5e34b5ec244113da",
+          "sha512": "e8594d44e77528e55b4c39255d400dd32eaf633f86737c53b4eb8448bb2dbf4e0479ccd13c4b436489974352ea7e4212c48ce48755b89f2187d9141c8f00dbf6"
+        },
+        "size": 85755084,
+        "duration": 9208.581,
+        "container": "Ogg",
+        "codec": "vorbis",
+        "bitrate": 96000,
+        "bitrate_mode": "VBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-11T17:00:27Z",
+        "added": "2026-11-11T18:21:40+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-11T19:43:05+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 23,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-23_O&A_C18B5A88.mp3",
+        "original_filename": "O&A 2007-11-23.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "c18b5a8853e6b5dc",
+          "audio_blake3": "8bbf141719713f4b02f809179a0cbff79a05ebfb9c9db2be6511cd47fc2ce3a1",
+          "blake3": "8bbf141719713f4b02f809179a0cbff79a05ebfb9c9db2be6511cd47fc2ce3a1",
+          "sha256": "4b21950e69fa888054046bbd3ccaee61e0da838cb268d54f6ba7c7063103df74",
+          "sha512": "ea240ac038ea2d021cd05935330605a1e17c48b35daf0b7c088aace0cc72b1d317002a81b67e50c82cbbcbe11210dbacb0bb35cf73a1d4b04ed888b0b81d03e3"
+        },
+        "size": 73668650,
+        "duration": 9208.581,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-11T17:00:27Z",
+        "added": "2026-11-11T18:21:37+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-11T19:43:03+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 23,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-23_O&A_452DBA5A.mp3",
+        "original_filename": "O&A 2007-11-23.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "452dba5a25325c25",
+          "audio_blake3": "4a7750e556d2e4a3baeb8bb5c586749170a31d92b0c9bdff8c99aed8cba56516",
+          "blake3": "4a7750e556d2e4a3baeb8bb5c586749170a31d92b0c9bdff8c99aed8cba56516",
+          "sha256": "a1009d9d02938b01ac8070b46de2fcbba51913482e0935dff60956c7d51c982d",
+          "sha512": "35215446ff97540473109cfc52cc34a5f6b002a35ddff0a24e77ba54389bf0229a2ef3323f8b6abce8aa54c69417b0e1db20c68a420559e5afa680dbcc8c268b"
+        },
+        "size": 147720150,
+        "duration": 9232.509,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 128000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-11T17:00:28Z",
+        "added": "2026-11-11T20:09:40+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-11T20:23:04+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 23,
+        "part": null,
+        "notes": null,
+        "extension": "ogg",
+        "filename": "2007-11-23_O&A_7DBA91A3.ogg",
+        "original_filename": "O&A 2007-11-23.ogg"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "7dba91a32ad063e4",
+          "audio_blake3": "33016ce2ea06015d5875fe7abc03d83cc64a31b0f53e5f6f7f36de60217972a1",
+          "blake3": "f70079acb3aadfecd596109f1242336b5694bac534f4737c6a8b76f76ebfe9cb",
+          "sha256": "7aeaffe5b8b9f05873818a6a35c5e99fbf385005f2a91f014fc486552b53c32a",
+          "sha512": "6eb9dee8e3b28c5f97e4d35ef0fe67754e5c8f5cf4089e514152a317f7aae70d1b59b9f0615fc1dcd05a68b80d5a25eb609cadd0872b185c8be386b9797268f9"
+        },
+        "size": 91255081,
+        "duration": 9232.509,
+        "container": "Ogg",
+        "codec": "vorbis",
+        "bitrate": 96000,
+        "bitrate_mode": "VBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-11T17:00:28Z",
+        "added": "2026-11-11T20:09:42+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-11T20:23:06+00:00"
       }
     },
     {
@@ -1173,42 +1321,6 @@
         "month": 11,
         "day": 27,
         "notes": null,
-        "extension": "mp3",
-        "filename": "2007-11-27_O&A_6E625CC4.mp3",
-        "original_filename": "O&A 2007-11-27.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "6e625cc46515a7af",
-          "audio_blake3": "cf33915adecf85f9c1674ca01985584f014be641c7ae4954836e704b7fce8e07",
-          "blake3": "cf33915adecf85f9c1674ca01985584f014be641c7ae4954836e704b7fce8e07",
-          "sha256": "6ecb7ce92064461f890e5c1d6d308131fd09b552bfa44d6b9384ce9fae4bbdd5",
-          "sha512": "21d70a54286bddfc1e57f53dcd1423260b5389b2b4e1dd394c32ff8dfbdb53cb37c49420a1356c55aed4b124bb2d4876cfafcf976524e87a46373827b11c3959"
-        },
-        "size": 121544384,
-        "duration": 15193.048,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-07T16:45:04Z",
-        "added": "2026-11-07T19:08:54+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T20:27:30+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2007,
-        "month": 11,
-        "day": 27,
-        "notes": null,
         "extension": "ogg",
         "filename": "2007-11-27_O&A_46290CCE.ogg",
         "original_filename": "O&A 2007-11-27.ogg"
@@ -1235,6 +1347,42 @@
       "fingerprint": null,
       "status": {
         "imported": "2026-11-07T20:27:33+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 27,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-27_O&A_6E625CC4.mp3",
+        "original_filename": "O&A 2007-11-27.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "6e625cc46515a7af",
+          "audio_blake3": "cf33915adecf85f9c1674ca01985584f014be641c7ae4954836e704b7fce8e07",
+          "blake3": "cf33915adecf85f9c1674ca01985584f014be641c7ae4954836e704b7fce8e07",
+          "sha256": "6ecb7ce92064461f890e5c1d6d308131fd09b552bfa44d6b9384ce9fae4bbdd5",
+          "sha512": "21d70a54286bddfc1e57f53dcd1423260b5389b2b4e1dd394c32ff8dfbdb53cb37c49420a1356c55aed4b124bb2d4876cfafcf976524e87a46373827b11c3959"
+        },
+        "size": 121544384,
+        "duration": 15193.048,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-07T16:45:04Z",
+        "added": "2026-11-07T19:08:54+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-07T20:27:30+00:00"
       }
     },
     {
@@ -1317,42 +1465,6 @@
         "month": 11,
         "day": 29,
         "notes": null,
-        "extension": "mp3",
-        "filename": "2007-11-29_O&A_B11B9CC9.mp3",
-        "original_filename": "O&A 2007-11-29.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "b11b9cc9ce20bd97",
-          "audio_blake3": "8bfc80adb2a9f8b458dd1352860679aafe83327746fb27da5b00710c87c974e4",
-          "blake3": "8bfc80adb2a9f8b458dd1352860679aafe83327746fb27da5b00710c87c974e4",
-          "sha256": "88a8b3c7d1386bc7674e382f18c1f09a44a3a952b5f0550f99776d55f7c4fb3d",
-          "sha512": "25cfe73fead5401d91050bc371160c9f5a8aaf7e3f6a238db991b8b63eeebde5873525bb21b3062c5d92f04c4b26adc94a757656b298f61b18726ed592a9fdae"
-        },
-        "size": 112785504,
-        "duration": 14098.188,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-07T16:45:07Z",
-        "added": "2026-11-07T19:09:09+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T20:27:41+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2007,
-        "month": 11,
-        "day": 29,
-        "notes": null,
         "extension": "ogg",
         "filename": "2007-11-29_O&A_49EE16FD.ogg",
         "original_filename": "O&A 2007-11-29.ogg"
@@ -1387,34 +1499,34 @@
         "code": "O&A",
         "year": 2007,
         "month": 11,
-        "day": 30,
+        "day": 29,
         "notes": null,
         "extension": "mp3",
-        "filename": "2007-11-30_O&A_8A3F3E43.mp3",
-        "original_filename": "O&A 2007-11-30.mp3"
+        "filename": "2007-11-29_O&A_B11B9CC9.mp3",
+        "original_filename": "O&A 2007-11-29.mp3"
       },
       "physical": {
         "hashes": {
-          "xxh64": "8a3f3e436ea20246",
-          "audio_blake3": "03b78d7c7c6369ac9ea02ffe4f5ecceb5d78dbff852e1ba626257eb8463eab02",
-          "blake3": "03b78d7c7c6369ac9ea02ffe4f5ecceb5d78dbff852e1ba626257eb8463eab02",
-          "sha256": "911cacf090a3b62f0b1d93ffd21d553767f333043d1bf52b61e1c6e779faa4a4",
-          "sha512": "4bfa5b17b8bad5d8ba84d4d84d31c179bc6c0caa93be2e5e9a3a6716f556951f781daff82f80e8841356a9f21e9b805aca162e2ed3187e9bec782d440803c37c"
+          "xxh64": "b11b9cc9ce20bd97",
+          "audio_blake3": "8bfc80adb2a9f8b458dd1352860679aafe83327746fb27da5b00710c87c974e4",
+          "blake3": "8bfc80adb2a9f8b458dd1352860679aafe83327746fb27da5b00710c87c974e4",
+          "sha256": "88a8b3c7d1386bc7674e382f18c1f09a44a3a952b5f0550f99776d55f7c4fb3d",
+          "sha512": "25cfe73fead5401d91050bc371160c9f5a8aaf7e3f6a238db991b8b63eeebde5873525bb21b3062c5d92f04c4b26adc94a757656b298f61b18726ed592a9fdae"
         },
-        "size": 116642032,
-        "duration": 14580.254,
+        "size": 112785504,
+        "duration": 14098.188,
         "container": "MPEG Audio",
         "codec": "mp3",
         "bitrate": 64000,
         "bitrate_mode": "CBR",
         "channels": 1,
         "sample_rate": 44100,
-        "mtime": "2026-11-07T16:45:08Z",
-        "added": "2026-11-07T19:09:16+00:00"
+        "mtime": "2026-11-07T16:45:07Z",
+        "added": "2026-11-07T19:09:09+00:00"
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-07T20:27:47+00:00"
+        "imported": "2026-11-07T20:27:41+00:00"
       }
     },
     {
@@ -1451,6 +1563,42 @@
       "fingerprint": null,
       "status": {
         "imported": "2026-11-07T20:27:50+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2007,
+        "month": 11,
+        "day": 30,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2007-11-30_O&A_8A3F3E43.mp3",
+        "original_filename": "O&A 2007-11-30.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "8a3f3e436ea20246",
+          "audio_blake3": "03b78d7c7c6369ac9ea02ffe4f5ecceb5d78dbff852e1ba626257eb8463eab02",
+          "blake3": "03b78d7c7c6369ac9ea02ffe4f5ecceb5d78dbff852e1ba626257eb8463eab02",
+          "sha256": "911cacf090a3b62f0b1d93ffd21d553767f333043d1bf52b61e1c6e779faa4a4",
+          "sha512": "4bfa5b17b8bad5d8ba84d4d84d31c179bc6c0caa93be2e5e9a3a6716f556951f781daff82f80e8841356a9f21e9b805aca162e2ed3187e9bec782d440803c37c"
+        },
+        "size": 116642032,
+        "duration": 14580.254,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-07T16:45:08Z",
+        "added": "2026-11-07T19:09:16+00:00"
+      },
+      "fingerprint": null,
+      "status": {
+        "imported": "2026-11-07T20:27:47+00:00"
       }
     }
   ]
