@@ -7,6 +7,7 @@ ACTIONS = {
     "fingerprint": "Add fingerprints to cataloged files that don't have one yet, several at a time",
     "quarantine": "Move bad recordings (default: failed fingerprints) and their entries out for checking",
     "damaged": "List recordings with damaged spots; mark them ok or bad after listening",
+    "check": "Read every file looking for damage (mp3val + ffmpeg); writes a readable report",
 }
 
 
@@ -29,6 +30,9 @@ def run(action, args, config):
     if action == "damaged":
         from . import damaged
         return damaged.run(args, config)
+    if action == "check":
+        from . import check
+        return check.run(args, config)
     raise SystemExit(f"radio has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -78,3 +82,12 @@ def add_arguments(action, parser):
                                  "the next quarantine pulls it out (repeatable)")
         parser.add_argument("--unchecked", action="store_true",
                             help="only list the ones not checked yet")
+    elif action == "check":
+        parser.add_argument("--quarantine", action="store_true",
+                            help="check the files in quarantine instead of the library")
+        parser.add_argument("--recheck", action="store_true",
+                            help="check files again even if they were checked before")
+        parser.add_argument("--jobs", type=int, default=0,
+                            help="how many files to check at once (default: up to 4)")
+        parser.add_argument("--dry-run", action="store_true",
+                            help="check and write the report, but save nothing to the catalog")

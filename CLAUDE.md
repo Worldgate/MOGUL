@@ -213,6 +213,7 @@ mogul_core/           shared code
   fingerprint.py      chromaprint digest + similarity
   store.py            safe JSON read/write (temp file + rename)
   progress.py         "[ 53/194  ~12m05s left]" labels, ETA by bytes not file count
+  damage.py           finds damage in a file (mp3val spots -> show times, ffmpeg errors, empty gaps)
 modules/radio/
   __init__.py         radio actions
   naming.py           filename pattern parsing
@@ -221,13 +222,14 @@ modules/radio/
   verify.py           checks the library against the catalog
   fingerprint_pass.py adds missing fingerprints, several files at once
   quarantine.py       moves bad recordings + their entries out of the catalog
-  damaged.py          lists recordings with damaged spots; mark ok/bad after listening
+  damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
+  check.py            reads every file for damage; readable worst-first report
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py)
 examples/             sample JSON
 ```
 
 Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
-`ffmpeg`, `mediainfo`, `fpcalc` (`libchromaprint-tools`).
+`ffmpeg`, `mediainfo`, `fpcalc` (`libchromaprint-tools`), `mp3val`.
 
 ## Radio scanner (`mogul.py radio scan`)
 
@@ -363,6 +365,34 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   `fingerprint_failed` so the fingerprint pass retries it). `--list` shows
   what's quarantined. `--dry-run` changes nothing. Nothing is deleted.
 
+## Radio check (`mogul.py radio check`)
+
+- Reads every cataloged file all the way through for damage, whether or
+  not it fingerprinted (fpcalc can get through damage without failing,
+  e.g. 2002-08-17). Code in `mogul_core/damage.py`, shared with
+  `tools/damagemap.py` and quarantine's empty-bytes report.
+- MP3s: mp3val resync offsets ("MPEG stream error, resynchronized") mapped
+  to show times via ffprobe's frame list, grouped into stretches (spots
+  within 10 s), with a rough "audio missing" (junk bytes glued onto a
+  frame / average bytes per second). Other formats: ffmpeg decoder error
+  count, no times. Every file: percent empty bytes + biggest empty gap.
+  mp3val's wordy warnings are shortened (VBR header counts off, VBR
+  without header, mixed MPEG versions); "no tags" is ignored.
+- Saves `status.check = {date, tool, spots, stretches, first, last,
+  missing_seconds, warnings, empty_percent, biggest_gap, readable/error}`
+  (times in seconds). Spots or unreadable also set `status.damaged`
+  (found_by "check"; keeps any verdict). Skips files already checked
+  unless `--recheck`, so a long run can be stopped and resumed.
+- `--quarantine` checks the quarantined files instead (saved as
+  `quarantine.check` in `_quarantine.json`). `--jobs N` (default up to 4;
+  disk-bound). `--dry-run` reports but saves nothing.
+- Reports: `mogul_reports/radio-check_*.txt` (the one to read: counts,
+  CAN'T BE READ, DAMAGED worst first with one-line summaries and
+  verdicts, NOT FOUND; covers everything checked so far, not just this
+  run) and `.json` (every stretch).
+- Speed: a clean 1-hour mp3 takes ~0.3 s, a damaged one ~2 s; the NAS
+  read speed is the limit.
+
 ## Radio damaged (`mogul.py radio damaged`)
 
 - When fpcalc needs the ffmpeg fallback (scan or fingerprint pass), the
@@ -471,6 +501,8 @@ banner name.
   not at the end. Chained OGG streams (`ogginfo`).
 - Holes from bad downloads: runs of 4 KB+ zero bytes.
 - Decode errors: `ffmpeg -v error -i FILE -f null -`; `mp3val` for MP3s.
+  (Done: `radio check`. Empty gaps are reported too. Buried tags and
+  chained OGG streams are still to do.)
 - Damaged copies should lose to clean ones when picking which duplicate
   to keep.
 
@@ -542,6 +574,11 @@ banner name.
   date. Watch out for time-compressed replays (sped up 2–5%).
 - Cue sheets / commercial-free cuts built by aligning a full show with its
   CF version, so only the full file needs keeping.
+- **Splice repair:** when a file is damaged only in one stretch (e.g.
+  2002-08-17: clean to 2:43:47, 156 bad stretches to the end, ~9 s
+  missing), any other copy covering that stretch (another source, a
+  clip, a worst-of replay) could fill it. Align with the fingerprint,
+  splice the clean part in, keep the original's hashes on the entry.
 - MKA container as a "playable zip": audio + chapters + attachments
   (manifest, cover, original tags).
 - Issues and bounty list (`mogul.py issues --bounty`).

@@ -30,9 +30,8 @@ Nothing is ever deleted.
 """
 
 import os
-import re
 
-from mogul_core import VERSION, hashing, store
+from mogul_core import VERSION, damage, hashing, store
 
 from .importer import target_folder, safe_move, free_path
 from .scan import load_catalog, find_files, new_manifest, manifest_path
@@ -77,76 +76,8 @@ def is_quarantined(qindex, audio):
 
 # ---------------------------------------------------------------- damage report
 
-def damage_report(path):
-    """How much of the file is empty (zero bytes), and the biggest empty stretch.
-
-    Only stretches of 512+ zero bytes count as gaps (real audio has short
-    runs of zeros all the time)."""
-    size = os.path.getsize(path)
-    zeros = 0
-    best = (0, 0)          # (length, start) of the biggest gap
-    run, run_start = 0, 0  # a gap still open at the end of the previous chunk
-    pos = 0
-    gap = re.compile(rb"\x00{512,}")
-    with open(path, "rb") as f:
-        while True:
-            chunk = f.read(CHUNK)
-            if not chunk:
-                break
-            zeros += chunk.count(0)
-            i = 0
-            if run:                                   # continue an open gap
-                lead = len(chunk) - len(chunk.lstrip(b"\0"))
-                run += lead
-                i = lead
-                if lead < len(chunk):                 # gap closed in this chunk
-                    if run > best[0]:
-                        best = (run, run_start)
-                    run = 0
-            if not run:
-                for m in gap.finditer(chunk, i):
-                    if m.end() == len(chunk):         # may continue in next chunk
-                        run, run_start = m.end() - m.start(), pos + m.start()
-                    elif m.end() - m.start() > best[0]:
-                        best = (m.end() - m.start(), pos + m.start())
-                # a short run of zeros at the very end can still grow into a gap
-                if not run:
-                    tail = len(chunk) - len(chunk.rstrip(b"\0"))
-                    if tail:
-                        run, run_start = tail, pos + len(chunk) - tail
-            pos += len(chunk)
-    if run >= 512 and run > best[0]:
-        best = (run, run_start)
-    if best[0] < 512:
-        best = (0, 0)
-
-    with open(path, "rb") as f:
-        head = f.read(CHUNK)
-    lead = len(head) - len(head.lstrip(b"\0"))
-    if lead == len(head) and best[1] == 0:
-        lead = best[0]
-
-    def pct(n):
-        return round(100.0 * n / size, 1) if size else 0.0
-
-    return {
-        "size": size,
-        "zero_bytes": zeros,
-        "zero_percent": pct(zeros),
-        "biggest_empty_stretch": {"start": best[1], "length": best[0],
-                                  "start_percent": pct(best[1]), "length_percent": pct(best[0])},
-        "empty_at_start": lead,
-    }
-
-
-def describe_damage(d):
-    big = d["biggest_empty_stretch"]
-    parts = [f"{d['zero_percent']}% empty"]
-    if big["length"] >= 4096:
-        parts.append(f"biggest gap {big['length_percent']}% of the file at {big['start_percent']}%")
-    if d["empty_at_start"] >= 4096:
-        parts.append("starts empty")
-    return ", ".join(parts)
+damage_report = damage.empty_report
+describe_damage = damage.describe_empty
 
 
 # ---------------------------------------------------------------- finding files

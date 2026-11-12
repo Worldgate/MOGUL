@@ -99,16 +99,19 @@ def run(args, config):
             verdict = (d.get("checked") or {}).get("verdict")
             if args.unchecked and verdict:
                 continue
-            rows.append((entry["naming"]["filename"], d.get("decode_errors", 0), verdict or "not checked"))
+            unreadable = ((entry.get("status") or {}).get("check") or {}).get("readable") is False
+            rows.append((entry["naming"]["filename"], -1 if unreadable else d.get("decode_errors", 0),
+                         verdict or "not checked"))
 
     if args.wanted:
         rows = [r for r in rows if r[2] == "keep"]
     if not rows:
         print("No damaged recordings in the catalog." if not args.unchecked else "Nothing left to check.")
         return 0
-    rows.sort(key=lambda r: (-r[1], r[0]))   # worst first
+    rows.sort(key=lambda r: (r[1] >= 0, -r[1], r[0]))   # can't read first, then worst first
     for name, errors, verdict in rows:
-        print(f"{name:<40} {errors:>4} damaged spot(s)   {verdict}")
+        what = "    can't be read" if errors < 0 else f"{errors:>4} damaged spot(s)"
+        print(f"{name:<40} {what}   {verdict}")
     counts = {}
     for _, _, v in rows:
         counts[v] = counts.get(v, 0) + 1
