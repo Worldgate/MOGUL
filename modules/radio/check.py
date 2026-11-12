@@ -56,6 +56,9 @@ def compact(result):
     if result["spots"] and result["first"] is not None:
         keep.update({"stretches": len(result["stretches"]), "first": result["first"],
                      "last": result["last"], "missing_seconds": result["missing_seconds"]})
+    for k in ("real_duration", "header_missing_seconds"):
+        if result.get(k):
+            keep[k] = result[k]
     if result["warnings"]:
         keep["warnings"] = result["warnings"]
     if "empty_percent" in result:
@@ -187,7 +190,7 @@ def run(args, config):
                 check = compact(result)
                 if not result["readable"]:
                     word = "UNREADABLE"
-                elif result["spots"] or result.get("biggest_gap"):
+                elif result["spots"] or result.get("biggest_gap") or (result.get("header_missing_seconds") or 0) >= 1:
                     word = "DAMAGED"
                 else:
                     word = "CLEAN"
@@ -249,7 +252,8 @@ def run(args, config):
     bad = sorted([(n, c, v) for n, (e, c, v) in zip(names, rows) if not c.get("readable", True)],
                  key=lambda r: r[0])
     damaged = sorted([(n, c, v) for n, (e, c, v) in zip(names, rows)
-                      if c.get("readable", True) and (c.get("spots") or c.get("biggest_gap"))],
+                      if c.get("readable", True) and (c.get("spots") or c.get("biggest_gap")
+                                                      or (c.get("header_missing_seconds") or 0) >= 1)],
                      key=lambda r: (severity(r[1]), r[0]))
     clean = len(rows) - len(bad) - len(damaged)
     lines.append(f"{len(rows)} checked: {clean} clean, {len(damaged)} damaged, {len(bad)} can't be read")

@@ -224,7 +224,7 @@ modules/radio/
   quarantine.py       moves bad recordings + their entries out of the catalog
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py)
 examples/             sample JSON
 ```
 
@@ -390,8 +390,27 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   CAN'T BE READ, DAMAGED worst first with one-line summaries and
   verdicts, NOT FOUND; covers everything checked so far, not just this
   run) and `.json` (every stretch).
+- **Real length vs header length:** an mp3's Xing header (and so
+  mediainfo and the catalog's `physical.duration`) keeps the ORIGINAL
+  length even after a piece goes missing or the end is cut off. check
+  stores `real_duration` (mp3val's frame count x samples per frame / sample
+  rate; matches ffprobe) and `header_missing_seconds` (header frames minus
+  real frames; tested exact: a 40 s cut showed 40.0 s). That catches the
+  "music then suddenly dialog" skips the spot estimate can't (a clean cut
+  leaves no junk, just one broken frame at the seam) and truncated files
+  (mp3val: "file is truncated"). Missing >= 1 s counts as DAMAGED.
 - Speed: a clean 1-hour mp3 takes ~0.3 s, a damaged one ~2 s; the NAS
   read speed is the limit.
+
+## Same-day comparison (`tools/sameday.py YYYY-MM-DD`)
+
+- Lists every recording of a date (library, incoming, quarantine):
+  format, bitrate, length (real length from check when there is one),
+  how much shorter than the longest copy, notes, check summary, verdict;
+  then pairwise fingerprint digest similarity. For picking the best copy
+  and spotting copies with audio missing.
+- Not built yet: per-gap measurement by aligning two copies with the full
+  fingerprint ("at 0:16:33, 47 s missing"); same alignment as splice repair.
 
 ## Radio damaged (`mogul.py radio damaged`)
 

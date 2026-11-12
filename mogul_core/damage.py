@@ -23,6 +23,10 @@ GROUP_SECONDS = 10          # spots closer than this are one stretch
 CHUNK = 4 * 1024 * 1024
 MIN_GAP = 512               # runs of zero bytes shorter than this are normal audio
 
+SAMPLES_PER_FRAME = {"V1L1": 384, "V1L2": 1152, "V1L3": 1152,
+                     "V2L1": 384, "V2L2": 1152, "V2L3": 576,
+                     "V2.5L1": 384, "V2.5L2": 1152, "V2.5L3": 576}
+
 # mp3val warnings that aren't problems for us
 IGNORED_WARNINGS = ("No supported tags in the file",)
 
@@ -31,6 +35,7 @@ SHORT_WARNINGS = (
     ("Wrong number of MPEG", "VBR header counts don't match the audio (length/seeking may be off)"),
     ("VBR detected, but no VBR header", "VBR without a VBR header (seeking may be off)"),
     ("Different MPEG versions or layers", "mixed MPEG versions (stray junk frame)"),
+    ("It seems that file is truncated", "the end of the file is cut off (or junk at the end)"),
 )
 
 
@@ -142,7 +147,12 @@ def run_mp3val(path):
         return None
     proc = subprocess.run(["mp3val", path], capture_output=True, text=True, errors="replace")
     offsets, warnings, frames = [], [], None
+    samples = 0
+    header_frames = None
     for line in proc.stdout.splitlines():
+        m = re.search(r"Wrong number of MPEG frames specified in Xing header \((\d+) instead of (\d+)\)", line)
+        if m:
+            header_frames = int(m.group(1))
         m = re.search(r"offset (0x[0-9a-fA-F]+)\): MPEG stream error", line)
         if m:
             offsets.append(int(m.group(1), 16))
@@ -150,6 +160,17 @@ def run_mp3val(path):
         m = re.search(r"(\d+) MPEG frames", line)
         if m and line.startswith("INFO"):
             frames = int(m.group(1))
+            # "(0 V1L1, 0 V1L2, 1 V1L3, 0 V2L1, ...)": samples per frame depend on the kind
+            mixed = re.findall(r"(\d+) (V1L1|V1L2|V1L3|V2L1|V2L2|V2L3|V2\.5L1|V2\.5L2|V2\.5L3)", line)
+            if mixed:
+                for count, kind in mixed:
+                    samples += int(count) * SAMPLES_PER_FRAME[kind]
+            else:
+                # one kind only: "12502 MPEG frames (MPEG 1 Layer III)"
+                k = re.search(r"\(MPEG (1|2|2\.5) Layer (I{1,3})\)", line)
+                if k:
+                    kind = f"V{k.group(1)}L{len(k.group(2))}"
+                    samples = frames * SAMPLES_PER_FRAME[kind]
             continue
         if line.startswith(("WARNING", "ERROR")):
             text = line.split('":', 1)[-1].strip() if '":' in line else line
@@ -157,7 +178,17 @@ def run_mp3val(path):
             text = shorten(text)
             if text and text not in IGNORED_WARNINGS and text not in warnings:
                 warnings.append(text)
-    return offsets, frames, warnings
+    return offsets, frames, warnings, samples, header_frames
+
+
+def sample_rate(path):
+    proc = subprocess.run(["ffprobe", "-v", "quiet", "-select_streams", "a:0", "-show_entries",
+                           "stream=sample_rate", "-of", "default=nw=1:nk=1", path],
+                          capture_output=True, text=True)
+    try:
+        return int(proc.stdout.strip().splitlines()[0])
+    except (ValueError, IndexError):
+        return None
 
 
 def ffmpeg_errors(path):
@@ -204,7 +235,16 @@ def analyze(path, with_empty=True):
 
     if mp3val is not None:
         result["tool"] = "mp3val"
-        offsets, frames, warnings = mp3val
+        offsets, frames, warnings, samples, header_frames = mp3val
+        rate = sample_rate(path) if frames else None
+        if rate and samples:
+            # the real length: what's actually in the file. The length the
+            # file's own header (and mediainfo) report can be the original
+            # length from before a piece went missing.
+            result["real_duration"] = round(samples / rate, 1)
+            if header_frames and header_frames > frames:
+                per_frame = samples / frames
+                result["header_missing_seconds"] = round((header_frames - frames) * per_frame / rate, 1)
         result["warnings"] = warnings
         if not frames:
             result["readable"] = False
@@ -268,6 +308,10 @@ def summary(r):
         where = hms(r["first"]) if r["first"] == r["last"] else f"{hms(r['first'])}-{hms(r['last'])}"
         text = (f"{r['spots']} spot(s) in {n} stretch(es), {where}, "
                 f"~{r.get('missing_seconds', 0)} s missing")
+    if (r.get("header_missing_seconds") or 0) >= 1:
+        if text == "clean":
+            text = "no damaged spots"
+        text += f"; its header says ~{r['header_missing_seconds']} s more than is there (missing or cut off)"
     if r.get("biggest_gap"):
         g = r["biggest_gap"]
         text += f"; empty gap {g['bytes'] // 1024} KB at {g['at_percent']}%"
