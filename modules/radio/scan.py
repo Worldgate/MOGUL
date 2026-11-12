@@ -299,6 +299,8 @@ def run(args, config):
             },
             "fingerprint": fp,
         }
+        from .damaged import mark_damaged
+        mark_damaged(entry, fp)
 
         # 6. add to the month file
         mpath = manifest_path(json_root, entry_naming["show"], entry_naming["year"], entry_naming["month"])

@@ -26,6 +26,7 @@ from mogul_core import VERSION, fingerprint, store
 from mogul_core.progress import Progress
 
 from .importer import target_folder
+from .damaged import mark_damaged
 from .scan import load_catalog, find_files
 
 
@@ -124,6 +125,7 @@ def run(args, config):
                 if fp:
                     entry["fingerprint"] = fp
                     (entry.get("status") or {}).pop("fingerprint_failed", None)
+                    mark_damaged(entry, fp)
                     report["done"].append(name)
                     bad = f", skipped {fp['decode_errors']} damaged spot(s)" if fp.get("decode_errors") else ""
                     print(f"{tag} DONE      {name}  ({fp['digest_minutes']} min{bad})")

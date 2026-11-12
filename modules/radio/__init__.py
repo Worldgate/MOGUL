@@ -6,6 +6,7 @@ ACTIONS = {
     "verify": "Check the radio library against the catalog (moves nothing)",
     "fingerprint": "Add fingerprints to cataloged files that don't have one yet, several at a time",
     "quarantine": "Move bad recordings (default: failed fingerprints) and their entries out for checking",
+    "damaged": "List recordings with damaged spots; mark them ok or bad after listening",
 }
 
 
@@ -25,6 +26,9 @@ def run(action, args, config):
     if action == "quarantine":
         from . import quarantine
         return quarantine.run(args, config)
+    if action == "damaged":
+        from . import damaged
+        return damaged.run(args, config)
     raise SystemExit(f"radio has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -61,3 +65,11 @@ def add_arguments(action, parser):
         parser.add_argument("--restore", action="append", metavar="NAME",
                             help="put a quarantined file and its entry back (repeatable); \"all\" puts everything back")
         parser.add_argument("--list", action="store_true", help="show what's in quarantine")
+    elif action == "damaged":
+        parser.add_argument("--ok", action="append", metavar="NAME",
+                            help="mark this library file as checked: plays fine (repeatable)")
+        parser.add_argument("--bad", action="append", metavar="NAME",
+                            help="mark this library file as checked: really broken; "
+                                 "the next quarantine pulls it out (repeatable)")
+        parser.add_argument("--unchecked", action="store_true",
+                            help="only list the ones not checked yet")

@@ -221,6 +221,7 @@ modules/radio/
   verify.py           checks the library against the catalog
   fingerprint_pass.py adds missing fingerprints, several files at once
   quarantine.py       moves bad recordings + their entries out of the catalog
+  damaged.py          lists recordings with damaged spots; mark ok/bad after listening
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh)
 examples/             sample JSON
 ```
@@ -346,7 +347,8 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 ## Radio quarantine (`mogul.py radio quarantine`)
 
 - Pulls bad recordings out of the library and the main catalog so they can
-  be checked by hand. Default: every entry with `status.fingerprint_failed`.
+  be checked by hand. Default: every entry with `status.fingerprint_failed`,
+  plus entries marked bad with `radio damaged --bad`.
   `--file NAME` (repeatable) picks library files by name instead.
 - The file moves to `[radio] quarantine` (default `mogul_quarantine/radio`,
   gitignored), same show/yyyy/mm layout. The entry moves out of its month
@@ -360,6 +362,25 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - `--restore NAME` (or `--restore all`) moves the file back and reinserts the entry (clears
   `fingerprint_failed` so the fingerprint pass retries it). `--list` shows
   what's quarantined. `--dry-run` changes nothing. Nothing is deleted.
+
+## Radio damaged (`mogul.py radio damaged`)
+
+- When fpcalc needs the ffmpeg fallback (scan or fingerprint pass), the
+  entry gets `status.damaged = {date, decode_errors, found_by, checked}`.
+- `radio damaged` lists them with the count and whether they've been
+  checked; `--unchecked` shows only the ones not judged yet. Entries
+  fingerprinted before the flag existed are found by
+  `fingerprint.decode_errors`.
+- After listening: `--ok NAME` (plays fine, stays) or `--bad NAME`
+  (`checked = {date, verdict}`). `quarantine` picks up verdict "bad"
+  entries by default, as well as failed fingerprints.
+- Repair without re-encoding is possible: `mp3val -f -nb FILE` drops the
+  broken frames and fixes the Xing header (tested: digest identical, no
+  decode errors left). But it changes the audio xxh64, so the fixed file
+  no longer matches anyone else's copy of the original. Not built: if
+  wanted later, a `repair` that keeps the original hashes on the entry
+  ("repaired from") so other copies still match. `ffmpeg -c copy` does
+  NOT fix it (bad frame is copied too).
 
 ## Radio specifics
 

@@ -15,7 +15,8 @@ For each selected recording:
 
 What gets selected:
   default         every entry the fingerprint pass couldn't read
-                  (status.fingerprint_failed)
+                  (status.fingerprint_failed), plus any marked bad with
+                  `mogul.py radio damaged --bad NAME`
   --file NAME     specific library file(s) by name (repeatable)
 
 Scan and import both check the quarantine list, so the same bad audio
@@ -200,6 +201,8 @@ def run(args, config):
             elif (entry.get("status") or {}).get("fingerprint_failed"):
                 err = entry["status"]["fingerprint_failed"].get("error", "")
                 picked.append((mpath, entry, f"fingerprint failed: {err}"))
+            elif (((entry.get("status") or {}).get("damaged") or {}).get("checked") or {}).get("verdict") == "bad":
+                picked.append((mpath, entry, "checked by hand: bad"))
 
     if wanted:
         found = {e["naming"]["filename"] for _, e, _ in picked}
