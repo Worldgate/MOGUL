@@ -125,7 +125,8 @@ def run(args, config):
                     entry["fingerprint"] = fp
                     (entry.get("status") or {}).pop("fingerprint_failed", None)
                     report["done"].append(name)
-                    print(f"{tag} DONE      {name}  ({fp['digest_minutes']} min)")
+                    bad = f", skipped {fp['decode_errors']} damaged spot(s)" if fp.get("decode_errors") else ""
+                    print(f"{tag} DONE      {name}  ({fp['digest_minutes']} min{bad})")
                 else:
                     entry.setdefault("status", {})["fingerprint_failed"] = {"date": stamp, "error": error}
                     report["failed"].append({"file": name, "error": error})

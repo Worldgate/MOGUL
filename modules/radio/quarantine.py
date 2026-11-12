@@ -285,6 +285,8 @@ def restore(args, config, library, qroot, folder_t, incoming, json_root):
     qdata = load_quarantine(json_root)
     manifests, _ = load_catalog(json_root)
     names = set(args.restore)
+    if "all" in names:
+        names = {e["naming"]["filename"] for e in qdata["entries"]}
     keep = []
     for e in qdata["entries"]:
         name = e["naming"]["filename"]

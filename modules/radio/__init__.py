@@ -59,5 +59,5 @@ def add_arguments(action, parser):
                             help="quarantine this library file by name (repeatable); "
                                  "without it, every failed fingerprint is quarantined")
         parser.add_argument("--restore", action="append", metavar="NAME",
-                            help="put a quarantined file and its entry back (repeatable)")
+                            help="put a quarantined file and its entry back (repeatable); \"all\" puts everything back")
         parser.add_argument("--list", action="store_true", help="show what's in quarantine")

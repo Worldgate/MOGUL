@@ -329,7 +329,13 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   `<folder_template>/<filename>`; others in `mogul_incoming/radio` by
   original filename. Only used if the size matches the catalog.
 - Runs several files at once: `--jobs N` (default: CPU cores minus one).
-- If fpcalc fails (usually damaged audio), records
+- fpcalc gives up at the first damaged mp3 frame ("Header missing"), even
+  when the rest of a 4-hour show is fine. When that happens the audio is
+  decoded by ffmpeg instead (skipping bad frames, like a player) and piped
+  into fpcalc; the digest comes out identical. The fingerprint block then
+  gets `decode_errors` (how many errors ffmpeg reported), and the console
+  says "skipped N damaged spot(s)". Useful later for picking clean copies.
+- If that fails too (really broken audio), records
   `status.fingerprint_failed = {date, error}` and skips it next time;
   `--retry-failed` tries again. `--dry-run` lists what it would do.
 - Catalog saved after every finished file. Report:
@@ -351,7 +357,7 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   the start). Typical bad download: big empty stretch at the front.
 - Scan reports quarantined audio as QUARANTINED and doesn't add it; import
   SKIPs it. So the same bad copy never gets re-cataloged.
-- `--restore NAME` moves the file back and reinserts the entry (clears
+- `--restore NAME` (or `--restore all`) moves the file back and reinserts the entry (clears
   `fingerprint_failed` so the fingerprint pass retries it). `--list` shows
   what's quarantined. `--dry-run` changes nothing. Nothing is deleted.
 
