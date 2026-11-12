@@ -68,6 +68,11 @@ def add_arguments(action, parser):
     elif action == "damaged":
         parser.add_argument("--ok", action="append", metavar="NAME",
                             help="mark this library file as checked: plays fine (repeatable)")
+        parser.add_argument("--keep", action="append", metavar="NAME",
+                            help="mark as playable but damaged: stays in the library, "
+                                 "listed as wanting a cleaner copy (repeatable)")
+        parser.add_argument("--wanted", action="store_true",
+                            help="only list the 'keep' ones (want a better copy)")
         parser.add_argument("--bad", action="append", metavar="NAME",
                             help="mark this library file as checked: really broken; "
                                  "the next quarantine pulls it out (repeatable)")

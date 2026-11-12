@@ -371,9 +371,14 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   checked; `--unchecked` shows only the ones not judged yet. Entries
   fingerprinted before the flag existed are found by
   `fingerprint.decode_errors`.
-- After listening: `--ok NAME` (plays fine, stays) or `--bad NAME`
-  (`checked = {date, verdict}`). `quarantine` picks up verdict "bad"
-  entries by default, as well as failed fingerprints.
+- After listening: `--ok NAME` (plays fine, stays), `--keep NAME`
+  (playable but damaged, e.g. clicks/bloops; stays as the copy we have,
+  wanted: a cleaner copy) or `--bad NAME` (`checked = {date, verdict}`).
+  `quarantine` picks up verdict "bad" entries by default, as well as failed
+  fingerprints. `--wanted` lists the "keep" ones (feeds a future
+  bounty / wanted list). The list is sorted worst first.
+- Works on any library file, flagged or not (found_by "by hand"), e.g.
+  2002-08-17_O&A_DFE66FEE: fingerprinted fine but has ~380 bad frames.
 - Repair without re-encoding is possible: `mp3val -f -nb FILE` drops the
   broken frames and fixes the Xing header (tested: digest identical, no
   decode errors left). But it changes the audio xxh64, so the fixed file

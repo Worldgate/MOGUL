@@ -11,9 +11,12 @@ fingerprint is made through ffmpeg instead, and the entry gets
 
 After listening:
   --ok NAME    it plays fine; marks it checked "ok" (stays in the library)
+  --keep NAME  playable but damaged (clicks, bloops); stays in the library
+               as the copy we have, flagged as wanting a cleaner copy
   --bad NAME   it really is broken; marks it checked "bad". The next
                `mogul.py radio quarantine` pulls it out.
   --unchecked  only list the ones not judged yet
+  --wanted     only list the "keep" ones (the want-a-better-copy list)
 
 NAME is the library filename (e.g. 2002-07-01_O&A_969283BA.mp3).
 Nothing is moved by this command.
@@ -57,6 +60,8 @@ def run(args, config):
     verdicts = {}
     for name in args.ok or []:
         verdicts[name] = "ok"
+    for name in args.keep or []:
+        verdicts[name] = "keep"
     for name in args.bad or []:
         verdicts[name] = "bad"
 
@@ -96,10 +101,12 @@ def run(args, config):
                 continue
             rows.append((entry["naming"]["filename"], d.get("decode_errors", 0), verdict or "not checked"))
 
+    if args.wanted:
+        rows = [r for r in rows if r[2] == "keep"]
     if not rows:
         print("No damaged recordings in the catalog." if not args.unchecked else "Nothing left to check.")
         return 0
-    rows.sort()
+    rows.sort(key=lambda r: (-r[1], r[0]))   # worst first
     for name, errors, verdict in rows:
         print(f"{name:<40} {errors:>4} damaged spot(s)   {verdict}")
     counts = {}
