@@ -15,6 +15,9 @@ After listening:
                as the copy we have, flagged as wanting a cleaner copy
   --bad NAME   it really is broken; marks it checked "bad". The next
                `mogul.py radio quarantine` pulls it out.
+  --note TEXT  your own words, saved with the verdict (e.g. "faint tap at
+               1:04:31, seam" or "last 2 hours missing")
+  --auto-ok    mark the tiny-damage, full-length ones ok without listening
   --unchecked  only list the ones not judged yet
   --wanted     only list the "keep" ones (the want-a-better-copy list)
 
@@ -96,7 +99,8 @@ def auto_ok(args, config, manifests):
                 continue
             status = entry.setdefault("status", {})
             d = damage_of(entry) or {"date": None, "decode_errors": 0, "found_by": "check"}
-            d["checked"] = {"date": store.now(), "verdict": "ok", "by": "auto", "rule": rule}
+            d["checked"] = {"date": store.now(), "verdict": "ok", "by": "auto", "rule": rule,
+                            "note": args.note or f"auto: {why}"}
             status["damaged"] = d
             changed = True
         if changed:
@@ -138,6 +142,8 @@ def run(args, config):
                 status = entry.setdefault("status", {})
                 d = damage_of(entry) or {"date": None, "decode_errors": 0, "found_by": "by hand"}
                 d["checked"] = {"date": store.now(), "verdict": verdicts[name]}
+                if args.note:
+                    d["checked"]["note"] = args.note
                 status["damaged"] = d
                 changed = True
                 print(f"{verdicts[name].upper():<4} {name}")
@@ -161,6 +167,9 @@ def run(args, config):
             if args.unchecked and verdict:
                 continue
             unreadable = ((entry.get("status") or {}).get("check") or {}).get("readable") is False
+            note = (d.get("checked") or {}).get("note")
+            if note and verdict:
+                verdict = f"{verdict}: {note}"
             rows.append((entry["naming"]["filename"], -1 if unreadable else d.get("decode_errors", 0),
                          verdict or "not checked"))
 
@@ -175,6 +184,7 @@ def run(args, config):
         print(f"{name:<40} {what}   {verdict}")
     counts = {}
     for _, _, v in rows:
+        v = v.split(":")[0]
         counts[v] = counts.get(v, 0) + 1
     print(f"\n{len(rows)} damaged: " + ", ".join(f"{n} {v}" for v, n in sorted(counts.items())))
     return 0

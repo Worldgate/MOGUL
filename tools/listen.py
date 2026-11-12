@@ -104,7 +104,10 @@ def main():
             c = status.get("check")
             if not c or not is_damaged(c):
                 continue
-            verdict = (((status.get("damaged") or {}).get("checked")) or {}).get("verdict")
+            checked = ((status.get("damaged") or {}).get("checked")) or {}
+            verdict = checked.get("verdict")
+            if verdict and checked.get("note"):
+                verdict = f"{verdict}: {checked['note']}"
             if verdict and not args.all:
                 continue
             name = entry["naming"]["filename"]

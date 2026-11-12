@@ -442,10 +442,15 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   `quarantine` picks up verdict "bad" entries by default, as well as failed
   fingerprints. `--wanted` lists the "keep" ones (feeds a future
   bounty / wanted list). The list is sorted worst first.
+- `--note TEXT` with `--ok/--keep/--bad` saves Mavrick's own words on
+  the verdict (`checked.note`), shown in the list and listen.txt.
+  A verdict never erases the damage record: `status.check` and
+  `status.damaged` stay. ok = damaged but listenable, stays; keep = rough,
+  stays, wanted list; bad = unlistenable / big chunks missing, quarantine.
 - `--auto-ok` marks every not-yet-judged file that `radio check` timed
   with no more than `auto_ok_max_missing` (mogul.toml, default 0.5 s)
   lost, real length matching the header, and no empty gap, as ok
-  (`checked = {date, verdict: ok, by: auto, rule}`), so listening goes to
+  (`checked = {date, verdict: ok, by: auto, rule, note}`), so listening goes to
   the real problems. `--max-missing N` overrides; `--dry-run` lists only.
   Why: Mavrick listened to 2009-04-01 at 1:04:31 (4 spots, 0.0 s missing):
   a faint tap, a seam where pieces were joined. Many 2009 files look like

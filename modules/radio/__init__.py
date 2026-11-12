@@ -82,6 +82,8 @@ def add_arguments(action, parser):
                                  "the next quarantine pulls it out (repeatable)")
         parser.add_argument("--unchecked", action="store_true",
                             help="only list the ones not checked yet")
+        parser.add_argument("--note", metavar="TEXT",
+                            help='your own note saved with the verdict, e.g. "faint tap at 1:04:31"')
         parser.add_argument("--auto-ok", action="store_true",
                             help="mark every file `radio check` found only tiny damage in "
                                  "(full length, little missing) as ok without listening")
