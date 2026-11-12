@@ -8,8 +8,8 @@
     "year": 2012,
     "month": 3,
     "created": "2026-11-11T03:55:37+00:00",
-    "updated": "2026-11-12T14:18:44+00:00",
-    "file_count": 48,
+    "updated": "2026-11-12T15:56:39+00:00",
+    "file_count": 51,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -137,6 +137,55 @@
       },
       "status": {
         "imported": "2026-11-11T05:47:35+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2012,
+        "month": 3,
+        "day": 2,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2012-03-02_O&A_A3590B29.mp3",
+        "original_filename": "O&A 2012-03-02.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a3590b297441e9e9",
+          "audio_blake3": "c34b3bd8b185dc52c2f2661df1c5d636ddb822779914ea4325991e5f34977077",
+          "blake3": "c34b3bd8b185dc52c2f2661df1c5d636ddb822779914ea4325991e5f34977077",
+          "sha256": "3fa25d7652dd3858ad17317c0fa53aebf6793ed7c446131fc127fe9f8b9c1039",
+          "sha512": "0ddfc81c1fd411674e0b44eebb075cd2e69894c3b7b26eec10fe6e49544751b0a0ad3a54e4b76a43ce33392b503e216bc61e0fda3eb09b79c701ec89103cd932"
+        },
+        "size": 236021556,
+        "duration": 14751.347,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 128000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-10T23:12:55Z",
+        "added": "2026-11-11T03:55:46+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "dc76a106d43ca006703ca02ef43ca02ef428ac2ef4342026dc3ea0265c2ea02af438802ef43ca02ed42aa026d43aa08ef63ea00e543ea02ede38a026f43ea02ef43ca026542ca02ef43ea00ed438a0aefc3a200efc38a02afc38200e5428a02cd43ca02ef428a026d43ca00a742aa02a7428a00edc38a006dc2aa086f43aa08efc3aa02adc38a00edc382006dc3ca0aade3ca00ed428a02efc38a22cdc38a02ef438a0ae500820265018a00ef028a026dc38a026f43aa026dc38a02a7c38a02ed4a8a02efc3aa00ef428a026dc28a0aefc28a0267438a00efc382006d438a006d43aa02ed43ea08e743aa02efc3ca02ef43ca00ed43aa02ef438a02e7438a00e7428a02ef428a02ed428a00e523aa028543aa00ad428a02e7438a02a542a802a742e202ef43a802ed43c202efc28a004dc2880244028a020d43ca006fc3ca022d628a00cf438a0065c38a02af438a0aef63ca02ed43ca02af428a02ef43ea02cfc2aa02ef428a00edc28a22ef628a02afc28a82cf428a02ef43c802ef438a02e543aa0aed43ea00e5428a00adc38a02e5e2820aa7438200e5c3ea0065c38a006f438a00ef428a02e542ea02efc3ca026d438a0ac743ca0aef43ca02ad438a026d42ea02ef436a02ef43ea0a6b43e2886f42aa226562820aa7418a00ef42ea026542aa084fc28800ede3e200ed438a02ef43ca02e7c3ca02efc2aa00edcaca02adc3aa02c7428a02efc38a02ad438a02ef42ca0265c3e202af43ca02ed438a0aa543aa02ab428a02ed43aa02ed038200e7c3ea22af628a08eec2aa0a6f404a00e7428a026fc38a00ef428a02ef42aa00af62aa0aefc2aa0a2f628a022f42ea0267c28a026fc3c202ef828a02ad438a02ed428a0ac502aa00afc38a826dc38a02ad438a02a5428a02e7028200e5428a026702ca02a742c200adc28a02af428a02eec3a280efc2808a6be0aa82edc28a08ebc3aa02ef43aa00edc38a026d628a8265438a02e543ca02e50a8a00a3428a0aef42aa02ad438a0aa702aa02e5428a082d438a0aed438a226de38a8069c38a02ef43ea00edc38a0229628a02ad43aa02ed428a02a543aa00ad43aa00edc28a02c542ca02ed42a200af428a02edc38a026d42ea0a69438202ed42c202af428a0a2dc3aa08ad428a0a2de28a02e743aa026de3ca02efc38a0a6dc38a02ef638a006fc3ea02eb62ca026dc3ea4a67434a02ad4382026d438a00a9028a00edc3ea00ef428a022d42ea006d438a002d42ca026963ca00ed43aa00ed42aa02ad438200cd42aa026d428a02a5428222ed438a8a4fe28802c9428202ef638a200d62ca02efc3ca00e5428a0aed02ca02ad63ca026d43c202af43ea026f438202ad43ca02edc3ea082f43c202e",
+        "digest_minutes": 246,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-11T05:47:32+00:00",
+        "damaged": {
+          "date": "2026-11-12T15:56:39+00:00",
+          "decode_errors": 2,
+          "found_by": "fingerprint",
+          "checked": null
+        }
       }
     },
     {
@@ -1241,6 +1290,48 @@
         "part": null,
         "notes": null,
         "extension": "ogg",
+        "filename": "2012-03-22_O&A_2CF3EE15.ogg",
+        "original_filename": "O&A 2012-03-22.ogg"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "2cf3ee15e6396b49",
+          "audio_blake3": "4bee52cf537091ccc985b54d0f3b9219889cdfef4c9a75a35c77bdcf07d36d7d",
+          "blake3": "cd4df722085f12b492ed21b820c7a5d3f0d8a5084782c20f3731d98632db6a77",
+          "sha256": "64037d966c69bc1db89dad009f65fe1868acb61481da6ffe1b913f2b79ffc532",
+          "sha512": "af349ecb6350256dc982843216af3db52970e1984ccc076415cb902d0188df234335bcb8aac937c39f065c50ba10ed325e2968e8d97d303ab20a24ca16e4c5bf"
+        },
+        "size": 20343014,
+        "duration": 3492.432,
+        "container": "Ogg",
+        "codec": "vorbis",
+        "bitrate": 56000,
+        "bitrate_mode": "VBR",
+        "channels": 2,
+        "sample_rate": 24000,
+        "mtime": "2026-11-11T17:04:44Z",
+        "added": "2026-11-11T20:13:55+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "de3ca026743ea00e742ca08cd438a026f428a00af43ea02ed4bca0aed43ca02ed43ea00ef63ea002f63ca02e5038202ed428a00e5428a022f428a026f428a0aed63ca02ed62ca026f43ca02ef438a00a5438a026f428a0aad438a006f42e802ed63c200ad63ca02ed428a0265438a02a7438a02ad42aa00ad628a0a2f42ca02e542ca08afc3aa02ed43ea026d43ca00e542ca022543c8026f438a02ef63ca02ef42ea00ed438a0a6f43ca006de3ea00ed63ca00edc3ea00ed438a08af438a026d638a02edc38a806983aa00ed438a02ed42e282edc18a02ad43ea0aef43ca086f63aa02e543ca02eb674e1af",
+        "digest_minutes": 59
+      },
+      "status": {
+        "imported": "2026-11-11T20:26:24+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2012,
+        "month": 3,
+        "day": 22,
+        "part": null,
+        "notes": null,
+        "extension": "ogg",
         "filename": "2012-03-22_O&A_6DBC1328.ogg",
         "original_filename": "O&A 2012-03-22.ogg"
       },
@@ -1271,48 +1362,6 @@
       },
       "status": {
         "imported": "2026-11-11T19:49:32+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2012,
-        "month": 3,
-        "day": 22,
-        "part": null,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2012-03-22_O&A_E31E4391.mp3",
-        "original_filename": "O&A 2012-03-22.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "e31e439142e6bf7b",
-          "audio_blake3": "001c1d175f6763dabea32ac9fbc29ad6aea7930545256f5797aa680b94bacca9",
-          "blake3": "001c1d175f6763dabea32ac9fbc29ad6aea7930545256f5797aa680b94bacca9",
-          "sha256": "963e4d776aeeb5701185140c16e51a95305ccc4895405856dc9e3be6292176a5",
-          "sha512": "87d66e0aa5392aba6207a6b1225a22f431caa294feb5d1f5c8b7a6a173f4551d26466d3f0f57130457fc9d9ed33100306d54c9fb8d2dc5d2916bbceda7e846cb"
-        },
-        "size": 87456768,
-        "duration": 10932.096,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 2,
-        "sample_rate": 24000,
-        "mtime": "2026-11-11T17:04:42Z",
-        "added": "2026-11-11T18:29:54+00:00"
-      },
-      "fingerprint": {
-        "algorithm": "chromaprint",
-        "digest_version": 1,
-        "digest": "f41ca0aed43ca02edc2c208e543ea00efc2aa02efc38a0aafc3aa02efe28a026f43ea026fc3aa02edc2aa02ad438a00efc38a02ed43aa02ef62ca00ed438a02ef438a006f63ca02e543ca02ad438a00ed42aa0aef4282022fc38a00ef43ca02edc38a0aed438a00a7c28a02ad468a026f428a026fc38a0aef63aa022f028a026dc28a0aed4a8a02e5628a00efc38a022e43ca02cd438a00ed42ca0aede2ca0a6d438800ed438a02ef43ca026d638a02eb43ca024f42ca026fc38202ef43a8026d43e802ed628a026d428a0a6d43c2004d438a026582aa02a5828a02edc3ca022f428a022d438a08ed42aa026d42ca026d428a0a2c438a026d438a02ef42aa02ad63ca004fc38a02ad43c202ef43aa006d438a00ef42ca00af42ca026f43e202ef4b8a02ef42ca20af438202e7428a02ad42ca0aa7428a00e5038200ed42ca022f43aa20efe38a002fc3ca026f0a8a006f43ea02efc2ca02ed438a00af438a02efc3ea022742ca00ed828a02afc28a02afe3aa0aef42c200a742ca02ef4bca02ef42c802e743ca02ad42ca02ef438a026d43c20aef42aa02ef438a02ed428800a7c3820aa5428a002302ea802543820aaf438802ad428a02ed63aa002dc3aa02a542ea08af43ca02e507ca12ef478a0267438a006fc3aa02edc3a20aedc3ca0a2742ca02e5c2ea02af438a026fc3aa02e742ea0a6f43c200ef43ca02efc3ca02efc3ca026fc3ca086f43ca022f43ea00efc3ca02edc38a02af43ca02afe38802edc3aa006bc3ca024fc3c200ef63ca02efc3ca02ed438a0aed43ca02cfc3aa00ef42ca02ef43a20aedc3ca086f43ca026fe3ca22ed43ea02ef43ca02ed42c802ed42ea02e743ca02edc3ca00ed43ca0a6f428a026d43ca0aedc28a08afc1ea02ed43aa026fc38a02af63c2026f438a0aafc38a0065438a0a6dc38a0ae5c38a02ed438202ebc38a006dc38a026f62aa00efc38a02efc3aa006dc3ca026fc3ca02edc3aa0aede38a02e5c3ea00ef42ca02efc3ca026f43ca00e2462921f",
-        "digest_minutes": 183
-      },
-      "status": {
-        "imported": "2026-11-11T19:49:30+00:00"
       }
     },
     {
@@ -1366,79 +1415,37 @@
         "day": 22,
         "part": null,
         "notes": null,
-        "extension": "ogg",
-        "filename": "2012-03-22_O&A_2CF3EE15.ogg",
-        "original_filename": "O&A 2012-03-22.ogg"
+        "extension": "mp3",
+        "filename": "2012-03-22_O&A_E31E4391.mp3",
+        "original_filename": "O&A 2012-03-22.mp3"
       },
       "physical": {
         "hashes": {
-          "xxh64": "2cf3ee15e6396b49",
-          "audio_blake3": "4bee52cf537091ccc985b54d0f3b9219889cdfef4c9a75a35c77bdcf07d36d7d",
-          "blake3": "cd4df722085f12b492ed21b820c7a5d3f0d8a5084782c20f3731d98632db6a77",
-          "sha256": "64037d966c69bc1db89dad009f65fe1868acb61481da6ffe1b913f2b79ffc532",
-          "sha512": "af349ecb6350256dc982843216af3db52970e1984ccc076415cb902d0188df234335bcb8aac937c39f065c50ba10ed325e2968e8d97d303ab20a24ca16e4c5bf"
+          "xxh64": "e31e439142e6bf7b",
+          "audio_blake3": "001c1d175f6763dabea32ac9fbc29ad6aea7930545256f5797aa680b94bacca9",
+          "blake3": "001c1d175f6763dabea32ac9fbc29ad6aea7930545256f5797aa680b94bacca9",
+          "sha256": "963e4d776aeeb5701185140c16e51a95305ccc4895405856dc9e3be6292176a5",
+          "sha512": "87d66e0aa5392aba6207a6b1225a22f431caa294feb5d1f5c8b7a6a173f4551d26466d3f0f57130457fc9d9ed33100306d54c9fb8d2dc5d2916bbceda7e846cb"
         },
-        "size": 20343014,
-        "duration": 3492.432,
-        "container": "Ogg",
-        "codec": "vorbis",
-        "bitrate": 56000,
-        "bitrate_mode": "VBR",
+        "size": 87456768,
+        "duration": 10932.096,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
         "channels": 2,
         "sample_rate": 24000,
-        "mtime": "2026-11-11T17:04:44Z",
-        "added": "2026-11-11T20:13:55+00:00"
+        "mtime": "2026-11-11T17:04:42Z",
+        "added": "2026-11-11T18:29:54+00:00"
       },
       "fingerprint": {
         "algorithm": "chromaprint",
         "digest_version": 1,
-        "digest": "de3ca026743ea00e742ca08cd438a026f428a00af43ea02ed4bca0aed43ca02ed43ea00ef63ea002f63ca02e5038202ed428a00e5428a022f428a026f428a0aed63ca02ed62ca026f43ca02ef438a00a5438a026f428a0aad438a006f42e802ed63c200ad63ca02ed428a0265438a02a7438a02ad42aa00ad628a0a2f42ca02e542ca08afc3aa02ed43ea026d43ca00e542ca022543c8026f438a02ef63ca02ef42ea00ed438a0a6f43ca006de3ea00ed63ca00edc3ea00ed438a08af438a026d638a02edc38a806983aa00ed438a02ed42e282edc18a02ad43ea0aef43ca086f63aa02e543ca02eb674e1af",
-        "digest_minutes": 59
+        "digest": "f41ca0aed43ca02edc2c208e543ea00efc2aa02efc38a0aafc3aa02efe28a026f43ea026fc3aa02edc2aa02ad438a00efc38a02ed43aa02ef62ca00ed438a02ef438a006f63ca02e543ca02ad438a00ed42aa0aef4282022fc38a00ef43ca02edc38a0aed438a00a7c28a02ad468a026f428a026fc38a0aef63aa022f028a026dc28a0aed4a8a02e5628a00efc38a022e43ca02cd438a00ed42ca0aede2ca0a6d438800ed438a02ef43ca026d638a02eb43ca024f42ca026fc38202ef43a8026d43e802ed628a026d428a0a6d43c2004d438a026582aa02a5828a02edc3ca022f428a022d438a08ed42aa026d42ca026d428a0a2c438a026d438a02ef42aa02ad63ca004fc38a02ad43c202ef43aa006d438a00ef42ca00af42ca026f43e202ef4b8a02ef42ca20af438202e7428a02ad42ca0aa7428a00e5038200ed42ca022f43aa20efe38a002fc3ca026f0a8a006f43ea02efc2ca02ed438a00af438a02efc3ea022742ca00ed828a02afc28a02afe3aa0aef42c200a742ca02ef4bca02ef42c802e743ca02ad42ca02ef438a026d43c20aef42aa02ef438a02ed428800a7c3820aa5428a002302ea802543820aaf438802ad428a02ed63aa002dc3aa02a542ea08af43ca02e507ca12ef478a0267438a006fc3aa02edc3a20aedc3ca0a2742ca02e5c2ea02af438a026fc3aa02e742ea0a6f43c200ef43ca02efc3ca02efc3ca026fc3ca086f43ca022f43ea00efc3ca02edc38a02af43ca02afe38802edc3aa006bc3ca024fc3c200ef63ca02efc3ca02ed438a0aed43ca02cfc3aa00ef42ca02ef43a20aedc3ca086f43ca026fe3ca22ed43ea02ef43ca02ed42c802ed42ea02e743ca02edc3ca00ed43ca0a6f428a026d43ca0aedc28a08afc1ea02ed43aa026fc38a02af63c2026f438a0aafc38a0065438a0a6dc38a0ae5c38a02ed438202ebc38a006dc38a026f62aa00efc38a02efc3aa006dc3ca026fc3ca02edc3aa0aede38a02e5c3ea00ef42ca02efc3ca026f43ca00e2462921f",
+        "digest_minutes": 183
       },
       "status": {
-        "imported": "2026-11-11T20:26:24+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2012,
-        "month": 3,
-        "day": 23,
-        "part": null,
-        "notes": null,
-        "extension": "ogg",
-        "filename": "2012-03-23_O&A_AAE75B7E.ogg",
-        "original_filename": "O&A 2012-03-23.ogg"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "aae75b7e715bdd28",
-          "audio_blake3": "9aec88761f4be54e4fc2d63dd5792bee91dcde9f9f6347a0ec487354697188a5",
-          "blake3": "72f94c875e34737f7f2af8fe37274836e4159d907b9776438eb454e5b4dacec6",
-          "sha256": "4c80e387822af7b5d5e05e53d71e5029deee4e33450b523f669ebfa82a436a0b",
-          "sha512": "abf144cc123209bd3f18a6120f3a52a4b4b447dbe3cc7142743bf932861d9863d91d267a1fe13b34221b2395bff64aa5508321af09fd948c97025bf7a60dd859"
-        },
-        "size": 67089891,
-        "duration": 11374.32,
-        "container": "Ogg",
-        "codec": "vorbis",
-        "bitrate": 56000,
-        "bitrate_mode": "VBR",
-        "channels": 2,
-        "sample_rate": 24000,
-        "mtime": "2026-11-11T17:04:46Z",
-        "added": "2026-11-11T18:30:02+00:00"
-      },
-      "fingerprint": {
-        "algorithm": "chromaprint",
-        "digest_version": 1,
-        "digest": "fc3ca00efe2aa00ed42ca0a2fc2c202af638a00e543ca02efc38a006dc38a08ed638a00ed43aa00ed438a0ae743ea00edc3ea00ad43a802edc3ea02ed43e202adc3ca0aa543ca02a543ca02e543ca00ad438a0aef438202ed428a006dc7ca02cd43aa02ef428a026f43ca026d43ca02ef438a02e743ca02edc3ca002f42c20aaf42a202ef42ca02e763ca006f43ea02ed42ca02ed42ea02edc3aa026747ea02a5434a02ed43c202ef43ca02ef438a02efc3ea02e742ca02af42c202e562c002ad43ea02e5438a02a542ca00e743ea02ef40ea00ef43c202ed43c202ede3ca02e543ca02ed43c20ae743ca02afe1ca02e5e3ca02a543ca02a5c3ca08a5c04a1a6fc28a02ed43ca00ef02ea02efc3ca02e5438a00a5438a02af438a026543ca02e7c3aa0a6563ea02ef63ca0aef428a0aade38a006dc38a022d42a200af42aa02ef428a00af628202af63ca028d438a0a2f438a006d43aa026d43ca026502ca02ed43ea02ef43ea02ef42ca02ed43ca026f43ea0aef43ca02ef63ea42ed42a200ed43ca02efc34a08edc30a806d478a0aef63ca026d43c800ed43ca00ed43ea00edc3ea08ed438a1ae543c202ed438a022dc28a02e543ca0aed438a006d43ca0aed43ca026d43ca02ed63ca02ed628a08ef43ea02ed438a00a743c200ed43ca0aed43ca02edc38a00ed638a0a65438a00ef63ea026d43ea00ed438a02ed43ca026d43e20a6d42aa02adc38a006d438a026fc3ca026d43ca026943aa0aed43c2026d43ca08ede38a026d43ca026d4baa026dcb8a02e503ca026d438202e543ca006d43ca026d43ca026d43ea0a6d438a02efc38a00a7028a80efc3ca026d438a02af43ca026543e802ed65ca0a6f47ca02ed438a0a6d43ea12e543ea026d43ea02a543ca022d438a022fc3c202edc3ca22e563ea02ed47ca0a6dc38a02ed66ca02ef438a0a65c3c802ed628a026d63ea0a6dc3aa026d438a026f428a006d43ca006dc3aa02ed42ca086d63ca00afc3ca02ed43ca022543ca00a5434a026fc3ca02ed43ea022543ea02ef03ca026dc38a08ed63ca086741ea20a",
-        "digest_minutes": 190
-      },
-      "status": {
-        "imported": "2026-11-11T19:49:36+00:00"
+        "imported": "2026-11-11T19:49:30+00:00"
       }
     },
     {
@@ -1523,6 +1530,97 @@
       },
       "status": {
         "imported": "2026-11-11T20:26:25+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2012,
+        "month": 3,
+        "day": 23,
+        "part": null,
+        "notes": null,
+        "extension": "ogg",
+        "filename": "2012-03-23_O&A_AAE75B7E.ogg",
+        "original_filename": "O&A 2012-03-23.ogg"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "aae75b7e715bdd28",
+          "audio_blake3": "9aec88761f4be54e4fc2d63dd5792bee91dcde9f9f6347a0ec487354697188a5",
+          "blake3": "72f94c875e34737f7f2af8fe37274836e4159d907b9776438eb454e5b4dacec6",
+          "sha256": "4c80e387822af7b5d5e05e53d71e5029deee4e33450b523f669ebfa82a436a0b",
+          "sha512": "abf144cc123209bd3f18a6120f3a52a4b4b447dbe3cc7142743bf932861d9863d91d267a1fe13b34221b2395bff64aa5508321af09fd948c97025bf7a60dd859"
+        },
+        "size": 67089891,
+        "duration": 11374.32,
+        "container": "Ogg",
+        "codec": "vorbis",
+        "bitrate": 56000,
+        "bitrate_mode": "VBR",
+        "channels": 2,
+        "sample_rate": 24000,
+        "mtime": "2026-11-11T17:04:46Z",
+        "added": "2026-11-11T18:30:02+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc3ca00efe2aa00ed42ca0a2fc2c202af638a00e543ca02efc38a006dc38a08ed638a00ed43aa00ed438a0ae743ea00edc3ea00ad43a802edc3ea02ed43e202adc3ca0aa543ca02a543ca02e543ca00ad438a0aef438202ed428a006dc7ca02cd43aa02ef428a026f43ca026d43ca02ef438a02e743ca02edc3ca002f42c20aaf42a202ef42ca02e763ca006f43ea02ed42ca02ed42ea02edc3aa026747ea02a5434a02ed43c202ef43ca02ef438a02efc3ea02e742ca02af42c202e562c002ad43ea02e5438a02a542ca00e743ea02ef40ea00ef43c202ed43c202ede3ca02e543ca02ed43c20ae743ca02afe1ca02e5e3ca02a543ca02a5c3ca08a5c04a1a6fc28a02ed43ca00ef02ea02efc3ca02e5438a00a5438a02af438a026543ca02e7c3aa0a6563ea02ef63ca0aef428a0aade38a006dc38a022d42a200af42aa02ef428a00af628202af63ca028d438a0a2f438a006d43aa026d43ca026502ca02ed43ea02ef43ea02ef42ca02ed43ca026f43ea0aef43ca02ef63ea42ed42a200ed43ca02efc34a08edc30a806d478a0aef63ca026d43c800ed43ca00ed43ea00edc3ea08ed438a1ae543c202ed438a022dc28a02e543ca0aed438a006d43ca0aed43ca026d43ca02ed63ca02ed628a08ef43ea02ed438a00a743c200ed43ca0aed43ca02edc38a00ed638a0a65438a00ef63ea026d43ea00ed438a02ed43ca026d43e20a6d42aa02adc38a006d438a026fc3ca026d43ca026943aa0aed43c2026d43ca08ede38a026d43ca026d4baa026dcb8a02e503ca026d438202e543ca006d43ca026d43ca026d43ea0a6d438a02efc38a00a7028a80efc3ca026d438a02af43ca026543e802ed65ca0a6f47ca02ed438a0a6d43ea12e543ea026d43ea02a543ca022d438a022fc3c202edc3ca22e563ea02ed47ca0a6dc38a02ed66ca02ef438a0a65c3c802ed628a026d63ea0a6dc3aa026d438a026f428a006d43ca006dc3aa02ed42ca086d63ca00afc3ca02ed43ca022543ca00a5434a026fc3ca02ed43ea022543ea02ef03ca026dc38a08ed63ca086741ea20a",
+        "digest_minutes": 190
+      },
+      "status": {
+        "imported": "2026-11-11T19:49:36+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2012,
+        "month": 3,
+        "day": 23,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2012-03-23_O&A_F6AA6336.mp3",
+        "original_filename": "O&A 2012-03-23.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "f6aa6336db7d3145",
+          "audio_blake3": "bd6fa84bfb6aa470161c8fc8408d200c14cda1a1e9b5230d0db60c300fe5dcf5",
+          "blake3": "bd6fa84bfb6aa470161c8fc8408d200c14cda1a1e9b5230d0db60c300fe5dcf5",
+          "sha256": "85cbf958e6a5e4ae4dd32430c55a8daf0fc7e6cac9120dbbf8430c2f2755836a",
+          "sha512": "69b2b8ca0b9bd1bd6ad6d3e6414f1a6fac6ce92176e71e3b570dc61e22fc286034af52308c7a521fd96b8e857f2571b3efa6884cc5b3c55b95d68e3d1551da53"
+        },
+        "size": 90995328,
+        "duration": 11374.416,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 24000,
+        "mtime": "2026-11-11T17:04:44Z",
+        "added": "2026-11-11T18:29:59+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc38200efe2aa00ed42ca0a2fc2c202af638a08e543ca02efc382006dc3aa0aed63aa00ed43aa00ed438a0ae743ea00edc3ea00ad43a802edc3e202ed43c202adc3ca0aa543ca02a543ca02e543ca00ad438a02ef4382028d428a026d47ca02cd43aa02ef428a026f43ca026d43ca02ef438a02e743ca02edc3ca002f42c20aa7428202ef42ca02e763ca006f43ea00ed42ca02ed42ca02edc2aa026747ea02a5436a02ed43ca02ef43ca02ed43ca0aefc3ea02e742ca02af43c202e562c000ad43ea02e5438a02a542ca00e743ea02ef40ea00e743ca02ed43c202ede3ea02e543ca02ed43c20ae743ca02afe1ca02e5e3ca02a543ca02a543ca0aa5c00a126fc28a02ed43ca02ef02ea02efc3ca0ae5438a00a5438a02a7438a026543ca02e7c3aa086563ea02ef63ca02ef428a0aade38a002dc38a022d42a200af42aa02ef428a00af628202af63ca02ad438a022f428a006d43aa026d43ca026502ca02ed43ea02ef43ea02ef42ca02ed43ca026f43ea08ef43ca02ef63ea02ed42a200ed43ca02efc34a0aedc30a806d438a0aef63ca026d43e800ed43ca00ed43ea00edc3ea08ed438a1ae543c202ed438a022dc28a02e543c20aed438a206d43ca0aed43ca026d43ca02ed63ca02ed628a08ef43ea02ed438a00a743c208ed43ca2aed43ca02edc38a00ed63aa0a6543aa00ef63ea026d43ea00ed438a02ed43ca026d43e2026d42aa02adc38a006d438a026fc3ca026d43ca026943aa0aed43c2026d43ca08ede38a026d43ca026d4baa026dcb8a02e503ca026d438202e543ca006d43ca026d43ca026d43ca026d438a02efc38a00a7028a80efd3ca026d438a00af43ca006563e8026d65ca0a6f47ca02ed43ca0a6d43ea12e543ea026d43ca02a543ca022d438a022fe3c200edc3ca20e563ea02ed47ca0a6dc38a02ed66ca02ef438a0a65c3c800ed628a026d63ea0a6dc3aa026d438a022f428a006d43ca006dc3aa02ed428a086d63ca00afc3ca02ed43ca022543ca00a5434a026fc3ca02ed43ea022543ea02ef03ca026dc38a08ed63ca086741ea20a",
+        "digest_minutes": 190,
+        "decode_errors": 3
+      },
+      "status": {
+        "imported": "2026-11-11T19:49:34+00:00",
+        "damaged": {
+          "date": "2026-11-12T15:56:09+00:00",
+          "decode_errors": 3,
+          "found_by": "fingerprint",
+          "checked": null
+        }
       }
     },
     {
@@ -1618,6 +1716,48 @@
         "day": 27,
         "part": null,
         "notes": null,
+        "extension": "mp3",
+        "filename": "2012-03-27_O&A_4AF48167.mp3",
+        "original_filename": "O&A 2012-03-27.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "4af4816754003421",
+          "audio_blake3": "f66e88cdf543127ada1294d7624fc944c230abbf05937af7eb24ba2730dd0315",
+          "blake3": "b5b9b78c3b853288c5391966abd402043bb0c213893421049759d7fab13f1766",
+          "sha256": "9eeb80dd13b19e0d5052672574232b0f46466fc8fc2bde83cf3f0c7162c3cc3a",
+          "sha512": "9d9310ddfda537089121a86759267bfd7071bb0f77ff02290ec4b56c88f71debbbaa29449759283d4663a007e79cee58514c2c707a222942077857f04fc0437a"
+        },
+        "size": 50596883,
+        "duration": 3162.279,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 128000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-11T17:04:47Z",
+        "added": "2026-11-11T20:13:57+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f4aca02ebe38a82edc28a82edc28282edc38a00ed428a0aefc28a8ae9c38a82ed828a02ede1a200efc3aa8aedc2e802efc3ea82e583aa02edc28a02ed42ca02ef4bca0aed428a026d6282026d428a022d43ea02ef628a0aede28a026d638a006d42aa02edc2a202edc38a80af8aaa02adc28a00a9c2ca006dc2aa00edc3aa02edc38a0aad42aa02edc2a802ed828280e9c280826dc38a02edc2aa02ed828a8ae983aa00cd43aa02e5428a02ed838a02eda28202edc3aa02ed43aa02afe2228226e30a822e4100162d6302822dc3ca02ef43c802e",
+        "digest_minutes": 53
+      },
+      "status": {
+        "imported": "2026-11-11T20:26:26+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2012,
+        "month": 3,
+        "day": 27,
+        "part": null,
+        "notes": null,
         "extension": "ogg",
         "filename": "2012-03-27_O&A_5A106B19.ogg",
         "original_filename": "O&A 2012-03-27.ogg"
@@ -1691,48 +1831,6 @@
       },
       "status": {
         "imported": "2026-11-11T05:48:55+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2012,
-        "month": 3,
-        "day": 27,
-        "part": null,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2012-03-27_O&A_4AF48167.mp3",
-        "original_filename": "O&A 2012-03-27.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "4af4816754003421",
-          "audio_blake3": "f66e88cdf543127ada1294d7624fc944c230abbf05937af7eb24ba2730dd0315",
-          "blake3": "b5b9b78c3b853288c5391966abd402043bb0c213893421049759d7fab13f1766",
-          "sha256": "9eeb80dd13b19e0d5052672574232b0f46466fc8fc2bde83cf3f0c7162c3cc3a",
-          "sha512": "9d9310ddfda537089121a86759267bfd7071bb0f77ff02290ec4b56c88f71debbbaa29449759283d4663a007e79cee58514c2c707a222942077857f04fc0437a"
-        },
-        "size": 50596883,
-        "duration": 3162.279,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 128000,
-        "bitrate_mode": "CBR",
-        "channels": 2,
-        "sample_rate": 44100,
-        "mtime": "2026-11-11T17:04:47Z",
-        "added": "2026-11-11T20:13:57+00:00"
-      },
-      "fingerprint": {
-        "algorithm": "chromaprint",
-        "digest_version": 1,
-        "digest": "f4aca02ebe38a82edc28a82edc28282edc38a00ed428a0aefc28a8ae9c38a82ed828a02ede1a200efc3aa8aedc2e802efc3ea82e583aa02edc28a02ed42ca02ef4bca0aed428a026d6282026d428a022d43ea02ef628a0aede28a026d638a006d42aa02edc2a202edc38a80af8aaa02adc28a00a9c2ca006dc2aa00edc3aa02edc38a0aad42aa02edc2a802ed828280e9c280826dc38a02edc2aa02ed828a8ae983aa00cd43aa02e5428a02ed838a02eda28202edc3aa02ed43aa02afe2228226e30a822e4100162d6302822dc3ca02ef43c802e",
-        "digest_minutes": 53
-      },
-      "status": {
-        "imported": "2026-11-11T20:26:26+00:00"
       }
     },
     {
@@ -1870,6 +1968,48 @@
         "day": 29,
         "part": null,
         "notes": null,
+        "extension": "mp3",
+        "filename": "2012-03-29_O&A_258A0774.mp3",
+        "original_filename": "O&A 2012-03-29.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "258a0774ea125551",
+          "audio_blake3": "b3110e97ca7fc714c0063caa894c9f621714fc10fee151647100f9f768417c01",
+          "blake3": "706cebc66ec5c499f1a4236b496868cfcb01cdf88cbc71cc427ed81d341e0741",
+          "sha256": "d1dc7c540fdd5df4677f5402f842d402c5bc0a41448d16a13c9c89f1d737c603",
+          "sha512": "f8e53daf52518a46ec715a56432ce14dc8cf2473d6452ed15bb916625f97560a2fb611e342afe4620f4fc1cbbc7de3719e37e5c63a5cfb1d6b10d1c7dec500cd"
+        },
+        "size": 48157674,
+        "duration": 3009.829,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 128000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-11T17:04:47Z",
+        "added": "2026-11-11T20:13:59+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f424a0a6f43e202ed438a02efc2aa02ef43ca02efc3ea02edc2aa0aaf43ca008f43ca02edc38a00edc3aa8a6dc3ea0aed828a82ad428a00efc3aa80edc3c202edc3aa00ef82aa02ed03ca82ebc2aa82efcb8a02ed438a0aedc2ea02e5438a006d43a200ef43aa02efc2ca02e5438a006742ea026d428a02edc3aa026d43c802edc3c202efc3a2006742c20ae6c30a82aec32a822fc10a02efc1c202e7c0ca40ed63ca0aed43ca02ed43c802ede38a00ef43a802ef438a02efc3ea0aed43ca0aedc3aa00ed43ca02ef67ca12e",
+        "digest_minutes": 51
+      },
+      "status": {
+        "imported": "2026-11-11T20:26:27+00:00"
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2012,
+        "month": 3,
+        "day": 29,
+        "part": null,
+        "notes": null,
         "extension": "ogg",
         "filename": "2012-03-29_O&A_35AFA480.ogg",
         "original_filename": "O&A 2012-03-29.ogg"
@@ -1913,36 +2053,43 @@
         "part": null,
         "notes": null,
         "extension": "mp3",
-        "filename": "2012-03-29_O&A_258A0774.mp3",
+        "filename": "2012-03-29_O&A_8EB572B9.mp3",
         "original_filename": "O&A 2012-03-29.mp3"
       },
       "physical": {
         "hashes": {
-          "xxh64": "258a0774ea125551",
-          "audio_blake3": "b3110e97ca7fc714c0063caa894c9f621714fc10fee151647100f9f768417c01",
-          "blake3": "706cebc66ec5c499f1a4236b496868cfcb01cdf88cbc71cc427ed81d341e0741",
-          "sha256": "d1dc7c540fdd5df4677f5402f842d402c5bc0a41448d16a13c9c89f1d737c603",
-          "sha512": "f8e53daf52518a46ec715a56432ce14dc8cf2473d6452ed15bb916625f97560a2fb611e342afe4620f4fc1cbbc7de3719e37e5c63a5cfb1d6b10d1c7dec500cd"
+          "xxh64": "8eb572b9bb5987c7",
+          "audio_blake3": "a48f16dc67d6025318ec061147683f4b767bb9eeb9b7e84225206541a35adc0f",
+          "blake3": "a48f16dc67d6025318ec061147683f4b767bb9eeb9b7e84225206541a35adc0f",
+          "sha256": "23406477df57a73da4119f2c29289b473490f2621c690e22c8e0231cac31d551",
+          "sha512": "b1254048fccc49192a6a04b3c658a98efac1f93df88b68e2d03955eabd6ccbce79b5e786967030461f21b56b16017082633dcb61f6e55e036133753013112e13"
         },
-        "size": 48157674,
-        "duration": 3009.829,
+        "size": 94307136,
+        "duration": 11788.392,
         "container": "MPEG Audio",
         "codec": "mp3",
-        "bitrate": 128000,
+        "bitrate": 64000,
         "bitrate_mode": "CBR",
         "channels": 2,
-        "sample_rate": 44100,
-        "mtime": "2026-11-11T17:04:47Z",
-        "added": "2026-11-11T20:13:59+00:00"
+        "sample_rate": 24000,
+        "mtime": "2026-11-10T23:13:58Z",
+        "added": "2026-11-11T03:57:43+00:00"
       },
       "fingerprint": {
         "algorithm": "chromaprint",
         "digest_version": 1,
-        "digest": "f424a0a6f43e202ed438a02efc2aa02ef43ca02efc3ea02edc2aa0aaf43ca008f43ca02edc38a00edc3aa8a6dc3ea0aed828a82ad428a00efc3aa80edc3c202edc3aa00ef82aa02ed03ca82ebc2aa82efcb8a02ed438a0aedc2ea02e5438a006d43a200ef43aa02efc2ca02e5438a006742ea026d428a02edc3aa026d43c802edc3c202efc3a2006742c20ae6c30a82aec32a822fc10a02efc1c202e7c0ca40ed63ca0aed43ca02ed43c802ede38a00ef43a802ef438a02efc3ea0aed43ca0aedc3aa00ed43ca02ef67ca12e",
-        "digest_minutes": 51
+        "digest": "d43aa026d43aa0a6522ca02ede3aa02efc38a0aed438a026f43ca00ed438a02e7c3ca02e743ca02e7434a00e742ca026d63ca026f42ea026fc3ca00ed438a02ad438a0aefc38a02e542ea02e5c3ca02ed63ca00ed62aa026542ca0ae562ca02efe28a02afc3aa08ed428a826d438a02ed438a006d02ca026f42ea006f438a026f62880ae9e2ca82ed43ca02ed43ca02edc38802ed42aa02e543c2002d43ea00ad438202ad438a02af428a08af43ea02ed438a02ef43ca02e542ca08ad438a00ed43ca02ed428a02afc3aa02a743ea02ef474a02ef42ca00af464e02ef47ce02e5424a00e547ea00e542e212ed43ca026dc3ca02edc288022fc38a02ed438a00ed63c202e542ea00afc38a02edc3ca0a6f628a00edc38a0a65e38a022d4aaa024742ca02a742aa8267428a024d428a022542ca02e583aa02e742aa02e5828208a5c28202e52a0a02e4428a02af42ca026f42ca02edc3a2006543aa00efe28202ef428202ed43c8026d43ea02ed63ca02ad4ac802ed43e802ed43ca02edc3aa02ef438a02ed438a02ef42ca02ad4b8a00ad438a0ae5038a02edc3aa02ef63ea00efc3ca02ef43ca02efc3ca0047c28a02e762ca026d438a0a0dc38a026d43aa026d438a006d43ca02edc3ca02edc38a0aed428a002fc38a02ef4288022d43ca00cf43c2026d438a22ed438a02e522ca02af43ea0267438a02e5c1ca0aedc3ca08ed438a02e5c3aa0a6fc3aa02ef43ca00edc3ca02edc38a28edc38a006d638200edc18a02e541aa00efc38a02afe3ea022302ea006342ea02ef438a00e5c38a0aad438a02efc3c002e543aa00ed438202edc38a0aedc38a02ed43ea02ed438a006d4bca02efc3ca026fc38a02edc3c202ed63aa0a6f43ea02ef43ea02ef43820aefcb8a020fc3ca00efd3aa0a67628a0a2dc3aa0a6de382022d43ea02efc38a00edc38a002dc3c202edc38a02ef43ca02efc3ea0a6dc3ea02e743ca08ed43ea086f4aea02edc38a0aedc38a026dc3ca0aede38a0065c38a02ed43ca00e741ea026dc38a004543aa00adc38a02ef638a0aed838a00cfc38a02ed63ca00ef438a02efc1ca02edc3ca0265438a00edc3ca02e7dc6bd26",
+        "digest_minutes": 197,
+        "decode_errors": 3
       },
       "status": {
-        "imported": "2026-11-11T20:26:27+00:00"
+        "imported": "2026-11-11T05:49:03+00:00",
+        "damaged": {
+          "date": "2026-11-12T15:56:25+00:00",
+          "decode_errors": 3,
+          "found_by": "fingerprint",
+          "checked": null
+        }
       }
     },
     {
