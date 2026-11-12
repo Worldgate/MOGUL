@@ -458,6 +458,12 @@ banner name.
   replaces files later. Consider `--no-derive` so IA doesn't add its own OGG
   copies. Item metadata: title like "Ron and Fez - October 2008",
   mediatype audio, date. Only library files go up, never dupes.
+- **Mirror agreement (the "EULA" gag):** first run of `mirror` scrolls a
+  huge fake-legalese wall that makes no sense, then offers "Press C to
+  condense" which shows the short, funny, readable version (fan archive,
+  don't sell it, check disk space, report mislabeled shows, the Opie
+  SSD + signed WOW sticker offer). User types `agree`; saved to their
+  `mogul.local.toml` so it's asked once. Nothing is sent anywhere.
 - **Mirror index:** the list of items (`MOGUL-RF-2008-10`, `-11`, `-12`, ...)
   can be generated from the catalog itself (one per month file), published
   in the repo with file count and total size per item, so `mirror` can show
