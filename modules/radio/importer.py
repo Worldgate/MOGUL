@@ -186,6 +186,8 @@ def run(args, config):
         return 0
 
     manifests, index = load_catalog(json_root)
+    from .quarantine import quarantined_audio, is_quarantined as quarantined_lookup
+    qindex = quarantined_audio(json_root)
     if not index:
         sys.exit("The radio catalog is empty. Run `mogul.py radio scan` first.")
 
@@ -254,6 +256,14 @@ def run(args, config):
         except (hashing.HashError, OSError) as e:
             report["skipped"].append({"file": rel, "reason": f"can't read audio: {e}"})
             print(f"{tag} SKIP      {rel}: can't read audio")
+            continue
+
+        # known bad audio that was quarantined: leave it alone
+        q = quarantined_lookup(qindex, audio)
+        if q:
+            report["skipped"].append({"file": rel, "reason": "same audio as a quarantined recording "
+                                      f"({q['naming']['filename']})"})
+            print(f"{tag} SKIP      {rel}: same audio as quarantined {q['naming']['filename']}")
             continue
 
         # xxh64 finds candidates; audio_blake3 confirms them.

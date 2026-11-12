@@ -220,6 +220,7 @@ modules/radio/
   importer.py         the radio importer (move, rename, sort, dupes)
   verify.py           checks the library against the catalog
   fingerprint_pass.py adds missing fingerprints, several files at once
+  quarantine.py       moves bad recordings + their entries out of the catalog
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh)
 examples/             sample JSON
 ```
@@ -300,7 +301,7 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - `--dry-run` moves nothing and writes no catalog changes. Every run writes
   `mogul_reports/radio-import_<date>_<time>.json` (from → to for every
   move, so an undo can be built from it later).
-- `mogul_library/` and `mogul_dupes/` are in `.gitignore`.
+- `mogul_library/`, `mogul_dupes/` and `mogul_quarantine/` are in `.gitignore`.
 - Not built yet: undo, and choosing *which* copy to keep by quality
   (right now the first one scanned wins).
 
@@ -335,6 +336,24 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   `mogul_reports/radio-fingerprint_*.json`.
 - Suggested flow for big batches: `scan --no-fingerprint` → `import` →
   `fingerprint` (can run overnight).
+
+## Radio quarantine (`mogul.py radio quarantine`)
+
+- Pulls bad recordings out of the library and the main catalog so they can
+  be checked by hand. Default: every entry with `status.fingerprint_failed`.
+  `--file NAME` (repeatable) picks library files by name instead.
+- The file moves to `[radio] quarantine` (default `mogul_quarantine/radio`,
+  gitignored), same show/yyyy/mm layout. The entry moves out of its month
+  file into `mogul_json/radio/_quarantine.json` (schema
+  `mogul.radio.quarantine`) with a `quarantine` block: date, reason, where
+  it was (library/incoming, relative paths only) and a damage report
+  (percent empty, biggest run of 512+ zero bytes and where, empty bytes at
+  the start). Typical bad download: big empty stretch at the front.
+- Scan reports quarantined audio as QUARANTINED and doesn't add it; import
+  SKIPs it. So the same bad copy never gets re-cataloged.
+- `--restore NAME` moves the file back and reinserts the entry (clears
+  `fingerprint_failed` so the fingerprint pass retries it). `--list` shows
+  what's quarantined. `--dry-run` changes nothing. Nothing is deleted.
 
 ## Radio specifics
 

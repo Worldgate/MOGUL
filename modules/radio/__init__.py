@@ -5,6 +5,7 @@ ACTIONS = {
     "import": "Move cataloged files into the radio library, renamed and sorted; extra copies go to dupes",
     "verify": "Check the radio library against the catalog (moves nothing)",
     "fingerprint": "Add fingerprints to cataloged files that don't have one yet, several at a time",
+    "quarantine": "Move bad recordings (default: failed fingerprints) and their entries out for checking",
 }
 
 
@@ -21,6 +22,9 @@ def run(action, args, config):
     if action == "fingerprint":
         from . import fingerprint_pass
         return fingerprint_pass.run(args, config)
+    if action == "quarantine":
+        from . import quarantine
+        return quarantine.run(args, config)
     raise SystemExit(f"radio has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -48,3 +52,12 @@ def add_arguments(action, parser):
                             help="how many files to work on at once (default: number of CPU cores minus one)")
         parser.add_argument("--retry-failed", action="store_true",
                             help="also try files that failed before")
+    elif action == "quarantine":
+        parser.add_argument("--dry-run", action="store_true",
+                            help="show what would be quarantined, move nothing")
+        parser.add_argument("--file", action="append", metavar="NAME",
+                            help="quarantine this library file by name (repeatable); "
+                                 "without it, every failed fingerprint is quarantined")
+        parser.add_argument("--restore", action="append", metavar="NAME",
+                            help="put a quarantined file and its entry back (repeatable)")
+        parser.add_argument("--list", action="store_true", help="show what's in quarantine")

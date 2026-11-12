@@ -41,6 +41,10 @@ dupes = "mogul_dupes/radio"
 # than one. false: it keeps its original name and subfolder.
 rename_dupes = true
 
+# Where bad recordings go when quarantined (mogul.py radio quarantine).
+# Their catalog entries move to mogul_json/radio/_quarantine.json.
+quarantine = "mogul_quarantine/radio"
+
 # Folder layout inside the library, and the filename (the extension
 # is added automatically). Tokens:
 #   {show} {code} {yyyy} {mm} {dd} {month_name}

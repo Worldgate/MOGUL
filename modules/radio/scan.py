@@ -155,6 +155,8 @@ def run(args, config):
         return 0
 
     manifests, index = load_catalog(json_root)
+    from . import quarantine   # imported here to avoid a circular import
+    qindex = quarantine.quarantined_audio(json_root)
     report = {
         "scan": "radio",
         "started": store.now(),
@@ -200,6 +202,14 @@ def run(args, config):
         except (hashing.HashError, OSError) as e:
             report["problems"].append({"file": rel, "problem": str(e)})
             print(f"{tag} PROBLEM  {rel}: {e}")
+            continue
+
+        # 2b. known bad audio that was quarantined?
+        q = quarantine.is_quarantined(qindex, audio)
+        if q:
+            report["problems"].append({"file": rel, "problem": "QUARANTINED: same audio as a quarantined "
+                                       f"recording ({q['naming']['filename']})"})
+            print(f"{tag} QUARANTINED {rel}: same audio as quarantined {q['naming']['filename']}, skipped")
             continue
 
         # 3. already in the catalog?
