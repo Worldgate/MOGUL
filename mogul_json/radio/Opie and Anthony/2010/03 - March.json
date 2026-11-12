@@ -8,7 +8,7 @@
     "year": 2010,
     "month": 3,
     "created": "2026-11-11T03:21:03+00:00",
-    "updated": "2026-11-11T05:20:39+00:00",
+    "updated": "2026-11-12T10:32:34+00:00",
     "file_count": 25,
     "mogul_version": "0.1.0"
   },
@@ -45,7 +45,12 @@
         "mtime": "2026-11-10T19:50:33Z",
         "added": "2026-11-11T03:21:03+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc3ca02e543ca026743ea00e7c3e802ed43ca00edc3ca02edc3ca006d43ca0067674a427f43ea006f43aa02e",
+        "digest_minutes": 11
+      },
       "status": {
         "imported": "2026-11-11T05:19:54+00:00"
       }
@@ -82,7 +87,12 @@
         "mtime": "2026-11-10T19:50:33Z",
         "added": "2026-11-11T03:21:04+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "343c202af43ca00edc3ca026543aa026f638a02ed43aa00e742ca08ed4bca02ed41e810ed41ca12ed43ca026d41ca02ef43c208ef438a0ae543ea0a2543ea126d43c20aef438a02ed43ca02ed43ca0225c68a02ed4b8a00edcaca0aed438a02efc38a02e9038a026bc38a02e9c38a82ed438a02ed43ea02edc38a02ed43aa00ed43ca00e543ea08a",
+        "digest_minutes": 34
+      },
       "status": {
         "imported": "2026-11-11T05:19:55+00:00"
       }
@@ -121,7 +131,11 @@
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-11T05:19:57+00:00"
+        "imported": "2026-11-11T05:19:57+00:00",
+        "fingerprint_failed": {
+          "date": "2026-11-12T10:32:06+00:00",
+          "error": "Error reading from the audio source (Invalid data found when processing input)"
+        }
       }
     },
     {
@@ -156,7 +170,12 @@
         "mtime": "2026-11-10T19:50:34Z",
         "added": "2026-11-11T03:21:07+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f47ce506d43ca00e7c3ea00ed43e200ed438812ed438a02ed438200ed43ea02ed43c202e543aa026563ea12eb438a026b47ca02ed43aa008dc38a026dc38a80efc38a00edc3ea006de38a026dc28a006fc28a8265438a02ef428a0261428a826ba2a2804dc3ca826dc3aa006fc3c8886bc38a006d438a006f62ca022de3aa08efc3aa40efc38a02cfc3aa026f43ca00efc3aa086d438a022d43aa0a65478a02edc3ca42ed43aa026542ca02edc7ca426f438a02edc38a02ed43ca42e542ca0aedc3ca00edc3ea02edc3aa02adc38a00ef438a02e547c80a6dc3aa026d42ca00efc38a026f43ca006de38a02edc3c80a65438a00efc3ea026d43aa026563ea00efc3ca026de2aa026",
+        "digest_minutes": 66
+      },
       "status": {
         "imported": "2026-11-11T05:19:58+00:00"
       }
@@ -193,7 +212,12 @@
         "mtime": "2026-11-10T19:50:34Z",
         "added": "2026-11-11T03:21:11+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "543ca006f43ea00edc3aa02edc38a0aebc28a826f47ca08edc3e2006543ca02edc3c2086d43ca02ef43ca0aef43ca00e543ea02e543ea1aed42ca02e543ca0aef43ca0aedc3ca02e000820260208b0aef542f54fd43ca40ed42ea02efc38a02ed42ca00cdc3ea08ed43ce0aed438a006503ca02ed43ca02ef43ca006dc38a02ed43aa006d438a006d63ca02e324ec02f",
+        "digest_minutes": 36
+      },
       "status": {
         "imported": "2026-11-11T05:20:01+00:00"
       }
@@ -230,7 +254,12 @@
         "mtime": "2026-11-10T19:50:34Z",
         "added": "2026-11-11T03:21:13+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d63e220ed67ea0a6d438a02af43ea02edc38a00edc3e80269d3ce52f8c34e16fdc7ca02ed43c200e543ca00ed43ea026dc2ca08ed43ca08ed43ca02ed63ca0aed438a02ed43c80265c3aa02ed43ca026f43ca026d42ca02ed43ca02ed43ca42ef63ca02edc3aa4a6dc3aa026fc3ea00e5438a00ef43ca0aedc3ea02edc3ca026f43c84a6d43ca02ef67ca026f43ca0aed43ca026f43ea1a8",
+        "digest_minutes": 38
+      },
       "status": {
         "imported": "2026-11-11T05:20:02+00:00"
       }
@@ -267,7 +296,12 @@
         "mtime": "2026-11-10T19:50:34Z",
         "added": "2026-11-11T03:21:14+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "543ca02cd43e200e542ea0ae5438a02e547ca02ed43ca026743ca08ed63ca02cd43ca02e740ea00e54bca02ef438200ef43ca02e543ea00e5436a02ed43ca02edc3aa02e543ca02e5434a0aa523ca02a743ca0ae7414a1ac",
+        "digest_minutes": 22
+      },
       "status": {
         "imported": "2026-11-11T05:20:03+00:00"
       }
@@ -304,7 +338,12 @@
         "mtime": "2026-11-10T19:50:35Z",
         "added": "2026-11-11T03:21:18+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d67ce52ede3ca00ef43ea02ed43ca02ed47c212ed43ca12ef43ea02ef43ea02ef47ea00ad47ca026507ca12ff43ca0aedc3ca00efc7ca026d43ea00edc38a00ed43ca00efc3ca02efc3c2026d43ca126d43ea02e9c3aa126d43c202ed43ca02efc3e202ed438a00edc3ca00ed47ca12efe3ca02ebc3ca006f43ca08ade3ca02e943ea00efc3c202adc3aa02ed438a0ae5c3ca02ed43ca026f43ca426d43ca00ed43ca42ed43ca00edc2ea0065438a00edc7ca026d478a02e9c38a00edc3ea0a6d43ca02ed43ea5265458a526",
+        "digest_minutes": 51
+      },
       "status": {
         "imported": "2026-11-11T05:20:06+00:00"
       }
@@ -341,7 +380,12 @@
         "mtime": "2026-11-10T19:50:35Z",
         "added": "2026-11-11T03:21:22+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d42ca006dc3ca026f42ca00edc38202e5428a02ed438a0a6f438a426f43ea006fc3ea006f43ee006d62ca0a4d478a02efc38202e5c38a1a6d43aa026d438a02edc38a006f438a006d42ca006f638a08afc38200efc38a02e7438a02e",
+        "digest_minutes": 23
+      },
       "status": {
         "imported": "2026-11-11T05:20:08+00:00"
       }
@@ -378,7 +422,12 @@
         "mtime": "2026-11-10T19:50:35Z",
         "added": "2026-11-11T03:21:25+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "542ca02efc3ca02e747ea02ef4bca02ef43ca00ed43ca00cfc3c200e543ca00e543ca12ef42a802ef438a026f63ea026f438a00ed43ca12ef63ea02ef63c20ae743c202ed43ea02efc3aa00ef43ca02edc3c802ed43ca0aef43ca02efc3ca006f43ea42ed43c202ed438a02e5c2ea02a563aa00ef42ca02af42ca0a6fc3ca026fc2ca826dc2aa026dc3ca8265434a00af43ca02efc3ca026d43ea006",
+        "digest_minutes": 39
+      },
       "status": {
         "imported": "2026-11-11T05:20:10+00:00"
       }
@@ -415,7 +464,12 @@
         "mtime": "2026-11-10T19:50:35Z",
         "added": "2026-11-11T03:21:29+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d43aa02ed438a02ef638a00e543ca02ef63ea02ed62ca00e7438a0a2542aa106fc2aa026dc38a0265828a0aed628a02e5428a082f428a02ef43ca006d4282026742c2022dc282822542aa022743ca02ed43ca02e7430a00ef428a0a6542ca02ad438a022f42e802e743ca22e7c2ca02ed42ca02efc38a0aef43a00acf4aea00efc3a202ecc28a022fc282026dc28a826942c8080",
+        "digest_minutes": 37
+      },
       "status": {
         "imported": "2026-11-11T05:20:13+00:00"
       }
@@ -452,7 +506,12 @@
         "mtime": "2026-11-10T19:50:36Z",
         "added": "2026-11-11T03:21:33+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "543ca00ed43c200e542ca02efc3aa02e543ca02ed43ca02ef43aa82efc38a0a6543ca1a2fc3ca02e74282002743ca02e54bea0a6f43ea026542ea002543c802e5438a02e543ca0aed43ea02e547ca12edc38a00af8aea00efc3ca0065c38a00ed43e200e503ea02e543ca02af438a006d43c8026f43ca026746ca02ef438a0ae543ca026de2aa02e742aa02edc3aa08ed43820265438a08ed43ca026f47ca00eb42aa02ef42ea0aed43aa02ed4382026d63ca08ed43a202e",
+        "digest_minutes": 46
+      },
       "status": {
         "imported": "2026-11-11T05:20:15+00:00"
       }
@@ -489,7 +548,12 @@
         "mtime": "2026-11-10T19:50:36Z",
         "added": "2026-11-11T03:21:37+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "5428a028f43ca086d428a4a6d43ca026f42ca02ef42820aef438a02ef47ca02fd43c20a6f43ca026f43ca026d03aa02ed438a026542c20a6d4bea02274280020",
+        "digest_minutes": 16
+      },
       "status": {
         "imported": "2026-11-11T05:20:18+00:00"
       }
@@ -526,7 +590,12 @@
         "mtime": "2026-11-10T19:50:36Z",
         "added": "2026-11-11T03:21:39+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc1ea02ef62ca0a4dc2aa026d438a02ef43ca02ede3aa086dc38a02ed43aa0265c18a00ef42c2026dc38a026d638a026dc3ca0a6f43ca0269438a006d638a026d43ca02edc38a00efc3ca0aed438a02ef438a024dc3aa006dc3ca02edc3ea008f43aa006dc3ca026dc1aa02edc3ca0a6fc38a08edc3ca006943ca02efc18a0aed67c840c",
+        "digest_minutes": 33
+      },
       "status": {
         "imported": "2026-11-11T05:20:19+00:00"
       }
@@ -565,7 +634,11 @@
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-11T05:20:21+00:00"
+        "imported": "2026-11-11T05:20:21+00:00",
+        "fingerprint_failed": {
+          "date": "2026-11-12T10:32:21+00:00",
+          "error": "Error reading from the audio source (Invalid data found when processing input)"
+        }
       }
     },
     {
@@ -600,7 +673,12 @@
         "mtime": "2026-11-10T19:50:36Z",
         "added": "2026-11-11T03:21:42+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "2161e82b2008216ff63c20a6d42c2026fc38a0aed43aa026f428a00ef43ca02ef43ca00e5828a02ede38a02edc38a08ed43ca0aef43ea026f43ea026d43ca002dc2ca026f43ca086f42ca0a6f42ea02ef43ca00ef43ca806fc3ca00efc2aa026f43ca00efe38a02ed62ca00ef628a00edc3ca026743ca00ed42ea02ef438a02e743ca02ed83820ae742ea02af63c8026fc3ca02e542c202a5628202e502ea00ed438a02e5428a02e5c38a02ef438202e742ca0ae742ca022742ca026d638a02a4438a0a6562aa02e543820a65028802a740ca02a4428202af63ea0aa762aa0267e50a42ed434a02ad42ca022d43ea02e542aa0265028a0067c2c200ed43aa0065628a0aede3aa02a5428a0025428a086563c202e543ca0265438a0ae762e202e5428a0a2543c20265028a0a6dc28a0a6f4288022f438a006dc3ca02e5428a0265c28a006d42aa02a7438a026",
+        "digest_minutes": 83
+      },
       "status": {
         "imported": "2026-11-11T05:20:22+00:00"
       }
@@ -637,7 +715,12 @@
         "mtime": "2026-11-10T19:50:37Z",
         "added": "2026-11-11T03:21:44+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc3aa02ef42ca00ef43ca02ed43c202a5428a02e543ca02ef43ea026743ea00ff43aa0a6543ea0aed438202ed43ea02ed43ea02e747ca02e543ea08e543ca18ef43ea026d43ca0a6d436a026d43ca02ef428a026f43c800ed438a0ae5c38a00e543ea0265638a02ed42aa02adc7ca02e702ca02ed63ca026f434a026d43ca00ed43ca004f43ca02ef43ca02efc38a02e543ea026f43ea02ed47ca006d43ca02e543ca0267438202ed43ca02ed478a0aed43c202ef43ea026d43ca026d43c2007d43ca02ed43ca12e5074210e",
+        "digest_minutes": 51
+      },
       "status": {
         "imported": "2026-11-11T05:20:23+00:00"
       }
@@ -674,7 +757,12 @@
         "mtime": "2026-11-10T19:50:37Z",
         "added": "2026-11-11T03:21:48+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "543aa02e562ea0a2dc38a02efe38200edc3ca08ef42e20865028a02ed43aa02efc2a80aef428a026f428a804f42c208e50aca022543aa02af428a0aed43ca02e78a8802a74382022f43c80ae7438a0067428a02afc28a0068a282826e0282a2ef42ca0aed42ca02e523c2026562ca0ae542ea08ad43ca02ed43ca026743ca022743ca02ef43ca006dc3a2022d428a08e762ca0a65428a02ef638a02af438a0a2dc3a2006d42ca004d62ca006d63ca026dc28a0a6d438a026dc38a026dc38a0269c382026dc3a2006dcb8a086f4382026d828a0a6d43c202efc3aa02ed42a8026d43aa02ed42ca02ed43aa026dc3aa02efc2aa02edc3aa0265428222ef408a8aed42aa026f428a886f43ca02ef438a02c",
+        "digest_minutes": 68
+      },
       "status": {
         "imported": "2026-11-11T05:20:26+00:00"
       }
@@ -711,7 +799,12 @@
         "mtime": "2026-11-10T19:50:37Z",
         "added": "2026-11-11T03:21:52+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "543ca006fc18202ed43ca02e743ca0aefc3ca02ed418a02edc3aa02e753ea02e541aa02e543ca02e503ca02ed438a006547ca1aef42ca02ed63e202e742e8026543c2006f43ca226f438a02edc38a82ed43ca02cd63ca026d42a200ed438a02e543ea00ef42c200e543ca02ed43ea02ed43ca02ed43ca00ed43ea02ef43ca02ad43ca026fc3ca086b43a2026d43e802e743c2026743ca02ed43ca02ed4baa00ed43ca0aed43ca12ed43ea02ed43ea02e543e212ed43ca12ebc38a00ef438a02efa28a02edc3a202e542e800e763ca00efc38a02edc38a0acf43ca006f43aa02e743ea02a7428a006fc2ca02ef03ca08e743aa02ed828882e",
+        "digest_minutes": 62
+      },
       "status": {
         "imported": "2026-11-11T05:20:29+00:00"
       }
@@ -748,7 +841,12 @@
         "mtime": "2026-11-10T19:50:38Z",
         "added": "2026-11-11T03:21:57+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d43aa00ed47ca126d43ca026fc38a02ef428a006b46ae426f47ca02ef43ea02ed67aa02ed43c202ed43e200e703ca026d43aa02e763ca00e547ca02e742ca086f4382026547ca0265678202ed43ea02ef47ca02ed43ca02ed47ca026fc28a0aef43ea006fc3ca00ed43ea00ed42ca0aed43ea00ede38a00e743ca0aef47ca12ed438a02e5438202e543ca02cd43ca02e5438a02eb438a0aed47aa086de3ca02efc3ca02efc38a026dc3ca026d438a0a6f43a800ebc7aa0a6f67ca026d43ea00ed43c20069c3aa024dc3aa0a6dc3ca006dc3ca02e943aa0269e3aa026dc38a026dc3a2026f438200e9c3aa00edc3aa0069c3ca02edc3ea426f43ca42ed43ca126dc7ee00ed47ca026d43c202efc3ca40ed47ca0a6f438a08edc3ca006fc38a02ef4be242e543ca02ad41ca00e541ca12edc38a02edc7ca02edc3ca02ed4382026d47ca12ed43ca02ed43ca0aef43c200ed43ca00ed47ca0aed47c810edc38a12ef43ca106d67ca00ed4bea00ed478a02ef43ca02efc7ca006d43ca4ae",
+        "digest_minutes": 95
+      },
       "status": {
         "imported": "2026-11-11T05:20:32+00:00"
       }
@@ -785,7 +883,12 @@
         "mtime": "2026-11-10T19:50:38Z",
         "added": "2026-11-11T03:21:58+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "542ca08e563aa02ed438a08af63ea02ef42ca02ed63a802ed438a006f43ca0aef62aa084f438a026fc3aa02ed43c80aef438802ef438a02efc08a00e704ca02ed438202acd68ac22cd78a422dc3aa026f43aa0aed438a02ed62ea02af63c802ed43ca02ed438a0a6d438a02ed43ea0229428a006d43ca026d62ca002f428a026d43c200ed42aa00ef438a02ed428a8a6d0388002d43ca00ed43c8026d004a02ec624a026d43aa02e7438a0aef4bea026fc2ea00af43c80acf43aa02e5c3ca026dc78a20efc38a08ed438a026742ca02eb43aa8265438a08a5408a02e1428800e5c08a12e56b8a00a5630a0ae702ca02e5e38a022542ca02e5438a0aa",
+        "digest_minutes": 63
+      },
       "status": {
         "imported": "2026-11-11T05:20:33+00:00"
       }
@@ -824,7 +927,11 @@
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-11T05:20:37+00:00"
+        "imported": "2026-11-11T05:20:37+00:00",
+        "fingerprint_failed": {
+          "date": "2026-11-12T10:32:25+00:00",
+          "error": "Error reading from the audio source (Invalid data found when processing input)"
+        }
       }
     },
     {
@@ -859,7 +966,12 @@
         "mtime": "2026-11-10T19:50:38Z",
         "added": "2026-11-11T03:22:02+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f43ea02ef428a00efc38a08afc3aa02efc38a02cfc38a02ede28a022bc3ca02efc3ca02ed438a08efe3c200ed43ca08efc382026d42ca000dc38a00efc38a02ed438a00ef43ca02efc38a0a65e28a026d8182006f42aa00e762ca0ae743ca00e762ca02ad428a02ed42ea026fc28a026fc3c20ac522ca0aed428a02e743ea02e543ea00e702820a4f43ea08efc38a02e3868a60e",
+        "digest_minutes": 37
+      },
       "status": {
         "imported": "2026-11-11T05:20:37+00:00"
       }
@@ -898,7 +1010,11 @@
       },
       "fingerprint": null,
       "status": {
-        "imported": "2026-11-11T05:20:39+00:00"
+        "imported": "2026-11-11T05:20:39+00:00",
+        "fingerprint_failed": {
+          "date": "2026-11-12T10:32:27+00:00",
+          "error": "Error reading from the audio source (Invalid data found when processing input)"
+        }
       }
     },
     {
@@ -933,7 +1049,12 @@
         "mtime": "2026-11-10T19:50:39Z",
         "added": "2026-11-11T03:22:04+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "5428a02ed43ca42ed47ea006543c202e742c202ed438a02ed42aa006dc3ca02adc3ca426dc28a02edc3aa02ede3aa026fc2ca00efc28a00adc3ca02ef43ca02ed438a006d43ca026d43ea026fc2ca006d41e8006d418a026d41ea024d2aaa022549ea0ae562aa02ef43ca02eb43ca006f418a826b42ea826d438a02ed43ea006d43ca006f43ca026d43aa02ef438a026",
+        "digest_minutes": 36
+      },
       "status": {
         "imported": "2026-11-11T05:20:39+00:00"
       }
