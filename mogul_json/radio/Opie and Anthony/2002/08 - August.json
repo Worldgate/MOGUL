@@ -8,8 +8,8 @@
     "year": 2002,
     "month": 8,
     "created": "2026-11-07T00:05:00+00:00",
-    "updated": "2026-11-12T08:47:33+00:00",
-    "file_count": 32,
+    "updated": "2026-11-12T14:17:22+00:00",
+    "file_count": 31,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -964,46 +964,6 @@
       },
       "status": {
         "imported": "2026-11-07T01:56:06+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2002,
-        "month": 8,
-        "day": 17,
-        "notes": "Worst of (Audio Errors)",
-        "extension": "mp3",
-        "filename": "2002-08-17_O&A_DFE66FEE.mp3",
-        "original_filename": "O&A 2002-08-17.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "dfe66fee6717f483",
-          "audio_blake3": "3c64c9d416c171c7de90afc7a9be2791967fb1165eb59bf4e54dfe6e8680b9ed",
-          "blake3": "3c64c9d416c171c7de90afc7a9be2791967fb1165eb59bf4e54dfe6e8680b9ed",
-          "sha256": "c6055c759516020790cb229dac463b36343bd2382ffaed52d655d757935a6819",
-          "sha512": "3948bc37f814637e81370b4a43ace5b40140a21d2c3013ce6566c09e96061d8d541049265179adf6cc88aa9cc340478e819288b07e5a9a6ad0a094f9fc254554"
-        },
-        "size": 43367471,
-        "duration": 14455.824,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 24000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 22050,
-        "mtime": "2026-11-06T22:20:18Z",
-        "added": "2026-11-07T00:07:17+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T01:56:04+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T08:47:28+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
       }
     },
     {

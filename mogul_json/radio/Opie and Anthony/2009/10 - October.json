@@ -8,8 +8,8 @@
     "year": 2009,
     "month": 10,
     "created": "2026-11-10T20:41:15+00:00",
-    "updated": "2026-11-12T08:33:31+00:00",
-    "file_count": 46,
+    "updated": "2026-11-12T14:16:33+00:00",
+    "file_count": 45,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -1859,47 +1859,6 @@
       },
       "status": {
         "imported": "2026-11-10T21:30:51+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2009,
-        "month": 10,
-        "day": 31,
-        "part": null,
-        "notes": "Worst of (feat. Jocktober)",
-        "extension": "mp3",
-        "filename": "2009-10-31_O&A_7B623CF6.mp3",
-        "original_filename": "O&A 2009-10-31 -- Worst of (feat. Jocktober).mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "7b623cf642137af6",
-          "audio_blake3": "4f2973ce151bbc50d453b7b49f4763889db40f827c86287246e57f483d11b280",
-          "blake3": "03b385cc9f7ece92a3f91af29ab3b3b52d9eba068e54e365e836889dd315e6b8",
-          "sha256": "52f6d3dab4c0e6fcd06309e5c6381a3c19b4880a379db00c1ed0a63a02a4122e",
-          "sha512": "cd3bd84e64f1d9e571da20e787636101559b12f87d20295700f856ee6b7b3113cc7a6c1e7c885e0d154d816dad3c7f27d2c49ed2c04d447e1947b3f0cacb6870"
-        },
-        "size": 237550804,
-        "duration": 14846.746,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 128000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-10T18:34:05Z",
-        "added": "2026-11-10T20:43:39+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-10T21:30:56+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T08:32:57+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
       }
     },
     {

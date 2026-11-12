@@ -8,8 +8,8 @@
     "year": 2010,
     "month": 10,
     "created": "2026-11-11T03:31:04+00:00",
-    "updated": "2026-11-12T10:31:16+00:00",
-    "file_count": 38,
+    "updated": "2026-11-12T14:17:46+00:00",
+    "file_count": 37,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -935,47 +935,6 @@
       },
       "status": {
         "imported": "2026-11-11T05:28:36+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2010,
-        "month": 10,
-        "day": 18,
-        "part": null,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2010-10-18_O&A_1B409F47.mp3",
-        "original_filename": "O&A 2010-10-18.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "1b409f470033fc35",
-          "audio_blake3": "d5aaae6ce3bcea5cf6379342090937f6ebaf931cdb4920aad093411d283b1d41",
-          "blake3": "5ab03d3c8fd568ab69ce92d92a7d62b204fd46579c8a0096d86a5b389c4325a8",
-          "sha256": "0c0858f9b5e02735bf1425d4b22a2354012266df2705d78bd2f7ee9c1388520e",
-          "sha512": "d2aabee24abec79e259b3c573e16edd1492278e60403986bd61aaa9e0cbcd579203ebe02e943219d9288add22a748620d18ba993bf505481be92c5bd7c46b5d7"
-        },
-        "size": 88039337,
-        "duration": 11004.917,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 2,
-        "sample_rate": 44100,
-        "mtime": "2017-08-30T06:13:45Z",
-        "added": "2026-11-11T03:32:02+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-11T05:28:38+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T10:30:05+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
       }
     },
     {

@@ -8,52 +8,11 @@
     "year": 2011,
     "month": 1,
     "created": "2026-11-11T03:35:23+00:00",
-    "updated": "2026-11-12T09:16:30+00:00",
-    "file_count": 40,
+    "updated": "2026-11-12T14:17:31+00:00",
+    "file_count": 38,
     "mogul_version": "0.1.0"
   },
   "files": [
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2011,
-        "month": 1,
-        "day": 3,
-        "part": null,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2011-01-03_O&A_FE406A80.mp3",
-        "original_filename": "O&A 2011-01-03.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "fe406a809aa58f25",
-          "audio_blake3": "17cedd4b62f6702a1caa58892ccde33b7421016f495d7f90aa74e6578b2846b2",
-          "blake3": "17cedd4b62f6702a1caa58892ccde33b7421016f495d7f90aa74e6578b2846b2",
-          "sha256": "68e3af73409a972bb1a233a21f9d1d42385e601c6f55fdeae16b4e1f75ce5bd2",
-          "sha512": "7e53304ffefded7228281d159fd75c8e66e4bc4c9b4d353193c906b69b6dd5d3b096a61ff9f19a5ae6d22cac14d091129b17d3e73b66078184be64b244dbbf60"
-        },
-        "size": 98877888,
-        "duration": 12359.736,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 2,
-        "sample_rate": 24000,
-        "mtime": "2026-11-10T22:23:41Z",
-        "added": "2026-11-11T03:35:23+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-11T05:31:24+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T09:14:06+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
-      }
-    },
     {
       "naming": {
         "show": "Opie and Anthony",
@@ -1606,47 +1565,6 @@
       },
       "status": {
         "imported": "2026-11-11T05:32:48+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2011,
-        "month": 1,
-        "day": 31,
-        "part": null,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2011-01-31_O&A_3E49CA26.mp3",
-        "original_filename": "O&A 2011-01-31.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "3e49ca26e4e6fee4",
-          "audio_blake3": "42a041ce576236bde47f8de903a120a71983ae4266dcec9e2438be5664937ce0",
-          "blake3": "42a041ce576236bde47f8de903a120a71983ae4266dcec9e2438be5664937ce0",
-          "sha256": "6d53effae9a4a6f872de1757f690ad07d8bd9e48f61c149e59999363bc4ee5d2",
-          "sha512": "0ca6754a7c59d8cd912f1620ee116f8b68e65cc7b3fafdfbfa7bd2febc9c89d44759d0597dc8d49bc23ecbbeb879d04f44af9d8e7ef84246cb7059f35933d809"
-        },
-        "size": 105854016,
-        "duration": 13231.752,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 2,
-        "sample_rate": 24000,
-        "mtime": "2026-11-10T22:24:57Z",
-        "added": "2026-11-11T03:37:08+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-11T05:32:50+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T09:16:05+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
       }
     },
     {

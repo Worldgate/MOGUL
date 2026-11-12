@@ -8,8 +8,8 @@
     "year": 2006,
     "month": 1,
     "created": "2026-11-07T18:15:09+00:00",
-    "updated": "2026-11-12T09:51:56+00:00",
-    "file_count": 42,
+    "updated": "2026-11-12T14:17:36+00:00",
+    "file_count": 40,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -93,46 +93,6 @@
       },
       "status": {
         "imported": "2026-11-07T19:46:48+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2006,
-        "month": 1,
-        "day": 3,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2006-01-03_O&A_FBE767EF.mp3",
-        "original_filename": "O&A 2006-01-03.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "fbe767ef2cbc13a3",
-          "audio_blake3": "681ae7041fe1a47f3a7d3eba03e09399697153ec9509dc482120d9bddc95306d",
-          "blake3": "681ae7041fe1a47f3a7d3eba03e09399697153ec9509dc482120d9bddc95306d",
-          "sha256": "01e403c117c56e36f30b438ee1259c8b8c549e7e9780bb8517aeb28e20b40836",
-          "sha512": "2653a45e97932078a69d16fd29f4d58465c33355ee8d4f5ed384b982e28bc4ad40a2c74b43c1c7978254dedf32016cbaef0458c115297967a5d9a005ae7878bc"
-        },
-        "size": 102076291,
-        "duration": 34025.43,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 24000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 22050,
-        "mtime": "2026-11-07T14:01:36Z",
-        "added": "2026-11-07T18:15:38+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T19:46:51+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T09:50:38+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
       }
     },
     {
@@ -256,46 +216,6 @@
       },
       "status": {
         "imported": "2026-11-07T19:46:57+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2006,
-        "month": 1,
-        "day": 6,
-        "notes": "Live In Vegas at CES",
-        "extension": "mp3",
-        "filename": "2006-01-06_O&A_5B1DEF1F.mp3",
-        "original_filename": "O&A 2006-01-06 -- Live In Vegas at CES.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "5b1def1f8cede4c1",
-          "audio_blake3": "b68d5cd3be20bd7b7fa4ac0fedecbc0fd321b52e1a62de23f17392c76f7b18b2",
-          "blake3": "b68d5cd3be20bd7b7fa4ac0fedecbc0fd321b52e1a62de23f17392c76f7b18b2",
-          "sha256": "7e305832d04d806a6e9115e0ce32da29416ca6634cafc28246d00a31761f8830",
-          "sha512": "0fcc848c026d734f32216e6bbe588849527278bf39b164e2637c3e61edd0ea15080ed0c373a89ee2ea5f02abbe4b1aeac5a1ad1ddd72c1510c8c859dfdc5de09"
-        },
-        "size": 49392744,
-        "duration": 16464.248,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 24000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 22050,
-        "mtime": "2026-11-07T14:01:35Z",
-        "added": "2026-11-07T18:16:33+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-07T19:47:00+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T09:50:27+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
       }
     },
     {

@@ -8,8 +8,8 @@
     "year": 2012,
     "month": 2,
     "created": "2026-11-11T03:53:22+00:00",
-    "updated": "2026-11-12T11:03:26+00:00",
-    "file_count": 42,
+    "updated": "2026-11-12T14:18:48+00:00",
+    "file_count": 41,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -1523,47 +1523,6 @@
       },
       "status": {
         "imported": "2026-11-11T05:47:06+00:00"
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2012,
-        "month": 2,
-        "day": 27,
-        "part": null,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2012-02-27_O&A_4DD223F5.mp3",
-        "original_filename": "O&A 2012-02-27.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "4dd223f57bf97186",
-          "audio_blake3": "aa2481658dcb13f366894ccf7ead68f0fca8f4bb7d8f90219ef188cdc2f21e7c",
-          "blake3": "bb8f4932594456e75ffab429676e3873ff757a51b81bbe29c1b12c678c65eb6f",
-          "sha256": "8f68ca2a3f9933f210401005c0a3fe3b84a4ad196f7cfc2da8a1b9258518a23e",
-          "sha512": "30e1a32c325f9046bede3726d42ef0ed69c816e0bcb30e6f98fdbb1aeef667146d4d88c5a7a478c96374c71dbd5c5811a12a166aae44e462f3c5144859c2e59d"
-        },
-        "size": 119746753,
-        "duration": 14968.344,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 2,
-        "sample_rate": 48000,
-        "mtime": "2026-11-10T23:12:50Z",
-        "added": "2026-11-11T03:55:15+00:00"
-      },
-      "fingerprint": null,
-      "status": {
-        "imported": "2026-11-11T05:47:08+00:00",
-        "fingerprint_failed": {
-          "date": "2026-11-12T11:02:43+00:00",
-          "error": "Error reading from the audio source (Invalid data found when processing input)"
-        }
       }
     },
     {
