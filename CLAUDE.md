@@ -224,7 +224,7 @@ modules/radio/
   quarantine.py       moves bad recordings + their entries out of the catalog
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py)
 examples/             sample JSON
 ```
 
@@ -411,6 +411,22 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   and spotting copies with audio missing.
 - Not built yet: per-gap measurement by aligning two copies with the full
   fingerprint ("at 0:16:33, 47 s missing"); same alignment as splice repair.
+
+## Listening list (`tools/listen.py`)
+
+- After `radio check`: every damaged file not judged yet, worst first
+  (unreadable, then most audio lost, then most spots), with library path,
+  header length vs real length, and EVERY damaged stretch's show time.
+  Stretch times come from the newest `radio-check_*.json` per file
+  (the catalog only keeps first/last). `--all` includes judged ones,
+  `--top N` limits.
+- Writes `mogul_reports/listen.txt` and one Audacity label file per
+  damaged file in `mogul_reports/audacity_labels/` (tab-separated
+  start/end/text; labels start 2 s early; a label where the audio really
+  ends when the header claims more). In Audacity: File > Import > Labels.
+- Flow: `radio check` → `tools/listen.py` → listen → `radio damaged
+  --ok/--keep/--bad` → `radio quarantine` (bad ones out, hashes kept,
+  never re-added by scan).
 
 ## Radio damaged (`mogul.py radio damaged`)
 
