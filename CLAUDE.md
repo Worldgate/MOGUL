@@ -437,6 +437,18 @@ banner name.
   Same format feeds cue sheets and MKA chapters. Examples Mavrick gave:
   "Opie and Jimmy fight", "Anthony and Opie fight", Norton telling the
   "Draggin Wagon" caller to cancel XM, then "wait, don't cancel".
+- **Internet Archive download / mirror:** a curated list (JSON in the repo)
+  of known IA items Mavrick uploaded or vetted, each with size and file
+  count. `mirror` pulls them into `mogul_incoming/radio` with the official
+  `internetarchive` package, checks every file against IA's MD5 from
+  `_files.xml` before scanning (retry on mismatch), can skip IA-made OGG
+  derivatives, resumes after interruption, checks free disk space, and
+  warns on big ones before starting, e.g.
+  `[WARNING] THIS ARCHIVE IS 3.25TB [WARNING]` with a yes/no prompt.
+  Skip files already owned: store md5/sha1 at scan time so IA's checksums
+  can be matched against the catalog without downloading. Planned upload
+  layout: one pack per show-year-month, each with that month's catalog
+  JSON so anyone can verify the files by hash.
 - Per-hash "API" JSON per file, later filled with tags and history (who was
   on the show, etc.). Tags get stripped from files; a "rebuild tags" option
   writes them back when copying to a media player.
