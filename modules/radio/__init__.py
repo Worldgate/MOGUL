@@ -82,6 +82,14 @@ def add_arguments(action, parser):
                                  "the next quarantine pulls it out (repeatable)")
         parser.add_argument("--unchecked", action="store_true",
                             help="only list the ones not checked yet")
+        parser.add_argument("--auto-ok", action="store_true",
+                            help="mark every file `radio check` found only tiny damage in "
+                                 "(full length, little missing) as ok without listening")
+        parser.add_argument("--max-missing", type=float, metavar="SECONDS",
+                            help="for --auto-ok: most audio lost allowed "
+                                 "(default: auto_ok_max_missing in mogul.toml, 0.5)")
+        parser.add_argument("--dry-run", action="store_true",
+                            help="for --auto-ok: list what would be marked, save nothing")
     elif action == "check":
         parser.add_argument("--quarantine", action="store_true",
                             help="check the files in quarantine instead of the library")

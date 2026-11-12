@@ -424,7 +424,7 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   damaged file in `mogul_reports/audacity_labels/` (tab-separated
   start/end/text; labels start 2 s early; a label where the audio really
   ends when the header claims more). In Audacity: File > Import > Labels.
-- Flow: `radio check` → `tools/listen.py` → listen → `radio damaged
+- Flow: `radio check` → `radio damaged --auto-ok` → `tools/listen.py` → listen → `radio damaged
   --ok/--keep/--bad` → `radio quarantine` (bad ones out, hashes kept,
   never re-added by scan).
 
@@ -442,6 +442,15 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   `quarantine` picks up verdict "bad" entries by default, as well as failed
   fingerprints. `--wanted` lists the "keep" ones (feeds a future
   bounty / wanted list). The list is sorted worst first.
+- `--auto-ok` marks every not-yet-judged file that `radio check` timed
+  with no more than `auto_ok_max_missing` (mogul.toml, default 0.5 s)
+  lost, real length matching the header, and no empty gap, as ok
+  (`checked = {date, verdict: ok, by: auto, rule}`), so listening goes to
+  the real problems. `--max-missing N` overrides; `--dry-run` lists only.
+  Why: Mavrick listened to 2009-04-01 at 1:04:31 (4 spots, 0.0 s missing):
+  a faint tap, a seam where pieces were joined. Many 2009 files look like
+  this. Don't run it while `radio check` is running (both write the
+  month files).
 - Works on any library file, flagged or not (found_by "by hand"), e.g.
   2002-08-17_O&A_DFE66FEE: fingerprinted fine but has ~380 bad frames.
 - `tools/damagemap.py FILE` shows *where* a file is damaged: mp3val's

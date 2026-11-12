@@ -53,9 +53,70 @@ def damage_of(entry):
     return None
 
 
+def auto_ok_reason(entry, max_missing):
+    """Why this entry can be marked ok without listening, or None.
+
+    Only files `radio check` has looked at: readable, an MP3 with every
+    spot timed, no more than max_missing seconds lost in total, real
+    length matching the header (nothing cut out or cut off), and no empty
+    gap. That's the "seam" kind of damage: a broken frame where two
+    pieces were joined, heard as a faint tick at most."""
+    status = entry.get("status") or {}
+    c = status.get("check")
+    if not c or c.get("readable") is False:
+        return None
+    if ((status.get("damaged") or {}).get("checked")):
+        return None                                   # already judged
+    if not c.get("spots") or c.get("first") is None:
+        return None                                   # nothing timed (not mp3val)
+    if (c.get("missing_seconds") or 0) > max_missing:
+        return None
+    if (c.get("header_missing_seconds") or 0) >= 1:
+        return None
+    if c.get("biggest_gap"):
+        return None
+    return f"{c['spots']} spot(s), ~{c.get('missing_seconds') or 0} s missing, full length"
+
+
+def auto_ok(args, config, manifests):
+    radio_cfg = config.section("radio")
+    max_missing = args.max_missing if args.max_missing is not None \
+        else float(radio_cfg.get("auto_ok_max_missing", 0.5))
+    rule = f"<= {max_missing} s missing, real length matches header, no empty gap"
+    marked = 0
+    for mpath, manifest in manifests.items():
+        changed = False
+        for entry in manifest.get("files", []):
+            why = auto_ok_reason(entry, max_missing)
+            if not why:
+                continue
+            marked += 1
+            print(f"OK   {entry['naming']['filename']:<40} {why}")
+            if args.dry_run:
+                continue
+            status = entry.setdefault("status", {})
+            d = damage_of(entry) or {"date": None, "decode_errors": 0, "found_by": "check"}
+            d["checked"] = {"date": store.now(), "verdict": "ok", "by": "auto", "rule": rule}
+            status["damaged"] = d
+            changed = True
+        if changed:
+            manifest["header"]["updated"] = store.now()
+            manifest["header"]["mogul_version"] = VERSION
+            store.save(mpath, manifest)
+    print(f"\n{marked} file(s) {'would be marked' if args.dry_run else 'marked'} ok ({rule})")
+    if args.dry_run:
+        print("DRY RUN: nothing saved. Run again without --dry-run to mark them.")
+    else:
+        print("What's left to listen to:  python3 tools/listen.py")
+    return 0
+
+
 def run(args, config):
     json_root = config.json_store
     manifests, _ = load_catalog(json_root)
+
+    if args.auto_ok:
+        return auto_ok(args, config, manifests)
 
     verdicts = {}
     for name in args.ok or []:

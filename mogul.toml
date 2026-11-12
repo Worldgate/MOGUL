@@ -59,6 +59,12 @@ quarantine = "mogul_quarantine/radio"
 folder_template = "{show}/{yyyy}/{mm}"
 filename_template = "{yyyy}-{mm}-{dd}_{code}[_pt{part}]_{HASH8}"
 
+# --- Damaged (mogul.py radio damaged --auto-ok) ---
+# --auto-ok marks a damaged file "ok" without listening when radio check
+# found no more than this many seconds of audio lost, its real length
+# matches its header, and there's no empty gap (seams: a faint tick).
+auto_ok_max_missing = 0.5
+
 # --- Scan (mogul.py radio scan) ---
 # File types the radio scanner picks up.
 extensions = ["mp3", "ogg", "oga", "opus", "m4a", "aac", "flac", "wma", "wav", "mka"]
