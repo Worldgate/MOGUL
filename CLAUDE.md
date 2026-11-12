@@ -446,9 +446,22 @@ banner name.
   warns on big ones before starting, e.g.
   `[WARNING] THIS ARCHIVE IS 3.25TB [WARNING]` with a yes/no prompt.
   Skip files already owned: store md5/sha1 at scan time so IA's checksums
-  can be matched against the catalog without downloading. Planned upload
-  layout: one pack per show-year-month, each with that month's catalog
-  JSON so anyone can verify the files by hash.
+  can be matched against the catalog without downloading.
+- **IA publish (`radio publish`, planned):** one IA item per library month
+  folder, e.g. `mogul_library/radio/Ron and Fez/2008/10/` → item
+  `MOGUL-RF-2008-10`, with every audio file plus that month's catalog JSON.
+  IA identifiers only allow letters, numbers, `_`, `-`, `.` (no `&`, no
+  spaces), so each show needs an IA-safe slug in `mogul.toml` (`O&A` → `OA`,
+  `R&F` → `RF`); the filenames inside can keep `&`. IA guidance: max ~1,000
+  files / 500 GB per item (1 TB hard limit); a month is far under that.
+  Running updates are fine: `ia upload <same identifier> ...` adds or
+  replaces files later. Consider `--no-derive` so IA doesn't add its own OGG
+  copies. Item metadata: title like "Ron and Fez - October 2008",
+  mediatype audio, date. Only library files go up, never dupes.
+- **Mirror index:** the list of items (`MOGUL-RF-2008-10`, `-11`, `-12`, ...)
+  can be generated from the catalog itself (one per month file), published
+  in the repo with file count and total size per item, so `mirror` can show
+  the size warning before downloading.
 - Per-hash "API" JSON per file, later filled with tags and history (who was
   on the show, etc.). Tags get stripped from files; a "rebuild tags" option
   writes them back when copying to a media player.
