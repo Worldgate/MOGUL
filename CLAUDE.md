@@ -464,6 +464,15 @@ banner name.
   don't sell it, check disk space, report mislabeled shows, the Opie
   SSD + signed WOW sticker offer). User types `agree`; saved to their
   `mogul.local.toml` so it's asked once. Nothing is sent anywhere.
+- **Mirror health check:** a scheduled command (cron or systemd timer on
+  protostar) that checks every published IA item still exists and still
+  has every file with the expected checksum, using IA's metadata (no
+  downloading). Reports e.g. "The following IA mirrors are removed:" /
+  "files missing" / "checksum changed", and pushes it somewhere he'll see
+  it (ntfy, Discord webhook or email). Removed items get marked in the
+  index so `mirror` falls back to the secondary host. Later: secondary
+  storage (Cloudflare R2 / Backblaze B2 / Wasabi; watch download/egress
+  pricing, not just storage) with IA as primary.
 - **Mirror index:** the list of items (`MOGUL-RF-2008-10`, `-11`, `-12`, ...)
   can be generated from the catalog itself (one per month file), published
   in the repo with file count and total size per item, so `mirror` can show
