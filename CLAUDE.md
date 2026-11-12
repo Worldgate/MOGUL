@@ -220,7 +220,7 @@ modules/radio/
   importer.py         the radio importer (move, rename, sort, dupes)
   verify.py           checks the library against the catalog
   fingerprint_pass.py adds missing fingerprints, several files at once
-tools/                standalone helpers (parsetest.py, fpdigest.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh)
 examples/             sample JSON
 ```
 
@@ -355,6 +355,13 @@ Show codes map to show names in `mogul.toml` under `[radio.shows]`
 `tools/parsetest.py` shows how filenames are read (using the real parser and
 templates) and the library name each would get, and flags problems: invalid
 dates, unknown show codes, names that don't match the pattern.
+
+### Usenet name shapes
+
+`tools/fixnames.sh` (run inside the folder; `-n` = preview) renames
+`2008-10-01-O&A-CF64k.mp3`, `2008-10-30 Thu O&A CF64k.mp3` and
+`2008-10-30-O&A CF64K.mp3` to `O&A 2008-10-30 -- CF64k.mp3` (the rest of
+the name becomes notes). Never overwrites.
 
 ### Other filename shapes seen (handle later)
 
