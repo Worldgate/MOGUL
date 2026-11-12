@@ -222,7 +222,7 @@ modules/radio/
   fingerprint_pass.py adds missing fingerprints, several files at once
   quarantine.py       moves bad recordings + their entries out of the catalog
   damaged.py          lists recordings with damaged spots; mark ok/bad after listening
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py)
 examples/             sample JSON
 ```
 
@@ -379,6 +379,12 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   bounty / wanted list). The list is sorted worst first.
 - Works on any library file, flagged or not (found_by "by hand"), e.g.
   2002-08-17_O&A_DFE66FEE: fingerprinted fine but has ~380 bad frames.
+- `tools/damagemap.py FILE` shows *where* a file is damaged: mp3val's
+  resync offsets mapped to show times via ffprobe's frame list, grouped
+  into stretches, with a rough "audio likely missing" per stretch (junk
+  bytes glued onto a frame / average bytes per second). Without mp3val it
+  falls back to oversized frames (rough for VBR). Note: ffprobe glues junk
+  onto the previous packet, so there are no byte gaps between packets.
 - Repair without re-encoding is possible: `mp3val -f -nb FILE` drops the
   broken frames and fixes the Xing header (tested: digest identical, no
   decode errors left). But it changes the audio xxh64, so the fixed file
