@@ -8,7 +8,7 @@
     "year": 2009,
     "month": 4,
     "created": "2026-11-10T19:24:46+00:00",
-    "updated": "2026-11-12T15:48:47+00:00",
+    "updated": "2026-11-12T18:01:08+00:00",
     "file_count": 44,
     "mogul_version": "0.1.0"
   },
@@ -52,7 +52,13 @@
         "digest_minutes": 295
       },
       "status": {
-        "imported": "2026-11-10T21:18:03+00:00"
+        "imported": "2026-11-10T21:18:03+00:00",
+        "check": {
+          "date": "2026-11-12T17:57:14+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -97,10 +103,25 @@
       "status": {
         "imported": "2026-11-10T21:17:59+00:00",
         "damaged": {
-          "date": "2026-11-12T15:47:53+00:00",
-          "decode_errors": 10,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:57:04+00:00",
+          "decode_errors": 4,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:57:04+00:00",
+          "tool": "mp3val",
+          "spots": 4,
+          "stretches": 4,
+          "first": 3871.4,
+          "last": 14804.6,
+          "missing_seconds": 0.0,
+          "real_duration": 17680.5,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-01_O&A_F0BCDD12.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-01_O&A_F0BCDD12.mp3\" (offset 0xca56735): Garbage at the end of the file"
+          ],
+          "empty_percent": 3.5
         }
       }
     },
@@ -143,7 +164,13 @@
         "digest_minutes": 257
       },
       "status": {
-        "imported": "2026-11-10T21:18:09+00:00"
+        "imported": "2026-11-10T21:18:09+00:00",
+        "check": {
+          "date": "2026-11-12T17:57:18+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -188,10 +215,25 @@
       "status": {
         "imported": "2026-11-10T21:18:06+00:00",
         "damaged": {
-          "date": "2026-11-12T15:47:47+00:00",
-          "decode_errors": 10,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:57:21+00:00",
+          "decode_errors": 4,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:57:21+00:00",
+          "tool": "mp3val",
+          "spots": 4,
+          "stretches": 4,
+          "first": 4287.7,
+          "last": 13106.8,
+          "missing_seconds": 0.0,
+          "real_duration": 15400.2,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-02_O&A_C0ECD832.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-02_O&A_C0ECD832.mp3\" (offset 0xb03df09): Garbage at the end of the file"
+          ],
+          "empty_percent": 3.4
         }
       }
     },
@@ -237,10 +279,25 @@
       "status": {
         "imported": "2026-11-10T21:18:12+00:00",
         "damaged": {
-          "date": "2026-11-12T15:47:45+00:00",
-          "decode_errors": 10,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:57:25+00:00",
+          "decode_errors": 4,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:57:25+00:00",
+          "tool": "mp3val",
+          "spots": 4,
+          "stretches": 4,
+          "first": 3759.9,
+          "last": 10937.5,
+          "missing_seconds": 0.0,
+          "real_duration": 13691.8,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-03_O&A_A42B0F33.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-03_O&A_A42B0F33.mp3\" (offset 0x9cb0d68): Garbage at the end of the file"
+          ],
+          "empty_percent": 3.3
         }
       }
     },
@@ -283,7 +340,13 @@
         "digest_minutes": 228
       },
       "status": {
-        "imported": "2026-11-10T21:18:15+00:00"
+        "imported": "2026-11-10T21:18:15+00:00",
+        "check": {
+          "date": "2026-11-12T17:57:39+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.4
+        }
       }
     },
     {
@@ -328,10 +391,25 @@
       "status": {
         "imported": "2026-11-10T21:18:18+00:00",
         "damaged": {
-          "date": "2026-11-12T15:47:47+00:00",
-          "decode_errors": 24,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:57:38+00:00",
+          "decode_errors": 11,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:57:38+00:00",
+          "tool": "mp3val",
+          "spots": 11,
+          "stretches": 11,
+          "first": 251.7,
+          "last": 18370.0,
+          "missing_seconds": 0.1,
+          "real_duration": 18442.8,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-06_O&A_8F660E82.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-06_O&A_8F660E82.mp3\" (offset 0x8cb5268): Garbage at the end of the file"
+          ],
+          "empty_percent": 1.2
         }
       }
     },
@@ -374,7 +452,13 @@
         "digest_minutes": 308
       },
       "status": {
-        "imported": "2026-11-10T21:18:22+00:00"
+        "imported": "2026-11-10T21:18:22+00:00",
+        "check": {
+          "date": "2026-11-12T17:57:53+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.9
+        }
       }
     },
     {
@@ -419,10 +503,25 @@
       "status": {
         "imported": "2026-11-10T21:18:25+00:00",
         "damaged": {
-          "date": "2026-11-12T15:47:50+00:00",
-          "decode_errors": 26,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:57:45+00:00",
+          "decode_errors": 12,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:57:45+00:00",
+          "tool": "mp3val",
+          "spots": 12,
+          "stretches": 12,
+          "first": 227.3,
+          "last": 17210.3,
+          "missing_seconds": 0.1,
+          "real_duration": 18549.2,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-07_O&A_B7735BD6.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-07_O&A_B7735BD6.mp3\" (offset 0x8d851e9): Garbage at the end of the file"
+          ],
+          "empty_percent": 1.2
         }
       }
     },
@@ -465,7 +564,13 @@
         "digest_minutes": 309
       },
       "status": {
-        "imported": "2026-11-10T21:18:28+00:00"
+        "imported": "2026-11-10T21:18:28+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:13+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.8
+        }
       }
     },
     {
@@ -510,10 +615,25 @@
       "status": {
         "imported": "2026-11-10T21:18:31+00:00",
         "damaged": {
-          "date": "2026-11-12T15:48:19+00:00",
-          "decode_errors": 26,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:58:03+00:00",
+          "decode_errors": 12,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:58:03+00:00",
+          "tool": "mp3val",
+          "spots": 12,
+          "stretches": 12,
+          "first": 225.8,
+          "last": 18485.7,
+          "missing_seconds": 0.1,
+          "real_duration": 18558.7,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-08_O&A_67AAF51C.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-08_O&A_67AAF51C.mp3\" (offset 0x8d9789b): Garbage at the end of the file"
+          ],
+          "empty_percent": 1.2
         }
       }
     },
@@ -556,7 +676,13 @@
         "digest_minutes": 310
       },
       "status": {
-        "imported": "2026-11-10T21:18:35+00:00"
+        "imported": "2026-11-10T21:18:35+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:22+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.8
+        }
       }
     },
     {
@@ -598,7 +724,13 @@
         "digest_minutes": 353
       },
       "status": {
-        "imported": "2026-11-10T21:18:43+00:00"
+        "imported": "2026-11-10T21:18:43+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:39+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.1
+        }
       }
     },
     {
@@ -640,7 +772,14 @@
         "digest_minutes": 353
       },
       "status": {
-        "imported": "2026-11-10T21:18:39+00:00"
+        "imported": "2026-11-10T21:18:39+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:09+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 21172.6,
+          "empty_percent": 1.1
+        }
       }
     },
     {
@@ -685,10 +824,25 @@
       "status": {
         "imported": "2026-11-10T21:18:46+00:00",
         "damaged": {
-          "date": "2026-11-12T15:48:39+00:00",
-          "decode_errors": 24,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:58:31+00:00",
+          "decode_errors": 11,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:58:31+00:00",
+          "tool": "mp3val",
+          "spots": 11,
+          "stretches": 11,
+          "first": 189.5,
+          "last": 16432.9,
+          "missing_seconds": 0.1,
+          "real_duration": 18731.7,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-10_O&A_8B49E197.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-10_O&A_8B49E197.mp3\" (offset 0x8ee97c9): Garbage at the end of the file"
+          ],
+          "empty_percent": 1.2
         }
       }
     },
@@ -731,7 +885,13 @@
         "digest_minutes": 312
       },
       "status": {
-        "imported": "2026-11-10T21:18:49+00:00"
+        "imported": "2026-11-10T21:18:49+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:48+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.8
+        }
       }
     },
     {
@@ -773,7 +933,13 @@
         "digest_minutes": 309
       },
       "status": {
-        "imported": "2026-11-10T21:18:56+00:00"
+        "imported": "2026-11-10T21:18:56+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:56+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.8
+        }
       }
     },
     {
@@ -815,7 +981,14 @@
         "digest_minutes": 309
       },
       "status": {
-        "imported": "2026-11-10T21:18:53+00:00"
+        "imported": "2026-11-10T21:18:53+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:39+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 18499.6,
+          "empty_percent": 3.6
+        }
       }
     },
     {
@@ -857,7 +1030,13 @@
         "digest_minutes": 234
       },
       "status": {
-        "imported": "2026-11-10T21:19:01+00:00"
+        "imported": "2026-11-10T21:19:01+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:08+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.2
+        }
       }
     },
     {
@@ -899,7 +1078,14 @@
         "digest_minutes": 234
       },
       "status": {
-        "imported": "2026-11-10T21:18:58+00:00"
+        "imported": "2026-11-10T21:18:58+00:00",
+        "check": {
+          "date": "2026-11-12T17:58:44+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14018.7,
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -944,10 +1130,25 @@
       "status": {
         "imported": "2026-11-10T21:19:03+00:00",
         "damaged": {
-          "date": "2026-11-12T15:48:47+00:00",
-          "decode_errors": 10,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:59:06+00:00",
+          "decode_errors": 4,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:59:06+00:00",
+          "tool": "mp3val",
+          "spots": 4,
+          "stretches": 4,
+          "first": 3325.9,
+          "last": 12758.0,
+          "missing_seconds": 0.0,
+          "real_duration": 14085.4,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-15_O&A_28BB8123.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-15_O&A_28BB8123.mp3\" (offset 0xa131ecc): Garbage at the end of the file"
+          ],
+          "empty_percent": 3.0
         }
       }
     },
@@ -990,7 +1191,13 @@
         "digest_minutes": 235
       },
       "status": {
-        "imported": "2026-11-10T21:19:06+00:00"
+        "imported": "2026-11-10T21:19:06+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:17+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.8
+        }
       }
     },
     {
@@ -1032,7 +1239,13 @@
         "digest_minutes": 240
       },
       "status": {
-        "imported": "2026-11-10T21:19:12+00:00"
+        "imported": "2026-11-10T21:19:12+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:24+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.8
+        }
       }
     },
     {
@@ -1074,7 +1287,14 @@
         "digest_minutes": 240
       },
       "status": {
-        "imported": "2026-11-10T21:19:09+00:00"
+        "imported": "2026-11-10T21:19:09+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:13+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14400.4,
+          "empty_percent": 3.0
+        }
       }
     },
     {
@@ -1119,10 +1339,25 @@
       "status": {
         "imported": "2026-11-10T21:19:15+00:00",
         "damaged": {
-          "date": "2026-11-12T15:48:44+00:00",
-          "decode_errors": 6,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:59:29+00:00",
+          "decode_errors": 3,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:59:29+00:00",
+          "tool": "mp3val",
+          "spots": 3,
+          "stretches": 3,
+          "first": 3126.8,
+          "last": 11457.5,
+          "missing_seconds": 0.3,
+          "real_duration": 15944.5,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-17_O&A_75504B75.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-17_O&A_75504B75.mp3\" (offset 0x79a63c8): Garbage at the end of the file"
+          ],
+          "empty_percent": 1.2
         }
       }
     },
@@ -1165,7 +1400,13 @@
         "digest_minutes": 266
       },
       "status": {
-        "imported": "2026-11-10T21:19:18+00:00"
+        "imported": "2026-11-10T21:19:18+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:43+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.2
+        }
       }
     },
     {
@@ -1210,10 +1451,25 @@
       "status": {
         "imported": "2026-11-10T21:19:21+00:00",
         "damaged": {
-          "date": "2026-11-12T15:48:40+00:00",
-          "decode_errors": 10,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T17:59:34+00:00",
+          "decode_errors": 4,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T17:59:34+00:00",
+          "tool": "mp3val",
+          "spots": 4,
+          "stretches": 4,
+          "first": 3217.0,
+          "last": 11699.4,
+          "missing_seconds": 0.0,
+          "real_duration": 14267.5,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-20_O&A_4BEDB8BD.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-20_O&A_4BEDB8BD.mp3\" (offset 0x6cda5b5): Garbage at the end of the file"
+          ],
+          "empty_percent": 1.3
         }
       }
     },
@@ -1256,7 +1512,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-10T21:19:24+00:00"
+        "imported": "2026-11-10T21:19:24+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:53+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.3
+        }
       }
     },
     {
@@ -1298,7 +1560,14 @@
         "digest_minutes": 224
       },
       "status": {
-        "imported": "2026-11-10T21:19:26+00:00"
+        "imported": "2026-11-10T21:19:26+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:35+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 13436.6,
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -1340,7 +1609,13 @@
         "digest_minutes": 224
       },
       "status": {
-        "imported": "2026-11-10T21:19:29+00:00"
+        "imported": "2026-11-10T21:19:29+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:01+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.3
+        }
       }
     },
     {
@@ -1382,7 +1657,14 @@
         "digest_minutes": 234
       },
       "status": {
-        "imported": "2026-11-10T21:19:31+00:00"
+        "imported": "2026-11-10T21:19:31+00:00",
+        "check": {
+          "date": "2026-11-12T17:59:39+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14019.8,
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -1424,7 +1706,13 @@
         "digest_minutes": 234
       },
       "status": {
-        "imported": "2026-11-10T21:19:34+00:00"
+        "imported": "2026-11-10T21:19:34+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:10+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.3
+        }
       }
     },
     {
@@ -1466,7 +1754,13 @@
         "digest_minutes": 250
       },
       "status": {
-        "imported": "2026-11-10T21:19:40+00:00"
+        "imported": "2026-11-10T21:19:40+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:18+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.3
+        }
       }
     },
     {
@@ -1511,10 +1805,25 @@
       "status": {
         "imported": "2026-11-10T21:19:36+00:00",
         "damaged": {
-          "date": "2026-11-12T15:48:44+00:00",
-          "decode_errors": 8,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T18:00:14+00:00",
+          "decode_errors": 3,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T18:00:14+00:00",
+          "tool": "mp3val",
+          "spots": 3,
+          "stretches": 3,
+          "first": 3106.6,
+          "last": 11712.4,
+          "missing_seconds": 0.0,
+          "real_duration": 14967.9,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-23_O&A_B991C2B7.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2009/04/2009-04-23_O&A_B991C2B7.mp3\" (offset 0x72324d3): Garbage at the end of the file"
+          ],
+          "empty_percent": 1.3
         }
       }
     },
@@ -1557,7 +1866,13 @@
         "digest_minutes": 227
       },
       "status": {
-        "imported": "2026-11-10T21:19:44+00:00"
+        "imported": "2026-11-10T21:19:44+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:28+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.4
+        }
       }
     },
     {
@@ -1599,7 +1914,14 @@
         "digest_minutes": 227
       },
       "status": {
-        "imported": "2026-11-10T21:19:42+00:00"
+        "imported": "2026-11-10T21:19:42+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:17+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 13619.5,
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -1641,7 +1963,13 @@
         "digest_minutes": 252
       },
       "status": {
-        "imported": "2026-11-10T21:19:49+00:00"
+        "imported": "2026-11-10T21:19:49+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:41+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.4
+        }
       }
     },
     {
@@ -1683,7 +2011,14 @@
         "digest_minutes": 252
       },
       "status": {
-        "imported": "2026-11-10T21:19:47+00:00"
+        "imported": "2026-11-10T21:19:47+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:22+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 15076.5,
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -1725,7 +2060,13 @@
         "digest_minutes": 229
       },
       "status": {
-        "imported": "2026-11-10T21:19:54+00:00"
+        "imported": "2026-11-10T21:19:54+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:46+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.3
+        }
       }
     },
     {
@@ -1767,7 +2108,14 @@
         "digest_minutes": 229
       },
       "status": {
-        "imported": "2026-11-10T21:19:52+00:00"
+        "imported": "2026-11-10T21:19:52+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:27+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 13752.5,
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -1809,7 +2157,14 @@
         "digest_minutes": 242
       },
       "status": {
-        "imported": "2026-11-10T21:19:57+00:00"
+        "imported": "2026-11-10T21:19:57+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:32+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14526.1,
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -1851,7 +2206,13 @@
         "digest_minutes": 242
       },
       "status": {
-        "imported": "2026-11-10T21:20:00+00:00"
+        "imported": "2026-11-10T21:20:00+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:57+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.3
+        }
       }
     },
     {
@@ -1893,7 +2254,14 @@
         "digest_minutes": 259
       },
       "status": {
-        "imported": "2026-11-10T21:20:02+00:00"
+        "imported": "2026-11-10T21:20:02+00:00",
+        "check": {
+          "date": "2026-11-12T18:00:37+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 15497.7,
+          "empty_percent": 3.5
+        }
       }
     },
     {
@@ -1935,7 +2303,13 @@
         "digest_minutes": 259
       },
       "status": {
-        "imported": "2026-11-10T21:20:05+00:00"
+        "imported": "2026-11-10T21:20:05+00:00",
+        "check": {
+          "date": "2026-11-12T18:01:08+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.8
+        }
       }
     }
   ]

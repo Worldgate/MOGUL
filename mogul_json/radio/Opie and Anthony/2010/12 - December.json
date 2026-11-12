@@ -8,7 +8,7 @@
     "year": 2010,
     "month": 12,
     "created": "2026-11-11T03:34:19+00:00",
-    "updated": "2026-11-12T15:51:43+00:00",
+    "updated": "2026-11-12T20:14:47+00:00",
     "file_count": 24,
     "mogul_version": "0.1.0"
   },
@@ -52,7 +52,13 @@
         "digest_minutes": 212
       },
       "status": {
-        "imported": "2026-11-11T05:30:33+00:00"
+        "imported": "2026-11-11T05:30:33+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:36+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -94,7 +100,14 @@
         "digest_minutes": 212
       },
       "status": {
-        "imported": "2026-11-11T05:30:30+00:00"
+        "imported": "2026-11-11T05:30:30+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:30+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 12719.4,
+          "empty_percent": 2.9
+        }
       }
     },
     {
@@ -136,7 +149,14 @@
         "digest_minutes": 201
       },
       "status": {
-        "imported": "2026-11-11T05:30:35+00:00"
+        "imported": "2026-11-11T05:30:35+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:29+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 12013.8,
+          "empty_percent": 2.9
+        }
       }
     },
     {
@@ -178,7 +198,13 @@
         "digest_minutes": 201
       },
       "status": {
-        "imported": "2026-11-11T05:30:37+00:00"
+        "imported": "2026-11-11T05:30:37+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:50+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -220,7 +246,13 @@
         "digest_minutes": 196
       },
       "status": {
-        "imported": "2026-11-11T05:30:42+00:00"
+        "imported": "2026-11-11T05:30:42+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:51+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -262,7 +294,14 @@
         "digest_minutes": 196
       },
       "status": {
-        "imported": "2026-11-11T05:30:39+00:00"
+        "imported": "2026-11-11T05:30:39+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:34+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 11771.0,
+          "empty_percent": 2.8
+        }
       }
     },
     {
@@ -304,7 +343,13 @@
         "digest_minutes": 204
       },
       "status": {
-        "imported": "2026-11-11T05:30:46+00:00"
+        "imported": "2026-11-11T05:30:46+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:59+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.5
+        }
       }
     },
     {
@@ -349,10 +394,25 @@
       "status": {
         "imported": "2026-11-11T05:30:44+00:00",
         "damaged": {
-          "date": "2026-11-12T15:51:43+00:00",
-          "decode_errors": 45,
-          "found_by": "fingerprint",
+          "date": "2026-11-12T20:13:49+00:00",
+          "decode_errors": 13,
+          "found_by": "check",
           "checked": null
+        },
+        "check": {
+          "date": "2026-11-12T20:13:49+00:00",
+          "tool": "mp3val",
+          "spots": 13,
+          "stretches": 13,
+          "first": 1387.8,
+          "last": 11964.7,
+          "missing_seconds": 0.3,
+          "real_duration": 12219.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2010/12/2010-12-06_O&A_671EFE2E.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2010/12/2010-12-06_O&A_671EFE2E.mp3\" (offset 0x5d3942c): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 4.0
         }
       }
     },
@@ -395,7 +455,14 @@
         "digest_minutes": 182
       },
       "status": {
-        "imported": "2026-11-11T05:30:48+00:00"
+        "imported": "2026-11-11T05:30:48+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:53+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 10921.9,
+          "empty_percent": 2.9
+        }
       }
     },
     {
@@ -437,7 +504,13 @@
         "digest_minutes": 182
       },
       "status": {
-        "imported": "2026-11-11T05:30:50+00:00"
+        "imported": "2026-11-11T05:30:50+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:12+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.6
+        }
       }
     },
     {
@@ -479,7 +552,14 @@
         "digest_minutes": 196
       },
       "status": {
-        "imported": "2026-11-11T05:30:52+00:00"
+        "imported": "2026-11-11T05:30:52+00:00",
+        "check": {
+          "date": "2026-11-12T20:13:55+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 11740.2,
+          "empty_percent": 2.7
+        }
       }
     },
     {
@@ -521,7 +601,13 @@
         "digest_minutes": 196
       },
       "status": {
-        "imported": "2026-11-11T05:30:55+00:00"
+        "imported": "2026-11-11T05:30:55+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:17+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -563,7 +649,13 @@
         "digest_minutes": 201
       },
       "status": {
-        "imported": "2026-11-11T05:31:00+00:00"
+        "imported": "2026-11-11T05:31:00+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:18+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.6
+        }
       }
     },
     {
@@ -605,7 +697,14 @@
         "digest_minutes": 201
       },
       "status": {
-        "imported": "2026-11-11T05:30:57+00:00"
+        "imported": "2026-11-11T05:30:57+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:03+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 12020.9,
+          "empty_percent": 2.8
+        }
       }
     },
     {
@@ -647,7 +746,13 @@
         "digest_minutes": 205
       },
       "status": {
-        "imported": "2026-11-11T05:31:04+00:00"
+        "imported": "2026-11-11T05:31:04+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:23+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -689,7 +794,14 @@
         "digest_minutes": 205
       },
       "status": {
-        "imported": "2026-11-11T05:31:02+00:00"
+        "imported": "2026-11-11T05:31:02+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:18+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 12281.6,
+          "empty_percent": 3.0
+        }
       }
     },
     {
@@ -731,7 +843,14 @@
         "digest_minutes": 207
       },
       "status": {
-        "imported": "2026-11-11T05:31:06+00:00"
+        "imported": "2026-11-11T05:31:06+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:20+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 12405.1,
+          "empty_percent": 3.1
+        }
       }
     },
     {
@@ -773,7 +892,13 @@
         "digest_minutes": 207
       },
       "status": {
-        "imported": "2026-11-11T05:31:08+00:00"
+        "imported": "2026-11-11T05:31:08+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:37+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.7
+        }
       }
     },
     {
@@ -815,7 +940,14 @@
         "digest_minutes": 209
       },
       "status": {
-        "imported": "2026-11-11T05:31:11+00:00"
+        "imported": "2026-11-11T05:31:11+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:24+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 12495.6,
+          "empty_percent": 2.9
+        }
       }
     },
     {
@@ -857,7 +989,13 @@
         "digest_minutes": 209
       },
       "status": {
-        "imported": "2026-11-11T05:31:13+00:00"
+        "imported": "2026-11-11T05:31:13+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:43+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -899,7 +1037,13 @@
         "digest_minutes": 190
       },
       "status": {
-        "imported": "2026-11-11T05:31:17+00:00"
+        "imported": "2026-11-11T05:31:17+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:44+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.6
+        }
       }
     },
     {
@@ -941,7 +1085,14 @@
         "digest_minutes": 190
       },
       "status": {
-        "imported": "2026-11-11T05:31:15+00:00"
+        "imported": "2026-11-11T05:31:15+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:27+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 11369.7,
+          "empty_percent": 3.1
+        }
       }
     },
     {
@@ -983,7 +1134,13 @@
         "digest_minutes": 191
       },
       "status": {
-        "imported": "2026-11-11T05:31:21+00:00"
+        "imported": "2026-11-11T05:31:21+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:47+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -1025,7 +1182,14 @@
         "digest_minutes": 191
       },
       "status": {
-        "imported": "2026-11-11T05:31:19+00:00"
+        "imported": "2026-11-11T05:31:19+00:00",
+        "check": {
+          "date": "2026-11-12T20:14:42+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 11452.0,
+          "empty_percent": 2.4
+        }
       }
     }
   ]

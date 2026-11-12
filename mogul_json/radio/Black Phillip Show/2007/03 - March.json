@@ -8,7 +8,7 @@
     "year": 2007,
     "month": 3,
     "created": "2026-11-06T21:38:00+00:00",
-    "updated": "2026-11-06T21:42:09+00:00",
+    "updated": "2026-11-12T16:20:17+00:00",
     "file_count": 2,
     "mogul_version": "0.1.0"
   },
@@ -51,7 +51,14 @@
         "digest_minutes": 155
       },
       "status": {
-        "imported": "2026-11-06T21:42:08+00:00"
+        "imported": "2026-11-06T21:42:08+00:00",
+        "check": {
+          "date": "2026-11-12T16:19:59+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9293.7,
+          "empty_percent": 3.3
+        }
       }
     },
     {
@@ -92,7 +99,13 @@
         "digest_minutes": 155
       },
       "status": {
-        "imported": "2026-11-06T21:42:09+00:00"
+        "imported": "2026-11-06T21:42:09+00:00",
+        "check": {
+          "date": "2026-11-12T16:20:17+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 6.7
+        }
       }
     }
   ]

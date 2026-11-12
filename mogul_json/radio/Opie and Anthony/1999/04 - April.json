@@ -8,7 +8,7 @@
     "year": 1999,
     "month": 4,
     "created": "2026-11-05T21:46:07+00:00",
-    "updated": "2026-11-05T21:54:45+00:00",
+    "updated": "2026-11-12T20:35:05+00:00",
     "file_count": 6,
     "mogul_version": "0.1.0"
   },
@@ -51,7 +51,14 @@
         "digest_minutes": 58
       },
       "status": {
-        "imported": "2026-11-05T21:54:40+00:00"
+        "imported": "2026-11-05T21:54:40+00:00",
+        "check": {
+          "date": "2026-11-12T20:34:54+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 3480.1,
+          "empty_percent": 0.7
+        }
       }
     },
     {
@@ -92,7 +99,13 @@
         "digest_minutes": 58
       },
       "status": {
-        "imported": "2026-11-05T21:54:41+00:00"
+        "imported": "2026-11-05T21:54:41+00:00",
+        "check": {
+          "date": "2026-11-12T20:35:00+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.2
+        }
       }
     },
     {
@@ -133,7 +146,14 @@
         "digest_minutes": 87
       },
       "status": {
-        "imported": "2026-11-05T21:54:42+00:00"
+        "imported": "2026-11-05T21:54:42+00:00",
+        "check": {
+          "date": "2026-11-12T20:34:58+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 5184.1,
+          "empty_percent": 0.7
+        }
       }
     },
     {
@@ -174,7 +194,13 @@
         "digest_minutes": 87
       },
       "status": {
-        "imported": "2026-11-05T21:54:43+00:00"
+        "imported": "2026-11-05T21:54:43+00:00",
+        "check": {
+          "date": "2026-11-12T20:35:04+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.2
+        }
       }
     },
     {
@@ -215,7 +241,14 @@
         "digest_minutes": 56
       },
       "status": {
-        "imported": "2026-11-05T21:54:44+00:00"
+        "imported": "2026-11-05T21:54:44+00:00",
+        "check": {
+          "date": "2026-11-12T20:35:01+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 3328.7,
+          "empty_percent": 0.7
+        }
       }
     },
     {
@@ -256,7 +289,13 @@
         "digest_minutes": 56
       },
       "status": {
-        "imported": "2026-11-05T21:54:45+00:00"
+        "imported": "2026-11-05T21:54:45+00:00",
+        "check": {
+          "date": "2026-11-12T20:35:05+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.3
+        }
       }
     }
   ]

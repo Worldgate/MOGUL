@@ -8,7 +8,7 @@
     "year": 2002,
     "month": 6,
     "created": "2026-11-06T23:58:09+00:00",
-    "updated": "2026-11-07T01:55:20+00:00",
+    "updated": "2026-11-12T18:18:10+00:00",
     "file_count": 18,
     "mogul_version": "0.1.0"
   },
@@ -51,7 +51,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:54:51+00:00"
+        "imported": "2026-11-07T01:54:51+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:19+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-04_O&A_1D14B366.mp3\" (offset 0x28da414): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -92,7 +102,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:54:53+00:00"
+        "imported": "2026-11-07T01:54:53+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:36+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.2
+        }
       }
     },
     {
@@ -133,7 +149,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:54:54+00:00"
+        "imported": "2026-11-07T01:54:54+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:22+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-05_O&A_7EC61BA7.mp3\" (offset 0x28da414): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -174,7 +200,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:54:56+00:00"
+        "imported": "2026-11-07T01:54:56+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:38+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.3
+        }
       }
     },
     {
@@ -215,7 +247,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:54:57+00:00"
+        "imported": "2026-11-07T01:54:57+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:23+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-06_O&A_87B75C41.mp3\" (offset 0x28da414): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -256,7 +298,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:54:59+00:00"
+        "imported": "2026-11-07T01:54:59+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:41+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.3
+        }
       }
     },
     {
@@ -297,7 +345,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:01+00:00"
+        "imported": "2026-11-07T01:55:01+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:27+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-07_O&A_97E0EB6B.mp3\" (offset 0x28da414): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -338,7 +396,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:03+00:00"
+        "imported": "2026-11-07T01:55:03+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:44+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.2
+        }
       }
     },
     {
@@ -379,7 +443,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:05+00:00"
+        "imported": "2026-11-07T01:55:05+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:38+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-11_O&A_47C06357.mp3\" (offset 0x28da480): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -420,7 +494,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:06+00:00"
+        "imported": "2026-11-07T01:55:06+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:53+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.2
+        }
       }
     },
     {
@@ -461,7 +541,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:08+00:00"
+        "imported": "2026-11-07T01:55:08+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:41+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-12_O&A_943DB269.mp3\" (offset 0x28da414): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -502,7 +592,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:10+00:00"
+        "imported": "2026-11-07T01:55:10+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:56+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.2
+        }
       }
     },
     {
@@ -543,7 +639,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:11+00:00"
+        "imported": "2026-11-07T01:55:11+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:43+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-14_O&A_40C34C28.mp3\" (offset 0x28da414): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.7
+        }
       }
     },
     {
@@ -584,7 +690,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:13+00:00"
+        "imported": "2026-11-07T01:55:13+00:00",
+        "check": {
+          "date": "2026-11-12T18:18:01+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.0
+        }
       }
     },
     {
@@ -625,7 +737,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:15+00:00"
+        "imported": "2026-11-07T01:55:15+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:45+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14277.4,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-17_O&A_1576F316.mp3\" (offset 0x28d9118): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -666,7 +788,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:17+00:00"
+        "imported": "2026-11-07T01:55:17+00:00",
+        "check": {
+          "date": "2026-11-12T18:18:03+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.1
+        }
       }
     },
     {
@@ -707,7 +835,17 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:18+00:00"
+        "imported": "2026-11-07T01:55:18+00:00",
+        "check": {
+          "date": "2026-11-12T18:17:55+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14279.3,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/06/2002-06-19_O&A_DFD2412B.mp3\" (offset 0x28da708): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.7
+        }
       }
     },
     {
@@ -748,7 +886,13 @@
         "digest_minutes": 238
       },
       "status": {
-        "imported": "2026-11-07T01:55:20+00:00"
+        "imported": "2026-11-07T01:55:20+00:00",
+        "check": {
+          "date": "2026-11-12T18:18:10+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 1.9
+        }
       }
     }
   ]

@@ -8,7 +8,7 @@
     "year": 2002,
     "month": 5,
     "created": "2026-11-06T20:57:33+00:00",
-    "updated": "2026-11-07T01:54:49+00:00",
+    "updated": "2026-11-12T18:21:13+00:00",
     "file_count": 10,
     "mogul_version": "0.1.0"
   },
@@ -51,7 +51,13 @@
         "digest_minutes": 159
       },
       "status": {
-        "imported": "2026-11-06T21:28:32+00:00"
+        "imported": "2026-11-06T21:28:32+00:00",
+        "check": {
+          "date": "2026-11-12T18:20:56+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.4
+        }
       }
     },
     {
@@ -92,7 +98,14 @@
         "digest_minutes": 159
       },
       "status": {
-        "imported": "2026-11-06T21:28:31+00:00"
+        "imported": "2026-11-06T21:28:31+00:00",
+        "check": {
+          "date": "2026-11-12T18:20:51+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9542.0,
+          "empty_percent": 0.7
+        }
       }
     },
     {
@@ -133,7 +146,17 @@
         "digest_minutes": 241
       },
       "status": {
-        "imported": "2026-11-07T01:54:38+00:00"
+        "imported": "2026-11-07T01:54:38+00:00",
+        "check": {
+          "date": "2026-11-12T18:20:53+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14459.7,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/05/2002-05-05_O&A_BC3CBB1C.mp3\" (offset 0x295e978): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -174,7 +197,13 @@
         "digest_minutes": 241
       },
       "status": {
-        "imported": "2026-11-07T01:54:40+00:00"
+        "imported": "2026-11-07T01:54:40+00:00",
+        "check": {
+          "date": "2026-11-12T18:21:09+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.3
+        }
       }
     },
     {
@@ -215,7 +244,14 @@
         "digest_minutes": 164
       },
       "status": {
-        "imported": "2026-11-07T01:54:42+00:00"
+        "imported": "2026-11-07T01:54:42+00:00",
+        "check": {
+          "date": "2026-11-12T18:20:56+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9795.0,
+          "empty_percent": 1.6
+        }
       }
     },
     {
@@ -256,7 +292,13 @@
         "digest_minutes": 164
       },
       "status": {
-        "imported": "2026-11-07T01:54:43+00:00"
+        "imported": "2026-11-07T01:54:43+00:00",
+        "check": {
+          "date": "2026-11-12T18:21:11+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.4
+        }
       }
     },
     {
@@ -297,7 +339,14 @@
         "digest_minutes": 167
       },
       "status": {
-        "imported": "2026-11-07T01:54:45+00:00"
+        "imported": "2026-11-07T01:54:45+00:00",
+        "check": {
+          "date": "2026-11-12T18:20:57+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9978.3,
+          "empty_percent": 1.8
+        }
       }
     },
     {
@@ -338,7 +387,13 @@
         "digest_minutes": 167
       },
       "status": {
-        "imported": "2026-11-07T01:54:47+00:00"
+        "imported": "2026-11-07T01:54:47+00:00",
+        "check": {
+          "date": "2026-11-12T18:21:13+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 3.5
+        }
       }
     },
     {
@@ -379,7 +434,14 @@
         "digest_minutes": 166
       },
       "status": {
-        "imported": "2026-11-07T01:54:48+00:00"
+        "imported": "2026-11-07T01:54:48+00:00",
+        "check": {
+          "date": "2026-11-12T18:20:58+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9919.6,
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -420,7 +482,13 @@
         "digest_minutes": 166
       },
       "status": {
-        "imported": "2026-11-07T01:54:49+00:00"
+        "imported": "2026-11-07T01:54:49+00:00",
+        "check": {
+          "date": "2026-11-12T18:21:12+00:00",
+          "tool": "ffmpeg",
+          "spots": 0,
+          "empty_percent": 2.4
+        }
       }
     }
   ]
