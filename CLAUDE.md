@@ -723,6 +723,13 @@ banner name.
   cron and piping (auto when output isn't a terminal) so reports and
   scripts like update.sh still read cleanly. Keep result words (ADDED,
   DUPLICATE, DAMAGED...) the same so old habits/greps keep working.
+  Mavrick's reference for "fancy": **Vopt** (old Golden Bow Windows
+  defragmenter), whose display was the whole disk as a grid of small
+  colored blocks shuffling live. MOGUL version: one block per show day,
+  e.g. gray waiting, green clean, yellow damaged-but-ok, red bad, blue
+  duplicate, filling in live during check/hashes/scan; the same grid as a
+  collection map (one row per month) so missing days and damaged stretches
+  show at a glance. Not until the ~900 GB of Usenet still to sort is done.
 - Issues and bounty list (`mogul.py issues --bounty`).
 - **One repo for everything** (decided 2026-11-12): every media type is a
   folder under `modules/`, sharing `mogul_core/`. No separate mogul-*
