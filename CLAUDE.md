@@ -716,6 +716,13 @@ banner name.
   splice the clean part in, keep the original's hashes on the entry.
 - MKA container as a "playable zip": audio + chapters + attachments
   (manifest, cover, original tags).
+- **Fancy output (when MOGUL goes from "us figuring it out" to sharing it
+  with others):** Mavrick wants the console output to look nicer; what
+  "fancy" means isn't decided. Likely tool: the Python `rich` package
+  (colors, live progress bars, tables, panels). Keep a plain mode for logs,
+  cron and piping (auto when output isn't a terminal) so reports and
+  scripts like update.sh still read cleanly. Keep result words (ADDED,
+  DUPLICATE, DAMAGED...) the same so old habits/greps keep working.
 - Issues and bounty list (`mogul.py issues --bounty`).
 - **One repo for everything** (decided 2026-11-12): every media type is a
   folder under `modules/`, sharing `mogul_core/`. No separate mogul-*
