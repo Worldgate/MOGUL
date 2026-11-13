@@ -415,6 +415,14 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   how much shorter than the longest copy, notes, check summary, verdict;
   then pairwise fingerprint digest similarity. For picking the best copy
   and spotting copies with audio missing.
+- Grouped by show (one section per show, its own "shorter than the
+  longest"); similarity is compared within each show. Across shows it only
+  prints pairs at 95%+ ("same recording under two show names? one may be
+  misnamed": a re-encoded copy with the wrong show code; an exact copy is
+  already caught by the hash). `--all` lists every cross-show pair.
+  Measured 2008-08-27: different shows ~83%; same O&A day, 4:23 vs 3:50
+  copies (probably full vs CF / FM vs XM) only 86.5% because the minutes
+  stop lining up once commercials are cut.
 - Not built yet: per-gap measurement by aligning two copies with the full
   fingerprint ("at 0:16:33, 47 s missing"); same alignment as splice repair.
 

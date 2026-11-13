@@ -6,8 +6,11 @@
 
 Lists every cataloged recording of that date (library, incoming and
 quarantine) with format, bitrate, length, notes and what `radio check`
-found, then how alike each pair sounds (fingerprint digest similarity):
-95% and up = same recording, ~84-86% = different shows.
+found, grouped by show, then how alike each pair within a show sounds
+(fingerprint digest similarity): 95% and up = same recording. Across
+shows it only speaks up when two recordings filed under different shows
+sound the same (95%+), i.e. a re-encoded copy with the wrong show code.
+--all lists every cross-show pair too.
 
 Handy for picking the best copy, and for spotting a copy that's shorter
 than the others (audio missing). Reads only; changes nothing.
@@ -35,6 +38,8 @@ def mmss(seconds):
 def main():
     ap = argparse.ArgumentParser(description="Every copy of one air date, side by side.")
     ap.add_argument("date", help="YYYY-MM-DD")
+    ap.add_argument("--all", action="store_true",
+                    help="also list every cross-show comparison, not just suspicious ones")
     ap.add_argument("--config", help="use this mogul.toml instead of the default one")
     args = ap.parse_args()
     try:
@@ -63,45 +68,82 @@ def main():
         return 0
     found.sort(key=lambda r: (r[0]["naming"]["show"], -(r[0]["physical"].get("duration") or 0)))
 
-    longest = max(((r[2] or {}).get("real_duration") or r[0]["physical"].get("duration") or 0) for r in found)
-    print(f"{args.date}: {len(found)} recording(s)\n")
-    for i, (e, where, check, verdict) in enumerate(found, 1):
-        n, p = e["naming"], e["physical"]
-        kbps = f"{round((p.get('bitrate') or 0) / 1000)}k" if p.get("bitrate") else "?"
-        ch = {1: "mono", 2: "stereo"}.get(p.get("channels"), "")
-        # the real length (from `radio check`) beats the header's claim
-        dur = (check or {}).get("real_duration") or p.get("duration") or 0
-        if (check or {}).get("real_duration"):
-            real = " (real length)"
-        elif (p.get("codec") or "").lower() == "mp3":
-            real = " (from the header; run radio check for the real length)"
+    def length(r):
+        return (r[2] or {}).get("real_duration") or r[0]["physical"].get("duration") or 0
+
+    # group by show; numbers run on across groups so pairs can be named
+    shows = {}
+    for i, r in enumerate(found, 1):
+        shows.setdefault(r[0]["naming"]["show"], []).append((i, r))
+
+    print(f"{args.date}: {len(found)} recording(s) of {len(shows)} show(s)\n")
+    for show, rows in shows.items():
+        print(f"== {show} ({len(rows)}) ==\n")
+        longest = max(length(r) for _, r in rows)
+        for i, (e, where, check, verdict) in rows:
+            n, p = e["naming"], e["physical"]
+            kbps = f"{round((p.get('bitrate') or 0) / 1000)}k" if p.get("bitrate") else "?"
+            ch = {1: "mono", 2: "stereo"}.get(p.get("channels"), "")
+            # the real length (from `radio check`) beats the header's claim
+            dur = length((e, where, check, verdict))
+            if (check or {}).get("real_duration"):
+                real = " (real length)"
+            elif (p.get("codec") or "").lower() == "mp3":
+                real = " (from the header; run radio check for the real length)"
+            else:
+                real = ""
+            short = f"  ({mmss(longest - dur)} shorter than the longest)" if longest - dur >= 5 else ""
+            print(f"{i}. {n['filename']}   [{where}]")
+            print(f"   {(p.get('codec') or '?')} {kbps} {ch}, {mmss(dur)}{real}{short}")
+            if n.get("notes"):
+                print(f"   notes: {n['notes']}")
+            if check:
+                print(f"   check: {damage.summary(check)}" + (f"   [{verdict}]" if verdict else ""))
+            else:
+                print("   check: not checked yet (mogul.py radio check)")
+            print()
+
+        dg = [(i, (r[0].get("fingerprint") or {}).get("digest")) for i, r in rows]
+        dg = [(i, d) for i, d in dg if d]
+        if len(dg) >= 2:
+            print("   How alike they sound (fingerprint digest):")
+            for x in range(len(dg)):
+                for y_ in range(x + 1, len(dg)):
+                    (ia, da), (ib, db) = dg[x], dg[y_]
+                    sim = fingerprint.similarity(da, db)
+                    label = ("same recording" if sim >= 95 else
+                             "unsure" if sim >= 90 else
+                             "different recording (or the same show cut differently)")
+                    print(f"   {ia} vs {ib}: {sim:.1f}%  {label}")
+            print()
+
+    # across shows: only speak up when two "different shows" sound the same
+    # (a re-encoded copy filed under the wrong show code)
+    if len(shows) > 1:
+        names = list(shows)
+        hits = []
+        for x in range(len(names)):
+            for y_ in range(x + 1, len(names)):
+                for ia, ra in shows[names[x]]:
+                    for ib, rb in shows[names[y_]]:
+                        da = (ra[0].get("fingerprint") or {}).get("digest")
+                        db = (rb[0].get("fingerprint") or {}).get("digest")
+                        if da and db:
+                            sim = fingerprint.similarity(da, db)
+                            if sim >= 95 or args.all:
+                                hits.append((ia, ib, sim))
+        if hits:
+            print("Across shows:")
+            for ia, ib, sim in hits:
+                warn = "  <- SAME RECORDING under two show names? one may be misnamed" if sim >= 95 else ""
+                print(f"   {ia} vs {ib}: {sim:.1f}%{warn}")
         else:
-            real = ""
-        short = f"  ({mmss(longest - dur)} shorter than the longest)" if longest - dur >= 5 else ""
-        print(f"{i}. {n['filename']}   [{where}]")
-        print(f"   {n['show']}, {(p.get('codec') or '?')} {kbps} {ch}, {mmss(dur)}{real}{short}")
-        if n.get("notes"):
-            print(f"   notes: {n['notes']}")
-        if check:
-            print(f"   check: {damage.summary(check)}" + (f"   [{verdict}]" if verdict else ""))
-        else:
-            print("   check: not checked yet (mogul.py radio check)")
+            print("Across shows: nothing sounds alike (as it should be).")
         print()
 
-    digests = [(i, (r[0].get("fingerprint") or {}).get("digest")) for i, r in enumerate(found, 1)]
-    digests = [(i, dg) for i, dg in digests if dg]
-    if len(digests) >= 2:
-        print("How alike they sound (fingerprint digest):")
-        for a in range(len(digests)):
-            for b in range(a + 1, len(digests)):
-                ia, da = digests[a]
-                ib, db = digests[b]
-                sim = fingerprint.similarity(da, db)
-                label = "same recording" if sim >= 95 else ("probably different" if sim < 90 else "unsure")
-                print(f"   {ia} vs {ib}: {sim:.1f}%  {label}")
-        print("   (compares minute by minute from the start, so a copy with a piece")
-        print("    missing scores lower after the gap; a damaged mp3 vs its ogg twin")
-        print("    can still land in the 90s)")
+    print("(Compared minute by minute from the start: a copy with a piece missing,")
+    print(" or with commercials cut, stops lining up and scores like a different")
+    print(" recording; two different shows score ~83%.)")
     return 0
 
 
