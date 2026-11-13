@@ -1,6 +1,7 @@
 """Read technical details from a media file with mediainfo."""
 
 import json
+import os
 import subprocess
 
 
@@ -27,6 +28,28 @@ def _num(value, kind=float):
         return kind(float(str(value).split("/")[0].strip()))
     except ValueError:
         return None
+
+
+def packet_length(path):
+    """Real playing time from the audio packets themselves (ffprobe adds up
+    every packet's duration). For files whose header doesn't say how long
+    they are, e.g. raw ADTS .aac streams, where mediainfo gives no
+    duration. Reads the whole file but decodes nothing. None if it fails."""
+    try:
+        proc = subprocess.run(
+            ["ffprobe", "-v", "error", "-select_streams", "a:0",
+             "-show_entries", "packet=duration_time", "-of", "csv=p=0", path],
+            capture_output=True, text=True,
+        )
+    except FileNotFoundError:
+        return None
+    total = 0.0
+    for line in proc.stdout.splitlines():
+        try:
+            total += float(line.strip().rstrip(","))
+        except ValueError:
+            pass
+    return round(total, 3) if total > 0 else None
 
 
 def read(path):
@@ -59,6 +82,14 @@ def read(path):
                or _num(audio.get("BitRate_Nominal"), int)
                or _num(general.get("OverallBitRate"), int))
     duration = _num(audio.get("Duration")) or _num(general.get("Duration"))
+    if not duration:
+        # raw .aac (ADTS) and similar: no length in any header, so count it
+        duration = packet_length(path)
+    if not bitrate and duration:
+        try:
+            bitrate = int(os.path.getsize(path) * 8 / duration)
+        except OSError:
+            pass
 
     return {
         "container": (general.get("Format") or "unknown"),

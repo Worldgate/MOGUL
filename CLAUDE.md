@@ -226,7 +226,7 @@ modules/radio/
   check.py            reads every file for damage; readable worst-first report
 modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py)
 examples/             sample JSON
 ```
 
@@ -266,6 +266,14 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   and quarantines it.
 - Test result: mp3 vs IA-style ogg vs m4a of the same audio = 99%
   fingerprint digest similarity.
+- **Raw .aac (ADTS) files have no length in any header**: mediainfo gives
+  no duration or bitrate. `mediainfo.read()` now falls back to
+  `packet_length()` (ffprobe adds up every audio packet's duration; reads
+  the file, decodes nothing; tested exact on a 95 s ADTS file) and works
+  out bitrate from size / length. Entries scanned before that (59 .aac,
+  2008) had `duration: null`: `tools/filllength.py` (`--dry-run`) fills
+  them in once. Their fingerprints were always fine. Not tested on
+  HE-AAC (no encoder here); packet durations should still be right.
 
 ## Radio import (`mogul.py radio import`)
 
