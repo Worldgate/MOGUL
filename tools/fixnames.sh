@@ -1,15 +1,45 @@
 #!/bin/bash
 # Rename Usenet-style O&A names into MOGUL's pattern:  O&A YYYY-MM-DD -- <rest>.ext
-#   2008-10-01-O&A-CF64k.mp3        -> O&A 2008-10-01 -- CF64k.mp3
-#   2008-10-30 Thu O&A CF64k.mp3    -> O&A 2008-10-30 -- CF64k.mp3
-#   2008-10-30-O&A CF64K.mp3        -> O&A 2008-10-30 -- CF64K.mp3
-# Add "-n" as the first argument to only show what would happen.
-dry=0; [ "$1" = "-n" ] && dry=1
+#   2008-10-01-O&A-CF64k.mp3            -> O&A 2008-10-01 -- CF64k.mp3
+#   2008-10-30 Thu O&A CF64k.mp3        -> O&A 2008-10-30 -- CF64k.mp3
+#   2008-10-30-O&A CF64K.mp3            -> O&A 2008-10-30 -- CF64K.mp3
+#   O&A 2008-08-04 Mon O&A CF64K.mp3    -> O&A 2008-08-04 -- CF64K.mp3
+#
+# Run it inside the folder with the files.
+#   -n   only show what would happen (rename nothing)
+#   -p   plain: drop the rest of the name too  ->  O&A 2008-08-04.mp3
+#        (the CF64K / FS / TO part says WHICH copy it is; without -p it's
+#         kept as the notes, which MOGUL stores in the catalog)
+# Flags can be combined: -n -p
+#
+# When the name has a weekday (Mon, Thu...), it's checked against the date.
+# If they don't match (a sign the date is wrong), the file is LEFT ALONE
+# so the weekday clue isn't lost; fix that one by hand.
+# Never overwrites: if the new name is taken, the file is skipped.
+dry=0; plain=0
+for a in "$@"; do
+  case "$a" in
+    -n) dry=1 ;;
+    -p) plain=1 ;;
+    *) echo "unknown option: $a (use -n and/or -p)"; exit 1 ;;
+  esac
+done
 shopt -s nullglob
 for f in *; do
   [ -f "$f" ] || continue
-  if [[ "$f" =~ ^([0-9]{4}-[0-9]{2}-[0-9]{2})[-\ ]([A-Za-z]+\ )?O\&A[-\ ](.+)\.([A-Za-z0-9]+)$ ]]; then
-    new="O&A ${BASH_REMATCH[1]} -- ${BASH_REMATCH[3]}.${BASH_REMATCH[4]}"
+  if [[ "$f" =~ ^(O\&A\ )?([0-9]{4}-[0-9]{2}-[0-9]{2})[-\ ]([A-Za-z]+\ )?O\&A[-\ ](.+)\.([A-Za-z0-9]+)$ ]]; then
+    day="${BASH_REMATCH[2]}"; wd="${BASH_REMATCH[3]% }"; rest="${BASH_REMATCH[4]}"; ext="${BASH_REMATCH[5]}"
+    if [ $plain = 1 ]; then new="O&A $day.$ext"; else new="O&A $day -- $rest.$ext"; fi
+    if [ -n "$wd" ]; then
+      real=$(LC_ALL=C date -d "$day" +%a 2>/dev/null)
+      w3="${wd,,}"; w3="${w3:0:3}"
+      if [ -z "$real" ]; then
+        echo "LEFT ALONE: $f: $day is not a real date"; continue
+      elif [ "${real,,}" != "$w3" ]; then
+        echo "LEFT ALONE: $f: says $wd but $day was a $real (which one is right?)"; continue
+      fi
+    fi
+    if [ "$new" = "$f" ]; then continue; fi
     if [ -e "$new" ]; then echo "SKIP (name taken): $f -> $new"; continue; fi
     echo "$f  ->  $new"
     [ $dry = 0 ] && mv -n -- "$f" "$new"

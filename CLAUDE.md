@@ -523,9 +523,12 @@ dates, unknown show codes, names that don't match the pattern.
 ### Usenet name shapes
 
 `tools/fixnames.sh` (run inside the folder; `-n` = preview) renames
-`2008-10-01-O&A-CF64k.mp3`, `2008-10-30 Thu O&A CF64k.mp3` and
-`2008-10-30-O&A CF64K.mp3` to `O&A 2008-10-30 -- CF64k.mp3` (the rest of
-the name becomes notes). Never overwrites.
+`2008-10-01-O&A-CF64k.mp3`, `2008-10-30 Thu O&A CF64k.mp3`,
+`2008-10-30-O&A CF64K.mp3` and `O&A 2008-08-04 Mon O&A CF64K.mp3` to
+`O&A 2008-10-30 -- CF64k.mp3` (the rest of the name becomes notes).
+`-p` (plain) drops the rest: `O&A 2008-08-04.mp3`. A weekday in the name
+is checked against the date; on a mismatch the file is LEFT ALONE.
+Never overwrites (name taken = skipped).
 
 ### Other filename shapes seen (handle later)
 
