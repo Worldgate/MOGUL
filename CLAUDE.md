@@ -734,6 +734,15 @@ banner name.
   processed); right ~1/3 = scrolling list of files as they're handled
   (with their result word); bottom strip = what it's doing, progress/ETA,
   and notes/warnings. Colors as above.
+  **Opt-in only: a `--gui` flag** (decided by Mavrick), so the plain
+  output stays the default and the fancy screen is only shown when asked.
+- **Watch-folder daemon (once everything is done):** MOGUL runs as a
+  background service watching a folder and organizes whatever lands there
+  according to a config file. Startup warning, in his words: "this only
+  works if the data exists already, files not found are untouched", i.e.
+  it only acts on files that match the catalog (known hashes); anything
+  unknown is left exactly where it is. Same rules as import: never
+  deletes, dupes to a folder.
 - Issues and bounty list (`mogul.py issues --bounty`).
 - **One repo for everything** (decided 2026-11-12): every media type is a
   folder under `modules/`, sharing `mogul_core/`. No separate mogul-*
