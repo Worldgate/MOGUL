@@ -8,8 +8,8 @@
     "year": 2006,
     "month": 1,
     "created": "2026-11-07T18:15:09+00:00",
-    "updated": "2026-11-13T02:15:54+00:00",
-    "file_count": 42,
+    "updated": "2026-11-13T16:42:50+00:00",
+    "file_count": 44,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -225,6 +225,55 @@
         "code": "O&A",
         "year": 2006,
         "month": 1,
+        "day": 3,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2006-01-03_O&A_07199607.mp3",
+        "original_filename": "O&A 2006-01-03.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "07199607de662ef1",
+          "audio_blake3": "80b10eb9a90bfad98d102386ff972bfafcf4176891fe038e6b163497d3f394cc",
+          "blake3": "80b10eb9a90bfad98d102386ff972bfafcf4176891fe038e6b163497d3f394cc",
+          "sha256": "f26e993bb2cdadec85d362840a6ebb4a9fd0d2d7aec6261804fd340ba8efd981",
+          "sha512": "240499c05af7a658ca30764fd75a2d3d84d696abfea1dea91b6525bc4dbd438a5a11bd98eac973594f1245c5003ae489f4ff5766232bcd9a1f71acd411a9a334"
+        },
+        "size": 102076291,
+        "duration": 12759.536,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T15:49:32Z",
+        "added": "2026-11-13T16:29:48+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "2161e96b2008a12f6008b46ef51ca56e941ca5a6941ca006d43ea026d43ea0aef43ca00efc3ca02efc3ca02ed43ca00efc2ca026fc3ea026d43c802ed438a00ed43ca026d41c202a543ca0aed438a02edc3aa0a6f43ca00cf43ca02a543ca02ef43ca02ed43ca00ed43ea026d62ca00ed43c202efc3aa00ed63aa006f43ca026742ca006d47aa02ed628a0aafc3ca02ef43ca006d43ca026f43ca02ef63ca026d43ea02ef43ca02ef43ea08e3800a20a7428a02ad43ca026fc38a026d43ca02edc28a026d42aa02ef42ca826f43ca006f43ea024f438a08efc2ca006dc38a026d43a202ed62ca126d43ca02ef43ea026d42ca086d42e80a6743ea02e543aa086d43aa0ae543ea02ed43ca02ed43ea02ed43ca0ae543ea02ed63ca02e503c202ed42ea02ed61ca0a6dc3aa022f438a026d43ca02af43ea02e547ca02af47ce126743ca02e743ea02e5c3aa12e210ce02f563c2006547ea427543ca0267c3ca02ed43ea0266026a0aa5438a02efc3ca0a6dc382026d43ca02ed43ca026246df927242ca80ed438a026dc38a00efe3a80aefc3aa086f43ca02af43ca02ed43c2004d47ca026f42ca02ef43ea08efc3ca026f42ea0a6ac7ce466d43ca026d43ea02ef63ca006f43c200edc3ea0a6d63ca02ed43c8026f63ca02ef438200ed42ca00ef228a026d43ca0aed43ca026d43ca02e542ea022d438a0aef62a200ef438a206f438a0a6502cb026fe2c2026d43aa02ed438a02ed43ea026f43ea08ef438a02ab428a02cfc0aa008fc38a0a6d42aa026dc3aa02edc38a028fe38a02ef43ca00ed43aa08ee62aa82e7808a82edc38a0aed42aa02e7434a0aee144254e6414a02fd42ca028d4bca02ef43ea02ed43ea00ed47ca026d43ca02edc28a00efc38a026f438a02ef42ca026f4be2004102ea026fc3ca022f43ca02edc2ca026f42ca026f42ca026dc3ca02efc38a0ae542ca006d43e0026f4bea006742ca02efc1e202ef438a08ef42ca020763c802eb43ca1aed43ca02ef43ca0267c3ea00ef42ea02ed43ca026f67ca02efc38a02ef43ca08ef43ca026d43ca006f43ea0a6762e200ef42ea026f42ca026f42ca02ef43e208ef43ca02ef43c802ed41ea42ef43c200e7c2ca006d43aa026fc28a020f42ca02ef43ca006743ca006f43ca02e543ca02ef43ca12e742ca02a702ea02afc28a02efc38a0ae",
+        "digest_minutes": 213
+      },
+      "status": {
+        "imported": "2026-11-13T16:30:40+00:00",
+        "check": {
+          "date": "2026-11-13T16:42:49+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 12759.5,
+          "empty_percent": 2.1
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2006,
+        "month": 1,
         "day": 5,
         "notes": "Live In Vegas at CES",
         "extension": "mp3",
@@ -422,6 +471,55 @@
           "tool": "ffmpeg",
           "spots": 0,
           "empty_percent": 3.8
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2006,
+        "month": 1,
+        "day": 6,
+        "part": null,
+        "notes": "CES",
+        "extension": "mp3",
+        "filename": "2006-01-06_O&A_84619D77.mp3",
+        "original_filename": "O&A 2006-01-06 -- CES.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "84619d77474a2d3c",
+          "audio_blake3": "a4524fa1545c886c48e4910d608cd4783981b421963719dcb6f413f6a25acac2",
+          "blake3": "a4524fa1545c886c48e4910d608cd4783981b421963719dcb6f413f6a25acac2",
+          "sha256": "bed5bb640238fdb0ec8a303d68b8e2f273cee51eb47980d2b08fa3e35fab2703",
+          "sha512": "a00aa2ceb40b60e3f82e88de5421397a7d68c7a1c6f1fac06443ae05d2147d86fdadfbe11e22cc88bee37c8983be9729478aec4fea2ac8b5496011327980194a"
+        },
+        "size": 49392744,
+        "duration": 6174.093,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T15:49:32Z",
+        "added": "2026-11-13T16:29:49+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "2161e96b2008a02f6008b56ef51ca56efc3c202e941c2026d4baa020f42ca20afc3aa02ef638a026fc3aa0a6dc28a026f42ca42cd43ca022f43ea02ed43ca0aef43ca026d43ca02ef438a026d43ca02ed438a00af43aa02ef43ca00ef4aca00ed43ea026f42ca02ad62ca006f43aa02ef438ac26f43ca02e3478a02e943ca026943ea00eb428a0aef43ca026f43ca026b43c8026942ea0a6b43ca626b42ea02eb42ea02eb42ea02ed428a02eb43ea026942ca02eb428802e942ca02ab438a026f43ca02e943ca02ed43e202ad46ca0aef436a0aef43c202e9438a02ef428a02ab43ca02ef43aa02ed438a02ed42ca02ef43ea02ef43ea00e943c200e54bca026d43ca02ef47ca02ef434a02ed43ca02e902ca02e3a00a20afc68a22ed43a202ef42ea0aed63ca02ed43c802ef53ca426b43ca00eb43ea02ef43ca004f43aa02ef63ca026b4b8a426b43ca02eb43ca026b4baa0aef43ca42eb438a02eb43aa00eb42e802eb43ca02e963ca00eb43c2026b43c2026b438a426b4282026b62aa026b63ca026b43ca42eb4bca42ed42ca026f43ca42ed43ca02ef43ca00e",
+        "digest_minutes": 103
+      },
+      "status": {
+        "imported": "2026-11-13T16:30:41+00:00",
+        "check": {
+          "date": "2026-11-13T16:42:50+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 6174.1,
+          "empty_percent": 1.9
         }
       }
     },

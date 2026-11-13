@@ -1,0 +1,66 @@
+{
+  "header": {
+    "schema": "mogul.radio.month",
+    "schema_version": 1,
+    "media_type": "radio",
+    "show": "Ron and Fez",
+    "code": "R&F",
+    "year": 2008,
+    "month": 1,
+    "created": "2026-11-13T16:32:26+00:00",
+    "updated": "2026-11-13T16:42:09+00:00",
+    "file_count": 1,
+    "mogul_version": "0.1.0"
+  },
+  "files": [
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 1,
+        "day": 15,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-01-15_R&F_96780707.mp3",
+        "original_filename": "R&F 2008-01-15.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "967807072226dcf1",
+          "audio_blake3": "59cab139b0662ed4d9330eb84fb6487294b08cbf35f811c63a0d714049b7aba1",
+          "blake3": "59cab139b0662ed4d9330eb84fb6487294b08cbf35f811c63a0d714049b7aba1",
+          "sha256": "f6d7633248b6604e40595ffc18e472af203a9a2cbe385988b7c29fae46e31376",
+          "sha512": "e3d747b97d27aa4c8c2c6667e927635eb5ca546220dc2b0dd63a8ec003f99321d7aa8905890733fb269e007d3ef0f2454c678738d50807da848979df48f7b9f5"
+        },
+        "size": 76311040,
+        "duration": 9538.88,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T15:49:32Z",
+        "added": "2026-11-13T16:32:26+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "dc26a40e8a0c2c668a38ace6bc282826742ca028d42ea0a6d438a026d438a0065038a026d42ca026f63aa0aed428a00ef42ea08a542aa08ef42c200ad43aa02ef42ea02ef43ca006d42ca802fe38a0aec43aa0a67428a002d43aa02e743ca02ed43ca080d42ca02e963aa026d62ca0a2f428a024502ca08ed03ca024d43c8086d42ca022d43aa00ed428a082e428a026f43c2004b428a8049428a082502ca0aed43aa006542aa02e542ea022d43aa006f438a02ef4bca02ef43ca02ef43ca02e542ca02e543aa002343ca0827028a02a5c282026f428a0065438a2267c38a002702ca0ae5228a00ef428a02674288006f238a02e9438a02ee438a00ed43aa086fc38a00ed43ea824d628a006d42aa022542ca026562c20a64428a0a2742c202eb428a8262428a08ed4a8a00674ac2024f42c202ed428a02ef42ca026d428a006d43aa826f4a8a0a2d428a086f428a006d428a026f428a802f428a026b428a006d4aaa026fc28a026f42ca0a6d438a026d42aa00ef43ca026b02ca0ae76a8a00afc28a006d438a0265c38a086d028a02ef428a02a422ca022542820227428a0227428a026542ca00ed42aa0025428a02ef428a026d438a0261438a02cf428a006d428a0aafc28a0269c2ca006f428a08ef428a02ad428a0a45428a02e5428a02a5428202e50282006702ca0a6d43aa0aef43aa00ed438a0a6d028a02af42ea02a542ea02af438a02af62aa02ad4baa02ef43c200ed438a02e763ca02ef43ca00cf43ea02ef438a006f428a026ec3aa02ecc3ea226c43aa02edc2a8002dc28a022b428a022f43ca026fc3aa026f6a8a026543ca0065428a020f6b8a0ae743ca02ed62aa006fc3ca026743ca026f428a0267638a0aa5428a00e5c382806dc78b486",
+        "digest_minutes": 160
+      },
+      "status": {
+        "imported": "2026-11-13T16:32:37+00:00",
+        "check": {
+          "date": "2026-11-13T16:42:09+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9583.8,
+          "empty_percent": 0.7
+        }
+      }
+    }
+  ]
+}
