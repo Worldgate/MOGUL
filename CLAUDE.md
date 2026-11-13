@@ -730,6 +730,10 @@ banner name.
   duplicate, filling in live during check/hashes/scan; the same grid as a
   collection map (one row per month) so missing days and damaged stretches
   show at a glance. Not until the ~900 GB of Usenet still to sort is done.
+  Mavrick's screen layout: left ~2/3 = the block grid (data being
+  processed); right ~1/3 = scrolling list of files as they're handled
+  (with their result word); bottom strip = what it's doing, progress/ETA,
+  and notes/warnings. Colors as above.
 - Issues and bounty list (`mogul.py issues --bounty`).
 - **One repo for everything** (decided 2026-11-12): every media type is a
   folder under `modules/`, sharing `mogul_core/`. No separate mogul-*
