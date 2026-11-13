@@ -8,7 +8,7 @@
     "year": 2010,
     "month": 11,
     "created": "2026-11-11T03:32:46+00:00",
-    "updated": "2026-11-12T20:31:19+00:00",
+    "updated": "2026-11-13T02:15:56+00:00",
     "file_count": 33,
     "mogul_version": "0.1.0"
   },
@@ -252,7 +252,8 @@
           "date": "2026-11-12T20:29:38+00:00",
           "decode_errors": 4,
           "found_by": "check",
-          "checked": null
+          "checked": null,
+          "found": "4 broken spot(s) in 4 stretch(es) between 0:12:18 and 2:14:38, ~34 min lost; only 2:40:51 of audio really there (header says 3:26:05, 45 min short); zeroed stretch of 8.0 MB at 6% through the file (about 17 min of audio)"
         },
         "check": {
           "date": "2026-11-12T20:29:38+00:00",

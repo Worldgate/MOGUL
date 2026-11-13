@@ -8,7 +8,7 @@
     "year": 2012,
     "month": 4,
     "created": "2026-11-11T03:57:59+00:00",
-    "updated": "2026-11-12T21:16:51+00:00",
+    "updated": "2026-11-13T02:15:56+00:00",
     "file_count": 40,
     "mogul_version": "0.1.0"
   },
@@ -500,7 +500,8 @@
           "date": "2026-11-12T21:14:44+00:00",
           "decode_errors": 1,
           "found_by": "check",
-          "checked": null
+          "checked": null,
+          "found": "1 broken spot(s) in 1 stretch(es) at 1:43:22, ~0.1 s lost"
         },
         "check": {
           "date": "2026-11-12T21:14:44+00:00",
@@ -1692,7 +1693,8 @@
           "date": "2026-11-12T21:16:16+00:00",
           "decode_errors": 1,
           "found_by": "check",
-          "checked": null
+          "checked": null,
+          "found": "1 broken spot(s) in 1 stretch(es) at 3:31:43, ~0.0 s lost"
         },
         "check": {
           "date": "2026-11-12T21:16:16+00:00",
@@ -1803,7 +1805,8 @@
           "date": "2026-11-12T21:16:38+00:00",
           "decode_errors": 1,
           "found_by": "check",
-          "checked": null
+          "checked": null,
+          "found": "1 broken spot(s) in 1 stretch(es) at 1:33:26, ~3.8 s lost; zeroed stretch of 6 KB at 38% through the file"
         },
         "check": {
           "date": "2026-11-12T21:16:38+00:00",
