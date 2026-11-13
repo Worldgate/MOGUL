@@ -8,7 +8,7 @@
     "year": 2008,
     "month": 8,
     "created": "2026-11-07T19:27:14+00:00",
-    "updated": "2026-11-13T15:23:12+00:00",
+    "updated": "2026-11-13T15:34:28+00:00",
     "file_count": 70,
     "mogul_version": "0.1.0"
   },
@@ -147,7 +147,14 @@
         "digest_minutes": 156
       },
       "status": {
-        "imported": "2026-11-13T15:22:30+00:00"
+        "imported": "2026-11-13T15:22:30+00:00",
+        "check": {
+          "date": "2026-11-13T15:34:25+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9363.5,
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -467,9 +474,24 @@
         "mtime": "2026-11-13T15:13:37Z",
         "added": "2026-11-13T15:22:48+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d01ca02e543e20ae543ca02a743aa0ae543ca02ef43ea028743c8026f43ca02ed43aa02e543e802e343c2026f438a02e747c80aafc3ca02edc18a026f43ca02ef438a02edc38a00ef62ea0aef438202e7628a022f43a20ac7638a282742820aef428a006f43c20225e2c202adcb8208e543ca02ad43aa002de38a40ef63ca0aef438a02e5c38a0a2763ca02ef43aa006d438202ed47ea006bc7c8526f43aa026f438a0aef43ca00e702ca02e743ca0a6810cb866f438a00ef43aa02edc2aa806543ca006543ca024547ea006542ca02e543ea02ed43ca00a543ca0aed43aa026f43ca02ed438a02ef62ca02edc18a026743ca0aad438a0aed43aa006542c20025428a022fc3ca026547ca026f438a02e543ea082543c200ed43ca02ed43ea02ef63ea02e5428a006d458a00ed43ca02ef43ea02ed62ca026f42ea0aef438a826f42ca026542ca0ae543e200e543e802ad42ea12e502ca02ed42ca02a543ea02edc38a02ed63ea026dc38a02e543c002e543ca026642cb026543ea20af43ca02ed42c20225028a0aed43ca00e742aa00afc3aa0ae5028a0ae743ca0aef4282000d438a08ed63aa00ed42aa02e5438202ad43aa026d42aa02e5638a0a65c38a006743c202ef42aa02a543ca006d03ca026f43ca02674382022d43ea006f43ca026543ca024d43e2026f43ca02ed43e2086543ca28e503c202e543ca0ae5438a006d43ca0265c3ca02ef43ca0a6547ca00e",
+        "digest_minutes": 132
+      },
       "status": {
-        "imported": "2026-11-13T15:23:06+00:00"
+        "imported": "2026-11-13T15:23:06+00:00",
+        "check": {
+          "date": "2026-11-13T15:34:25+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 7916.7,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 1.2
+        }
       }
     },
     {
@@ -504,9 +526,24 @@
         "mtime": "2026-11-13T15:15:26Z",
         "added": "2026-11-13T15:22:49+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d43ea02ed43a200ed43aa02ed43c202a743ea02af428a02ed42aa002542ca02e722ca02e742ca00ed42a208e543c202e706ca826f42c800ed43c20a2543ca0a6f42ca02e5c3aa02af43ca022743ca006f4388026d43ca02ed43aa002d43aa02ed43c802ef43ca02e5c3c202e147e212a5c3ca0aad43ca006d61ea00e507e202a543ca026721ca02e763ca0a6d43ca02ef43ca22a503ca00e543aa02ef43ca026f43ea0aef43c202ef43ea02e743ca006703ca086743ca00e543ca02e503ca02e743ca02e743ca00e503ca02e543ca02a543ca02e543e202e543ca0225438a08e543ca00ef43e800ed43c20ae562ca00af02aa026f4368026f43ea00e543ca00ad43ca0aed42aa026d43820067038a02ef43ca0aed62c2022f43ca026503c000ed43c202ed43ca026dc3ea0267428a00eb43e202ef42c800ed438a02ed43ea026d43c2006d43ea426d43ea02e563a202c762ca026543ea006d43ca026fc3ca026503aa00a542ca0a2",
+        "digest_minutes": 90
+      },
       "status": {
-        "imported": "2026-11-13T15:23:07+00:00"
+        "imported": "2026-11-13T15:23:07+00:00",
+        "check": {
+          "date": "2026-11-13T15:34:24+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 5394.2,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 1.2
+        }
       }
     },
     {
@@ -639,9 +676,24 @@
         "mtime": "2026-11-13T15:18:59Z",
         "added": "2026-11-13T15:22:51+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d49e8026d41ca00e543aa00e543c200ed43ca006562aa006543ca00e547ca022507c202a542ca026742ea02ef43ea006543aa0aaf638a02ef66ca02e542ca02e542ea02e5438a026543ea0a6f43ca406fc54212edc3ea00ef43ea02ef43aa006f42e2826f63ca02ef43c802e543ca0ae563ea02e5c3ea02e443ca12e543aa02e563aa02ed4382026f43ca00e543ca02e702aa022743ca02e743c800ed43ca006d638a026dc38a02efc3ca006f438a006f43ca00e5638a02ef43ca08ed43a202e743c202e543ca08e103c208ad03ca02e542c202ed63ca00ad62ca0a2543ca02e523aa006103ca00ed43ca02c5438200ed438a08ed43ea02ed43ea006d42ca02e40ac2822c0ac2822dc78a02ef428a026f43ca026f43ea02e143ca186762ca00ed438a02ed43a8082f438a00ed4382006740ca0aef43ca02ed42a202ed43c2026503ca006d43aa02e743ca00e543ca02e543ca00cd43aa02ef43ca00ed63ca02e543ca02ad438a00ed634a026d638a02e5428a00a547c80aa543ea00cd63ca00ed43ea08edc38a0ae342ea086103ea02e543ea00e545ca12e543aa006543ca022541ca02ef43ea00ef43c200efc3ca02ef42ea026503ea022743ca086f43ca006d43ca12e543ca1aed45ca00e563c800af43aa0aef628200ef838a02efc3ca00ef4bc208efe3ca026d43ea02e503aa00cf42ea02efc38a02c743aa0065438a00ef43ca08ad42ca00c543aa0aa543ca00ef43ca82ef028a02ef41c8006d41ce004",
+        "digest_minutes": 136
+      },
       "status": {
-        "imported": "2026-11-13T15:23:08+00:00"
+        "imported": "2026-11-13T15:23:08+00:00",
+        "check": {
+          "date": "2026-11-13T15:34:28+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 8121.5,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 1.2
+        }
       }
     },
     {
@@ -676,9 +728,24 @@
         "mtime": "2026-11-13T15:19:23Z",
         "added": "2026-11-13T15:22:52+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d43aa0a6d43c802ef43ca004dc7ca02ed438a006dc3ca02e543ea02ad638a006dc3ca02edc2c2026fc388026d43ca02ef43aa026d43ea006d4bca026d43c8026d43ca02edc3ca02ef47ca426dc3ca006d63ca02ed43ca026dc3ea00edc3ca226d63ca026d43ca00ef418a00ed43c812ef438a02efc3ca026fc38a006dc3c20aef43ca026f438a026f478a026dc38a0aef43e8026d438a0ae7e1aa02ed43ca00ed43aa026d43ca026d43ca026f42ea0aedc3ea02e542ca08efe38a0269c38a02ad63aa08ed42ca00ef428a00e743c000a502820025028a02c500ca0aa70aca02e502ca02e102ea00ac4a8a02af42ea00ed42ca02e002e202a102ca0aad42aa026543ea00e743ca00e442ca022142ea0aaf42ca0aed02ca02e547c802e542ea086f02ca026d43aa02e543ca00a543c800ef63ca02e543ca026743ca02af43ca02e547ca22e543c80aedc1ca026d63ca0265c3ca00e543ea02e545ea12ad438a02ed47ca02ed43ca02ed438a00e543c800e503ca02ed438202ed43aa00ef438a00ed47ea006d67ea026d43ea00ef878a00ed41c200e543c80065428802a503e802edc3ca026",
+        "digest_minutes": 105
+      },
       "status": {
-        "imported": "2026-11-13T15:23:09+00:00"
+        "imported": "2026-11-13T15:23:09+00:00",
+        "check": {
+          "date": "2026-11-13T15:34:27+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 6276.8,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 1.2
+        }
       }
     },
     {
@@ -808,9 +875,24 @@
         "mtime": "2026-11-13T15:19:43Z",
         "added": "2026-11-13T15:22:54+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d45ce5e6d41ca006f41ea02e543e802a543ca02e543ea02ff63ea02ef43ca0267436a12e543ca0ae743ea02ad43ea1ae743ea02e762ea02a762a80ae5c3aa00e763ea02e543aa08a543ca0065438a00e542ca0069854a1629c58e50bfc3ca02edc18802ef43ca0ae502c802a142ea02e543ca00ef438a02e742aa02e5038202e542aa0aa741c802e503ca026d63ca08e742ca02e543ca0aed42c202c5618a02ef43ca026d43c202ede78202e543c202ef4b8a0ae7614a006f63ca02ef4b8a022fc3aa00ed43ca426f63c802ed43aa0aed408a00ed438a08eb67ca127b63aa5e7d438a02e54202022f43ca006f63aa0a6543ca026503ca02e955ce56fdc50e1225428800edc3ca02e543ea02e7112208e7c20a022cc38a0267434a00e5038a02ae4e02100f476a026547ea0266552a5225c3a852ef43ca02ef4bca0266838a02e1c2c80aa680ca02ed43aa0a6543ca12ed47ce527703ce02ef438a02edc3ca00ef43ea02ed438a00ed47c2026d438a12ede38a00ef438a0a6fc3aa0a6d43ca00e543ea08cf42ea02ed43ca02efc28a0aed438a026543ea02ed43ca02ef438a22ed43ea00ef63c200ed4382026d43a202ed43ca02efe5ea02ffe7ea086d43c802ed428a08efc28a006f438a00ef438a0aef43ca02e742ea02c5438202ed43c200e5438a00ed43c202cf42c202edc3ca002d428a02ed63ca02ed42aa02ed438a026f41ca0a6f43ca00ed41ca404",
+        "digest_minutes": 131
+      },
       "status": {
-        "imported": "2026-11-13T15:23:11+00:00"
+        "imported": "2026-11-13T15:23:11+00:00",
+        "check": {
+          "date": "2026-11-13T15:34:28+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 7831.7,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 1.3
+        }
       }
     },
     {
@@ -845,9 +927,24 @@
         "mtime": "2026-11-13T15:19:57Z",
         "added": "2026-11-13T15:22:55+00:00"
       },
-      "fingerprint": null,
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "dc7ca10a543ca02ed43ca02ed43ea02ed47ca026541ca02ed418a026d43aa02e547ca0aadc1ea026de3ca026dc1ca006dc3aa026d47e202edc3ca026d43aa02edc38a00edc38a02ad438a00ed63ce0265048f14cd45ce14ed45e802ed638a02e943ea026d43ca006dc3ca02ef43ca0ae547ca12ed43ca426963aa026f43ca086543ca026942ea00ed43c202efc3c200ed43ca42ed43ca02ed43aa00edc3aa00ed47ca026d43c20aef43ca026bc3ca406f67ca427fc3aa026d43e002ed42ca02ef43ca026d43ea006f43ca026d43ea006d57ee547c43ca106d428a02e543ca00ed47ea02e546ca128d4fca006543ca02e547ea02a543ca1a6543ca08af47ca02ef474e12ff776e52ef57ca4aed438a00ed47ea026543ea026543ea02a543ca00ed47ca026d43ca0aad47ca026f438a02ed63ca02e707ca02e547aa02ed438a0aed43ca02ed438212ed43aa02ede26a02ed438a0a6d41ca006543c802e5432a12ed438a126703ca00ebc78a026b5786086",
+        "digest_minutes": 92
+      },
       "status": {
-        "imported": "2026-11-13T15:23:12+00:00"
+        "imported": "2026-11-13T15:23:12+00:00",
+        "check": {
+          "date": "2026-11-13T15:34:28+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 5492.4,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 1.2
+        }
       }
     },
     {
