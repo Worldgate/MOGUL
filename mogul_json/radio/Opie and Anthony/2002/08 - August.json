@@ -8,7 +8,7 @@
     "year": 2002,
     "month": 8,
     "created": "2026-11-07T00:05:00+00:00",
-    "updated": "2026-11-13T06:47:46+00:00",
+    "updated": "2026-11-13T14:59:11+00:00",
     "file_count": 41,
     "mogul_version": "0.1.0"
   },
@@ -248,12 +248,27 @@
       },
       "status": {
         "damaged": {
-          "date": "2026-11-13T06:43:34+00:00",
-          "decode_errors": 4,
-          "found_by": "fingerprint",
+          "date": "2026-11-13T14:59:11+00:00",
+          "decode_errors": 2,
+          "found_by": "check",
+          "found": "2 broken spot(s) in 2 stretch(es) between 1:01:58 and 1:02:10, ~0.0 s lost",
           "checked": null
         },
-        "imported": "2026-11-13T06:47:30+00:00"
+        "imported": "2026-11-13T06:47:30+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:11+00:00",
+          "tool": "mp3val",
+          "spots": 2,
+          "stretches": 2,
+          "first": 3718.5,
+          "last": 3730.7,
+          "missing_seconds": 0.0,
+          "real_duration": 14278.8,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/08/2002-08-02_O&A_D7471F89.mp3\" (offset 0x28da1f8): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 0.8
+        }
       }
     },
     {
@@ -390,7 +405,14 @@
         "digest_minutes": 236
       },
       "status": {
-        "imported": "2026-11-13T06:47:33+00:00"
+        "imported": "2026-11-13T06:47:33+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:03+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14135.4,
+          "empty_percent": 1.4
+        }
       }
     },
     {
@@ -527,7 +549,14 @@
         "digest_minutes": 244
       },
       "status": {
-        "imported": "2026-11-13T06:47:35+00:00"
+        "imported": "2026-11-13T06:47:35+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:03+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14635.8,
+          "empty_percent": 1.5
+        }
       }
     },
     {
@@ -664,7 +693,14 @@
         "digest_minutes": 241
       },
       "status": {
-        "imported": "2026-11-13T06:47:37+00:00"
+        "imported": "2026-11-13T06:47:37+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:05+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14426.0,
+          "empty_percent": 1.4
+        }
       }
     },
     {
@@ -896,7 +932,18 @@
         "digest_minutes": 242
       },
       "status": {
-        "imported": "2026-11-13T06:47:39+00:00"
+        "imported": "2026-11-13T06:47:39+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:06+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14507.9,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/08/2002-08-12_O&A_11B6950A.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/08/2002-08-12_O&A_11B6950A.mp3\" (offset 0x2981eed): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
       }
     },
     {
@@ -938,7 +985,14 @@
         "digest_minutes": 170
       },
       "status": {
-        "imported": "2026-11-13T06:47:40+00:00"
+        "imported": "2026-11-13T06:47:40+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:05+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 10162.8,
+          "empty_percent": 0.9
+        }
       }
     },
     {
@@ -1078,7 +1132,14 @@
         "digest_minutes": 173
       },
       "status": {
-        "imported": "2026-11-13T06:47:41+00:00"
+        "imported": "2026-11-13T06:47:41+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:07+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 10357.5,
+          "empty_percent": 0.9
+        }
       }
     },
     {
@@ -1217,7 +1278,14 @@
         "digest_minutes": 239
       },
       "status": {
-        "imported": "2026-11-13T06:47:44+00:00"
+        "imported": "2026-11-13T06:47:44+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:08+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14312.8,
+          "empty_percent": 1.4
+        }
       }
     },
     {
@@ -1457,7 +1525,18 @@
         "digest_minutes": 244
       },
       "status": {
-        "imported": "2026-11-13T06:47:46+00:00"
+        "imported": "2026-11-13T06:47:46+00:00",
+        "check": {
+          "date": "2026-11-13T14:59:08+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14601.6,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/08/2002-08-16_O&A_F4A47491.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Opie and Anthony/2002/08/2002-08-16_O&A_F4A47491.mp3\" (offset 0x29c68b3): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
       }
     },
     {
