@@ -69,8 +69,10 @@ def compact(result):
 
 
 def mark_from_check(entry, check):
-    """status.damaged from a check result (keeps any verdict already given)."""
-    if not check.get("spots") and check.get("readable", True):
+    """status.damaged from a check result (keeps any verdict already given).
+    Also stores `found`: the one-line description of what check found."""
+    from .damaged import is_damaged_check, found_text
+    if not is_damaged_check(check):
         return
     status = entry.setdefault("status", {})
     old = status.get("damaged") or {}
@@ -78,6 +80,7 @@ def mark_from_check(entry, check):
         "date": check["date"],
         "decode_errors": check.get("spots", 0),
         "found_by": "check",
+        "found": found_text(entry, check),
         "checked": old.get("checked"),
     }
 

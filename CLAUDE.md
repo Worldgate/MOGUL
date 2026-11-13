@@ -224,7 +224,7 @@ modules/radio/
   quarantine.py       moves bad recordings + their entries out of the catalog
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py)
 examples/             sample JSON
 ```
 
@@ -256,8 +256,12 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   `--no-fingerprint` skips fpcalc. `--path` scans another folder.
 - Every run writes `mogul_reports/radio-scan_<date>_<time>.json` listing
   added, duplicates (with matches), already cataloged, problems, warnings.
-  The import step (not built yet) will use the catalog to move, rename and
-  sort, and send duplicates to a dupes folder.
+- **Cleaner copy alert:** when an ADDED file's show + date already has a
+  damaged entry (any verdict but bad), scan prints `^ this date has a
+  DAMAGED copy: NAME [verdict], N% alike` (95%+ = same recording) and
+  lists it in the report's `better_copies`. Mavrick then checks with
+  `tools/sameday.py`, marks the damaged one `--bad --note "replaced by ..."`
+  and quarantines it.
 - Test result: mp3 vs IA-style ogg vs m4a of the same audio = 99%
   fingerprint digest similarity.
 
@@ -442,6 +446,16 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   `quarantine` picks up verdict "bad" entries by default, as well as failed
   fingerprints. `--wanted` lists the "keep" ones (feeds a future
   bounty / wanted list). The list is sorted worst first.
+- **Every damaged file stays marked damaged, whatever the verdict**, so
+  when a clean copy turns up he knows which one to pull. `status.damaged.found`
+  holds the one-line "what the system found", e.g. `4 broken spot(s) in 4
+  stretch(es) between 1:04:31 and 4:06:44, ~0.0 s lost` or `only 0:36:05 of
+  audio really there (header says 4:04:49, 3 h 29 min short); zeroed
+  stretch of 51.9 MB at 47% through the file (about 1 h 53 min of audio)`.
+  Set by `radio check`; `radio damaged` (any run) fills it in for entries
+  checked before it existed. Damaged = broken spots, unreadable, an empty
+  gap, or audio missing vs header (not just spots). Shown under each file
+  in the `radio damaged` list.
 - `--note TEXT` with `--ok/--keep/--bad` saves Mavrick's own words on
   the verdict (`checked.note`), shown in the list and listen.txt.
   A verdict never erases the damage record: `status.check` and
@@ -548,7 +562,17 @@ banner name.
 - Tags buried mid-file (merged without stripping): `ID3` header at byte
   offsets other than 0; extra `Xing`/`Info` frames; `APETAGEX`/`LYRICS200`
   not at the end. Chained OGG streams (`ogginfo`).
-- Holes from bad downloads: runs of 4 KB+ zero bytes.
+- Holes from bad downloads: runs of 4 KB+ zero bytes. Found in the
+  2010 batch: zeroed runs of exactly 4, 8, 16, 24 MiB = download pieces
+  that never arrived (file was created full size, missing pieces stay
+  zero). That's why those files are full size but much shorter.
+- `tools/findtags.py FILE` finds buried ID3v2/ID3v1/APE/Lyrics3 tags and
+  extra Xing/Info header frames (pieces glued without stripping), each
+  with its show time. Tested on 3 pieces joined with `cat`. A glued file's
+  first Xing header only covers the first piece, so the header length is
+  SHORTER than the real one (e.g. 2008-09-15: header 17 min, real 230).
+  Mavrick's theory: the seam spots (~0.2 s "lost" each, 2008/2013 groups)
+  are buried tags. Not yet confirmed on his files.
 - Decode errors: `ffmpeg -v error -i FILE -f null -`; `mp3val` for MP3s.
   (Done: `radio check`. Empty gaps are reported too. Buried tags and
   chained OGG streams are still to do.)

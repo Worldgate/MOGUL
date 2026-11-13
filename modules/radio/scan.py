@@ -123,6 +123,23 @@ def describe(entry):
 
 # ---------------------------------------------------------------- main
 
+def damaged_same_date(manifest, entry):
+    """Other entries of the same show and air date that are flagged damaged
+    (any verdict except bad, which is on its way to quarantine anyway)."""
+    n = entry["naming"]
+    found = []
+    for e in manifest.get("files", []):
+        if e is entry:
+            continue
+        en = e["naming"]
+        if (en["show"], en["year"], en["month"], en["day"]) != (n["show"], n["year"], n["month"], n["day"]):
+            continue
+        d = (e.get("status") or {}).get("damaged")
+        if d and ((d.get("checked") or {}).get("verdict") != "bad"):
+            found.append(e)
+    return found
+
+
 def run(args, config):
     radio_cfg = config.section("radio")
     shows = radio_cfg.get("shows", {})
@@ -168,6 +185,7 @@ def run(args, config):
         "duplicates": [],
         "problems": [],
         "warnings": [],
+        "better_copies": [],
     }
     width = len(str(len(files)))
     t0 = time.time()
@@ -325,6 +343,26 @@ def run(args, config):
         })
         print(f"{tag} ADDED    {rel} -> {os.path.relpath(mpath, json_root)}")
 
+        # 7. does this date already have a damaged copy? Then this may be
+        #    the cleaner copy that one was waiting for.
+        for other in damaged_same_date(manifest, entry):
+            sim = None
+            if fp and other.get("fingerprint"):
+                sim = round(fingerprint.similarity(fp["digest"], other["fingerprint"]["digest"]), 1)
+            new_damaged = bool((entry.get("status") or {}).get("damaged"))
+            verdict = ((other["status"]["damaged"].get("checked")) or {}).get("verdict") or "not judged"
+            report["better_copies"].append({
+                "file": rel, "xxh64": xxh,
+                "damaged_copy": other["naming"]["filename"],
+                "damaged_verdict": verdict,
+                "similarity": sim,
+                "new_copy_damaged_too": new_damaged,
+            })
+            same = "" if sim is None else (f", {sim}% alike" + (" (same recording)" if sim >= 95 else
+                                                                " (different recording?)"))
+            print(f"{'':{len(tag)}}   ^ this date has a DAMAGED copy: {other['naming']['filename']} "
+                  f"[{verdict}]{same}" + ("; this new one is damaged too" if new_damaged else ""))
+
     # ---------------------------------------------------------------- summary
     report["finished"] = store.now()
     elapsed = time.time() - t0
@@ -338,6 +376,11 @@ def run(args, config):
     print(f"  problems:          {len(report['problems'])}")
     if report["warnings"]:
         print(f"  warnings:          {len(report['warnings'])}")
+    if report["better_copies"]:
+        print(f"  possible cleaner copies of damaged dates: {len(report['better_copies'])}")
+        print("    check them:  python3 tools/sameday.py YYYY-MM-DD")
+        print("    then pull the damaged one:  mogul.py radio damaged --bad NAME --note \"replaced by ...\"")
+        print("                                mogul.py radio quarantine")
 
     stamp = time.strftime("%Y-%m-%d_%H%M%S")
     report_path = os.path.join(config.reports, f"radio-scan_{stamp}{'_dry-run' if args.dry_run else ''}.json")
