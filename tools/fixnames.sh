@@ -1,13 +1,18 @@
 #!/bin/bash
-# Rename Usenet-style O&A names into MOGUL's pattern:  O&A YYYY-MM-DD -- <rest>.ext
+# Rename Usenet-style names into MOGUL's pattern:  CODE YYYY-MM-DD -- <rest>.ext
+# Works for any show code (O&A, R&F, HSS, O&A-CBS ...): it takes the code
+# from the name itself.
 #   2008-10-01-O&A-CF64k.mp3            -> O&A 2008-10-01 -- CF64k.mp3
 #   2008-10-30 Thu O&A CF64k.mp3        -> O&A 2008-10-30 -- CF64k.mp3
 #   2008-10-30-O&A CF64K.mp3            -> O&A 2008-10-30 -- CF64K.mp3
 #   O&A 2008-08-04 Mon O&A CF64K.mp3    -> O&A 2008-08-04 -- CF64K.mp3
+#   2008-10-30 Thu R&F CF64k.mp3        -> R&F 2008-10-30 -- CF64k.mp3
 #
 # Run it inside the folder with the files.
 #   -n   only show what would happen (rename nothing)
 #   -p   plain: drop the rest of the name too  ->  O&A 2008-08-04.mp3
+# Show codes it doesn't know are still renamed; scan will then flag an
+# unknown code as a PROBLEM until it's added to [radio.shows] in mogul.toml.
 #        (the CF64K / FS / TO part says WHICH copy it is; without -p it's
 #         kept as the notes, which MOGUL stores in the catalog)
 # Flags can be combined: -n -p
@@ -27,9 +32,14 @@ done
 shopt -s nullglob
 for f in *; do
   [ -f "$f" ] || continue
-  if [[ "$f" =~ ^(O\&A\ )?([0-9]{4}-[0-9]{2}-[0-9]{2})[-\ ]([A-Za-z]+\ )?O\&A[-\ ](.+)\.([A-Za-z0-9]+)$ ]]; then
-    day="${BASH_REMATCH[2]}"; wd="${BASH_REMATCH[3]% }"; rest="${BASH_REMATCH[4]}"; ext="${BASH_REMATCH[5]}"
-    if [ $plain = 1 ]; then new="O&A $day.$ext"; else new="O&A $day -- $rest.$ext"; fi
+  code_re='[A-Z0-9]+(&[A-Z0-9]+)?(-[A-Za-z0-9]+)?'
+  if [[ "$f" =~ ^(($code_re)\ )?([0-9]{4}-[0-9]{2}-[0-9]{2})[-\ ]([A-Za-z]+\ )?($code_re)[-\ ](.+)\.([A-Za-z0-9]+)$ ]]; then
+    lead="${BASH_REMATCH[2]}"; day="${BASH_REMATCH[5]}"; wd="${BASH_REMATCH[6]% }"
+    code="${BASH_REMATCH[7]}"; rest="${BASH_REMATCH[10]}"; ext="${BASH_REMATCH[11]}"
+    if [ -n "$lead" ] && [ "$lead" != "$code" ]; then
+      echo "LEFT ALONE: $f: starts with $lead but says $code later (which show is it?)"; continue
+    fi
+    if [ $plain = 1 ]; then new="$code $day.$ext"; else new="$code $day -- $rest.$ext"; fi
     if [ -n "$wd" ]; then
       real=$(LC_ALL=C date -d "$day" +%a 2>/dev/null)
       w3="${wd,,}"; w3="${w3:0:3}"

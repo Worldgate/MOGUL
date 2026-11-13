@@ -528,7 +528,9 @@ dates, unknown show codes, names that don't match the pattern.
 `O&A 2008-10-30 -- CF64k.mp3` (the rest of the name becomes notes).
 `-p` (plain) drops the rest: `O&A 2008-08-04.mp3`. A weekday in the name
 is checked against the date; on a mismatch the file is LEFT ALONE.
-Never overwrites (name taken = skipped).
+Never overwrites (name taken = skipped). Works for any show code (O&A,
+R&F, HSS, O&A-CBS...): the code is taken from the name; a name whose two
+codes disagree (`O&A ... R&F ...`) is LEFT ALONE.
 
 ### Other filename shapes seen (handle later)
 
