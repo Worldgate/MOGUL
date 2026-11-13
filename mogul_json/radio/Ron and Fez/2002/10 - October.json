@@ -1,0 +1,1493 @@
+{
+  "header": {
+    "schema": "mogul.radio.month",
+    "schema_version": 1,
+    "media_type": "radio",
+    "show": "Ron and Fez",
+    "code": "R&F",
+    "year": 2002,
+    "month": 10,
+    "created": "2026-11-13T20:26:17+00:00",
+    "updated": "2026-11-13T21:12:37+00:00",
+    "file_count": 24,
+    "mogul_version": "0.1.0"
+  },
+  "files": [
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 1,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-01_R&F_3C7A3C52.mp3",
+        "original_filename": "R&F 2002-10-01.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "3c7a3c526fdfbc13",
+          "audio_blake3": "ba1e924946340a5cd74f85a99970d225e91a6b200c8a766c941e26722bf88944",
+          "blake3": "e3a443fdd22a9bc3c82ce23d122805cf1adec466dbf5a54e2ff2995735379685",
+          "sha256": "073ca3aba399d0ab887318f9c412c9b40e46b4a056015560cce678b806d3f0df",
+          "sha512": "7555c97d637d4ebd884ac3d6f9fc920d87d32a32cd04fecc22348b77f1a3bb30a50d8f8e08b6c2bffc25fa61feabc695bc371f819b65f0556853f159a9d611cd",
+          "sha1": "3d1bb3453296897b60ac5fb86b55048f5ff5da59",
+          "md5": "070a920bd4fc6cab0d66ce0eb3ac642f"
+        },
+        "size": 43323239,
+        "duration": 14441.08,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:32:55Z",
+        "added": "2026-11-13T20:26:17+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f558a1aed55ce10ef47ca50efd1ca02fb43ca0063474212ff438202efd1ca067fd548226f43ca02e543ea006f43ca026dc3ea02ed43ca00ef47c202e543ea00ed43ca02ef43c20ae543ca08efc3c2086be3c2086fc3ca0a6d42ca126d43c2026fc38a00efc2e2026d43ca10ef438a126f62ca02cf43c202ed43ca0acdc3ea02ed43ea0aed428a106d43c200ef63ca02efc14a006dc52e007f434a026f61ca02ef414a12ff574e527504ca126f81a800ef46ca002f43ca006f42ca0a6dc3ca006f43ca00ed43ca08ed424a02adc38a0aad43c000edc3ca026943ca02ed47ca02e542ca022dc3ca02ed42ea006dc78a02ed43ca006d43ca026d434a026fc3ca802d428a0ae742c200ed42aa004943e888edc34a12e7454a567dc1aa0a65c1ca12e7414a12674aca0265014a00ef47ca42e747ea00ef414a06eb454a567f63ca0aaf43ca006f43ea006d436a0a6f43ca02ef63ea006d42ca02efc3ea026fc2ca006d43ca08ed43ca02ed42ca006fc3aa006fc3c2206f43ca006f43ea026f4382086f42ca02ef43ea08cf43ca00efc3ea026fc38a00e543ca0a6d43ca08ef43ca02ebc2ca006dc3ca024f43ca006f438a006fc3ca00ef5d4e567761c202ef63c2026f514852ff45c6106fd50a52ef414a126f534a12e557cb02ed53ca00edc3ca006d42ca006f43ca026f434a126d63e202ed43ea02e542c2026f434a026f47ca026f43ca0265474a1aef43ca02ef43ca026d43ea1aedc3ea00efc3ca006d43ea006fc7ca026d436a006f438a02e953ca02ef43ca00ed43ea0ae547ca126d43ca00ed43ea0aed428a02ef43ca00ef43c2086542ca00ad63c212e7438a0ae542ca0a6d43c808e7c3ca026d428a0a6d42ca086f43e210ed438a022f62ca00ef83ca22ef43ca0267454a527f43ca02ed454e10ef45ee50efc3ca02efc3ea026f43aa02e543c2026d43ca026742ea0a65c2ca00e702ca00e543c200ed42ca006d43c202e743ca026743ca02e542c202e9c3ea02edc28a226dc3ca00ef428a02ed42ca02ef23ca02ef42e2006d62aa022f43ca024f428a026f428a006f43ca0acdc2a200ed43c20aef534a52e755ca5273554a12ff63ca126f43ca006f41ca0ae7414a00e6800a9a6fcaa080e742ca0ae742c0086743ca02e546ca0a6f42ca026d42ea026b428a02cf43ca006d434a006b42ca806d42ca08eb42ca806d43ea026dc38a00ed43ca00ed4b22006542ea02ed42ca1a6fc2ca806fc38a082dc3ca00ef43ea02ed02ca00ed43ca02ed43e800ed42ca02ed43ca02e5424a0ae543ca026fc34a126f554a526fe50a1077c002127f554a567d45ee52e743ca00ef474a42ef454212fe8282c04",
+        "digest_minutes": 241
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:06+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:42+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14441.1,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-01_R&F_3C7A3C52.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-01_R&F_3C7A3C52.mp3\" (offset 0x2950f91): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 2,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-02_R&F_B25E07A8.mp3",
+        "original_filename": "R&F 2002-10-02.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "b25e07a8fbdfb01d",
+          "audio_blake3": "b5f53c3c363e3864013c92d01fe167cfa606e0f18d7273c2e5cc3bdc066c4065",
+          "blake3": "dc5c1b7ee41cb0dd36f961502c1ab2a6e3372e190c72f54fd568fa4843eb8578",
+          "sha256": "8d431321c8747c8c4ca3dd3f1ee6665b4de8e1b5b7bc13ee42b22e8ecc61c02a",
+          "sha512": "78e50097c8b1330c9ecb01b4f37ced4af3211c035c090874ab33746ad4cd3860fabb6ec46d8974f696f1b13e560411493217df18e416bd1069d10694c728340f",
+          "sha1": "14bddc22049d17556c164214c4bd9d4498270936",
+          "md5": "b768ce5694b34c3c70ab952208d06319"
+        },
+        "size": 42977017,
+        "duration": 14325.672,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:02Z",
+        "added": "2026-11-13T20:26:20+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "5514a926dc54a407fc14a026f43ca4c6fc3ca407d47ca427f41ca466fd54822efc3ca026d42ca026f43ca00ef43ca02ed43ca026f43ca086dc3aa026de2ca0a6f42ca0a6f63c20aed43c202e543ea026b42ea02ed43aa02ef43ca006d4a820aef43ca026543c802cd42ca0a6f43ca086d42ca0a6f43c2026dc382006743ea02edc2aa02efc3ca00ef43ea006fc3ca826f476a02e5c54a02f7414a02f7454a1277c00b12eec30ad2e7952e52ed454e526d43ca12ed43c2026867ce52e9414200ef42ca026f43ca0a6f63ca006d43ca00edc3ca004f63c2006f43ea0ae5534a4226c34a82254242006f43ca026fc3ca086d43e202ed43ca006d434a026d436a026fc3aa086542ca0aef43ca026fc3c2006f42c20825424a026543ca022d434a026543ca006f5b4a126d454a567d47ca12e547ea027fc54a46f5844a0677474a0aa147ce12f5c3a2022f434a106d454a54ff43ca02efc2ca026d42ca086f43ca02ef43ca00ed43ea02cf42ca026dc3ca02e542ca0a6f43ea22ef43aa006f42c200ef42ea08ed43ea0a6d46ea086f42ea0a6d42c208ef43ca00ed42e2086f42ca026f438a026f42e2026d42ca08ad43ca02edc3e802ef51ca12e7414a10edc54a407f8042c26de3ca80ed43c2586fc74a4467c16a02f7416a126fc28a026dc3ea02ed43ca02ef02ca02ed428a086fc2ca024542c200ef43ca022f42ea08ed43ca02e762ea0ae502c202e562ea00ed02ca00ef42ca086543ca006542ca02a542ea00a5428a02ef42c2024d02e8006f42ea086f43ca026f43ca02e5c3ca02f7434a026dc4ce5a6d644a52fd65ca02ef574a0a2d454a50ff8aa2c04d514a12ffc1ea006dc3ca00ef434202ef426a026f42ca02cf42ca02ed43ca02e7428a0aa7428a022f43ca006d42e200ef438200ed428a806d42ca00af424a0aed428a08ef42ca02ef43ca002543ca026502ca00e703ea00e502ca00e703ca00ed474a02e780c20265c44b56ff47ca006761ca12ff554a12f941aa12e743ca0aecc54a02f5544e5a67534a5226c74a922742ca026f43ca126fc3ca0aed43ca02e342ea02ef43ca00edc38a026543ca026f43ca00e743ca0ae743ca026d43ca02ef42c20a6547ca00e543ca00ed42ca00ed43ea02ef42ca006d43ea02ed434a00ed42ca02ed43ca006f43ca2aed434a026dc3c202ed42e20a6fc2ca026f42c20a6f63ea00e7424a00e742ca00ed43e2006d43ca026de3ca0865436a02ef42ca0867434a02ed43ea02ed434a02ef43ca02e342ca02ed638a026543c202e702ca00edc38a026f63c21a6fc3ea0265674a126fc56a4675438a8225c5ca10f5c14216ef454e5cf",
+        "digest_minutes": 239
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:08+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:44+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14325.7,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-02_R&F_B25E07A8.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-02_R&F_B25E07A8.mp3\" (offset 0x28fc71e): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 3,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-03_R&F_C96625BA.mp3",
+        "original_filename": "R&F 2002-10-03.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "c96625ba5c58b534",
+          "audio_blake3": "0eb0ea52dfce882fa801ed8d1c65fdd01d75c4280639f91026ce20aa600eb89c",
+          "blake3": "23cb5956f7c04ece8fad0c660777e4477df96e918447ef8943b6713eaeef9010",
+          "sha256": "0776670a96ec361715373a40c73d340bcbef67fdbe71d0e4ea8e98843f9861ab",
+          "sha512": "ee76d5dbee85c7c9291f49c31fa181cf64325d39a9ab7f6bf01c6b170686584cd20f6822cf540ca8bc6de376b6e6c58af39b10fdc76da20b95e4c6d4c747e3fd",
+          "sha1": "6e5f66efeda4edea990771ce3dffe4d3d0e4e18e",
+          "md5": "86916a7066169fb0884fbaec77f5067b"
+        },
+        "size": 43112511,
+        "duration": 14370.837,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:07Z",
+        "added": "2026-11-13T20:26:22+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc3ca40e61842daf7804240f1c7ea067747ca1a6741ca42fed44a026f41480ae563ca006d43ea0ae542ca0aef63ea026d43e802e743ea00e5438a0a6d438202ede3ca026f028a084543ca00ed43aa0a6d438202af42ca006547ca0ae5438a02ed42ca0a6d42aa026fc3ea88ed428802ed624a0a6f43ca0a6d43ca0a6f428a006d43ca02e543ea082d434a02ef43ca0a6d63ea026d434a12ef45ce12e7434a0aa7434a026f71e810e5854a0279434a06eb43ea02e14a8a00a302ea02e543ea02e703ca0a2dc2ca806f42aa026f43ca00254282086343ca00af4a8a20af428a02ed42ca006d42ca0865428a006d42ca0267428a826543ca02e742ca026702ca02ef43ca02ef43ca0ae743ca0ae102ea02a742ea00afca828a6d638a02ef476a026d57ca527e434a00edc1ca02ef8a82c04dd5ca527ed70ed06f47ca026fc54e02e78042027fd1ca0aef414a026f454e12fdd5ce567fc3aa026543c290ed42ca00e543aa00ad63ca02ef42ea02e562ca0a2f43ca00edc3ca00ef428a026d42ca024742a2006d428a006dc2ca006743c208edc3ca026d43ca02edc3c208e703ca12e747ca02e5428a00e543ca006f83ea82654d4a5265444e586f85ca42e581ea00eed30edaefd14a12efc3ca42ef45ce52e743ca02e543ca0266534ad2274602522f43ca026f43ca006fc3ea00ef43ca006d43ea006d43ca0aedc38a02cfc3aa026f62ca086f43ca026d43ca026543ca00edc2aa8aed43ca00ef42ca026742aa002f43ca2a6f42ea0a6fc2ca022dc2ca00ed42aa006742ca02edc3c2002d42c20aedc3aa00ef43c800e743ca02ef42ca0aedc3ca806b42ca0a67438a08ef42ca00ef43ea126f45ce547f428a02ed43ca1265014a8a2fc1ea02ebc1ca846fc54a52ead10ed2e8454a42ed43ca10e543ca00e7c3ea0a6f438a00ed43ca026bc3ca026d42ca006d734a00ed434a006f438a00ef43ca0ae743c800e1000a02af42ea0aed62ea026f43ca02ed43ea00ed43aa00ef43ca02e542e202e5c3ca106f43ca02ed63ca00ed43ca006d438a10e543ea02e543ca12e943ca02ed42ea1267474a00ef42ca00e543ca02ef43ca00ef436a026d43e80a6d478a00e5426a10ed43ea02ed43ca02ef43ea006d43ea00ef428a006f43ce526fc3aa026541ca00edc7c25271862210ef45ce16e547ca02ed41ca00edc54a02e7c1ca02e541ca00ed43ea02ed42ca00ef42c8006d63ca00ef43ca0ae743ea08ef43a200ef63ca02af42e20a4d42aa0ae543ea08e542ca0a6dcbea026fc3ca926d428202efc2e20065428a0aefa3ca0a6d61ca026dc5ca527547ea027d556e5265674a12ed414a006f63c80a7",
+        "digest_minutes": 240
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:10+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:43+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14370.8,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-03_R&F_C96625BA.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-03_R&F_C96625BA.mp3\" (offset 0x291d867): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 4,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-04_R&F_33FCF6DC.mp3",
+        "original_filename": "R&F 2002-10-04.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "33fcf6dca8c7dec4",
+          "audio_blake3": "cb0f2392a8429c38a52746b725b72badca8fd1888b5304ae7b2dd5161701272b",
+          "blake3": "c1ef0ccea3021fd42fed93cfb9bee495180bf55efb75471ede84e3c2dedcfdc4",
+          "sha256": "a5ec022d5aadfc657d68f19510a52988909e5747feb29acd9ebda769f18c5cfb",
+          "sha512": "37ab8a58ed39cb1db27f506d3fa18ada9296b28ea94753aecfe7cd4093226d4cba3ec222dcc37afb306895544f33e915d9532bef8c5649f5ea20b54fe426f74b",
+          "sha1": "f7861974f8032f4619257fc77a4c019c3f90a889",
+          "md5": "191bdbe33aa935610b5a2d2b2781cd9a"
+        },
+        "size": 43064788,
+        "duration": 14354.929,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:13Z",
+        "added": "2026-11-13T20:26:25+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "7818200edc18a0aaed40a527fd54e526dc16212ff554a00afc14a00efd04a026f434a02ef43ea02ed43ea02e743ca08e5436812ad43c20065434a10e5436a0265032a106d42420265466812ed42ca086146ea00ed43ca02ed42ca026d428a0a6d466a026d47ca026d43ea02ed428a0a6f4b4a026d634a10e5434a106f62e20a6543ca02ed43ca0aed42ea08e943ea086547ea1261424a0ae147ca08ef42ca0869466a02a947ea1aefc2ca08e9c3ca00ebc3e802ef42ea02ed42e812ef42e8026502ca18ed43ca12ed03ca006f434a12e563ea12e763ea00cfc3ca0a6dc1ca12ef41c210edc54e526dd5ce5e7f47ca527f554a12ad57ca52ff416a02e547c282ed678e1aeed12e52ed854a067f43c202ef43ca026d47ca026b43ca02ed03ea00ad42aa00ef42ca006b42ca00c142ea00af02ca02e503ca00ed42ca08a5424a00ed63ea00af43ca02e742ca00a5474a12ed43ca0ae080ca12e1004a98e9436a90e942ca02ed424a80eb424a82edc3828aed43ca1269c7ca06edc5ca527d474e12eed10ed2ef554a02af4b4200e543aa02e542aa00ed43ea00e762ca00e562c200e543ca026543ea0a2743ea006d434a12e543ca02ed02ca006d43ca02cd43ca006d42ea026f43ea02af43ca02e542ea026f428a02646162126743e202e3474a12eb57ca0af5428a026dc5c25279868218efc1ca02efd14a40a9474a42ef414a186d42ca006f43ca02ef42c80269c3ea02ede3ea1269e3ca006b4bc2026d43ca12ef4768026bf3c202eb43ca02ef434a12efe36a00ef43ca00ef43ca026fc3ca006fc3c2026f43ca00ed43ca006f43ca026b42ca02ed46ca12ed4aca02ef63ca02ed43ca006d47c8026f43ca02e847ee126947ca12fd55ca466fd54e50ef45ca52ff414a026fc3ca024fc2ca006dc3ca02ef43e2026f43ca00ef43ca02e543ca02ed438a00ef438a02ed42ca02ed438a02ed43ca086d628a02ed438a02e543ca02ed43ca006f43ca0a6f03c22a4f434a02e766ca02e542c202ed42ea126d656a12fbc3aa00ed47ea12ef41ca12ed554212fdc5ca527f8542466ed14a52af534a02ef43c2026f43ca0a6d47ca026b43ca02e963ea006dc3ca0a6d62ca006f43ca026f42ea026d42ea00294382126f63ca00ef63ca006d03ea0a6f63ca0aef42ca026f42e202ef42ca02e7064a02af424a026fc2ca00ed42c20a4d63ca126563ca02e743ea026f434a00ef51ca00efd54a02ad45ce50e781aa00e5444e5265574a5226c34a922b428a026542ca006f23ca12ef43ca026f63ca02ef43ca006f43ca026d63ca00ef62ca026742ca026fc38a00ef43ca02ef43ca086d43ea0aee4a6c826",
+        "digest_minutes": 240
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:13+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:45+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14354.9,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-04_R&F_33FCF6DC.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-04_R&F_33FCF6DC.mp3\" (offset 0x2911dfc): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 7,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-07_R&F_9C7E4DD5.mp3",
+        "original_filename": "R&F 2002-10-07.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "9c7e4dd5923a4fb4",
+          "audio_blake3": "336c699f67160432cb2bda9643626da03fe8c12df8f715a554547b1fd798f0da",
+          "blake3": "6b758bf55665f169be33178bb53f47a9ab871e5d48bc2901fbc72b86a403a509",
+          "sha256": "3763d66a82b1c7f4c802799a6a65d6aa554028e84947b5fda7ee083702b2a9f7",
+          "sha512": "0af675e072b1a450831f4158e96607ed220829c96b75a5b163c88acaac3ca08b6d5b2ffec1726a3df3121d65b554e85900aa38ea3c88dd096d3669313ca58ec8",
+          "sha1": "9f2bd38efca50e73c7f03ed0b377f18929f695f6",
+          "md5": "13f08a1c7e253f8104fd005e91eac8f9"
+        },
+        "size": 43131245,
+        "duration": 14377.082,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:20Z",
+        "added": "2026-11-13T20:26:27+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fd74a52f6804a126ed10ed2cf416a126fc002886fd3ca82cf554a58edc5ce12efc1ca066fc14a0aefc3ea026963c2006f43ca00ef43ca006543ca02ed43ca02cfe38a02ef42ca00ed42ca026dc3e200ed43ea086f42ea006d43ca026d43ea0aef43c2086fc3ca00e5428a026743ca00e543ca026f43ca02ef42ca00af438a026f438a00ef43ca806dc3ca086f6aca004d43ca026d43ca02efd74a527ed10a12afc56a12efc00a02e7c002126fd7ca52ea55ea52eb43ca0aef63ca02ef43c202edc38a02edc28a826fc38a02e743c2006fc28a02ed43c2006743c208ed42ca02ef43ca026dc28200cf43ca02eb438a026d41ca00e94bca026d43ca026d43ca026d63ca026d42ca02ed43ca0aef436a02ec43ea02ef43ea00ed43c202ef47ca006d62c8022d43aa0ae7228200af43ea0ae543ea00edcbca02edc3aa00edc2ea086f42ca026dd54a526545ca12e5c18a02e543ca42eed10ad2efd54e507f554a12fdc5ce50efd74a52fa574e52ff43c2026f43ca026d43c202eb43ea026b43ca00ef43ca00ed43aa02e5c38a02ed628a086f43ca02e543ca00ef438a02ed438a026f42ea02ed43ca02ef428a024943ea00efc3aa82ed42ca026942ca006142ca00e702ea02e5c3ca006d63ea12e9c3aa00ed454a02e7414a12e7c14a00efd54a526ad50ed2efc74a027f534a52efd46c1267c2ca0a6fc28a006542c2006d43ea0267038a0a6702ca02ad47e200e5c38a006d43ea00edc3ca026543ca00e742c2006d42ca826f02ea02e542ea02af42ea026f42ca006702ea02c542aa00a542c200ad42ea0ae7438a02ef43ca026d42ca026d628a826542a202e543ca0aef42ea02e8c3c8126fc34a12ef43ce0a6f47ca00ff554a5aefc3aa02efc3aa126bc3c8006f42aa82e502ca0aaf43ca026d638a006f43ea026f43ca086fc3c2026743c202e503ca00ef42aa00ef428a00ef428a086542c200e54282026f43ca00c543ca02e102ca02ed42e2006742ca0a2d43ca0865438a08ed43ea02e5438a02edc2ca00ed42c2026dc2aa00af624a126d434a02ed55e81cef45ca52e7c14a126e574a5af61802daffc3aa026d434a026d42ca006542e202e543ca006fc28a002f438a026743ea02ef82ca00e562ca026d42ca02e563aa0aed42ca026d43ca0a6d42ca026f43ca00ef02ea0aefc2ca006d42ea00afc2ca08c7000a4aedc3ca82e543aa00ef82ca026d43ca086fc3ca126f438a02efc3ca42ef514a5aff41ca026c454a5267c04a1a73908b00e5c382002dc38a00e9c38a02e2c28a80efe3220ae7474e12ff41ca02ff496a02efd74a08ee572a50ff550e526fc14a1265c04a126dd54a587",
+        "digest_minutes": 240
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:15+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:45+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14377.1,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-07_R&F_9C7E4DD5.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-07_R&F_9C7E4DD5.mp3\" (offset 0x2922194): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 8,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-08_R&F_5E3D1B9A.mp3",
+        "original_filename": "R&F 2002-10-08.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "5e3d1b9a1872a503",
+          "audio_blake3": "e592a7f648c1a984615b36dbedae8ccc576313f07202e17cb11fe95b5c16c2fd",
+          "blake3": "5f760fd05872ed30317ba567e7d49126d0d4bd39cb20dbf072eb3dbac2338953",
+          "sha256": "809551198660876e5d1bda3d929d8326018fc923afeb8fc1bc3366e13946a6c9",
+          "sha512": "5df521bb187c471696def9b836bc3760acaa2f069a855f8a605fc8f5553c3847dad25756fc8630ee5138f9883526c0c09df1a270cdb2ca40f019fbe4af441d3a",
+          "sha1": "accc5034f99792127681678a514147cc914ebb9e",
+          "md5": "551af0ceb82a68176ea465c241e4a348"
+        },
+        "size": 42519273,
+        "duration": 14173.091,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:26Z",
+        "added": "2026-11-13T20:26:30+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "5456a02fd414a12efd1ca006f434a0267c04b126fc14a02efd44a026f554a224f43e802ebc3ca02eb62ca08efc3ca906bc38a006fc38a086d42aa0869c3aa02efc3ea806fc3aa00e5420ac2eb438a02ebe28a80e9c382886543ca08a562ca002fc3a2026fc2ca00ebc3ca026fc38a02ed43ca02ef42aa02ad438a00ad428a08ad428a826d43ca00ef428a02ed63ea00ed42ca02edc2ea00edc3ca02ef434a02ef414a02ef412a0aefc5ca12e7c04b126f55ce0aebc3ca00efc38a882dc38800eb4a8a826dc3c2006d428a026dc2aa00af42ea02edc3ca026f42ca00ebc2ca826f42ea0aefc2ca026de28a828f428a826d428a0acd42ea106bc28a826bc3ca126fc2ea8067438a026541ca00edc7e802ed554e10ead10ed2efd54a12ef654e526e42ca00efc3aa02ad62aa02e502ca826bc3ca806742ca02cdc3ea02ef42ca8a6dc3aa08edcbca086dc3a2006b42ca806542ca0aefc2aa02edc28a82eb43ca026d42ca00e543ca08ed03ea00ed43c80065c38a00e5434a02e542c202ef43ca00ed63ca02ede7ca0aef438202e74bca0a6563ca02e5438a006d63ca086542ca0ae5026a006f63ca10ef43ca0a6f420a026f42ca0aed438a02e142ea0aed43ea026d43ca026d428a08ef42ca008fc3ca12ed428202efc38a0065438a02e5468a0aed43ca02ef43ca126f428a006f42ea106fc38802ef416802ec416a126dc3ca00ef414a02edc46a5065404a5e6f63ca0269c3ea026d554a12ed41ce126f41c200e543ca026f43ea0aef42ca00ef4bca026f43e208e543ea00ef438a02ed43ca02e543e800af438a0aef438200ef43ca02ed42ca08efc2aa02ef42c2006fc38a02e542ca02ef43c20ae743ca026f43ca02edc38a426d43ca026dc3e2026fc1ea02efc3ca006f43ca006d428a026dc3ea00ed02ea006d43ca00ed43ca026f43ea0ae5628a02ede3ca02e5414a02ea536e42ffc14a126f414a12ed554e12ed47820a6dd14a126cd14ac02bd34a42e5414a12ed574a00edc7ea02ef43ca42edc16a02e6434a5225c64a922f426a086d428a026dc3ca00edc3ea08efc38800ebc2ea806543ca00edc382086d43aa026dc3ca006f43ea08ef43ca02ed43ea02efc3ca08a543ea02e54bca08a502aa02ef43ea00ef438a006d43ca0aebc3ca206f63ea026dc38a02efc38a02afc28a026f43c2006fc3ea126de38a02ef414202eed10ad2e7034a02e9c3aa00edc14a12ef456a126d414a006fd56a50ef47c202ebc2ca00ed42ca026543aa082d42ea006d43ca08efc3ca02ed43c208efc3ea0a6f42ea026dc3ca80e5438a12ef42ca086fc30a0ae",
+        "digest_minutes": 236
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:17+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:46+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14173.1,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-08_R&F_5E3D1B9A.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-08_R&F_5E3D1B9A.mp3\" (offset 0x288cb0e): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 9,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-09_R&F_B24A4DDF.mp3",
+        "original_filename": "R&F 2002-10-09.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "b24a4ddf6601a425",
+          "audio_blake3": "4cc05be84340cc05966696ce04326a33ca56f4467cf8ebef22b9c8415d0745b1",
+          "blake3": "0465f0a9c579d5f65f963bf82491e71eca47b58d9e03260f1e8f8095bd43c9a6",
+          "sha256": "337f7de843e6959d2950f3fd096573ce62be378261e1ed54d1fb91cd77182d22",
+          "sha512": "562f9a72c7556dcfeee2171730e5d1983f7b0276bab0886cc72b49f4e67ec835a14a881e9e58058a472ae361c34dfb98866ae2ecf776848cb72ef005ccc22154",
+          "sha1": "94ad41b34ed8368bb89fd50222af88b26165b371",
+          "md5": "dd0f701bde079e88f2ee05752cf56aaf"
+        },
+        "size": 43098180,
+        "duration": 14366.06,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:33Z",
+        "added": "2026-11-13T20:26:32+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f43ca02eec10ed2ed454a52ef434a0025434a02efc14a02efd04a426f51ca00efc3ea0a6f43ca006d43c208edc3ea004fc38a086dc2ca82ebc3ea88edc3ca086fc3aa186543c802e542ca006dc3aa026fe2ca026d43ca026fc38a006dc3ca00ed63c2086dc2ca106dc3ea02e5c2c202ed42ca022bc3ca80edc38a006d62ca0265438a02e7068a08e923ca00ef43ca00ed47ea00ef43ea00ed47ca12ef638a02ef43ca02ed43ca02e543e210ed43ea00edc3ca026de74a02efc3ca086d43ca40edc2ca02e561ca02efd74a52e5c44a5265004a10efc3ca02ef434a027f414a12f5004a126ed14ad2ead70a12af474a12efc2aa08cd538a02efc38a02ed43ea08ef43ca0aef42c8086f42ca0a6f03ca026dc38a02edc2ca02ed438a0ae543ea00ed63aa006d42ca0065e78a02e982aa00ad43ca00efc34a026743ca00ef42ca00ef43ca08ef42ea00afc2ca0aef43ca026f428a00ed43ca02ed43c200edc3aa82ef63ca0067c3ca026dd3ca80ed63e802ef42ca0aef43ea02e543ca02edc3ea02ef42ca02efc3e202ef43ca026545ea02ed40ca8a2d514a12f9c1aa02afc54a52ef454e52ff456a126fc182c8ed82a2d06f43ca006543ca024f42c202ef42ca006fc3ca006f438a0a4b53ca02ed42ca00e542ca002702ea186d438a02ef43aa0a65428a00ed634a126fc3ca02e5c7ca0a2d43ca10efc04a06ef514a106fc1ca50ff41ca0a6dc7ea12eed10ad2e5c54a127f414a12fb43ca02e86aca926d438a0a6f43c202ef43e800ede3ca02ef43ca02e600ca00e743ca02e543ca12e543ca02e502ea02ed43ca12adc38a00ade78a02ed43aa02edcbca02ed438a026bc2ca026d43ca0a6106ca02e543ca1acf43ca02edc1ca006543ca02ed45ce10fd474e126f43ca526dc44202e9842210ed41ca527d014a026503ca12ad428a026d43ea02ed43ca08edcbc202ed43ea1ae943ca02edc3aa026f43ca00ef43ca02ef43ca826f43ea026dc2c20aed42ca026dc28202edc38a006f42e202e502ca0ae542aa0ae642aa006542ca10cd43ca00e543ca02ef43e2026f62ea10edc3ca82efc1ca12e741ca02ed554e106ed50ed2ed556a02fd438a086d55ca507f474a027de3ca026d42ca02a563ea0acf43ca00ef43ca006d42ca0aed43e2026f628a0aef43ca026f434a00ef434a0aede3ca0aeb42aa806dc38a00ef43ca02ed038a00edc2ea006d63ca0a6fc3ca026bc3c2026d63ca00e043ca8224474a522fd14a02edc54a52e543ca02eb57ce52edc18a026dc7ca12efc36a02af43c202efc38a02ef43ca02e7c28a026483a8106d474a126d550e1667c04a126dc44e127fc1ca00e7c1ca186",
+        "digest_minutes": 240
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:19+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:46+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 14366.1,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-09_R&F_B24A4DDF.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-09_R&F_B24A4DDF.mp3\" (offset 0x291a066): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 10,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-10_R&F_3A6694DE.mp3",
+        "original_filename": "R&F 2002-10-10.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "3a6694de3020814b",
+          "audio_blake3": "3766e726764823ac812588805a262f5fb603c95dede51813fe406bd84e8b01d9",
+          "blake3": "4501c4bcbc2e690129be9e6c56dc3421a1b91ec4c0082a76d4f0504893805909",
+          "sha256": "a8f5549ea447cffe5b38a0f5b2609feb1c30bc59e2f12b13da8f1cb9b215e88e",
+          "sha512": "d41ce6ba3d280e2bd0674ba6197dfdae36bb344d92e38a37448875e3e8e6a1454fe0198977b10a33f4fa62d57c2ae50acdeaf0929791e32c36f6e473fc622883",
+          "sha1": "15bc22e4e32be0db248af95a4eb4719306fcc5f9",
+          "md5": "43d2c7377d4039814ab2bd630a6f8621"
+        },
+        "size": 42100656,
+        "duration": 14033.552,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:39Z",
+        "added": "2026-11-13T20:26:35+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d45ca1265456a1267416a02ef494a02ef43ca026f47ca126bd3ca426fc0ca026fc44ae26fe2ca02ef428a88ed46aa006dc28a826f43e2886fe24a826fc382826f428a886d428a806142ea0a2f42ca006dc38a02ef43ea806b42aa886b42ea026d43c200ed63ca006d4288026d428a026f62ca00ed42ca826743ca0aef4aca806f828280efc28a8267438a00ef438a806542ca02ebe3a2006f43c202edc2a802ef62ca806fc3a2026d43ca82edc3aa00ed43e202ef4b8a00ed43ca086dc38a0aef61c202ef416e506d47ca126743c202eec30ad2ed51ca02ef57ca12ef43ca02ffc2ca00efc3ca0aeb428a806f43ea0aefc3aa0ae542ea08ef428a0a2ac28a8a6d43ca826d82aa0aed828a006d428a826d42ea006f426a024bc3ca0069828a826f428a086fc38a00eae38a8a6f82ca08efc28a88efc2ca02e742e2026742ca02e743ea0a4f03a20ae542ca02ef42ca00cd43ca02e9c28a826fc3ea006d43ea026d63c2122f43ca10ed43ca02e5404e526f43ca02ef434e02ef55c212f947ca426d42ca084542aa0a6f62ca02e742c202efc28a0265c28a02ef42ca0a6fe282886f22ca0a6543ca02adc2a20ae702ca0aa542ca02e542ea0aef43ca026d42ea004d43ca02ef42ca8a6dc28a00edc28a82ed42ca026f42ca02af42ca00ad428202ef42ca02ef43ca02ed4382006fc38a1aefe0aa80ef41ca026f43ca026743ca00ef47c202ef43ca02a5474a02ee470a52ef47ca00ff57ca52ef43c2006542ca02ed43ea00efe3ea022d42ea0067428a08e762c208e542ea00c502ca0ae742ca02e542c202e742ca00e542e200e542ca022543ea0265434200e563ca02e542aa026d438a00ef43ca02ef03e8826d63aa006542ca006f43ca026d028a0aed41ca886b57ce526cc3ca8205c3880227014202ef45ca02ef454a12ef45ce10ef434a00e742ea026543ca026f42ca00e5438a026542ea02efc2ea026542ea026d62ea0827424a00e542ea0267428a00e543ca02e743ca02e502ea1aef43aa026502c20a2f42ca006f428a006f62ca006543ca086d42ca026542ca02ed42ca0a6d4bc20aef43820aed41ca52efc1ca02ef43e8022f41ca02e61842daff63ea0a4f42ca0a6f42e2082f42ea02e542e200a5438a0ae742ca026d42a20aa542ca024f03ca02ed63ca006fc2ea0ae702c80aef03ca006542ea02ed438a006d42ca002543ea0ae7628a02e542ca08ebc2ca0067e2c2084503ea0ae742ea0ae742ca00ef43ca00c54382006f42ca0a6762ca026dc28a028d4bca026f43ca026f47ca127e5602106f55ce5ae543ca02a",
+        "digest_minutes": 234,
+        "decode_errors": 8
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:21+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:11:56+00:00",
+          "decode_errors": 3,
+          "found_by": "check",
+          "found": "3 broken spot(s) in 2 stretch(es) between 0:00:11 and 3:38:03, ~0.1 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:11:56+00:00",
+          "tool": "mp3val",
+          "spots": 3,
+          "stretches": 2,
+          "first": 11.8,
+          "last": 13083.0,
+          "missing_seconds": 0.1,
+          "real_duration": 14033.6,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-10_R&F_3A6694DE.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-10_R&F_3A6694DE.mp3\" (offset 0x28267d8): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 11,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-11_R&F_245BA433.mp3",
+        "original_filename": "R&F 2002-10-11.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "245ba4338385c867",
+          "audio_blake3": "2be42ebe8f30478b64c97122a8639ea6aa5a0bad43173c5434d51c41e2947040",
+          "blake3": "5aa2538bec086c8b2c29bcbf615ff1cc65227e9326fb5e8449a833543b59489a",
+          "sha256": "8b9c9d0a1e75b3f2f88abd1f54dce83c5216b92fcd7cde5de1b5b7d27a2e3a37",
+          "sha512": "0de92bf92f59f04f4ecd841d129e7a55dad8c8f7ca71bdf29993612457874bf721425ad203ea99260aa7bba8cadd08175e8ccff61df23ce50d0db0f1e8d24202",
+          "sha1": "8fe0c755a871147d041c485bb44152040c972c82",
+          "md5": "2f49d886f4aa172ce01dd54ffcdd21a6"
+        },
+        "size": 42939216,
+        "duration": 14313.072,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:46Z",
+        "added": "2026-11-13T20:26:37+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "ec74ad2ef43ea12ef5bca02ed41ca12ef41ca02eb43ca026e44ca026fc4c2226742ca026f42ca0aef42ea08ede28a026d02ca08a542ea086d42ea02ed438a0a6d438a02ef43ea02e743ea00ed42ca02ad42ca086f62ca0ae542aa886fc2aa006f42ea0a6d42ca0067c3ca004fc2a2884b42ca806f43ca006f43ea026fc38a086f428a006fc38a086fc2ca006d428a082f43c8006f02ca02edd1ca00ed55c212ff514a52ef43c2026f43ca02e9c28a826f42aa00ef238a02ad42aa00ac428a02af42aa02ef428a826542ca0acf42ca0a4f428a026d43aa02e5428a086b42c200efc3ea806dc2ca886fc2e282ef02ea02ef42aa002d42ca8a6b42ea886f63ca02efc28a006dc28a804f028a006f43ca00efc28a8acdc38280c543ca10e545ca12eec24a92ee47ca12edc3ca02a4e2ca820fcaeac22fc28a826763ca02ef42ca02674aca0065028a026f42a280cf428a002fc28a8a6f428a086d428a006be28a02cfe2ca022d82ca08ef428a00ef428a006fc2ca002fc28a00ef42ca02ef42ca02a7438a00ad42ca0a4dc28a826dc3ca026fc3ca026f474a52ead3ca426d65c816ed55ca127f43c202ef43ea00ede3ca00ef43ca0a6f438a026f43c2026d23ca026f22ca006fc2a20a2f62ea006f428a006f43ca0067e3ea006f42ca02ed42ca826fc2ca886d428a086f42ca026d428a0a6702ea026dca8a806dc2ca026f42ea826d428a086542aa002f43ca006fc28a006fc3ca02e741ca00ef43c202ed47ce50eed24a52ad45c812ef43ca02ed47ca02e543ca02ed75ca1aef47ca127f43ca02ebc2aa02ef438a00e542aa026102ca02a442ca026542c2026362ca0a6342ca026742c3027f02ca026f42ca00654288006f62c20aed4ae2006d428a026f42ea02ef438a026d4a8a026542ca0a2547c202edc3820aed474a026f43ca026743ca02ed43ca02ef45ce10ef41c8026fc14a52ffc3ca42e5e3ca026f4aca22e542ca0ae702c2026542ca026d42ca00ed62a2026d43aa02ed02ca026d42ca002d42c2006c42ca024d42ca026fc3c800e9c282c26de28a026d42ca12ed42aa0267426a08af62c20a6f42ca086d438a0aed628200ed42c200efc28a022342ea80e742ea8265634a02654282822742ca00e5024a08edc3ea026f43ca02e742ea006d454a126f43ca02e741ca02ebc7ce426f43ca006dc3aa0aaf418a02af43ca026d63ca026f02ca026d42ca026fc2ea026762ca0a2f4aea886f43ea026562ca006d43aa026542ca0065428a006d42e208ed42ca02ef426a00ef42e2006642ca026764ca12ee1042dafdc1ca02ad47ca12e7416a02ef43ca02ed454e50ed43ca184",
+        "digest_minutes": 239,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:23+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:11:56+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:03, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:11:56+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 3.5,
+          "last": 3.5,
+          "missing_seconds": 0.0,
+          "real_duration": 14313.1,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-11_R&F_245BA433.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-11_R&F_245BA433.mp3\" (offset 0x28f3373): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 14,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-14_R&F_B88BBA85.mp3",
+        "original_filename": "R&F 2002-10-14.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "b88bba85b435f1d6",
+          "audio_blake3": "b46190f476a68bfca67250bf6b16433ffeffecbd8ec7aa57882981b2e034607f",
+          "blake3": "832ca57c204538d7f0f5703a11258cb97ede7b816ac38a88e113d5f00ff6c459",
+          "sha256": "4be32b019d97643ad7aaa354fc2643f7cf8ec814fa7b2b15f2a4194f85c54132",
+          "sha512": "bbf9173ea9b2d5070e3edfff90f67acf6be9f7f227d5911b9e865a56db7568e5cb5c510f7392053aa27c9c1a7e4f38d03ed2c66fd200177b13f766d9bda71e83",
+          "sha1": "c051a2d50fd0755aa180d15a10ca31efdc0cbca4",
+          "md5": "f04b760603d886ade11d7bc13d66422d"
+        },
+        "size": 43835565,
+        "duration": 14611.855,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:52Z",
+        "added": "2026-11-13T20:26:40+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f214a0afe40ca12efc44a626742ca0a8d42ca026fe2ca8a6fc2ca88ef42ea00e743c2026f428a026542ca02e742ea00af42ca02ed43ca026763ca02ef428a0027428a00ed428a0a6f428a026743ca086f42e20a6f47ca02ed42ca00ed42ca026f42e2026fc3e2026d42ea002f438a026502ca0a6d42aa0aef42ca024742ea00e545ca02ef4b4a026d43ca02ed61ca526743ca00edc7ca0aef43ce52ff43ca106f42ca00ef42ea086d42ca12ed42ea0067428a026dc2820065024202e542ea02e502ca0a2542ca02ed42ea006563ca824742ea0ae522aa026f42c200ed62aa02ed43ca008d428a0ae542ca02e542ca0aef42ea006f43ca026743ca02e7414212ef570a52ef43ca02ee474e02ef41ca526d42ca006f42ca006502ca02ad42aa886d42ca026f42c202a503aa02e7628a0aa3c28a082742ca02e74aaa000fc28a02e502ca02ef43ea026542ea08af62ca0aef42e2006502c802ef43ce42efc7ce02ef43ea08e543c0026741ca027f43ca086f434a026e436ad0ee47ca12e7470a026742a8026743ca00afc2ca08ed42e00a6542ca0227438a00e54282086f42ea02e8a2ca0e6542ca08e542c20aef438a02e7020a02ef4a8a00e542ca02e5c2c202ef42ca026f42e2026dc3aa02e543ca026d4aca00efc3ca08ede3ca02ed43aa08ad43ca02e5428a02e5428a00cd43ea0ae7422a12ed2ac2026d43c202e543ea1aed428a026d62e20a6d63ca02e943ca026725ca02ed47ca126fc3ea026f43ca02e547ca02e542ca0a6f02ea08ef42ea02a742c2026d42aa026702ea0225428a026702c20aa542ca02674282002d42ea026542e202e742c2006d42c2022d42ca086bc2ea82ef42ea006542c200ad43ca026f42ca086f43ca026502ca02ef428a02ad42e8126d43ca02ed43ea0a65438a02efc3ca02edc38a02eed30a12ee470b12adc2aa0a0f42aa006f42ca024f438a006f42ea02af43ca026542ea026d428a022502ca026f02ca02eec38a0aef42ca02ef42ca022f43ea02efc28a006d43ca0a6d43ca02ed41c210ef464e12fd41ca026742ea006fc3ca826f42ca026543ca10e543ca02e142ca006943c2026543ea026d436a026542ca022143ca006502ca18e542ca00ef62ca086503ea08ed43ca00e842ca026d43ea0065438a006543ca00a542ca022f43ca0261428a006143ea006bc28a886d43e80065434a02ef43e2007d63c20aefc2ca02efc2ca006562ca026502c200a742ea02ef42ca0aed46ca1aef46ca10ef42c2026d43ca08e743ca02ed43c200e542ea02ed63ca02ed42ca026d43ca086d61ca126741ca02edc38a02ef434a026ed20ad2ae114a52bf57ea52fb43ee406b43ca026b43ca826e0bca426",
+        "digest_minutes": 244,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:25+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:00+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 1:53:20, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:00+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 6800.9,
+          "last": 6800.9,
+          "missing_seconds": 0.0,
+          "real_duration": 14611.9,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-14_R&F_B88BBA85.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-14_R&F_B88BBA85.mp3\" (offset 0x29ce0d3): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 15,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-15_R&F_9C582FB1.mp3",
+        "original_filename": "R&F 2002-10-15.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "9c582fb1452564ab",
+          "audio_blake3": "f8fbce87076a8798c93ebdb8f81e23f4dada67a18759b0373096fa7ae7b64d62",
+          "blake3": "d9131c656d2834eba1da148d8d6885d2b2cfcf1104293d00da57052c720e5990",
+          "sha256": "0cb941e7ebcf8ccfbcff3392a024cabe3db5dde03360f1c8f575def4bd5e6988",
+          "sha512": "c4ce112c068c0f1130a6fe86e739200832ded287ae36a36af2e77987c54f04b34a206d0297a0e882a3abc8bc25f5cb2247ce6ca487ab8b6bb486a45600838144",
+          "sha1": "37c836e401d9e00d3ab4186de898f279489485cb",
+          "md5": "5ffbb681a842bc6c2e6e5a49be9f80ae"
+        },
+        "size": 42981748,
+        "duration": 14327.249,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:33:58Z",
+        "added": "2026-11-13T20:26:42+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f654a12e540ca00ed47ca02ed43ca02e541ca02ee44ca026fc24a026f42a2086502ca02edc3ea006d42c2086543ca006f42aa006d43ca00ed62ca00efc3a202ed43ea026f42c20a6f62ea00e5438a006f428a006d428a00ad4282006d42e2002dc38a006d42c2806d42ca08ef02ca02ef43ea006d62ca02ed63ea1ae142ca024d47ca0aef43ca126fc282c24541ea02ef47ce02f5c38a0aaec3ce42efc38a12e742aa222542ca006502ca02e742ca02ef42c200ef42ca0a6502ca0ae742ca00af42ca026f42ca00ed42ca006d42ea0a67028a08ef42ca00e542c202cf62e202a5428a02ed42ca0aaf42ca026f42ca02ef43ca826dc3ea186d4ac200ef42c200af43ca004f428a02e9c1ca02f5434202ef43ca42ef42ea02ef454e56ef41ca12f560ca026f43ca102f42c8006de3aa00ed43ca02ed43e202ed43ca00ed43ea08ef4282002f42ca02ed42aa0a6f43a8026dc38a02e7c28a02edc3ca026f03ea026d07ca026f42ea00ed438a226f43ca02ef43ea086d43ca086d43ca1aef438a0a6f43ca026742ea026f438a0a6f43ca006d62ca0aef428a006f438a006d43ea026d43ca12e6170a12fe104248ffc14a126f46ca12f541e202ef436a02e947ca40ef638a0a6f0aca0aed42a200ef42aa00cf42aa02e7438a02ef42ea08e56aea006742ca0265428a02ef62ca8a2d42ca006f42ca086d438202e542ea00ef42ea02ad428a02ed42ea026f0bc20aedc38a026f43c202af42ea0a6f42ea006fcb8202eb42ea08e543ca00ed42ca022702ca02ef428a00ef42ca026d428a0a6f43ea00efc3ea00ef43ea08ef42ea08ef42ca006d43ca026542c8026d63c202af43ea0267434a42e5456200ed43ca126f47ce52ff43c2026f43ca02ed03ea024d62ca024dc38a00ef62ca02ef43ca826dcb880a6dc282006f42ca02ed42aa0aede3aa0a6dc3ca00edc3ea086dc38a02ed4282006742ca02ef62ca006f428a026d02ca02efc3e200e702ca026f43ca088d42ca02efc2ca006f82aa806d43aa08efc2ca08ef83aa0065428202e542ca02a743ca006f43aa026742ca02ef428208ed43ca0aedc3ca0aef55ca12ed41ca026f526a12ef478a10ef42ea82edc3aa00e5428a006b428a806502ca00ef428a0266428a02ef43ca08ad43c800ed42c202ed42ca006542ea0ae5c28a82e7428202e742ca8267428202ed428a02ed42ea086f02ea082d42ea0aaf428a08e5428a026d42ca02ef02c20aef028a02eec2ea0267428a00ef428a806fc2ea88ef42ca426543c202ef438a02e767ca00fd478a02ef49ca286dc302026f438a00e7456a02ef436a026f41ca0a6ec142126e420e508",
+        "digest_minutes": 239,
+        "decode_errors": 3
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:28+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:11:59+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:02, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:11:59+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 2.7,
+          "last": 2.7,
+          "missing_seconds": 0.0,
+          "real_duration": 14327.2,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-15_R&F_9C582FB1.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-15_R&F_9C582FB1.mp3\" (offset 0x28fd9b7): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 16,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-16_R&F_99A266A2.mp3",
+        "original_filename": "R&F 2002-10-16.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "99a266a2e6916a0e",
+          "audio_blake3": "3529bee816a9e6fba7d7d08a2d68f4ccf99b7e6338ed68602207079f68fd2e97",
+          "blake3": "3dce9d615a75a61c3cb83b2276e9505dec774433e7aa9981ec5f11aa736c912b",
+          "sha256": "eec814a15cc25e6d451151a4039f24e9cac22d4bb097805fa0c4490c0eeb4035",
+          "sha512": "ff1b9da94ba18c23d2d19fe69b44d89a916c9270d1bba9cbf2b41e129276a5c9a1a468aaa3fe7ebb83b7e9cccab703e32773673193b762550770118b359d9ea9",
+          "sha1": "061eaa49b31de74faeb8d0140d5075f6dea05dde",
+          "md5": "0e6318d3c89832f4a0e0db56230d904c"
+        },
+        "size": 43033659,
+        "duration": 14344.553,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:06Z",
+        "added": "2026-11-13T20:26:44+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f43c202a7c46a0a6fc2ca02ed47ca126f43ca02efc04a026763ca02ef83ca02e543ca02ed42ca00ef43ca026d42ca00ad43ca026543ca0aed62ea00ef42ca00ef43ca02af43ea0aef43ca006f42ea0265c22a0027438a02e5a38a022dc2ca0a67cbaa02e542820a6dc3e20065428a0aad428a0065028a02e542ca00ef02ca08ef42ca02edc2ca086702ea00ef428a02ad47ca00ed63ca02e5c04a006fc5ca426f414a02e7416a026b43ca00e543ca02ad42ca006f42ca02adc2c200ed42e20a6fc28a006d42ca02ef43a802efc2ca006dc28a00ef02ca026d43ca026343ca026dc38a00e702c200f542aa02ef43ca006f42ca02c542ca1ae542ca026d43ea8aed524a12efc38a40e543aa00af438a00ad42ea006d43ea02ad43c2026f43e802efc1c2026d43ca086f47ce42e741ca026540ca02e7616a026dc7ca0aef47ce42eb47ca42e7c3c202e7c44a426f468a0227428a822f428a006742c20a2962aa026fc2aa08ed428a006d62ca00ed438a08ed22ca00ef42c20ae542e20a6502ca086542ca006f4a8a00e543ea186742ca02ed62ca8a6f43ca026742ca886f42ca02ef42ca00ef42c202ef43ca026d03ca00efc3ca006b57c74a6d42ca02ce45ca12ff47ca12ef53ca1aee1842c8ff41ca02ef41ea0a2f4142526f42ca0a6f42ca006f42ca00ed42ca004f42ea006fc3ca02e542ea026d42ca026f42ca0865428202ebc2aa026f02ca02e7428a00e3420a006542cac26d42ea026d43c20ae542ca00a502ca0a6543ca0a69428a006d62ca00e5438a02e562ca0261060a12f942ca082d42ea006543ca00e9438a02ed62ca82ed42ca02ed428a00e542ca02a5674802eb43ea02ef434202e542ea02e543ca0aef43ce02edc1c802fd41ca00fd6fca42ed40ca126d42c2806dc28a006702ca006502e202eb42c202a702820ae502ea026542ca08e543ca026542ca022502a200ed42ca02e542c202e1028a08e0068a800d428a0a2d628a1ae7428a0a6d46ca10ef43ca02ed43ca02ef43ca026d43aa00cd43aa026f43ea0a6dc3e800ed42ca126d42ea0a7f62ca002742ca0aed438a00ef43ca026f43ca02ed42ea00ef43ca00e542ca082f42ca026fc3ca2a6f42c20a65438a026543ca026fc28a08cec2c280e6454a0265c442027dc3ca12f7414a1a6d43ca02e541e202ed61ca00ef43ca02ef47ca126bd7ce426f42ca0aefc28a086543ca08e742ca02ef63ca026743ca00e502ca0ae522ea00e7434a02efc3e202ef42ea00a503ca08e742ca02ed6bca02e542ca00ef42ea00ed94cb56ef43ca024dc3ca026d438a00e7c04a406dc3ea026fc3ca08ae634a02e6470212f",
+        "digest_minutes": 239,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:30+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:08+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:02, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:08+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 2.7,
+          "last": 2.7,
+          "missing_seconds": 0.0,
+          "real_duration": 14344.5,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-16_R&F_99A266A2.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-16_R&F_99A266A2.mp3\" (offset 0x290a45d): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 17,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-17_R&F_741BE783.mp3",
+        "original_filename": "R&F 2002-10-17.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "741be783e9dffd1b",
+          "audio_blake3": "5b3a460cb39de3cf2a27c4af5c8f930d8738544550b8de4e83b7553999c9ca1d",
+          "blake3": "817cab4eb7f2ea72d356922b8e30152368e3dd85c2845da9fe7d85ed1cdff7f7",
+          "sha256": "30d18df34ea878877f3dc90af80a397479298081ec118719b79546789f4c1ca8",
+          "sha512": "83167002d50cd03e6b25b64d2de492b17d85b14380492876a34d20c66a5835de14abf152f482245c27f5f50080d43b0a26e23c55ea84176caa466aa8d10f5937",
+          "sha1": "f4c4010a3e243c9a3c9650313b317f7ab0b5f208",
+          "md5": "825d5adc6ecad854f6c0696d27b27481"
+        },
+        "size": 42920407,
+        "duration": 14306.802,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:13Z",
+        "added": "2026-11-13T20:26:47+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "7418a12e541ca02f7494a12ed41ea026945ce52ef41ca026fe04a026fc3aa022fc3820aef43ea00ed428a02a743ea00e7438a026fc3aa006542ca02a742ea00e562aa00e502ca02e702ca02ef42ea02e5428a006f438a02ed428a02e742ea0aedc28a0ae542821265438a006d63ca026542c202ef42ca026f43e20265e3ea006f42ca12e5428a086d43ca02e742ea02ed43c200ef43ca006541ca026dc1ca0267c16a426f474e52fec24a12e7c042006f43c8022303ea02efc38a02edc3e202ef43ca006743ca02ed43ea10ef43ca00ed43ca02ef42ca0a6d43ca02ed43ca12ed63ca00ef43e8026f42ca02ef43c208ed43ca00ed43ea00ed43ea02ed438a12ef42ca026d42e2006d42ca02ed43c210ef43ca02ef06ce006985ca5667c46a026dc7c202ef17ca526bc782c86702ca006f42c0026563ea0a6742c2002742ca086563ca08e542ea00e7428a0aed62ea006f428a026d42aa00efcbca082743ea02a5428a0265434a00ed63ca026f42ca006f62aa002d428a0a2f428a08ef028a8a69428a006d428a026f42ca026f628a026f42ca0a6502ca00efc2ca804f43ea006e43ca026fc7aa02ef438a026f43c2126d43ca026742ea0aedcfca026f82c2c0e5c6c802c542ca806f82ca8069028a0029c28a82cd42ca08efc28a822f42ca02ed83ea086982ca08e542ca0aa5c3ca02ed43ca0a2d82ca0069c28a086d43ca126d42ea0ae9c2ca80a522ca086d43c208ed42ca00edc3ea00ed42ca806d82ca08cdc2ca802d43ca02e543ca022d42ca922b57ce426d478a506f474a00ed45ce52ff47ce4a6f02ca02af43ca026f628a006542ca026cc2ca026f02ea08ef43ea006522e200ed42ca026f42aa00ed63ca02ef42ea022d42aa026f428a006d428a006d62ea006f42ea00edc28a02af428a02cf42aa02ef62ca026942ca806f028202ef43ca026f42aa086fc3ea026dcb8a02ef42e200efc3ea0267c06a026fc38a00e9e38a0aef41ea08eec34cc2af43ca00e70282002542ca026542e2026743ca12e102c200e702c200e702ca02e5428a02ad628a0aed428a026d4a8a00ed42ca0a6d42a202a742ca006d42aa006d42ca0aed42aa026f428a02ad42aa0a2742ca02e542ea08e7c2a2026742ca082f63ca026f428a026543ca0aef43ea0a6542ca02e542ca0aef42ca004702a2026d62ca0a2d438a0205028a08ef43ca18ef02ea026542ca006d63ca02ad57ca526f43ca006d47ca126d47ca126fc34a122fc14a0067c04a026fc3ca006f038a004542ca0827428a006542ca0a6d42c200e5c28a8267828a80e542ea00ed638a0aaf43820065438a0a6f63ca0aef42a282e",
+        "digest_minutes": 239,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:32+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:07+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:03, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:07+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 3.5,
+          "last": 3.5,
+          "missing_seconds": 0.0,
+          "real_duration": 14306.8,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-17_R&F_741BE783.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-17_R&F_741BE783.mp3\" (offset 0x28ee9fb): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 18,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-18_R&F_CC39FCAB.mp3",
+        "original_filename": "R&F 2002-10-18.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "cc39fcaba874eddb",
+          "audio_blake3": "be5f0ca2910c95343bd5349f5ebc9f5b2042ebdc350f43388dcfe5585307c551",
+          "blake3": "134bc9a9590a71945ee8e710cf3ac4b0dbbadac49ff136f42d37b7cf787a61ce",
+          "sha256": "aaf01d0135ab951ae0048e8caca430a251c6a8a092c03dbd4de548356875e6a3",
+          "sha512": "b3f53808d64a1c9182d90242edd31ea5069213063524a5e4cea90ee9d521d14df87fed423fd1096e963c9ac1c08610c24e9978c879f82c5c14137b590362cfa7",
+          "sha1": "5fdcf7c4b51da116d63d2c104bd1498aad8c81a9",
+          "md5": "41ad987cbfcc3df59b54201827d1205f"
+        },
+        "size": 42930198,
+        "duration": 14310.066,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:22Z",
+        "added": "2026-11-13T20:26:49+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f43ca426d434a022f43c202ed638a106f43ca026f414a00ef47ce12ffc0ca026fcb4a026f42ca0a6f62ca0a6f42e200edc2aa8065438a12cd43ea022d428a08e543ca00ef628a02ed42ca02ef43ca0a6d42ea0a6d4382006f43c20a6543ea006d42ca026d42aa082d42ca02ef42ca026f42ca026f02ca002d438a00e742e2024dc2aa006d438a00e543ca02e562ca006dcaea02a543ca02e542ea00ef43ca0065c46a406d614a00ef416a026f43ea0aed47ca026f478a52ef55ca12efc7ce42ff41ca02ef438a02ed43ca004d43e2026d63ca006f428a0065438a00c522ca026783ca02ed42ca02e542ea0a6542ca006543e202e5428202e502ca0a2fc2aa026d42ca026f4282006742ca02ef42ca02ed42aa006dc3ea006f428a02654ae202a542ca024542ca026f43ca026d43ca086d43e2026542ca086d02ea0a6542ca02a5438a006f42aa006d43ca08e743ca026fc38a00cdc3ca02ef43ea02ed43ca026d47ca0265c46a026e420a52ed438a526d43ca0aefc28a00efc38a0267428a00ef03ca026f62ca826d43ca00a743ea02ebc3ca886f43ca0a6f428a02c5428a0aefc3ca00efc2ea006743ca02ef42c800ed438a02e742c200efc3ca006d43ca006d43ea022f42aa004502ca086f43ea006d4bca12ed63ca006d42ca02ef42ea026f42c2026d42ea0225434a02edc5ca126d47ca526f43ce42ff63c802ed43c8426f47ca12ef41ca1267428a026d42ea08ef43ca0aed62aa026d42820a45428a0227438a00e7428a02e742ca026543c2026f43ca0aef42ca02ed43ea00e702ea086d028a00ed43ca006342ca022542ca0aaf6282004f43ea006dc18a026d61ca00ef43ca006e4b4a406cc34a106541ca0a6f47ea42ef45ca02ed678a026d43ca022f438a02ed42ea026d42ea006d42a2026f428a02afc2ea0a2f43ca08e9c28a8a4dc28802e542aa006d428a00ed03aa8227428a00ed42ca002f438a0a2543c800ed438a024f42ea00ed42aa00ed62ca022d42e2022d628a00e543ca026d47ca026d43ca126e47ca02e7c06a026741ca00ed4dca12ed47ca527d47ca426f43ea00e741ca026f476a186f42aa806f428a02654202886d42ea00ad42ca08ef42e802ed42aa082d02aa022fc28a006f428a022542aa026d46ea00af428a28e502c282efc3ca02e542ca022f438a826f42ca806d428a02cf428a00e743ca02ef62ca0a6542ca026fc3ca02ef428a02cd43ca026d47ca00e5c06a4269c1ca02fd61ea02edc1ca546741ca022d43ca026f438a0a6d43ca004d43e2026d438a086f43c202ef43ca08ed438a026d53ca08efc3ca026d43ca08ed43ea026d43e8026",
+        "digest_minutes": 239,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:34+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:13+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:03, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:13+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 3.5,
+          "last": 3.5,
+          "missing_seconds": 0.0,
+          "real_duration": 14310.1,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-18_R&F_CC39FCAB.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-18_R&F_CC39FCAB.mp3\" (offset 0x28f103f): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 21,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-21_R&F_35218B45.mp3",
+        "original_filename": "R&F 2002-10-21.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "35218b455a121b9b",
+          "audio_blake3": "9248fefe9002fd368d65f93cbba2deedfec9f67c7995df07201c761bab25676b",
+          "blake3": "ef2c205d85665f7d718a82178e1d39ae7d83fc0e38975718cb4c6e56d73cc2a9",
+          "sha256": "0a84677e5372c592787656e522aeb9a79ce48116e5dd2d7ed6a8988446f0568a",
+          "sha512": "8ca98b75dace85fce3578deb8bbb0860a2bbbe808f0d177948d802dabb225eb6c3c16b786b8583d2fba19ab208e566c87e1b4563e4414d12826d1149ee51bf49",
+          "sha1": "b61f0c32e6c299a21ba228fc64f09bfe27262fd7",
+          "md5": "ddc8e003b597b5a6c859a5f2f8568cb6"
+        },
+        "size": 43137601,
+        "duration": 14379.2,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:29Z",
+        "added": "2026-11-13T20:26:52+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d67cc106fc3ca00ef43ca026f47ce12ef44ca626f45ca026fc3ea026dc3ca006742ca026f42ca02e542ea026f438a08efc38a884543ea002d62ca00ed42aa0265028a0ae943ca026d42ea004542ca026542ca026d42e2006743ca08edc28a02ef4aca026f428a02ef43ca0aef42ca0a6743aa026fc28a0a6502ea02cd428a026f02ea026fc3ea006f43ca10ef63ca02ef67ea00ef43ca126d474a026f43ca086b42c082ef42ca086f428a00edc38a00ad438a026dc2ca026f428a02e7428a8a6d42ea002742c208ed83ca02af62ca00e542ca026f42ea00ed43ca00ef42ea026f42ea02ed42e2006f02ca02ed42aa006f42ca006fe38a826fc3ea0aed428a022f42ca006dc28a00efc2a8006f438a8a6b42ca024f42ca02ef62ca02ed4282026f42ca0aefc28ac24de1ca00e9d58a42eb436a00e7e14a022f42ea00efcb8a02ed674a126f45ca02e582ca08c743ca02edc2ea80e542a8826542c2006542ca02e562ea00ed228212ed42ea0261428a82ed428aa26502ea026d42ca02e742c290e9e2aa806fc38a02ef42ca0ae543ca00e5438a00ad928282ed428a826742ca0261428a00e542aa00adc1ea82e7024a0ae7424a02cdc3ea1aef42aa02efe7ea02e5434a006fe3aa02e985ca566543c202e543ca12ed67ea00e743ca02e707ca0261018a826f43ea08e1420a82ef62ea82e5428a086342ca02ef428a086f42ca02c5c2e000ade2c2026542ca02e7228a0ae542ea1aef42ca02e7428a08e342ca00a122ca00e742ea02ed42ea886f428a00e702aa82e3028a80ed42ca00e9428a0261560292ed42aa82e502ca12e502ea026d43ca0aed42aa08e1024200a142e080e542ca12a546ea0ae703ca02ad42e20ae5414a026d628a022743ca02e741ca00e7474e12ed674a106d47ca026f41ea02ef57ca5aed43ca00ed43ea026f438a0a6d43ca004d43ea024d63ea0a6742ca00ef42ca00e102ca824e62c2886722ca026f42ea006d42828ae102ea00a5428282cdc28ac0ed83ca8221428202e5428a00e5c2aa0265424a00ed438a026d42ea12ef02ca00ef42ca086f42ca08ef63ea006f43ea0267554a12ed43ca126d57c202e7414800ef616a00ef61e800ef474a12ed438a0047c2ca802742ca0aa542ca08e702ca0ae542ca006f02ca006d42ea006542e200294bca0aed42ca02e543ca1aed42ca006103ca0a6d43ca02654aaa02e543ca08ef42ca026542ca006dc2ca806e428a02ad63ca02ef424a00ef43ea026f42ca00e543ca02ef42ca00e742ca08ef42ea024fca8a022d4bca02ef43e002ef41ca02ed43e202af51ca1aef63ca12e740c202ee474e02e7446a00ed6282086",
+        "digest_minutes": 240,
+        "decode_errors": 4
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:36+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:14+00:00",
+          "decode_errors": 2,
+          "found_by": "check",
+          "found": "2 broken spot(s) in 2 stretch(es) between 0:00:06 and 1:39:25, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:14+00:00",
+          "tool": "mp3val",
+          "spots": 2,
+          "stretches": 2,
+          "first": 6.7,
+          "last": 5965.0,
+          "missing_seconds": 0.0,
+          "real_duration": 14379.2,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-21_R&F_35218B45.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-21_R&F_35218B45.mp3\" (offset 0x2923a63): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 22,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-22_R&F_2557D131.mp3",
+        "original_filename": "R&F 2002-10-22.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "2557d131e6c5619a",
+          "audio_blake3": "383aa2327ec64f0248b3bbd3cef3d23c005b68f175d76edc8c8605e6073b0081",
+          "blake3": "8ff37780167319fd5bec14a200d3c6c5b661a908ed1c1ee3e7fc696fcdea65b1",
+          "sha256": "fb1414a59161c40adfd0b4179678d22751b2e85ea88d383e0a559b8af43775e7",
+          "sha512": "5797209ad0811ab3587d392bfec814936873647e1a8350fec199ddc1d00480d48eb2e960864abb5c79d063354e64ab87a6be5cd84ae2b32c334088a89cc3e124",
+          "sha1": "db65d72a854723e4e22c07090dcbaddef80aa785",
+          "md5": "511890de230a306bdbfb9e710e8ecb7b"
+        },
+        "size": 42906074,
+        "duration": 14302.025,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:35Z",
+        "added": "2026-11-13T20:26:55+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d63ea02af414a1a6f43ea00cf41ca0a6fc4ca026fc2ea026f42ca024d42ea02edc28a0065028a026d428a08e542ca0a6d42ca02e743ca026502ca0865428200ef42aa088502ea00e542c2006542ea1ae543aa00e742ca20e543c200e7524a12ed42aa02ef42ca082dc28a00e742ea02e562ea02ed43ca026d42aa0ae9428a0227428a02ef62ca12e542aa006743c2026d42ca086742c20a6d42ea80e542aa80e562ca02add542006fe3ea02ef41ea02edc1ea026d438a800f43ca006f43ca0a6fc16a02674b4a0265476a12ef43ea02af42ca00abc38a086d438a006d438202e743ca0aef42ca022f42c208efc3ea086f438a0aafc2ca0a25c2ca0225028a086742ca2aaf62c20aed42ca00cd42c200e542c20ae542ca0267628a00e7428a0207c282028fc28a0aad42c20a6d43ca00ed63ca1aedc3ca02e743ca02ed42aa08af63e202ef47ee02fe514a52bd47ca426f43ca026742ea02e763ca02ef42ca02e5428a02af63c20aa5428202af628a022f428a00ed428a02cd62c2026502c202e762e200e542ca0aad42aa0ae502ca00ed43ca026742ca0aa702ca08ed438a02cdc2aa0087428202ed42ea0ae743ea02e542aa02ef42ea0a6f4aea00ed43ca026f42ca0ae741ea12f741e202ee474a02ed47ca126d47ca02ed41ca00ef67ea02ef438802a542aa18e742ca0a6542ca02e5438200a543ca02cfc3ca026d428a00e543e202e502ea006d42ca026d42ea02ef428202ef42ca026742ca02ed43ea12ad42aa006f428a026542aa006f4a8aa22dc38a0aefe2ca08afc28a022b03ca02af43ea08efc1e2406f63ca02efc1ea02ef41ca026d43ea026fc3ce026de3c202efc38a02e763ea006d42ea00cfe2aa026dc3a2006f42c2022502ea08a543aa006742ea026d42ca006f42ea02ed42ea02edc28a886d428200ef42c2026f428a02ad43ca006fc2ca086fc2ea00e502ca02e562ca002f23ca00ef028a08ef42ca026d45ca026f57ca52ee474e02ef47ce52fd41ca0265444a526d43ca02ed43ea02e7428a0225428a822742ca02e5c3aa00ef43ca00edc2aa02ad43aa026d438a006542ca00e7c28a02a743ca00efcbaa08e54a8a0a6542ca02e502e208e743ca0ae742c202ef47aa02e542ea006f43ea026f43ca026d434a02ef454e02ef474a126f47ce00f743ee02e7438a02ad43ca0ae743ca02ed6bca026743ca0a67438a00ef43ca026f43ea0aef43ea0aed43ca006f43ca026d42ca00ed43ca08ed43ea02ed43ea02ed43ea02ef43ca026d43e200efc38a02e743ca00e543ca02ef43ca026b438a006543ca12ef65ca02ed41e800ed47ca126f67ca0ae522e8026",
+        "digest_minutes": 239,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:39+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:19+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:02, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:19+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 2.7,
+          "last": 2.7,
+          "missing_seconds": 0.0,
+          "real_duration": 14302.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-22_R&F_2557D131.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-22_R&F_2557D131.mp3\" (offset 0x28eb202): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 23,
+        "part": null,
+        "notes": "Midday",
+        "extension": "mp3",
+        "filename": "2002-10-23_R&F_4A8660B9.mp3",
+        "original_filename": "R&F 2002-10-23 -- Midday.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "4a8660b9d90011fb",
+          "audio_blake3": "ff764144e4ed1c3715a63cad27eaa82b44a79608af3066646b0d1f98bf36a28e",
+          "blake3": "ff764144e4ed1c3715a63cad27eaa82b44a79608af3066646b0d1f98bf36a28e",
+          "sha256": "b29dfe5fe7f5a0d31201c2b3630b2c70f9d823e03754aea048a1398710ffa5e1",
+          "sha512": "e5748cc68ef8761e7fc1673d6d39e0de81aac2d09a5722701d0dca70b93f3fc3a9930291fb96e3bad64226a6b6becaf02283da3722c9ae05106ca39667e94f7a",
+          "sha1": "d554a0b8f2fd4dc3efe145e3feb4391bbb59a029",
+          "md5": "3ca034f7bab39669b3818ecbcd707928"
+        },
+        "size": 30865136,
+        "duration": 10288.379,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 11025,
+        "mtime": "2026-11-13T20:21:42Z",
+        "added": "2026-11-13T20:26:56+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fe5ca02e547820025c68a022d42ca026f4282026fc38a00efc38a02ed438a006fc38200af43ca00ef43ca12efc2aa026dc28a006743a2026f02828265438a026fc28a026543ca00e543ca00efc38a024d438200ed63aa026f43ca00edc38a026543ea02ed43c20aefc3ca006f43ca006d438a026dc3ca086f43ca026f438a00ed43ca006dc3820aef438a08e542ca022f43ca20ef63ca02ef43ca00efc2ea006f42ca026d43ca00ef62aa00ef42c2026f438a02ed62ca02ef43aa02ef43ca0aef43ea00ef43ca08ed43ca026743ea00edc38a026d43ea026d43ca026f43ca00ef42ea02ef43ca022f47ca0261428a022d43ca00c5c3aa02e742c2006f438a02ef42a808af42ea0a6f43aa00efc3c2026d428a026f43ca02ef43ca0aef438a00ed43ca02ef638a02ef43ca02ed43ca02ef63ca026d43c200ed438a026d43ea02ed638a0aef42ca026d428a0a6d42ca02cf43aa0867c2ca00afc3ca026541ea0ae742ea02e5478a02edc38a02ef4ba202ef43ea026f42ea026dc2ea006d438a026fc38a00ef43ea08ef4bca02efc3ca0aef438a0a6f63aa006d43ca10ef63a8806d43ca006f43c2026f42c800e7028a02e7e3ca026f43aa0a6d42ea006dc38a086702ea00ad428a02efe2aa02ef43ca006f42ca0a6e43ca02ed42aa00ed43ca02ef43ca02ef43ca02ef43ea02ed428a02ef42ea00ad4b8a00e9c38a82ef838ac2edc3aa0265428a0a6f4bca000d43aa026f43ca00e74282022f42aa006200ca02e7a2c2026fc2aa0a6d41c210edc38a02efc38a02ef43ea0a6f428a006f42ca2aef42ca08edc2aa002f428a086f43c2022fc28a006fc382086fc38a026f42aa02ef628200ef43ea02e742ea00ef638a0a65c282022fc38a082d428202af438a026f438a00efc2aa806dc28a02e742ca0a6542ca086dc3ea00cf42ea0067c2aa022b43ca02edc38200ef42ca02edc32a00e",
+        "digest_minutes": 172
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:40+00:00",
+        "check": {
+          "date": "2026-11-13T21:12:10+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 10288.4,
+          "empty_percent": 2.5
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 23,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-23_R&F_4394A56D.mp3",
+        "original_filename": "R&F 2002-10-23.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "4394a56d326047f8",
+          "audio_blake3": "b5fe127b04b3b3a93847e82a3f76c35fae3629f05a194d28838cf8a02470701b",
+          "blake3": "b5fe127b04b3b3a93847e82a3f76c35fae3629f05a194d28838cf8a02470701b",
+          "sha256": "aecebc6170ac747da7038524511cb5fb3de40ece811f5f12b9901bad784043f9",
+          "sha512": "2a758c943fbdc23fab5fe1a7fab5e262c399f8b823efef58228a9cba3f4f62ede1a948551898f5aec091e1f2bf7b3e7da911345fa46d853a055850fa95d12837",
+          "sha1": "433b15ed089a84503336d230b1d8e4e7db1e5829",
+          "md5": "78f0cf997ba2da3ad5b5ff2cfb08896f"
+        },
+        "size": 40403461,
+        "duration": 13467.82,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:46Z",
+        "added": "2026-11-13T20:26:58+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f514a52f6c042067fd54a2265c3ca026dc3ca026743ca02e547ca00e542ca006d43c800af43ea00e543ea006dc3ea02e543ea02e542ca08ed43ea00ef42e2006d43aa006d43ca006d42ea026ae3c280ad43e808efc3ca00edc38a08e5c3aa02af43ca12e5024212f560ca0ae543ea0265420a026d43ca02ef4f4a12ed434e126f434a12edc14a4865434810ef43ca02ed43ea006dc3ca006d43ea08e543c20ae5c3ca02ede3ca006742ca0aedc3ea026d63ca00ede38a02e543ea08e543ca02ed42ca02e563aa026dc3ca006f43c8086fc3ca0065434a12e5434a0265426a0265014212e5454a006b43ca02ef5d4a1274d14ac22d614a12f7044a02ffc3ca02ed43c2004f436a026dc3e800ed43ca02ed43ca02e542ca02e563ea02e543c202ed43ca00ef43ea02ed43ca126543ea0aed43ca02e543ca006f43ca0265c28208af43ca02e543ca00e543ca026f434a106405ca9a25574a02f5436a1265476a12a5404a02ed424a82efe24a026d016210e5054a12ff43ca02ed43ea0ae9c3c2006943ca12e943ca026d42ca006d43ca00ef43ea08ed028a02ef43ea00edc3ca026dc2c2086f43ea02ed428a00edc3ea006543ca02ef436a026d43ea10ed43c2026f424a0aed43ca0265036a10a5556e18fd47ca12ef43ca00ee494212ff474212ee414812ed554e12754546187f434a12e5004a10ed43ea00edc38a00edc3e20aed43ca00edc3c2006742aa00ed428a006743ca00ed63ca026543ca02ed43ea00ed43ca006f43ea026d43ca02ed43ca02ed430a006543ca026dc3ca12ed43ca0aef434a02ef434a0265074a126bc74e167f654a16fd474a126d416a126f414a12e5454a106d004a12f4d54e5265444a5aff43ca00e743ca02e7438a00e542c202ed42ca02ed43ca00ed484a1a2543ca12e542ea02e5424a12ef43ea0265434a00ed47ca0065434a08e743ca02a543ca10e5234a02e743ea0acd474a126f43ca00ef5d4a12ff434a026dc14c127d436a126dc04a1267054a10fd314052f5544e5269c5ca02edc38a006d43ca00ed43c200ed43ca024542ca00ed43ca08ed43ca02edc3ca004d438a026dc3aa00e742ca02af43ca006dc3ea106dc3ca02ed43ea08ed43c2086d43aa0265428008ed438a00a547ca0aa5434a02edd54e1265544a10fbd14a406f454e526d054652fdc142106d416a126e514a52ffc34a0247024a00ed43c200e543ca006dc3ca02e5428a00ed43ca02ed42ea00ed43ea006fc38a02e7eb8a024",
+        "digest_minutes": 225
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:42+00:00",
+        "check": {
+          "date": "2026-11-13T21:12:12+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 13467.8,
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 24,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-24_R&F_758F12CB.mp3",
+        "original_filename": "R&F 2002-10-24.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "758f12cbf85816ac",
+          "audio_blake3": "80217e6dbcfc8bfea92a85d44789d0e7c85c5d6f4a0cc908b0e631cd23e88fd6",
+          "blake3": "0346d14bd3ae35b1506b3563d7b3622276d568722cc4ea7440e3116de46644cb",
+          "sha256": "de2f13105a5a1162fff95d9531b29ed38d272409bfeab4e9410124f22ac4d6e7",
+          "sha512": "2f2265a9025cd1139b20210d14f8171d25480a55e3417e6d3f2fbd912af5d92ef57c45b227d2a11ef15b09528ea6f2b704ab77e324fd604dff8ad1fab96fa05a",
+          "sha1": "a4e64e2b2f10d071f707b64de01c4579d5ed710a",
+          "md5": "37ad84967522b9ca6de59c64ef76447b"
+        },
+        "size": 43201616,
+        "duration": 14400.539,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:51Z",
+        "added": "2026-11-13T20:27:01+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f65ca12fe114e52a541481ae7c16a026fc44a026f43ca026fcaca026fc38a086f42ca004d428a00e54282026d42ea086742ca026503ca00ed42c802edc28a026d62ca0a6d028a022dc2a2022dc28a806fc3e2006d43ca02e542ca02af428a00af028a00edc28a026f428a00ebc2aaa86f428a006f428a822f42ca826dc28a002dc3ca00e547ca122d57ce57ef67ca02ed474a5065c3ca022dc3ca006cc1c2126dc1c802ed63ea02e7c4ca066d42ea086fc28a0a6d43ca026fc2aa8a6f62ca002f42ea026d42ca0aefc3ca026dc3ca00ed42ca026f42ca02ef43ca0aed42ca02c542ca08e543ca026941ca126f45ca527d674a126f456a00ef474e02ff43ce006f57c202edc1ca02ef62ca026742ca002502ea006542ca02e54aaa02a502ca02e542ca0ae742ea00a542ea02ed42aa006742c20264028a022b42aa02e5028a006502ca02ed42ca0265028a0ae74aea22ed42c20a4542ca026d02ca00ed42ca02ef42ca086d438a02edc3ca004f43ca006dc3ea086f438a00ef43ca02ecd3ea1265404a5aef47ce52fd474a10ef41ca02ed43ca026d4d4a124d42e2006f62ca02edc28a022742ca02ad028a024f42ca026d42ea00ef42ca02e542ca006f428a0aef4aca02ad43ca006102ca0a25428a026d428a00efc3aa02eb42aa2aef034a026e02ca02ed43ca026fc3ca02ef43ca02ef45ee42ff43ea10ef434a12edc1ca026f41ca02ef45ca426543ca0a6d428a006f43ea08efc3ca8245428a00e743e2026542ca02e543ca02e543ea02e142aa00c542ca08ab43ea08ed438a00e542ca00e143e202a742ca026542ea02e742ca00e542ea0065438a12e1c28a0aaf43ca00ed42ea026542ca00e541ca02e746ea12ed43ea806502aa00e5428202ad42ea02af42aa00efc3ca006d43ca08ed43ca0aed57ca52edc3ea126cc38a802f43ce0aedc3c2426bc7ca02ef41ca02ef616a12edc3ca006742ea82ecc38a006d42ca026f4b8a026d43ca00ed02a208ef43ea00ef42ca026302ca08e002ca1263004a02ed028a12e502ea1aee226a12ed43ca022e03ca0aaf434a02ef43ea026f454a12fd478a5269c7ca02ef41ea00ef434a12e567ca006542c2002542ca026742ca006d42ca0a6f42ca082d43ca026f02ea026d42ea00edc2ca0aebc38a026f42ca02ed42ca08e742ca00e342c200af428a08ef42ca006f42aa206d434a02ef43ea00ed47ce12e5404a126f41ca02e541ca02ed61ea02ed41ca004f43ca12ed11ca126f42ca026f42ea02ed42c20aef42ca08cf02ca02e542ca0a2fc3e200e542ea006542ca026f42aa006f63ca026d43ea10ed41ca9069c5ca026540c2126f434a12e",
+        "digest_minutes": 240,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:44+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:24+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:06, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:24+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 6.7,
+          "last": 6.7,
+          "missing_seconds": 0.0,
+          "real_duration": 14400.5,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-24_R&F_758F12CB.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-24_R&F_758F12CB.mp3\" (offset 0x2933478): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.6
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 25,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-25_R&F_7C2E8549.mp3",
+        "original_filename": "R&F 2002-10-25.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "7c2e8549073e4170",
+          "audio_blake3": "5cdc7ddf54f506fc4923e3b6484201c91edc7684479c251f87062a2475599863",
+          "blake3": "5cc318a42ea1ea2bd3bb616f1c2ca010d20e95789b8f70b6e4e5a1ada78588a1",
+          "sha256": "4f46944fcad707296e8a376d32274e34603db9048ad58c0813eb8fda784567c9",
+          "sha512": "167f156177f2f3a2dc9196b74ff1765b5b1bbbd7c07b8395d015df94bab68f21b459705a4c4ebb254378c90f5e103b977fe50a19f33a7b77bac64baa177b7d09",
+          "sha1": "4ffcdbbab8fc43d7c28ecd68a3994b8deff11ffa",
+          "md5": "121bf410ddd6280a73f93dd2fad8f370"
+        },
+        "size": 42067938,
+        "duration": 14022.646,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:34:57Z",
+        "added": "2026-11-13T20:27:03+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc148026f43ca026fc3ca02cfc3ca006f42ca02ef43c202ef43ca026f43ea006dc3ea026f42420269c3ca08ed43ca026f43ca0a6f43ca02ed4288026f43ea00ed43ca02ef43ca02ef43ca00ed43ca086fc3ca8a6543ca00ed434a02efc3ea0aef574a52ed42ca02ef43ca12efd1ca166761ea02e141420a6fc3ea006f43ca02ef43ca026bc3ca026b4342086d43ca18ed43ca1aed43ea02ef43ca08e502ca02ef42ea026f43c202e5436a106d43ca08ef438222ef43ca0a6dc2ea004f43ca082f42aa026f42c80a6f43ca026f42ca002d42ca026dc34a02ef436a02ee414a1065444a1a7541ca02e9808a906fc3ca02efc3ea026fc2aa806b42ca006f62ca00ed43ca02ef42ca02ef42ca006f43ca02ed63ca12edc3ea08ed43ca006f43ea006f42ca0aef438a006d43ca02ef43ea006f43ea00ed43c2026102ca022d43ca02ef43ca12ef434a026d438a002fc3ca006f42ea006f42ca006d43c2106d43e202e541ca02ad67ca0aff566e12fd414a0ae7416a02ef476a02ebc28a00e543ea026dc3aa00edc3ca00e743ca02e543e21aef43ca006d43ca126f43c8026d4be2026d43e8026fc3ca0a6d47ca12ed43e800ea538e56ea014a02ef43ea90e7434a026542a202e702ca0a6762c802edc28a0a6e4340826ec2a88024028a002f628a02e542ca1a69c28a026fe2c200ed42ca086543ea006d42ca00af43ca02efc2ca006d438a00af42ca08e9428a206f438a006fc3aa026d43ca026743ca026fc3ca02e563ca02edc3ca006dc3ca006dc3ca804da3c8806de3ca886dc3ea086742ca02ed43ca0065c14a026541ca006e450a12ef43ca026d430a026fd10a52e847ca42fd43ca00ef42ea026f42ca0a6f02ca826f42ea0a6f434a0a6d436a08e542ca02e543ea00ed438202ef43ca02ed42c8026b42aa026703ea026f42ca024742ca004f42ca08e743c2106fcbe200ed62ea12e7424a1ae752ca02ef42ca02ed43ca08e9434a02efc1ca02e957ca12af41ca0a6d41ca026fe1ea02e9428a906f414a42ed43ca006f42ca08af43ca086fc3c200ef42ca006d43ca0a6f43ca00efc3c0086f43ca026f428a8a6f43ca026b42ea8a6dc2ca826d63ca026d42ca00ef43ea086fe3e200cd42ea00ef42ca026563c202eee3ca026fc18a02edc2ca0aed42ca00ed43c802ed42ea026f42aa022d82aa822f42ca006f42ea006d42ca086d02aa026fc3ca006d554e14ff414a12ef046a9675424a826fc3ce024f43ea02ebc3ca106bc3ca026b03e2006fc3ea826f42ca026f43ea02ef43ea006f02ca00efe3ca0077e32a0225c16a10e",
+        "digest_minutes": 234,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:46+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:24+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:02, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:24+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 2.4,
+          "last": 2.4,
+          "missing_seconds": 0.0,
+          "real_duration": 14022.6,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-25_R&F_7C2E8549.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-25_R&F_7C2E8549.mp3\" (offset 0x281e80a): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 28,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-28_R&F_27A4B9DD.mp3",
+        "original_filename": "R&F 2002-10-28.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "27a4b9ddd193e38e",
+          "audio_blake3": "f5df79970fd7849934cd4f2a0106a8f697fce41d9d00606caeb3664dd804c414",
+          "blake3": "9b217dab5a1cfb41f592971becd381b460ee466395ebaa33f0f8b09ad35c026e",
+          "sha256": "07acf188f83b1afff08afdef37ac282a6aae3fd8115c72490da02e7b4659494b",
+          "sha512": "be387b61f1070549dc6883200f6ceaa51414696b5a05fe558d8bfc870bfb9ee38e491479f4f8d0e9ee6dec3d844a7c3e99eb6478052975607d9656eb2e9d5002",
+          "sha1": "63d062f78dcf9807e059aca747c333afc96d7fa5",
+          "md5": "0024fee882c9b7332e78ec9a1442eb9c"
+        },
+        "size": 42998939,
+        "duration": 14332.98,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:35:02Z",
+        "added": "2026-11-13T20:27:06+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f41ea00ef434a1a6dc04a006f4142027e904a226f456a02ef43ca0a6f634a006f43ca02edc3ca026f63ca02e562ca106d43ca0ae74bca00ad43ea02ef434a026543c2006dc3ca0a6f43ca026de3ca026f43ea026d43ca006f43ca00ef43c200ef43ca0aef42ca0aef43ca02ef42ca02ef43ca00ef42ca00e702ca1a6d43ea026d43ca02ed43ea0a6542ca126fc3ca00ef434202e54042002545480ae541ca02e7416a027dc16812e9e54a12ff014a026346ce127742ca086b470a5a6f42ca0a6723ca002d43ea02cd42ca086d42ca022f42ca026f42ea0aef438202e743c202e9d34a006f838a086fd54a40ed426a8265554a526f43ca026dc0421a6f42ca02e340e202efc3ca0aed634a026b43ca022702ca022742ea00ed02ca026fc38a82edc3ca806ac2aa806d428a086fc3c212ef434a12e7c3ca026543ca02ef03ca026f424a0065438a026542ca006f434a0265038a00ed432a02ed43ea184f424a026502c2082f62ca0aef43ca00efc2ca806f42ea026f424a0a6f43ca8865422a906dc28a086d42ca806d43ca10e5c30a126d434a1269414a54ff614a16ffc3ca08ea57ce56e5414812ed434a12efc14a026f4148026fc3ea02ebc3ca026fc3ca026bc3ea026943c2006fc3ca006f03ca086743ca006f43ca026d43ca02ef42ca006dc202026752e29aef434a086dc2ca824f43ea806d42ca826d43ca007f424a006f43ca00ef42ea0a64028a00ef42ca028b62c2026dc28a00690282106542ca1aed63ca00ed434a026f036802ed554a5267414a02ed47ca12ed41ca08efc3ca00efc24a0a65c54a1277496802efc3ea02c542ca026542c202a5434a0ae706e000a5424a12ef42aa006d02800ae502ca18e7466a80ed638a02ef43c2006f42889a6f42c200e5028200a942ca82edc3ea882d03ea0a6f42ea026d47ca02edc3c200ef474a4a6fc3ca006741ca026d43ca00e500ca82ee01ca12e9e1c812ed43ca02ed47ca0a6f434a1aed43ea004f43ca0a6f424a00afc3ca086d62aa02ef428208a942ea026302ca82ef428a002dc3aa026542c2026543ca026dc2e20a6fc2ca022f028a026d46ea127d42ca022fc3ca006d614a12ed454a12ffc5ca02edc16a0a6d424a9265424a0269c1c812f5614a02ed838a08ef43ca0a6f434a02ed43ca02ef42ca0a6d43ca026dc38a126543ca08e543ea00ed438a0aef43ca00ed63ca006fc2ea086f42ca00ed43ea026f434a0265654a12f5454e5265444212ed47ca12e143ca006d41ca126fc3ca0aedc1ca0aef55ca0aed42ca00ed42aa80edc38a886b43ca88ed42c2006743ca0ae683a28aa5454a12f541ca026f43ea02e",
+        "digest_minutes": 239,
+        "decode_errors": 6
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:48+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:26+00:00",
+          "decode_errors": 2,
+          "found_by": "check",
+          "found": "2 broken spot(s) in 2 stretch(es) between 0:00:02 and 2:36:37, ~0.1 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:26+00:00",
+          "tool": "mp3val",
+          "spots": 2,
+          "stretches": 2,
+          "first": 2.9,
+          "last": 9397.2,
+          "missing_seconds": 0.1,
+          "real_duration": 14333.0,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-28_R&F_27A4B9DD.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-28_R&F_27A4B9DD.mp3\" (offset 0x2901cbe): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 29,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-29_R&F_80F74FCE.mp3",
+        "original_filename": "R&F 2002-10-29.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "80f74fce7d19db8b",
+          "audio_blake3": "3b8c843dc9ab3649e1243668ef148451309acf21855dd8d2cb92e896913f38d5",
+          "blake3": "c9a1a06956da75ef401f589f9ffceb910ebdd1d8b4b067dcb5e95001c77362ba",
+          "sha256": "c6cfff6631df5325b24ecc5315d7266ba592523a8c864b6ba9e9e6699c5b67b1",
+          "sha512": "7dcabee865f58ced3f0f301a8a2e8d0a4ac6a7b54d56c877d689124c76bce42a7e443aa313a60759263fff1ac12d0a0eac103939b87ca47507d8700b4cd4677d",
+          "sha1": "3f35667467cbb607424e13099b03ba39a6469e42",
+          "md5": "afca43c4b50789a041ba5a0f60a5677f"
+        },
+        "size": 41612557,
+        "duration": 13870.852,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-10-30T20:35:08Z",
+        "added": "2026-11-13T20:27:08+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "9c5ca506705ca10ef41ca0a6e514a52bf41ea02ef43ca2267438a02ed428202e5c28a0aef43c20aef42ca0aed4bca0a4f02ca022dc2ca02ef42ca026d42e2022d43ca026562ea0225428a02ef43ca006742a20265428a08e642ea0a6d428a0067428a02e542ea0a6542ca006f428a00ef62ca02e542ca026542820867428a026d43ce00efc7ce406fc3ea00e5456a02e5454a12efc14a02ed63ca02ed41ea02ed43ca12efc7ea00edc3ca024fc28a00cf43c800e542ca00e7424200ef63ca02afc2ca80e742a8002542aa02e542aa02454aca026542ea0a6543ca0065638a0aed42aa024f42aa02ef628a0aed42ca0ae5628a006d628a0a2f42aa026dc2aa026dc3a202e542ca026d43ca026dd3ca002f43ca02edc3ca02ed41ca4aed57ca10ed41ea02ed43ca00edc3ca02ed41ca026d47ca52e7638a022742ea02a543c20a65428a00ebc28a02e5628a0aed43a2026d43aa00e7438a00e743aa08e743ea02e583e2026e42ea026f42ea00eb42ea006d228a006d4282002d028a02a542ca08ef42ea02e543ca08ad43ca1aed47ca02ed4bc000ed63c8026f56ae52e943ea02e7c14a1aefc1ca12ef456a0265474a00ef62aa0a6f42aa086f43ea08e7428a0a65438a02e742ca00ef428a0a67428a006f42aa0865438a00cf428a006f43ca0865c3ea00ad428202edc2aa086f43e28865c78a026f42aa026dc28a086f01ca02ef43a20aef43ca02ef43ca02ef534e12e545c812ed41ea02fd41e212ed65ca12ff41ca026fc38a026f43c2026f42c2086f42c202654202006542ca0ae743ea006fc282002f42ca020763c202ef42ca026542ca000d42ea006f42ca00ef42ca00eb42ca886f42ca02ef428a00ef43ca126fd5ca026dc1ca02efc1ca02ff456a1aed43ca02ed43ca02ef01ca026f63ca0ae7530a4227c20a8227428a0a6d43ca006542ca906303aa88e542ca02e742ea02e542820ae5422a02edc28a02e503c202ef43a20aed42ca80c5428a0a6742ea0a47428a00ed428a086742ca0ae7028a00e742ca02a542e202ef428a02efc3ca02e545ca126fc3ca086541ca02ed574e10ed45ca1aedc3ea08e701ca10ef41ca026d61ca0acd428a00e7628a02672aaa02adc28a026102aa02ef42ea006f42ca08e742aa022d638a00e742ca00ed42ca026f43ca026f42ea02ed43aa006e42ca82e547ca12fd43ca12ed43ca026540ca1aed63ca02eb43ca006dc3ea02e9e5ca12ef00ca00edc54a826742ca026742ca0265428a0a6de28a002742a208a702ca0aef42ea00e702aa026542ea08a",
+        "digest_minutes": 231,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:50+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:34+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:06, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:34+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 6.7,
+          "last": 6.7,
+          "missing_seconds": 0.0,
+          "real_duration": 13870.9,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-29_R&F_80F74FCE.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-29_R&F_80F74FCE.mp3\" (offset 0x27af53a): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 30,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-30_R&F_39E786FA.mp3",
+        "original_filename": "R&F 2002-10-30.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "39e786fa7dcc622a",
+          "audio_blake3": "23ccca2105708390c242986de1eb01adce3ba7dd8140491ae2bb04e7aff5a818",
+          "blake3": "a8a49a729d67bef875de8643fc81896ccf8e11aac9497646fcfbc134c66f9441",
+          "sha256": "4e4ae02fa64ef5959861a6d54b74ceac65d256221308d50b528ed0a111d049f4",
+          "sha512": "2f7e784fd311fe08f57bca74fdc98a0dac0a1c86e41ffc77ab3b12510d69e7b82040ecb0ffa1f60b54c1498aad2f3406f9cc19ba79fb91ee72a677fd9ae96f19",
+          "sha1": "e55497a4032224ad08a28f825bfbc1171194da85",
+          "md5": "756da0512c7550f8350c2564316b583a"
+        },
+        "size": 41915221,
+        "duration": 13971.74,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-11-13T17:21:11Z",
+        "added": "2026-11-13T20:27:11+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f55cc52ff414a12ef41ca0aee514a52b7c1ca02efc7ca0a6f42a8026543ca026f42e208ef43ca0a6562ea006542ca0aed43ca02ef42ea026f428a02e543ca02efc28a026d42ca0a65028a02ef42ea02ed4282006542a202ed02ea006d43ca006f43ca02a7438a02ef428a00ad42c20285428a00656aea02ed428a822f43ca026dc0ca086d40c212ed43aa02ef43c2026d41ea00ef45ea42ff07ca02e543ca02e9c1c812ef02ca026fe38a02ef428a886fc28a006d628a00e54baa02efe3ea00654282002fc28a02edc2aa006f42c202e542ca02ed62ea0aef0382026f42ca086f43ca026f43ca02ef414a10ef63ca026dc38a02ef45ca42ede3ca02ef43ea02ef43ca02efc74a52ed438a026503ca026f43ea0265c3ca006d43ca826f63ca00ed63ca022f43ca026dc26a0225e38a022543ca02ef43ca02efc38a026d42ea02edc38a026d43ca00ed438a026fc2ca026f42ea026543ca026d43ca00ef62ca006f638a0267438a08e502ca0267428a00ef62aa026747ca00ed41ca5aef00ee006f43ca02ed43c202ef43ca02efc1ca12efc18a00edc1ca02e9e1ca12e947ca42ff428a006f42ca0867428202e542ea02e702ca006f42ca00656a8a02c742ca00e743ea0ae7228a0aa743ca02ef42c20a6743ca02e743ca026d42aa02ab42ea08ede3ca026d42ea006dc3ca0025414a126e69ea02ede1ea02edc1e000ed43ca02efc34a1aed55ca1ae505cf527504df527524ce537302ab826de38a0aad438a0ae542ca02cf028a80e542ca02ed42c202e542a202a502ca02e542ea08e743ca00e542ca0a6542ca006742ca0aa702ca00654382026502ca0aef82aa00ed428202e742ca2ae542ca086542ca0a6502ea02cdcbc20aed43ca026541ea02ed41aa00ef43ca02ef43ca02ed43ca02ed55ca12e5438a08edc3ea00ed43ca026522ca0ae542ca006f42ea0a6942ea022562ca026c0282022d42820aa5428a12e542ca00a70aa20ae702ca0a254a8a0a2f63ca02e6450a02ef63ca02efc3ca106f414a02ef4d6a02ef004a00f901ca127d41ca026d41ca006563ca022f43ca126502ea0aef42a202ed42ca106f42ca0ae142aa02ef42ca022f42c2026922ca006542ca0245438a0225c2aa0269c2aa026dc28a026742ea02e543ca026f43e200ee428a82eb02a2202502ea006d47e20ae541ca12ed45ca12ef41ca12ef4d6a02e9e1c812ef418a02efc1c818ed41ca026545ca52e747ca18afc28a02e542ca0265628a8a40068a102702ca0265428a00ef428a028702ca02a702ca02e742ea0ae502ca00e542ca022",
+        "digest_minutes": 233,
+        "decode_errors": 2
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:52+00:00",
+        "damaged": {
+          "date": "2026-11-13T21:12:37+00:00",
+          "decode_errors": 1,
+          "found_by": "check",
+          "found": "1 broken spot(s) in 1 stretch(es) at 0:00:06, ~0.0 s lost",
+          "checked": null
+        },
+        "check": {
+          "date": "2026-11-13T21:12:37+00:00",
+          "tool": "mp3val",
+          "spots": 1,
+          "stretches": 1,
+          "first": 6.7,
+          "last": 6.7,
+          "missing_seconds": 0.0,
+          "real_duration": 13971.7,
+          "warnings": [
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-30_R&F_39E786FA.mp3\" (offset 0x0): Garbage at the beginning of the file",
+            "WARNING: \"/home/claude/MOGUL/mogul_library/radio/Ron and Fez/2002/10/2002-10-30_R&F_39E786FA.mp3\" (offset 0x27f9379): It seems that file is truncated or there is garbage at the end of the file"
+          ],
+          "empty_percent": 1.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2002,
+        "month": 10,
+        "day": 31,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2002-10-31_R&F_A9CD121A.mp3",
+        "original_filename": "R&F 2002-10-31.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a9cd121add01f527",
+          "audio_blake3": "d67af8551a73fe413f9b040dc52fa3713b984b9bd11e7f92c1166f89a5e08348",
+          "blake3": "d67af8551a73fe413f9b040dc52fa3713b984b9bd11e7f92c1166f89a5e08348",
+          "sha256": "ce51224759701a020964e79b328dd05c28072db95d018133dfb142479392e7cb",
+          "sha512": "c0a8d01e894ff9898c3ade5f60a593135e2260206a2fcaae4de6e098d57db27c88dd9b5e9a4afe401041a41df673a08f739e6660f3677d7e204a6c45b7403499",
+          "sha1": "adc8846ce56db6ff7aa52243d1e319a4dc9b76e9",
+          "md5": "08ff37f91ae9c0cf5dc191b5cf592aa1"
+        },
+        "size": 41093878,
+        "duration": 13697.959,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 24000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 22050,
+        "mtime": "2026-11-13T20:21:42Z",
+        "added": "2026-11-13T20:27:13+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f42ea0a4fc2ca026f43ea10ef62ca02edc2ea086d424a022dc3ca004f43ca006742ea08ef43ca02e543ca08ef42ca026d4242006543ca086742ca026fc2ca006f42ca02edc3ca826f43ca0ae543ea006dc3ca826d42ca086fc28a026d43ea006fe2ca026dc3ca0065c28a8a2fdd0252e5044a1a7f41ea02e100ca026fc34a026dc042186fc3ca8265494a1260048bd67016cbd77004cf9670d6db9635e3ca026f42ca02ed42c2086f02ea00ed42c20269c2aa806d42ca022702ca00ef43ea026d468a0a6fc38a006542ca0a2d43ca02e543ca00ed63ca02edc2e000e742ca0ae743ca026f428a006fc2ca026de3ea0aefc1e802ed454a12f7496802efd52ad2ef434a1a6ec14a02e965ca127dc3ca00ed434a16ef43ca02ed43ca02ef43ca02ed63ca18e743ca02ed43ea006f47ca006dc7ca126f43ca02ef43ca026f43ca02ef43c202e743ca00ed43ca02edc06a126bc30a806b85ca12754942026e47ca12f540ca106f474a1277014a006b53ca0265416202e5224a02ef43c2006542ca026d43ca02e503ca00ed43ea08e542ca0aed42ca022dc24a82edc2ea8aed43ca02ef43c202efc3ea0a6dc3ca006f43ca026f428a026f428a026f42ea08ed43ca486f47ca126f43c2026e83ca922a534a0264d7ca8025476a12ed434a127f634a12efc2e20069c3ca824d81e28069ebca806983aa8269c3ca80ef42ea826fc3c200efe2ca0865020a026d43ca002f43ca006dc3ca0a6f6a6a006dc3ca006dc32a126f434a006dc3ca006742ca022543c20269e3c2026dc3ca0069c3ca0065414a12e947c21ae8468212ef47ca02edc1e802e9e1c812efc1ca02eec14a02efc36802ef43ca126943ca006de36a006d838ac24d838a806dc3ca826fc2ca826bc3ca826dc28a826f42ca006d4342026dc3ca806f43ea086f62ca006fc3e2826fc3ea806f82ca006763ea086d4bca022743ca002d4bc2026501ca00e5844a066dc24a126fc3ca9069006a026801ca1077436a0277c14a02ee454210ef554a02efc3ca806fc2ca002d62aa006d43c2006f43ca0a6f43ca0aad43ca006d6382804b42ca886fc28a006f42a2806d42ca02efc2a2006f42ca026f43ca02ed43ca02ef428a826f42ca02efc2ea026f43ca02ed43ca006fc3ca0ae9c34a806ec16a02ecc14a5065424a0265624a006d41ca127f43ca02edc3ca086b474e12ef42ca006f42ea00e6400a00a742ca006d43ca02ef62ea02e743ca08ef43ca0aef42ea0046e30a02abe3c200ef00ca026608ca10e5424a926d464ae06",
+        "digest_minutes": 229
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:54+00:00",
+        "check": {
+          "date": "2026-11-13T21:12:26+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 13698.0,
+          "empty_percent": 0.6
+        }
+      }
+    }
+  ]
+}

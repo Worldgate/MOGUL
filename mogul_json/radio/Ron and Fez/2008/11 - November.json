@@ -8,8 +8,8 @@
     "year": 2008,
     "month": 11,
     "created": "2026-11-13T19:36:24+00:00",
-    "updated": "2026-11-13T19:52:29+00:00",
-    "file_count": 25,
+    "updated": "2026-11-13T21:11:44+00:00",
+    "file_count": 26,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -794,6 +794,60 @@
           "spots": 0,
           "real_duration": 9334.4,
           "empty_percent": 3.6
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 21,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-21_R&F_507646E0.mp3",
+        "original_filename": "R&F 2008-11-21.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "507646e030e20002",
+          "audio_blake3": "b96049638f600b8f170a5d40d83867ed2be60836fa85f5fab930e8dfb103d073",
+          "blake3": "f20a45457edc6564c4599534a87d4084bab7cff15da8965445e7e8e2babf034f",
+          "sha256": "093db26855dbcda9b7ab6a1244767a8b9b1e32e405dbf54071bdf13c303bff94",
+          "sha512": "5a3e359c81fd2ceda0cfb134d8e6bdba4da3396ce44d6f452658604bfae85396df969d37c4ac838470c6a43dc604631d64f6c787b77ab2a528ce69a9349f0a4b",
+          "sha1": "a2a1c3f84512206b92d8d9aabae337f8d8b2d5eb",
+          "md5": "73b44f36210d14ef02cfcaa538d22a54"
+        },
+        "size": 108423104,
+        "duration": 3632.248,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 96000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T20:22:32Z",
+        "added": "2026-11-13T20:27:16+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "7064e0ae3044303a7044e02a7044e02a7046e02abc3ca00ed428ac0e1434000e502ea02ef43aa00e703ca02ad43ca02ed43ca026d43ca02cfc38a086d438a00e543ea02e543ea0aef43ea086f4b8a086d43e802ed43ca00a5434a00e743aa00ef43ea0ae742ea00ed43ca02ed43ea00ed43c202ed43aa02e742ea02e743ea806f43ca00ed43c202ed43ea02e5428a0a6542ca006b43ca006f43ca08ef438a006543ea0a6542ca02ade2ea02a742ea02af42ca020742c2026d43ca026543ca0ae562ca0a6643ca026f438a02e74382006f43ea02e742ca086d43ca02ed4aaa082f42ca006742ca026307ca827314ced37204ca827743c2026743ea0aef43ca086743c800e5c2ca006743ca0a6543ca02ed43ca02ed42ca0a6dc3ca026d02ca02ef43e802ed42ea002dc3ca00ed43ca006543c20ae743ca02e743aa886d0aea08e943e208e5420a00e942ca0ae702ca02e343c2026d63e202ed43ca8865024a0ae1434a126d43ca00e7034a02e703ca026d438a026d43ca026f03ca0aad424a02e743ca02e743ca00a503c800e743ca00e742ca086743ca0aef43ca02e942ca006f43ca006fc3ca00ef43ca02e743ea00a543ca0ae543e202ef42ea00e743ca0227428a024d42ca02a543e202e743ca006503ca006743e200eb4362086742ca00edc3ca0ae543aa00ac428a826f43ca0aef62ca008543ca0ae722ea02ad43ca0aed42ca02e9c28a886703ea8067426a0867428200ef43ca026542ca026742c20a254bca006d43ea022dc38a0265c28a804543ea0aef62ca8a6502ca0aed43ca00e542c20ae542ca00e5224a08e543ea02ed42ea086f42ca0265869b4a6",
+        "digest_minutes": 151
+      },
+      "status": {
+        "imported": "2026-11-13T20:28:56+00:00",
+        "check": {
+          "date": "2026-11-13T21:11:44+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9035.3,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 2.2
         }
       }
     },
