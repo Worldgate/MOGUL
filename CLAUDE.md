@@ -673,6 +673,16 @@ banner name.
   date. Watch out for time-compressed replays (sped up 2–5%).
 - Cue sheets / commercial-free cuts built by aligning a full show with its
   CF version, so only the full file needs keeping.
+- **Music / commercial scanner (Mavrick's plan):** find where songs and
+  commercials are inside a show, instead of trusting filename labels
+  ("CF" can mean commercial free OR complete file). Ideas: commercials,
+  promos and bumpers repeat across many days, so stretches whose
+  fingerprint shows up in lots of different shows = ads/bumpers; songs can
+  be named via AcoustID (same chromaprint fingerprint, free music
+  database); a speech/music classifier (e.g. inaSpeechSegmenter) labels
+  talk vs music vs noise. Results would measure what a copy really is
+  (full vs commercial free vs talk-only) and explain length differences
+  like 2008-08-27's 4:23 vs 3:50 copies. Feeds cue sheets / CF cuts.
 - **Splice repair:** when a file is damaged only in one stretch (e.g.
   2002-08-17: clean to 2:43:47, 156 bad stretches to the end, ~9 s
   missing), any other copy covering that stretch (another source, a
