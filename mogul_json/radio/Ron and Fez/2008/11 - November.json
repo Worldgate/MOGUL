@@ -1,0 +1,1254 @@
+{
+  "header": {
+    "schema": "mogul.radio.month",
+    "schema_version": 1,
+    "media_type": "radio",
+    "show": "Ron and Fez",
+    "code": "R&F",
+    "year": 2008,
+    "month": 11,
+    "created": "2026-11-13T19:36:24+00:00",
+    "updated": "2026-11-13T19:52:29+00:00",
+    "file_count": 25,
+    "mogul_version": "0.1.0"
+  },
+  "files": [
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 3,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-03_R&F_0B0EE172.mp3",
+        "original_filename": "R&F 2008-11-03.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "0b0ee17218fc87f6",
+          "audio_blake3": "bf696607775ff54808da920107d69caef82b711adb0b6193fbe82be682250773",
+          "blake3": "bf696607775ff54808da920107d69caef82b711adb0b6193fbe82be682250773",
+          "sha256": "3c69d42a5540505f0de18748c8df38bdcabfd48025fcc36e73bb2dca83997388",
+          "sha512": "c45d7960053e02a6dae6554f2a009168df42859d40b7187f28198d197fc7d1b62972c4ffd3e3cc03eeebbcd4640db622c8f457fc921236831d949a2b9a484a6c"
+        },
+        "size": 74611566,
+        "duration": 9326.446,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:11Z",
+        "added": "2026-11-13T19:36:24+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "bc04ad26bd5c3d66f43ca42abc3a200cdc28a806f82ca80af438a02ef62ca00ed42ea00ef428a002dc3aa006f638a02ef82ca02efc3ea00ed428a00ef6b8a02e543ca0065c28a08efc28a02ad42ca08ade38a006742aa00ef628200ed42ea08ade3ca0a6ce38a00e543c2286f43ea00cdc3aa006f43ca00ad43e202ef43ca026bc3aa0a4d4b8a022fc3a20a65438a00e563e8026503a800adc2aa008f438a00e7428a002dc2aa00ed83aa02e702ca004f22c202e54b82086d628a02edc28a00a342ca00af43ca02ed438a026dc28a006dc28a0224828a02adc2ea02c543c808edc2aa0aef62aa00e542ca002bc28a024d63aa026d638800e5638a006502c802edc28a0061c2aa0a6563ca026543e2082542ea02a502ea882c42aa8025428a0265438202ef428a02ed43ca02ed42ca1065438a02af428a026f42ca086d43ea0a6d428a026542aa006f42ca0265438a02e5628a022502c2002d43ca0a67e24a0265c382006f43aa02ed43e800ed42ea00ed438a00ed42ca00ef43ca0aed46ca12ed42aa08af42ca00ef42ea0ae74282006f42ca02ed42c80ae542ca0aef43ca08654bc2022d438a226f42ea08ef12c802654282022d628a086f42ca0a6f63ca026fc3ea00ed438a0aed42a2006543aa02ef42ea0ae7438a02e543e2006f628a082fc3aa0ae742ca026dc38a0a6f438a02ed4382024d438a02ed42ea00a1428200e002c2026642c00021c2e2006f62e88aeb428a00ec02ea020542e200ed42ca02e502ca026d82aa8225428a02ad42ca12ed428a02ad438a026f43ea02ed43ca0aed42ca02ed43aa12ed42aa00e543ea0065438a026543ea026502ea026d43ca0a2d838a026f42ea006dc38a026dc78a5a6",
+        "digest_minutes": 156
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:41+00:00",
+        "check": {
+          "date": "2026-11-13T19:51:55+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9326.4,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 4,
+        "part": null,
+        "notes": "R&F Election Special",
+        "extension": "mp3",
+        "filename": "2008-11-04_R&F_027F9AE4.mp3",
+        "original_filename": "R&F 2008-11-04 -- R&F Election Special.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "027f9ae478cf748d",
+          "audio_blake3": "65577bd0e62af3fb21bb663aede78bf08d175bfd5656fb91c0e9be9afd1a3dd1",
+          "blake3": "65577bd0e62af3fb21bb663aede78bf08d175bfd5656fb91c0e9be9afd1a3dd1",
+          "sha256": "9f2c218f88118a67f57bf3d230033c6c6613510b5e34a1c894a2e11bdcbe54c9",
+          "sha512": "442ce89dd2bd4598906c9101b44a30676b145cf7fa8ed388cff1fa46b76fc22a5135a20cb0de6fff34d608000179544a9b5d2684de24054e9e0274304f314620"
+        },
+        "size": 137997184,
+        "duration": 17249.648,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:11Z",
+        "added": "2026-11-13T19:36:28+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d428a02ed62ca02af57cf52be575f5afe575f16fe575e527fc38a02e442ca08af42a20ae9438a02ef43aa006d43ca086542ea02af628a002f42aa00edc28202edc28a08ef43ca00edc28a002de3ea026d428a00cd428a006dc38a00efc38200ef43ca084dc28a0aed42ca0227c38a0a6d42ea02a9e3a202ed438a002e42ca002586aa8227008ac065428a006d438a08edc28a006dc28a0ae4828a022fc28a00ef42ca00ef42ca0a65638a00ed43c8022d628a0067c382002dc38a00a742ca00ed43c20aef43ca02adc2ea086fc28a086dc2ca02c543ca026f428a02c763ea0aef438a02afc38a022fcb8a02efc282802442c20aa3428a8024428a0aed428a0027628a002d428202a0028a882d828a008f42e2026fc2ca02ef428a02e542ea00efc3ea00efc38200efc28a0a2d428a02e542ca02a562ca02ad62aa0285428a00a5438a00e5c28a00e5428a006c428a00edc28a00a562ea0aaf42ea0067c2ca0aa7028a006d4a8a0025428a026fc2820267428a02e9438a02ef42aa0a66428a00e7428a026543ca08e5428a00aec2aa02a7c3c200a542ca026f42ca00a7428a02ad43aa002f43c2026542ca00e54382006f43ea026780ca02efc2ca020642ea006b838a02ef42aa0ae743ea02ad4a8a0aaf428a026d428a02e5428a088d428a08a7428a00a6c2ca0a67428a08ad42ca02a5c2ca00ef43ca02e762ca02adc28a026dc3aa0067c28a026542ca08a5828a0a65e28a026542ca02edc28a8a2f428a026f43ca002dc3ca02ef42aa8aed4a8a022dc2820807428202cf02aa006fc2ca086fc2aa00afc28a226543c20ae542e202e5428a086d42ca026f628a0aed43ca02e5c2aa02e542ca022f42ca00ef42ea0a6742ca0265c28a02e542ea00a5c38a0aef47c242e3428202a543ca02a7c3ea00a6c28a0a2d42ca082f028a0a2f42ca0247e3aa822562ca002d438a08cd43ca026f42ca00e563e802e542ca082542ea822d43ca02e5438a00a542c202ef42ca02ed43ca00a542ca02ed42ca0a4f62ea02a7574a12ecd78a18a542ca00a4c28a022dc28a0025428a006742aa0064428a0225028a026f4ae2008dc28a02a4c28a022f43ca0a64428a02e543e20225c282820ec28a08a0628200adc2ca0065428208efe28a02e3c28a006fe2ca02efc3c202cc838a12ecc2aa0e8783aa02ad42ea00ef628a026942ca0a2d428a026562ca02e7028a02a7438a0aef42ca0aefcaca826d438a086dc2aa0825428a02ef428a00cbc28a8869028a806502ea0ae542ca0aef428a006742ca02e746ca0a6d428a006f42ca082f428a02ed42e802ed438a0ae4838a002b428a0a27028200a1022a02a542ea026dc38a00e58b8a02ad428a022d4282026542ca0225428a2267e28a00e543ea00af42ca0a6742ca02cd438a00e5e28a082f42ca02e542ea02ad42ea00af62ca02ed42c202ebc38a02ed43aa02edc78e0a65468a4220020a0225c78a026702aa022f42a2486dc7ca0265428a0a2542aa0267428a0ae543ca0267028a082702c2006543aa026f62ea006702e20065c38a00274282006582aa02e8838282edc2aa808d838a00a5c3c802e9c28a00ede3aa00e402ca02a02a8a12a0228a12a022ee02a",
+        "digest_minutes": 289
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:44+00:00",
+        "check": {
+          "date": "2026-11-13T19:51:55+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 17330.9,
+          "empty_percent": 0.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 4,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-04_R&F_4FEFB711.mp3",
+        "original_filename": "R&F 2008-11-04.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "4fefb711c01a73ec",
+          "audio_blake3": "c06cadbe1b8f70af32c3479a30c56c5c2c5409d913fa1f8280e3fd6942c945a0",
+          "blake3": "c06cadbe1b8f70af32c3479a30c56c5c2c5409d913fa1f8280e3fd6942c945a0",
+          "sha256": "4a8b0db1781550d8a2b7c99f154790510f2fec528460d5171bd438e497cd2fdc",
+          "sha512": "3ff80acfbe903835c6a849d38319f0c6c7f9f33d438e057d41ad21e26a1f784426daa5b5dfdb4c69238cf427e9bc091309339feb76c8cee5a1f2becd28b19115"
+        },
+        "size": 73274723,
+        "duration": 9159.34,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:30+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d65ce523d64ce567942ca12edc28a082bc28202a742ca0027a38a006742aa082542aa0a4ec28a802542ca026d62aa0a256282022d428a0205028a022d428a022d428a026d42ca0a2502ca0267424a00e7428a0a2f0a8a0a6502ea024f428a828742a2024542ca026c628a8a254288002d428a022d43aa026742820a2dc28a802d42c2006f43ea02e947ca0afd43ca12efd3ca02efc3aa080dc2ea00e542ea006f82aa0267428a0a6fc3ca026f428a0227428a08edc3ea02ef42ca0265c2ca0aefc3e2006d43ca026dc2ca02edc38a08ecc3aa00c563ea08af42ea00ad43ea002d028a006d4aca026f4282006902ea826cc38a80cfc2ca006e628a08cfc3ca006d62ea0065438200a5428a022742c2082f628a006d43aa006542c20a0f42ca006b42aa882d628a002bc28a8a6f42e2002d62aa006d428a026d438a026f62ca026d43ca026d42aa8267028a08af428a02af42aa002b428a002f42aa026f028a002f42ca086d47ea126f43ca0ae505ca12ef65ca4a6fc2a20023c28a8a254a8a002e42aa006d428a0227c2a202a5428a0aa762ea0aed62aa026742c20aa5638a02e543aa02ad438a02e543820027428200a5438a024742ca02e322ea02a54282084fe38a006cc28a822442820a20028a0aa64a8a02a502c2020543a20a2442e202a402aa0084428200a5428a020542ca02ad428a0a6543ea006d03ca006d428a026d428a002d438a002dc2aa02274ac202af428a02ad628a022f0aca826f42a8020f428a024542ca0225428a026f42ca022da38a20edc3ca02a7c282002f428a026d438a804f42ea0a6a42aa8a6d42aa0065428a006d42a2026d4282026d808e4aedc78b5e6",
+        "digest_minutes": 153
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:45+00:00",
+        "check": {
+          "date": "2026-11-13T19:51:55+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9159.3,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 5,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-05_R&F_57F40DFA.mp3",
+        "original_filename": "R&F 2008-11-05.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "57f40dfacb2972dd",
+          "audio_blake3": "b00f0ada720a00b7570ef075fda078ea152e166a29edbabb2fd405392586f238",
+          "blake3": "b00f0ada720a00b7570ef075fda078ea152e166a29edbabb2fd405392586f238",
+          "sha256": "7dfbd88d53f6a10dea8874cfe2efb51081ea798ee1ca6bef7f7722ab9abe8c41",
+          "sha512": "77f96b010e01c83712d6157471d66b253ed827e67c7863887e4bc2f3e9d0895698256015124545e9ddfe87fca00859894cd9a121d4b59f968b8a0334d404c37f"
+        },
+        "size": 76160522,
+        "duration": 9520.065,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:32+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d47ca02f9576f1279c3ce0279d7ca126bd7ce027fc3ca02ed428202adc3aa08e543ca02ef43ea02cf63aa00ef438a02afc28202ad43aa00a9428a8aebc38a82efc3aa0aed43ca02ad43aa806b62aa00cc228a02af438a006d42aa02afc28a02af028a82efc3aa026d638a00efc2aa00eec2aa002d4282822f438a02e5428a022f428a88cd428a00e9c282002f828a02ef4a8a00e5428a02adc2aa022f428a022f42aa806fc3aa00eda3ea02e5438a00ef43c2026f438a0aed42e208ed63ea006d43ca00ed638a00ef438a0a69c3aa802dc28a822d438208ed41ca02ed43aa006d43ea026de28a006dc3ca00edea8a00ef628a02e5438a0267028a0aee02c20a6ee3a2800de38a00ed4282002d42ca0a6543ca824d43ca026de3ea006542ea02e543c2026543e802c543ca022dc3ea02ed42ca006d42aa022c428a080fc2a2026d42ea004dc38a006f428a086d82aa8a6dc38a0a6fc3ca026542c20065c3ca006f43ca00e5828a8aacc28a8065c3c200ed4aea08ad42e2020c428a026d428a0047438a02ad438a802d43aa02ad42ca00e5428a006502ca0a6d42ca002d43ea002dc2aa00ed42a2086d42aa00e542aa026d4aca002542ea006d43aa026dc2aa02ed43ca006d42ea002f42aa006f438a0a6dc3a20265428a002dc2ea02efe2ca006d428a026d43ea026d02ca006f42ea086fc3ca02ef22ca0a6743c202e716ca446747ce527fc38a00efc38200ef438a00e5428a00ad428a02ef42ca08e6c38202af428a02af63ea02ede38a002fc3aa024fe28a02a5428a022f438a08ec42aa822f02ca0aeb428a08e5428a826702aa0825428a00a7428a00ade2a200ef43aa00a442ca02efc28a026763ca02cd43a2006d43ea026dc3aa022de78b4e6",
+        "digest_minutes": 159
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:47+00:00",
+        "check": {
+          "date": "2026-11-13T19:51:55+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9520.1,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 6,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-06_R&F_C8623750.mp3",
+        "original_filename": "R&F 2008-11-06.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "c8623750b5e978c6",
+          "audio_blake3": "74c19e4b5409bf091a7b0864f852fec9e109d6a2bfe4b86bf274c5b2474c9878",
+          "blake3": "74c19e4b5409bf091a7b0864f852fec9e109d6a2bfe4b86bf274c5b2474c9878",
+          "sha256": "ebb8174e0eb087e84a428c40b23fdac2ee663ddcca39aa1fc27862e7192ee1c9",
+          "sha512": "a1d5bf3a3be54c5aa88eecbf6f882abf2e8ec813d8ba556760e1be5e1a713642e875ca2b78383e5b635a7e3ec8c0cdd162621207aecbac49815426d2e165494c"
+        },
+        "size": 75763670,
+        "duration": 9470.459,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:34+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "dc24a00edc04a02e9e14a00edc028006bc3ca42efc28a002dca8a0aaf43ea00e702ca02ed42ea02e743ca02eb43ea006dc28a88e7ca8a026542c28227438a02ef42ca0aedc2ca8267438a026dc2ca026f428a00e7c38a08af43a200eb438a02edcb8a026d428a086f42ca022dc38a026943ca02ed42ea086543ea026542ca026d83a202cd428a026742ca002402ea0825428200654aaa0025428a08e5428a0aed42ea00ef42ca006d43ea0aed43ca022f43ca0aed428a026d42aa0867c2aa002542ea00e5428a006d638a002d42c2086d43aa00edc28a08adc28a022f428a00e5428a022442ca02ed42ca0a6d42aa026d638a02e7428a00efc2ea006f02ca02ef438a00c543aa026d43ca02656aaa082743a202e542ea08e543ca00ad43aa00ef438a00ef43ca00ed42e2002542ea006742ca02ed62ca00ed43e202ed43ca02e5c28a006d438a0ae563a2026542ca02ad428a002dc3ea026743ca026d42ea00efc3ca02edc38a004742c200e762c2006d628a026d4aca0865c2ca002d43a2024dc3ca006dc38a0aed43ca4225e2aa00efc28a08ed42aa00efc28202e5c3a208efc3aa02e543aa0a61c28a08efca8a00ed43aa026d63aa006d43ca026dc3aa004d62aa0065428a026d428a0269c3aa826dc2aa008d43aa0025c28a006f628a002dc38a806d438a804d42ca826dc38a0a6d62ea026d43aa086d6382006d43ca006543a200ed4282026d428a004d42ea026f4aca22ed62aa0a054a8a026d42820a2dc28a02ed028a022d428208e9c38a02adc3a200ede3ea02ed428a0a6f63ea00ef42aa02ed42c202cdc38a026d63e20a4d42a2026dc28a02cd42aa026de38a206d428a08ed6382026dc38a02efc08a0a8da08a0afdc78f5a6",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:48+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:01+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9470.5,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 7,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-07_R&F_0AE68468.mp3",
+        "original_filename": "R&F 2008-11-07.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "0ae68468d1933862",
+          "audio_blake3": "91c2c9fa96c7593476891eb3f2d41471be125c73115f641938442a1949e8b728",
+          "blake3": "91c2c9fa96c7593476891eb3f2d41471be125c73115f641938442a1949e8b728",
+          "sha256": "21b8346b4812569816a8b7ebd3d2b7b77cb7bc1dca94b53465508bf16969581c",
+          "sha512": "40a0b75c33fa6ef16f2c9fbf5a7de08ff6b486daf18b841f01c46a450a6529896d73e9075d14584020850d19388a7f0bf39f19d251c6b28ea1e4debc1bfd5a90"
+        },
+        "size": 75634939,
+        "duration": 9454.367,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:36+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d438a102c592ad22d530ac82c5f2e522f56ce127d42c202ef434a026f43ca00ef4bca0acd42ea00ebc38a022f42ca02efc38a02e502ca0aad63ea02ef428a022f63e202ad43ca02ad4b8a0aedc2ca0064028a00a5c28200a7e28a02afc28202a942ca0265028a026d438a00e942aa00ad428a00a542aa0a6d42820a2542e8082d428200ad42aa0aa5c3ca02ad628a026563ca00ed438a00efe3ea02ede38a02ef428a00ede38a022d428a086f63ca02ee42ca0aede2a2022d42ea026d42aa006d428a00e542ca02e702ca02e542ca02e5028a026542ea08c7038a02e543c200ed42aa006d42ea0265438a02efc28a026dc2ca02ef62ca006d438a02ef428a02e5438a0a6d038a02ad638a022e4282086f428a00ed43aa00af438a022f438a026d42aa00e54aaa08e5038a02ed438a02cd438a0225c3aa002d428a00adc3aa02edc38a02a3426e00a7c3ca02ef438a02ef42ca80ed638a00ad42aa00ef63ea08efc28a006fc2ea026742ea02ef42ca022dc38a026f4a8a00af428a0a2f038a024dc28a0a2f428a008862aa826f82aa00ef42aa00ef43ea026b63ca02e563ca006f428a0a2d42ca006d42ca022fc2aa826943aa28e1028a8227028a00e7428a02ef438a002f428a00ed428a006dc28a0acde3a802ed43aa0aedc38a00e7c24a02aec10a00efc38a02ed43aa00e9838a08e743aa00e943ca0aedc3ca026fc38a08e543e802c743a800e7628202ad428208ed61aa02ede38a824541ca006d03ca026842ea00adc28a022dc38a0265018002e542ea80ed63c800efc282086e43aa00ee43ea00af428a0aed63ca02af43aa00ad43ea00ed43aa80e742ea00ed438a02edc28a02ed63ca02edc38a0265438a00ad478a022d468a02a",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:50+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:01+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9454.4,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 10,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-10_R&F_1A3D0412.mp3",
+        "original_filename": "R&F 2008-11-10.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "1a3d0412814e2f33",
+          "audio_blake3": "cbd897f182696c7d28ce0f87cdd956d406b6702d8210b39c492f86babaae70bf",
+          "blake3": "cbd897f182696c7d28ce0f87cdd956d406b6702d8210b39c492f86babaae70bf",
+          "sha256": "66854afca18102c804f53daddd9bc6ed576e0a678df2aef1c7e7db3bc5e8706e",
+          "sha512": "ebf93cb9ad70506103c62e480105e929f6104f27abb55bd7ebd02019f0f7397ca2283740447d29333830dd44911385be947c86eda7c6f17b8deaf06dc34ddb35"
+        },
+        "size": 75688647,
+        "duration": 9461.081,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:38+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f438a0aebd78c567fd58e57ffd78e567f57df56bec3ca0aaf42c2002742ca02ef438a02edc3aa00edc3aa028d638a002943820ae5428a02edc28a02a543c2422543ea008502ca00a542ea00a5428202ad63ca0a6d42ca00cd42aa00e742ca0aed43aa0827428a02ed428a00e742c202a7028202ad428a8226428a08a5c28000a74282802bc28a00a562ca02ef62aa0aad428a02af42aa0acd42aa0aed42aa022f42ca02a542ea02a743e202afc2ca00a542aa02e54aca02ac428a022d42ca00ed638a02edc38a80a5028a026d428a026542a2086542ea08adc28a00ef428a02af42aa08ef628a00a5428a02ed4aca02e7428a024f428a02e7c28a0aefc28a026f828a826dc28a822f42aa006c42820025c2a20a6f428a0aedc2a20025428a02ad42ca0225438a0ae5428a02254282026d42ca006d428a022f47c200ed43ea02e542aa0aef428a00ed438802ed42ca006d43820065628a0ae742aa00a74aea02ef42aa0065c38a0aed428a022d628a02e54ac2026542aa006562a2002542ea00e5428a02af42ca0a21028a024d42ca006742ca0aaf02aa02e5428a00a7428a00e74b8a00654288026dc3a20a6742ca08e542820a67628a026fc28a006742ca02af428a006502aa0ae742ca026d428a026d02ca00e743ca00ed438a02e542ea086d42aa026342c202e7428a020dc38a02ed42ca00e442ca222702ea02ad438a02ed438a006fc2aa0067c78a0ae4c2820a27038a0aa542ca02e5628a02a543c202ed42ea08a542ca02a543aa0aad42ca02ed438a02ef42ea00ed62c202ad4a82026d43aa00ed43ca00efc2ea02efc28a006542a200af42c202a74282082de28a026d43ea026d4a8a02edc28a022d428a02af42ea008de28a186",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:52+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:01+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9461.1,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 12,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-12_R&F_BEA77F4D.mp3",
+        "original_filename": "R&F 2008-11-12.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "bea77f4d8584a9e6",
+          "audio_blake3": "132717a567a35c2c0e7675656371ea231ab15dbbbf3c4eeb8bb2d5480a694b2a",
+          "blake3": "132717a567a35c2c0e7675656371ea231ab15dbbbf3c4eeb8bb2d5480a694b2a",
+          "sha256": "ad4800e76441d1469453ab134c7e09ca9d5daf859c291f70f3e5e29efbcd37c4",
+          "sha512": "4491c03ad2bbf31cc89f8e888575bc63c7a46a68760e12f797ff9350251ce11a6616e2624a07f0f5f721d808f7822cad23209de98ede6f36496a0203624ae938"
+        },
+        "size": 75358667,
+        "duration": 9419.833,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:40+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "4c78a8264c78ec06cd6dfd22f43ea02ed43ea006d43ca026d42a200e5428a026d42ea00cd43ca02af438a026f43ea0aefc3aa002d42aa00ed43e202e543aa02edc3c208ed42ea0ae542ca08ef43c2026d43ca02e543aa0aed43ea0069c38a00ed43ea086743ca00ad43aa82e5438a0025428a006d03aa00efc3ca026543e800e743c202ef43ca02ed4388002bc3aa082d43c200e5438a002503ca00ed43aa022543ca10e543ea12ed6382006d63ea02ed43aa0aed62aa006d428a00e742ea006d43aa02edc3ca00efe2ca802d62ea0aed43ca026743ea00edc38a02e7438a886dc38a006543ca086dc3ca02ede2828a21438a8267438a8ae7438a0aede38a0ae542ca0a6f43ea08ed438a82ed43ca02e543ca00af41ca02ed43ca026fc3ca002f438a00e543e80aeb428a0267c3ca02a5438a006fc38a006fc3ea82ede3ca02a563ca02af42ea886fc38a02edc28a026742ca082fc38a00e743aa08cd43ca006d438a02ad028202a5428a02a742828006428a00a543e20065e28a0227c28a0a25428a00a743ea0a87438a0aef42c200a543ea02af43ca026f438a086d428a00ed428a02af43ca0a4f428a02efe3aa00a5438a02e563a8006d42aa00cf43ea02e7438a02254a8a02e542ca006f438a026d438a026f43ca02ef438a0a67438202ef43ca02ed438a026d43ca02654bca02e543ca0a6d43ca0a65438a026d638a026d43ea02ed4b8a006d43ca002562c20aef43ea006d63ea02654282026d63e2022d42e2026d42ea026f63ca02ef43ea00ed43ea0865438a026702ca082342820225428a02ed428a00ed62ca026d43ea026dc3ea02ef42aa02ef4bea026542ca02ed628a00cd42ea026b428a82ee428282a6428a02a",
+        "digest_minutes": 157
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:53+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:01+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9419.8,
+          "empty_percent": 1.3
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 13,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-13_R&F_DA55946C.mp3",
+        "original_filename": "R&F 2008-11-13.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "da55946ce3eeef3d",
+          "audio_blake3": "cf856e88cbcfd3867a0314778d3a7628038c68771e7c6c4c4ce65da295eb809d",
+          "blake3": "cf856e88cbcfd3867a0314778d3a7628038c68771e7c6c4c4ce65da295eb809d",
+          "sha256": "620161fe3f3912967c101435eac8869525b1b231a0fe10995dba230ff93bc365",
+          "sha512": "aa38325f570940763b1cdd1349554019fd931c6c223e919e3a45212a0f07a5662dc94c00f3cf6226572d2a4b658b511a415e6dacb1596dd1692ddf26fe47ce9d"
+        },
+        "size": 75456261,
+        "duration": 9432.033,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:42+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "3028a00ab06ea02ab22ea0aed06ce42eb46ca02af67ca12efc3ca00ed43ca02e543ca02edc3ca0aed43e20aedc38a0a6dc3aa08e9c3aa008d42c2006f428a006743ea006fc38a02e9c382006dc38a08ed428a02afc3c802efc3ca026dc38200ed438a086d43ca02e541ca02ef47c800ed43ea02ed43ca02e543ca006563ca00ad43ea00e743ea00e563ca02654bca006543ca10a543c2006543ca02e543ca02ed43ca0a65c3e802ed63ea08e543ca00e562ea00ad43ca00ed42ca02a543c20ae543ea0ac9438a02e7c3aa026d43ca02ef43ca02ed42ca026542ea006f42ca02ed63ea02edc3ca02af838a82efc3ca00e9e282002dc38a00efc38a0a6f82aa824fc28a002543aa08abc38a0a4d42ca08e743ca00ad43ea026fc3c200e5c3aa08c543ca00edc3e000ed638a000d42aa0aad428a0267428a0aad42aa0267438a02edc2ca02ed42ea086d43aa0aef438a02ad4aaa00ed43a202e7c2ca0067e38a08ad4b820866470a0066430a9a6de38a08ed42a2022f438a026fc3a20065428a022d63ca0aedc3820aedc28a026d42c200e743ea02e5438a02ed63ca026dc3a8026dc28202e563ea0a6542ca00e562ca00ed43c202e5c3ea00694aaa02ef438a004943ca022d42ea0aef43ca026b42ea00c543ca00ef428a0ae543ca02e702ca0a2d42ea02654aca02a542ca00e543ca006b43aa02ed43ca086963ca02e542ea0aed42ca22edc2ea026542c202e5028a18af42ca02ef43ca02e542c20ae942e202e562ca0aa542ca0a2742ea02e743ca026542aa0069c28a802dc28a022542aa00a7428a02a543ca026502ea0aa542ca026543c21ae7c3ca08ef42c2026d43ca006f43ca026f038a02e722ca02c7a2aa02ed848fca6866cbcff",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:55+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:05+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9432.0,
+          "empty_percent": 1.4
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 14,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-14_R&F_A22C5E91.mp3",
+        "original_filename": "R&F 2008-11-14.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a22c5e9176667cb7",
+          "audio_blake3": "4981e2c98fcc99151d6eba1e68ceb8d6055c4c03e1b4bada746debc3f109d15e",
+          "blake3": "4981e2c98fcc99151d6eba1e68ceb8d6055c4c03e1b4bada746debc3f109d15e",
+          "sha256": "557ed0f9c4c175cab3f81b45e3cf1bf432fc54f90549064df19a7bab697b205e",
+          "sha512": "4066caaee79832dae86fc82037c7bfc0bbb264ca8e0f591c8cde4199b62cde4158b5c55ac0514f51f2c164a5a8ca252694f61f301cac7083137f306750758387"
+        },
+        "size": 75735040,
+        "duration": 9466.88,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:44+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc7ca02e5c78a82ff478e5aff478e02bfc78f52bb57cf53aa42ca92e0428a826f4248006d438800ef43aa08a5428a00e54b8a00ed438a02ed42aa00ed43ca02ed428a0aad43aa006f43ca02edc1aa08adc38a02ed438a02ad428a02af42ca00af42ca02cfe282002f03a202a5038a22afc38a00adc38a02efc2a2808fc3ca00ec638a02ad42ca02ad438a0a6d42ca02ed438a08a7628200efc38a00af43ca00e742aa00efc28a006f438a004dc38a02ed428a00ef428a0aad43aa00ef628a0a6fc38a02ed42aa08edc38a02a7c3ca0065628a02e7c38a000f438a00ecc38a00afc38a00efc2c280a5c3aa022f43aa02ed42aa02e7c3ca02edc38a00e742aa00e102ca02a562ea02ed628a00af43ea00efc2ea00ed438a0acc42ea02a542ca0825428a22af43ea026f038a08ed43ea086fc2aa026d42aa00af43ea02edc2a208ae828a002f428a02ef438a00efc282022f43ca00ef43aa0ae3c6468062c41a02e3845e97f2c403027f43aa02ef43c8006f42ca00e5c1ca02ed42aa02edc3a200e5438a00ed438a02ed43aa0aed638a0a6f438a02e9438a0a6d43aa02efc28202cd438a02efc28a00ef428a02ad428a02adc3ca022147ce12b147ce12a7438208a543aa028d438a00edcb8a08ed43ca026d43aa026d42ca0a6f62ca0a6d438a02ed438a0ae543ca00ed43a202ed038802e542ca02ed63ca00ed43ca02e543ea0aed43ea02ad42ea02ef43ca006d43aa02ed42ca00ed428a02ef428a0a6d42ca0065438a026f47ca12ed43ca006dc18a08ed43aa02ed438a006f438a006d42ca0aedc38a02ef428a006d03ca086762ca08ed43ca026d43ca00e703ca02ed478200edc3aa0aedc3ca026dc38a806d428a026dc2aa026de38a4e6",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:56+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:07+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9466.9,
+          "empty_percent": 3.6
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 14,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-14_R&F_E56C7249.mp3",
+        "original_filename": "R&F 2008-11-14.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "e56c72497be0e52a",
+          "audio_blake3": "0a0074a3915ca1a25c2b0c527f55c4e8f1686ff785cde46b54628864536273d0",
+          "blake3": "0a0074a3915ca1a25c2b0c527f55c4e8f1686ff785cde46b54628864536273d0",
+          "sha256": "9212e545a78831ca6f2b260a3215e4568a3749fd6e69fb86a8bf4dd932924531",
+          "sha512": "94a97078913fbfd9fc6b48602a3ff5d98f52631ba6b9e3b51a70e2ee08eea18ff03e55a00a5401ccee7902b114ac6477fcf67e603a49b69ea6daae40c9f65c64"
+        },
+        "size": 75559288,
+        "duration": 9444.911,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:47:05+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "bc7ca02e5c78a82ff478ecaff478e42bfc78e52bb57cf56af438a00ed428a026b4248006d43c800ef63aa00e5428a00e563aa00ed438a00ed428a00ed42ea00edc28a02ad43ca026f43ea02e5c38a08adc2aa02ed428a02ad6b8a00a742ca02af42ca02cf628a002e0382006d838a02afc38a02e9c3ea02cfc28202afc3c288ede38202ed42ca00a943ca026d62ca02ed43ca00e742ca02efc38a08af43ca00e7438a00efc28202e7638a004fc38a0aed438a02ed42ea0aed43aa08ef438a0a6fc38a02ed42aa00edc38a02afc3ca026562aa02e7c38a008fc3ea00ec438200afc38a00ed42c208a5c3aa022f43aa02ed428a02e1e3ea02efc3ca00e74aaa00e142ca02a5638a0aef428a00ef43ca00efc2aa80cf028a0aec42ea02a542c20a25428a22a703ca02ef438a08ed03ca0acfc3aa00ed43aa00af43e8026542aa00afc28a880dc2aa02ef438a00efc282026f43e202ed438a0ae3845e82e2c41a02f3845e97f2c60a427fc18a02ef42ca02e543c208edc1ca02e5838a00e5418200e5c38a00ad638a02e543aa0aed438a026f438a00ec438a08ee42ca02ed4282002543ca10ef428a88ef62aa02ad42aa02edcbea022147ce16b343ca02a743aa00a5438802e5038a08ed438200ed43ca02ed42c2026b43ea026f62ca026d43ca08e5438a02ed43c200ed43e20a6d43ca00e563ea02ed43ea00ed43ca02e543ea00ed43ca00af42ea08e742aa006543ea0aed42aa00ef428a00ef42c20a6542ea086d4382026b47ca12ed438a0065418a0aed43aa026d438a026543aa08ed43ca02ef438a00ef428a086d43c2086762ea0885438a02e703c200e503ea00ed47aa10ebc3ea82e5c38a026fc38a826dc3aa026dc38a006da68bca6",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:47:20+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:06+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9444.9,
+          "empty_percent": 1.4
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 17,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-17_R&F_20EC77DD.mp3",
+        "original_filename": "R&F 2008-11-17.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "20ec77ddfb6f14dd",
+          "audio_blake3": "df48a04a14502842bd6509ab88e58e2de9860a33b4d909923f173664c71dd9a1",
+          "blake3": "df48a04a14502842bd6509ab88e58e2de9860a33b4d909923f173664c71dd9a1",
+          "sha256": "3d98385ee0df43f6378535e74096a1ecea281ae828d245619b1cad170bdc3fb0",
+          "sha512": "5222d848b0963b0b29d1031ae3615851983469ac110ec7abdeed60eed4ed4cc6b186ff401f74461d7e7d86f3599ddff0df72aa91857e7eb7c97cdf458e48ccdb"
+        },
+        "size": 74683873,
+        "duration": 9335.484,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:46+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "0428a02ef45ca526d578e526f56cb526b57cf56ff47ce12ef43ca02af42ca00edc38a02a5c28a00ed43ea02ef43ca02e5c38a022f43ca026f43ca00ef43ca08ef43ca00ed43ca02ed428a026d43ea00ef438a024f43ea02e543ea008743c202efe3e202edc3c202e543aa02e542c202ed43ea026d428a00efe3c2086dc2aa08afc38a02ef63ca02ed428a02ef62ea0aedc3ea08a742aa02e7428a02ebc38a02a5c28a0aefc28a826fe2aa0aad43ca022f43ca18ed438a00ef43ca026d438208ef42aa00ed428a8266c2e2802d428202ade28a006f438a00ef438a026d42aa02ad42ca826d438a22ed438a026dc3ca00af43ca08e542ea002763ca02edc28a826f438a02ed43aa00e543aa026d42aa00ed43ca08cf43aa00ed438a086dc38a020dc28a0065c3ca026f43c2006d43aa0aef42ea02e742c2006742aa02afc38a02ed43aa00ed4bca026943aa02ad638a02e7e28802ef428a08a743880ae562aa02e7428a00af638a02edc38202af028a00cd43ca006b4aea02e743aa02e742aa00a763e20224628a08ed438202e742e202ef428a0ae542ea00e54282022dc282822542ea80ed42ca00e5628a02ed438a02ef62ea026f428a02ad42aa02e742ca02ed42ca026d4aca02ed62ca022f62ca026d428a006f438200ae43ea00ef43a208ef62ca00e5428a02ef42aa02a102aa02af028a02e7428a0267e38a022f828a02ed43aa02ed43aa02ef428a0a2d628200ad438a086f43c20045438a02e543ca02ade38a02e6038a00afc38a02edcb82026d43ca00c7c38a006d43aa0a6f43ca026f43aa02e7438a02ed4aca02ed43c2026d43ea00ef62ca026d438a02ed43ca0267428a02ed43a802edc382086de78f5e7",
+        "digest_minutes": 156
+      },
+      "status": {
+        "imported": "2026-11-13T19:37:58+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:07+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9335.5,
+          "empty_percent": 3.6
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 18,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-18_R&F_2A3CDBEB.mp3",
+        "original_filename": "R&F 2008-11-18.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "2a3cdbeb15dbe4bf",
+          "audio_blake3": "0c860596472a87e7d6045bf2fb30dc734cd1f437a20f6f04ee4a76bc05291640",
+          "blake3": "0c860596472a87e7d6045bf2fb30dc734cd1f437a20f6f04ee4a76bc05291640",
+          "sha256": "133e62fe03aaefaae2f8c7e5a68161e5a251c8746f5ba86e554cb6f7a0164ee6",
+          "sha512": "1309c9e287cccb1c0d6cfcc662aadabfd2bf0dfbdaaf73a7f0fb5491f951a925d7b6a6f47bf7d8cbdb63b0b9b62417bb09e37399adeead8d2510fb8c5daec96e"
+        },
+        "size": 75464620,
+        "duration": 9433.078,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:12Z",
+        "added": "2026-11-13T19:36:50+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "b43ca42eae6ce46fa47cf46fa66cf46fb428a02afc38a00a5c2aa0ae5c38a02cf4bca02ad43aa02ed63aa02efc38a08ef42aa02ed428a006dc28a02afc38a00c7428a002d52ca926256df977256df977d428a02ef42ca12e50ac202ad42ea02ed4388022f42ea00ed428a02e742ca00ad43ca02ef43c202ed42ea0265428a00edc2ca0aa7428a0a65438a082f42ca00ed42e20aed4b8a0aed438a02ef038a02e543ca02ed4bca0aed42aa00ef43aa006742ca2207438a0a6d42c20a6d42ea00ed428a02ef438a026dc28a02ed42aa086f42ea02efc28a022f628a026d42aa02ad62ea006fc28a00ef42aa02a5c28a006dc38a020442ea00a5438a02e5428a0aece2a8026d428a026543aa00af43ea002d42ca02ed4382006f43ca02ef42ca0a6d42ea00ad43ca02edc3aa026f63ca02efc28a02ad42e20aefc2aa00adc2aa0a2f42aa00af628a02af42ca00a542ea02e5428a02af42ea02ef02c800ef42ca02cd42c202ed43ea02ed428200e542a2026f438a02e9c3ea00afc28202ed43ca0aef43c200efc28a02e543a20aed63aa02e5438a02af63ca0aa7e3ca0ae702ea02a5c3ea0a2d428a0aadc3ca022d428a00ade3ca822f42ca00ad438a02e502ca0aef42ca02ef63ca00cf42ca02e743ea02ed42aa02ef42ca00cd43ea02ef428a0265438a0aa742e80ae742ea02ef43ca006de3ea02ed428a02e542aa02e543c20aed43aa0265428a0aa543ea02cf438a00ef424a02edc38a02edc2aa00ccca8a022dc38a026dc28202ed428a086d42ca0ae5e38a00e502ea0aefc28a00ed438a82ed428a422f42c2026542ea00e7428a08ed426808efe28a08adc3ca02afc3aa00ef42ea022f428a00afc3ca00efc3ea00ed42ca0a6563ec04e",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:38:00+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:10+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9433.1,
+          "empty_percent": 3.8
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 19,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-19_R&F_C71E8065.mp3",
+        "original_filename": "R&F 2008-11-19.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "c71e806521e29e98",
+          "audio_blake3": "5772e3b7974e924ea0893a35cf999fea9b8873480c85549e5071ccb2db73de5d",
+          "blake3": "5772e3b7974e924ea0893a35cf999fea9b8873480c85549e5071ccb2db73de5d",
+          "sha256": "feecf76874c9ed7ab10b2bdd1ebd4a00cbe24b6e54f6022d6b6d7662a9051a16",
+          "sha512": "cb175fb5bc02aae8de80eb09549f52b96d444ff1d72126a6cebfee330366489d3e983c25629d0a54364d8fff321213d9577d418f6476e530e3075d24166d40b6"
+        },
+        "size": 75180617,
+        "duration": 9397.577,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:13Z",
+        "added": "2026-11-13T19:36:54+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "74aaa00e494cf1624b4c71634b4cb1635b4ce162b43ce00ed428a0acd43ca00ed428a026d43aa02ef63ca00ef57ce12ef438a0ae742ca00edc38a02e503aa02ed43ea00ed42a20a2f628a006d438a0a6d428a02ed42aa026d43c20a6d428a0ae542c20aad63ca02ed43ca0a6d42ca0aed42ca0ac543ca12ed438a026d02aa026d638a002d02ca02ed438a02ed4382226f63ca0a6542e202ac428a08ed02a2026d428a086542ea02ed628a02ad428a02ac42aa00e5438a022d428a00ed22ca004d428a026dc3ea082742ca02e7c2aa0265c28a0065e28a02edc2aa08afc3ca0265428a02e763aa022d42aa002d028a806f42ca00ed43ca0a6dc38202ed63ca0a6542ca02ed43c208ef42ea02cd42aa0825428a02ede282002d42ca00ed438a0a6fc282006e42ca02a702ca0aa4c28a004f428a00c7628a0a25628a022742ea006d628a02e7428a0085c2a20824028a020f638a02ed428208ef438a08afc28a0265428a02ed43c2026f42c802af428a02e542ca2aad4a8a026543aa0227438a0ae542ca082f428a0265428a02e543ea02ed43ca002d638200e543ea1065428a026563ea002f62ca022502c202e502ca002742880a6f438a006d43ca0265c3a202edc3ea026d43ea00cd438a202d428a022dc38a002d43ca006d63ea026f57ce126d438a02ed428a026fc28a02a542aa00ed438a022d428a00ed43aa026f43aa0a6f42ca024f428a02e543ea006542ca02efc38a02ed43aa20af02ca086d02c8028d43ca006d02ca822d43ca026d428a006502ea022d43ca0069c38a00e9c3aa004dc2aa026dc3aa0069ebe200ed428a0aed418a0ae743ca00ed62ca02ed428a02a543ea086dc3ca02edc288022de282004da28a4a6",
+        "digest_minutes": 157
+      },
+      "status": {
+        "imported": "2026-11-13T19:38:01+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:11+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9397.6,
+          "empty_percent": 3.6
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 20,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-20_R&F_12129F20.mp3",
+        "original_filename": "R&F 2008-11-20.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "12129f202562b408",
+          "audio_blake3": "8cf09d9cc01517a9936901e8f6f4763cb9112464482a42cc01ad8d5d548e415b",
+          "blake3": "8cf09d9cc01517a9936901e8f6f4763cb9112464482a42cc01ad8d5d548e415b",
+          "sha256": "31844ff585e0c384984afbb3215ee546e90dabd5b26bd8ea0c300ea3d65bc0dd",
+          "sha512": "7be459458b42d68ea214804469d7097be1a6bf12604271c93d65e88ae113ee0dd26a25d1d36afcf5d62a7e9895bd45e41753eaef1312aa93320a0c246d88fac8"
+        },
+        "size": 77467481,
+        "duration": 9683.435,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:13Z",
+        "added": "2026-11-13T19:36:57+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d47ab0a6d57ab4968969b932cd6aa502f43ca02c742c200e7c20a0225628a02efc38a02e5438a02e70aea02a7c38200e7428a082702ca0865428a02e743ca02e5438200ad43a208e762ca006743ea02af42aa00ed42aa0a6dc28202ed428a0a2742c2022d428a00a742aa006562ea02ad42ea02e7438a02ed63ea006fc2aa02ef438a02cd428a08e7c28a00a743aa02cf4aca0a6d42ca08ef42a2026d43ca0865628a02e742c208e5428a00a542ca084502ea026f628a022d42ca02c542c802ed62ea0047428a0aed43ca0267c2aa02edc28a08af43ca02e5418a006dc3aa0aed42ca02ed42ca106dc38a02ef62ca006dc38a00ed428a0865428a0065438a0a244aea00a5c28a02a5c00a1027c18a802d42aa12e5428a006f43ca0aed43ea006d43ca026b43ca02efc38a02af43ea0aed42a2022f43ea00ed83a200ef42ca0067c38a0aa743ea0ae742ca0aa5438202ee42ca02ee42aa826f62ca00a44282026762aa08ef428a0025428a02a562e2026542c20065430a026d42c2026542ca0a69428a00e543ca02ed42ea00a743ea08e543ca0ae5428a00e743ca02e743ea026d43ca1aad43c208edc3ca086743ea02c542ca02a543ea02e543ca02e762ca00af62ca026dcb8a00ed43ca08ad42ea00e7028a028543ea02adcbea02ad43ca024d42ca026d838a02e562ea02e542ca02a7438a02e762ca02e7c2ca08ef438a02ef438a02e5028a0aad438a00e542820aad42aa02ed428a02edc38a02ed43e8026d638a02ed42ca08ed42ea00e542ea0ae542ea0aad42ea00ed42ca02af42ea00ed42ea00ef42ca026542aa00ed62ca0265428a00ad42ca00af42ea00ed42ca02e543ca02e722c20a6502ea02e542aa006d43ca0a2542ea0a6d43ca026de3ea026dc38a0a6de38d4a7",
+        "digest_minutes": 162
+      },
+      "status": {
+        "imported": "2026-11-13T19:38:03+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:14+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9683.4,
+          "empty_percent": 3.5
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 21,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-21_R&F_A5C68AAD.mp3",
+        "original_filename": "R&F 2008-11-21.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a5c68aad77af0c8d",
+          "audio_blake3": "ec175bd429c1443a331efcd4f1764fa5860573e7cd47912f653b05c6325d1888",
+          "blake3": "ec175bd429c1443a331efcd4f1764fa5860573e7cd47912f653b05c6325d1888",
+          "sha256": "a669f3018cf75d5b027d056f939aec82a5dcd5fe7bbe5162bef12f2a79b3d58a",
+          "sha512": "c6822a61b1d355e32796b416ae93db230fe89e0a8efc5204afc6f482bc2f6297b6293f8e5446919de4360dc1929c2c6863b57335d0ae35500e631657abb4d1c3"
+        },
+        "size": 74675096,
+        "duration": 9334.387,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:13Z",
+        "added": "2026-11-13T19:36:59+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "7044e5ae3044b43a7144f53ef044e02a7046e43ef42ca02ad42aa00edc2c200ed42aa02ed428a00e7438a00ed42ea00ad428a026d42ca02ef428a006d438a02ed43ca024d438a002563ea02ed43ca00edca8a002d43ca02ef638a0aa543ca00af438208ef43aa02ef42ea02ed43aa00ed63aa00ed43ca02ed438a00a742ea02e763aa006f43ca02ed42c2086d43ea02a5438a026562c20227c28a026f438200ed428a0aedc38a006dc38a026dc2ca0aafebca02a562c20a8542ca002542ca006d438a026543ca08e562ca0ae743ca02e7c38a02256282026742aa02e742ea086f42ca02e542ea022dc28a026fc2ca006d43ca026707ca406757ce427702c2026f43e8026dc3ca08efc3ca00e5c382026743ca022f438a0aafe3ca006d42ca0a6dc3aa00ed428a02ef43aa00ed42ca000de2ca00ed438a006dc38a084743ca02ef42ca00ef42aa02ef42ea02e9a28a00ed428a0ae5038a02a143ea00ad43ca0aed43c2006502ca086543ca02ed43ea122543ca12e743ca00e542ca026d428a026d42ca02ef428a0a2d42ca0ae763ca0ae743ca002543e808efc2c200ef42ea08e5438a0aefc38a02cf42ca006d43ea026fc3aa02ed438a02af43ea02edc38a02a543ea02ed42ca00ed438a00a543ca0aa742aa026542aa0aa763c2026543ca086742ca02654aca00ef43c2086562ca02edc3ca02e5638a00ad42aa802f63ca02ed62ca02a542ca0aa722ea0aad428a02ed42c802ed42aa026f42ca806543ca026742ea00e542ea00654282226742ca026502ca082743ea0a6c4a8a006dc28a8825628a024f43ca02ec42aa086542aa02ed43ca08e542c202e502a8002502c202a5428a02a542ca0a2d42ca026d878b5a6",
+        "digest_minutes": 156
+      },
+      "status": {
+        "imported": "2026-11-13T19:38:05+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:13+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9334.4,
+          "empty_percent": 3.6
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 24,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-24_R&F_68128CA4.mp3",
+        "original_filename": "R&F 2008-11-24.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "68128ca41a1fb82c",
+          "audio_blake3": "bf16e8bcf0d399ef8ba17a0842b5e12aa0e50c4dcc67f24f576c7c02e583f90a",
+          "blake3": "bf16e8bcf0d399ef8ba17a0842b5e12aa0e50c4dcc67f24f576c7c02e583f90a",
+          "sha256": "ff4b8c38a17320ec4d9618bb35c84bc53c795d57e436fd951e65e5a183cbfb65",
+          "sha512": "55be70db95ac4e40ef890bab914e03ef654962a1fc6e25410ea69ceede58a14d2484d92d4525995e8f628b325efccbdece38c70f33c4a1fe76565ca89dc07c4d"
+        },
+        "size": 75670674,
+        "duration": 9458.834,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:13Z",
+        "added": "2026-11-13T19:37:01+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "d620a126e680a8260510ad025d60b523e43c200a5428a02ad638a02ed42ca00af43ca02ed42ea00ad428a02efc2c200a762ca02af428a026d428a0a2f43c2026f4b8a006f43ca00efe38a0845428a00ef63ca00e542aa0aef43ca0aef42ea00e943aa00ef42ca08ef42ca006543ca02ef438a02ed42ca00ef42ea006f42820a6742aa00e963ca02c542c20065c3c802ac42ca8a6f438a02e7438a022f438a0a6f428a0265c38a0a6742ea02abc28a026f428a02ef42aa006542a2022443ea0aa562a2026d42ca826d42aa0267628a024d638a00ed42aa0062c2aa082742aa02a542e20086428a02674bca008743ea0a6542ca0aad63ea026de3820265438a022543ca026d43ca0aed43a2002fc28a0a6543c208ac628a022f43aa02e562e202c542ca026fc3ca0acf4ac200afc2ca80ed42ca02af43aa00ef43ca00edc3ca00e522aa082dc2ea02ef43ca0aedc3aa0025c38a02ef42ea02ef42ca026f42ca02ef02ca0aed438202efc3ca026f628a026f42ca026f4382022542820225428a026742e2006543aa006d42aa086f42ca0a6fc38a2067428a0a6f42ea0ae502ca00a5028a022fc2aa026f438a026742ea0067028a0a25c38a006d42ca02ef43e2006543e20a6502c2082d43aa00ed4a8a00edc2ea006d42e200edc28a0225428a022fc28a002d42ca086dc3aa00ede3c2026d628a02ed428a026d42ca0a6d42aa0245428a022b628a0ac742ca086b428a026542ea026542c20a65e28a02ad63c20aef42ea02e5c3aa02ef43ca002f42ca00ed43820027c28a8a25c3e002e1438a08edc3aa00e542ea002f42ea026fc2ea0065c2aa0a2d43ca00afc2ca02edc2ca022fc3ca08e9c2aa008dc3ca08e5c0ca00ad848e42ede78b5e6",
+        "digest_minutes": 158
+      },
+      "status": {
+        "imported": "2026-11-13T19:38:06+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:16+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9458.8,
+          "empty_percent": 3.6
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 24,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-24_R&F_9D84E88B.mp3",
+        "original_filename": "R&F 2008-11-24.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "9d84e88b2f4fe1a6",
+          "audio_blake3": "4cb775e79d8031de9d1d62b1545052be983fd60cb088ca08a57d4e54099c1dcb",
+          "blake3": "742588be4749b5100d311eb78f1f2d310da46203165bb79ad52d69b07db374bd",
+          "sha256": "46bebfedb2d744398a0a54ef7d70092991c21660930af0595f735f2684b6995b",
+          "sha512": "177214aefc5157b6fbbab5a3f4c2c3ed96f033f5c241fde5869883ba7736ff0689f07509323676b437ffc9ef916a441143b0c13d645c3881285f599314cd7e53"
+        },
+        "size": 108940955,
+        "duration": 4260.362,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 96000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:43:28Z",
+        "added": "2026-11-13T19:47:07+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f620a1262610ad260510ad02bd74bd37743c202a743ca02e563ea02ef43ea00ef42ca002fc2aa08a742ea00ef42ca08e5428a0a2d43ca086f42ca026f4b8200cd43ea0a6743ca00e763ca026f43ca0867024a00ed42ea0aee43ea006943aa00e742ca08e743c2006543ca02e763ca02e742ca006f43ca006f428a88e342ca00a963ca02e743c200e543ca022f624a224f4b8202e743ca006f42ca02e7c3ea0a6742ca0acbc2ca82ef428a806f42ea08e542aa00254bca0a274382006d42c8026542820a67428a00cf43aa00ed42ca8063c2ea022742aa006742ca02a742ca002743ca0a6543ea0ae742ca02a7c2ea0265638a0065c3ca02ad43ca02e543ca02efc2ea026762ca00ef02ca006fc28a02e542ea02e542ca0a6d43ca00ef42ca08af82c280ef62ca08af43ca006543ca00efc3ea00e502aa086dc2ca08e743ca00a5c3ca80efc3aa002f42ca026f42ca02ef428a08e7028a0ae5c3ea026f43ca0a6f42ca02ef42ca022f42c202a542c2026742ea0025038a086743ca886f62ca0867c28a026f63ca02ed42ca08e522ea026742ea0aefc2ea006f43ca8a6742ca0a6503ca002f43ca026742c202e543c208e542c2006dc3ca00ad438200ed428a00ed43ca80edc3ca0aa542ca026f42ea022b42ca006d43ea00ed43ca006d42ca80ed42c8026d428a0a6d42ea026b03ca026342ca08c942c2086d43ca006543ca026503ca006f43ea00e543ca02eb42ea00edc3ca00ef43c200ed038200aec28a8a2f43ea0a61c3a81ae543ea00e542ca026f43ca02efc2ca0061c2e20a2d43ca02af42ca02ed42ca80efc3ca00edc28a82ed43ca88e380ca02e784cb4a6d8493186",
+        "digest_minutes": 152
+      },
+      "status": {
+        "imported": "2026-11-13T19:47:22+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:19+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9078.4,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 2.2
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 25,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-11-25_R&F_ADF842BB.mp3",
+        "original_filename": "R&F 2008-11-25.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "adf842bb2835501f",
+          "audio_blake3": "0a0cae65f088ad10e020f8d09673d5944d5520c8ab598a86ac24db1848695d36",
+          "blake3": "becaaf9d8109a2ab155138267d3028c48b0ff06d12de87072039b301e630953a",
+          "sha256": "9eb576699ef6ce281d2711bd517f3a187bab889928bac1461eb5d44c86d7201e",
+          "sha512": "393796f81d67b2b05c83a0f6a141f1639a0e3d2ba3e3cdb0aea308305960f1fa771740ccd8c5b408eeab17ecf9e9130ab0e4bf00f4feb134b449d0cfa9d860c6"
+        },
+        "size": 108700211,
+        "duration": 216.059,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 96000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:44:53Z",
+        "added": "2026-11-13T19:47:09+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f470e127a571fd3fa571fd7fa561fd7ff43ca00ef43aa80ef42ca086243ca026fe3ca882743c200ed43ca026f43ca026f43ca00e543ca0aa743ca08cfc38a806dc3ca026d43ca026d63ca006542c200a743ca00e543ea006f43ea026d43c202ed43ca026dc28a006f43ca086f43ca026542ea026d438a006f43aa086942ea006f438a0a2f42ca026d42e2806f428a086d4bea006503ca026163ea0267438a022543e2026d43ea02ad42c208ad43ca004d42ca026f42aa006542c208ed03ea006d62aa0a2f428a002dc2ca022d42ca026542ca0a6742ca004f428a0a2d43ca026d42ea0a6d43ca006d4aea026f42ca026d42ca02ef42ea00a7c2e8026d4bca0267028a002f43ca00e542ca0a6f43c21a6d43ca006d43ea006d43aa026d434a026743ca00a742ca006742ca08ef43ca0a6f438a022d42ca08296388024d43ca006fc38a006543a202e743ea006f43ca0a6dc3ca026743ca00ed42ca0a6f63ea026542ca026d43c2006d43ca026d428a026762aa02ad42ea0a6d63ca02ed42ca0aed42ea02ed43ca08e562ca0aed43ca026fcaa2006f43c202cd62ca02ef43c2026f43ca02ef43e202af4bca2aabc28a886f43ea08e543ea082dc3aa0067428a02ad4bc20a6d43ca022543a2082f43ca006543ca006f43aa006742ca006506ea00e743ca006fc3aa00ed43ca00e102ca02efc3aa00cdc28a826fc2ca006f43ca006543ea006fc3ea026743ca00e542ca08e743ea00efc3ca006543ca026fc3ca0aef83ca006f63ca02ed43ca00e7c3c2086d43ca02ed43ca026d42e2026f63ca02ef42e20ae742ca00ef42aa8a6d42ea0a63a0cb80e780ca02e380ca02f",
+        "digest_minutes": 151
+      },
+      "status": {
+        "imported": "2026-11-13T19:47:23+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:21+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9058.4,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 2.2
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 26,
+        "part": null,
+        "notes": "Best of R&F",
+        "extension": "mp3",
+        "filename": "2008-11-26_R&F_470ADB58.mp3",
+        "original_filename": "R&F 2008-11-26 -- Best of R&F.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "470adb58de2d0288",
+          "audio_blake3": "a2d104f0a21c3954475b54f2cf2791174db1a27703db6ec9ad26c4bb7938b7de",
+          "blake3": "a2d104f0a21c3954475b54f2cf2791174db1a27703db6ec9ad26c4bb7938b7de",
+          "sha256": "8a33a85dac88faae6c75a0bdeaffbb79ed101ebfe1f9ba65cad1e70b1617b817",
+          "sha512": "64328d4eb5d6e168896e7a0f3460af5279dce7e24854a366fe44305ea36c67f673ab9715608db612777d418c3dbb2c612f76855509596ea6a9e8c461bd768ffe"
+        },
+        "size": 76230113,
+        "duration": 9528.764,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:13Z",
+        "added": "2026-11-13T19:47:13+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f574e56af57cc52af57ce13af57ca1eaf43ca026f02ca0a6f42ca426f43c2026f42c2026d42ca026f43ea006f42c8026f42aa806b63ca026f43ca026962ca006f22ca026b42ca086f42ca006f43ea026b472a0225572b5a35570b5a35770b523f438a026f438802ef6b8a026f438a026f43a2026d038a02ef43ca02ef63ca026d43cac061550bd374450bd235550bd27f43ca026742c8026743ca006f62ea026fe38a00ed43ca002dc28a82ebcb8a822f62aa802742e2082742ca006f42c202674282822fc28a806d42ca006d828a006fc34a00e7c1a2002f43c200edc38a082d438a022f428a00ef42ca02ecc38a00ad43aa026743ea0aad42820285038a006f83c202efe3aa02ef62ea024bc2aa0aedc3aa006502ca02e5c3ea006543c208edc3aa0a65438a026f43ca02e743ca0ae5c2aa02edc38a0aefc38a02e523ea0aa542ea024d438a0a6d43aa00ed418a02ed438a00ed438a002dc382806f438a02e543ca02e543c80a6d438a00ed638a106f43ea20ef43ca02af42e202e5428a022f63ca02ef428200ed42ea026f43ca00ed43ca0a6fc3aa82ef428202ef43aa02ef038a02cf42ca026f43ca02ed43ca006f62ca006f43ca026b43ca024f43ca026d43ca00edc2ca00274bca0aed63ca006f438a0a6f43ca006ec38a02adc2aa026f43a202edc28a022d428a0247438a02edc28a02a4428a00cdc28a02ef428a022582a88a6fc2aa022e42ea0a6f428a026d42ca00ef43ca02ed438a026f43ca00efc28a8267628a00efc2ca826e428a8005428a0aaf42ca0a6d43ca08efc3e208ef428a022f028a802d428a8a2702ca00ed4a8a0aefc28a02edc3828aed03aa00ed42aa082d428a026d82aa022f428a0227428a0a6742ca0225438a02e",
+        "digest_minutes": 159
+      },
+      "status": {
+        "imported": "2026-11-13T19:47:25+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:20+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9528.8,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 26,
+        "part": null,
+        "notes": "Best of R&F",
+        "extension": "mp3",
+        "filename": "2008-11-26_R&F_A47698B3.mp3",
+        "original_filename": "R&F 2008-11-26 -- Best of R&F.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a47698b3cfb81f7f",
+          "audio_blake3": "d48ff9898dc1c1610bbd2e9fb8568b5ab4e68ac5e5f932237d4dde3af621ef02",
+          "blake3": "c25deca98c5f7d59629c5cea15db319d7ba0cd3f1185b9a58c9cc6cbdb6d9e8a",
+          "sha256": "5096b71e6b28de7df29b5fb2416f687122c9f162f52c665e9c09c0e73726267d",
+          "sha512": "f6f7f1518304afd4bb2f78cdf9779932fc070b4ec7a11248c5d08586b0131002883c6ff215ca44f034107fe7f0006d23957ffcf21066f8d6b405b0c552284fe0"
+        },
+        "size": 108988601,
+        "duration": 2079.504,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 96000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:47:43Z",
+        "added": "2026-11-13T19:49:34+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "7576e16a757cf52a356ea16a757ca0e8742ca026a42ca826a42ca026f02c2026f43ca026f43ca026a43c8006742ca802f42ca826f43ca026f43ca026f23ca006a43ca004f42ca026543ca026a43cb0261570b1a31570b12315703123f42ca026f42ca026b63ca086f438a822703ca0a6f03ca02ef43ca026f43ca0263420bd263550bd271450bd277520a926d42ca026743ca0267438a006fc3ea80cd43c2026d83ca80ebcbaa822f02ca002742c2082742ca002e42ca8267c24a826fc28a826d426a886dc20a0ae3c3ca80e7cb4200efc3ca086dc2ca8a2d43ca00e5428a0a6763ca00edc382026fc2ca8a6502c20aed438a00ef43ca0a6f83ea00cf63ca00efc2ca8a6dc28a806503ca02e543ea02e763ca08efc38a0a6d43ca02ef43ea00e743ca02ed438a02efc3ca02ef43ca0ae543ea00a54342006d43ea00ed41ca00ed434a02e5c18a026fcbca026f43ca02e543ca0ae501481ae547ca10e543e2102f43ca00ef43ea0a4f43ea02c5620a026f42ca02e5c2ca0aef43ea806743ca006d43ea026fc3a2806f42ea00ef07ea02cf43c2026743c200efc3ea006f42ca126f43ca02eb43ea026743ca0245c3ea00e143ea002fe3ea00e543c2026f63ca026fc3ca08ede380026743ea0aed438a02ed42ca026743ca0265428a806503aa02e7c28a08ef42aa0825c22a826f42ea082f43ea0aef43ca0a6f43c200ef43ca02e743ca026fc3ca02ea628280efc2ca00eac28a824742ca0a6b42ca026d42ca086fc3ea00efc2ca022f42ea802fc2ca8a6722ea0ae54b8a0aefc28a80edc38288ed03ca00ed428a08ed4282022d42820a6f42aa022742c2026742ca00a1624a107",
+        "digest_minutes": 152
+      },
+      "status": {
+        "imported": "2026-11-13T19:49:45+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:24+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9082.4,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 2.2
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 27,
+        "part": null,
+        "notes": "Pre Recorded",
+        "extension": "mp3",
+        "filename": "2008-11-27_R&F_6FC363C3.mp3",
+        "original_filename": "R&F 2008-11-27 -- Pre Recorded.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "6fc363c3683d4813",
+          "audio_blake3": "ac9b33eef634ba05fc7c2a57a14be16c10c4cf3cee6a337250fda56d59ae7c76",
+          "blake3": "ac9b33eef634ba05fc7c2a57a14be16c10c4cf3cee6a337250fda56d59ae7c76",
+          "sha256": "570c91afad91094852fda168597ff4ed371a6473fd08cbfcec492359d79a6541",
+          "sha512": "afe2d25611cfecd49e1f63b244e773a3f294921c2dc251432480ac8dc5edddd82e1f7b8c8ee8d67cc19df6639b974e25b99888e677a4c95bd792e9f87e7fbc97"
+        },
+        "size": 76023850,
+        "duration": 9502.981,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:13Z",
+        "added": "2026-11-13T19:49:36+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "542ea02ed438a02ed42ca12ed43ca02cd63e200e742ca02cf54ce537e546e567f44ca527f556e1467c5aa526d438a006d63aa006f42aa2065438a004d43a2006d43ca006da3aa02ad438a0a2fc38a00efc28a822543c2026f43ca002f628a02e7028200a7028a002c43ca8265428a0a4542aa026543ea002dc2ca022de3ca02ef42aa004f42c202af428a2a6d428a00e762ca026d42ea0aed62ea024d428a026dc3ca026d42ca022d428202ad42aa8266400a802943ca026b43aa022f41ca422d438a022b43ca022943ca0068438a822dc38a822b628a82250a8a826d42ca8229038a822c00c8802d4382822d08aa82254188c02541ca822d82aa002d43ca006dc55e526dc54a527dcf4a527de7ca022dc38a022543ca00ad43ca02e5428a0a27c2ca0025428a022543ca02ed43ca224d42ca0265c2aa006dc38a006d42aa006dc28a0065428a02e743ca0ae743ca026743ca026682ca022102ca022f42c800e502ca006703ca026642aa028d43ca00cd4388026d42ea0067e38200ef43ca022d6282024d42ca026d428a026d428a80454282002d42ca026543ca02ad02aa026742ca026762aa08ed428a008d42ea0aed42ca00e7428a02e543ca008542aa024f42a2826742ea0027438a0265438a026d43ca0a6542ca02e1028a022102e802ed47ca0aef438a02ed038a02e5638a1ae5678a02e5428a0a6542ca02af438a0865caea00e743c0026743a200e543ca002502ca02ed42ca0aed62aa006142aa022142ca026f43ca026d428a026542ea0225428a02ed438a02ed43ca006d428a026d43ea026d43aa026582aa0aef42ea00ad438a026542ca00a54008822543ca022d43ca026dc54a166de56a12edc54e10edc5ca12edc5ce14e547fe0e7",
+        "digest_minutes": 159
+      },
+      "status": {
+        "imported": "2026-11-13T19:49:47+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:24+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9503.0,
+          "empty_percent": 3.4
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 27,
+        "part": null,
+        "notes": "R&F Thanksgiving Special (fixed)",
+        "extension": "mp3",
+        "filename": "2008-11-27_R&F_A62E634F.mp3",
+        "original_filename": "R&F 2008-11-27 -- R&F Thanksgiving Special (fixed).mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a62e634f3007d40c",
+          "audio_blake3": "9003b53a284ee1efb6c440cb9afd1f9f29e87d8f9fd58aa24e58f65770ec0272",
+          "blake3": "46fad19bc510fd1015ed01ffe7057f80ba10e1b4ee63bad84e02e17714b4edbe",
+          "sha256": "bd44a28d5ea614b7d2f2021ab3fa959a7290c11be0d7f08a509094cd056b53cc",
+          "sha512": "9c19eec88bbbb0300995eaec0cb00a4185fa611a03951f7c145a6a9ca2cbcd6accfe69389f7fbdf631620095c52b0031bbb95e0ca656d817290a52c3f58b6869"
+        },
+        "size": 30418755,
+        "duration": 2534.87,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 96000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-10-30T20:39:14Z",
+        "added": "2026-11-13T19:49:37+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "54bea02ed638a02ed42ea02ed63c802e5426202ef526a12ef544ed66e544ed77f544a5667554e546f44aa026f438a026f43ea002542aa08cd43ca026d4bca006d838a02ed438a0a6fc2aa806fc28a026543ca026d43c2002f638a026702ea02e7028a022d42ca0a61428a0a6542ca026543ca022cc2aa02af438a02cf42ea006543aa0aef42aa026742ca02ef43ca0a65424a026d43ea006d63ca026dc3e2026f62ca006bc28a80e10c62806",
+        "digest_minutes": 43
+      },
+      "status": {
+        "imported": "2026-11-13T19:49:47+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:23+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 2534.9,
+          "empty_percent": 2.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 27,
+        "part": null,
+        "notes": "R&F Thanksgiving Special",
+        "extension": "mp3",
+        "filename": "2008-11-27_R&F_BF701B1B.mp3",
+        "original_filename": "R&F 2008-11-27 -- R&F Thanksgiving Special.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "bf701b1bab042c03",
+          "audio_blake3": "f96f3de6f527e1a5c4036aadefa055f1a3896dd0e83418aa8f49f4db327ffb83",
+          "blake3": "6520b022b3fd282f61bc02259dd6636b34e9b6d642021bef98c93c62ecbecc6b",
+          "sha256": "bdbf6fdd4bc06171482a827fdecc26bfa319b5c4baed8695dbf4c19a98944e12",
+          "sha512": "d7c5646dcef895bee1f9ec9bd78ba63ac0ac3d35446cd6200a2da78b31564cf731bd10fabb95d9c4d7e6b3725b0f75fe18af69a4f0248f4119ab53f0cfaf5d11"
+        },
+        "size": 109355675,
+        "duration": 2538.789,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 96000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:48:43Z",
+        "added": "2026-11-13T19:49:39+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "54b6a02e543ca02ed42ca00ed434a02e5426a12ef526a10ee504ed27e546e537f544a5676554a526f44ea126f43ca80674bea006542aa084743ca026f4bc2006d838a00eb43c20a6dc2aa82efc28a826143c2026f43ca002f638a00e30aca02a702aa026542ca8a61428a024543ea026542ea026dc3ca02ed42c202cf42ea006543ea08eb428a026742ca006f43ca026d624a026d43ea004d43ca026dc3ca024d628a026bc2ca80e40042802d420a802f43cac025414ac22d432a022e416a802d434a802c410ac2254108c22f630a80254a0a926c42ca802c4b0a8224400280244b028024490280044108c82d43ca082c82ca80edc35e562dc142526dc34a527467ca126dc38a00e543ea00e543ea02e5428a02e5c2c2006542ca026543ca02ed43ca126d43ca026543ea006d43ca006d43ea02edc38a026543ca02e7e3ca0a6743e20067c3ca002102ca02a543ca0a6743ca02e703ca00e7438a00e543ea02c743ca00ed63ca0065c3ca02e543ea022942c202e5024a02ef43c200ebc2aa8065428208edc6ea026543ca02a702aa02e543ca02e7438a00ad62c200ed42ea02ed42ca00e543ea08e542ca00e542aa8067428a006743ea0065438a02ef43ca026543ca0ae502c2022102ea02e507ca12e343ca83e303ea02e543ca42e543ca00e742ca0ae742c2026543ca08a543ca0a6743ca02e543ca00e502ca0aad43ea0aedc28a0aed42ea026102ca026d43ca026502ca826d43ca026142ca026d63ca02ed43ca026d03ea826d43ea0aed43ea0265c2aa08efc3ca00ed43ca026542ca00a1c18a822f42ea0a65c1ca0065e56212e5c54a12e5c44e12e5c44e16e5454e167",
+        "digest_minutes": 152
+      },
+      "status": {
+        "imported": "2026-11-13T19:49:49+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:28+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9113.0,
+          "warnings": [
+            "VBR header counts don't match the audio (length/seeking may be off)"
+          ],
+          "empty_percent": 2.1
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Ron and Fez",
+        "code": "R&F",
+        "year": 2008,
+        "month": 11,
+        "day": 28,
+        "part": null,
+        "notes": "Best of R&F",
+        "extension": "mp3",
+        "filename": "2008-11-28_R&F_C74361A2.mp3",
+        "original_filename": "R&F 2008-11-28 -- Best of R&F.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "c74361a2a3176b8b",
+          "audio_blake3": "ec7f712c4c7770c4132ba02970c22ed5714e064cd7ec09a69c4a21ce2f4e4a98",
+          "blake3": "ec7f712c4c7770c4132ba02970c22ed5714e064cd7ec09a69c4a21ce2f4e4a98",
+          "sha256": "213669d2b9a36fc87739b97e0dcdd97acd8fc96d71b41e1ab138051b64cc14b2",
+          "sha512": "b59dad02bd19de54e6870c1800a1539711e9566976caded98c7ef60ddfda9e2f2694deaeab47f602a88224493c98488265ba39708765c2e65b8464b610a8f569"
+        },
+        "size": 77228617,
+        "duration": 9653.577,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-13T19:35:13Z",
+        "added": "2026-11-13T19:49:41+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "54ac200adc38a00efc28a0a8d63aa020d43aa02e22a8a826102aa0a27028a0aa742ea0aed43ca02ed638a0a6942c202e502aa026f02c20067438a026dc28a0a6543ca026502ca02ef428a00ecc28a806dc282022dc0aa8a87aa8a826fc28a82e707ca526714ce467fc3ca026fe3c2006fc28a02efc3e2806d42ea02ef43ca086dc3820a6dc2c8026d43ea002dc38a026f43ea006d438a0aed43c80065428a026d438a0065028a006582aa826502e202af438a024f42e2006fc3aa02e5c2ea0267c3ea02ed4382826d43ca086543ea02cfc2ca006f43ea02ede38a02ade3aa026dc3a2026d43ea0265c3820025826a0ae5c38a00a7c3ce02ae43ea0aafc3ca006742ca02e5438a0a67c3aa0265438a02e543ca08e5438a02ed428a026f438a026dc3ea002f038a026fc382006d43ca0a6f438a022f43ea006f428a0267428a026fe3ea206f438a022562ea0a6f438a026fe38a0062c4029062c40b9272c40b966f0282002f42ea02efc2ea026742ea026542c2024542ea02e542ca0aef42ea02e702aa0a6502c202ad4a8a02ef228202e722ca02e5028a02e722ca02ed428a0267428a82e7428a022d02aa026d42ea02ef428a00e942aa022d428a02e7600a082f0148426743ca08ef028a02a543ca006d43ca0ac443ea02ef42ca02efc28a02ed628200efc3aa02e743c8026503c202a743ea00a543ca00e5428a0067428a00af43aa02e502ca022d428a08a562ea02ef42ea006543ea02e542aa02e563ea02ef63ca02ef438802af4aca0aadc2aa006d428a026d428a806f42ca026f42a80ae543ca0065428a026d43820265438a006763ca02ef42aa026fc38a0a6d43ca026f43ea026600ca0ae640ca00ae428a086fe2aa026dc38a0863624a00a7424a02a743aa006",
+        "digest_minutes": 161
+      },
+      "status": {
+        "imported": "2026-11-13T19:49:50+00:00",
+        "check": {
+          "date": "2026-11-13T19:52:29+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9653.6,
+          "empty_percent": 3.7
+        }
+      }
+    }
+  ]
+}
