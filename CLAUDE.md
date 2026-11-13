@@ -176,8 +176,15 @@ else yet.
 - Also stored: `blake3`, `sha256`, `sha512` (cheap at radio file sizes,
   under ~200 MB).
 - **No CRC32.**
-- Not stored yet: `md5` and `sha1`. Internet Archive publishes these, so
-  add them if verifying mirrored downloads against IA becomes a goal.
+- `md5` and `sha1` added to `hashes` in mogul.toml 2026-11-13 (Internet
+  Archive publishes both for every file; needed to check IA uploads/
+  mirrors without downloading). New scans take them. **`mogul.py radio
+  hashes`** fills in any listed whole-file hash an entry doesn't have yet,
+  like the fingerprint pass: finds the file through the catalog, size must
+  match, and one hash the entry already has (blake3) is re-read in the same
+  pass and must still match, otherwise CHANGED (run `verify --update`
+  first). `--dry-run`, `--jobs N` (default 4, disk-bound). Report
+  `mogul_reports/radio-hashes_*.json`. Quarantined entries aren't covered.
 - First 8 hex characters of the xxh64 may appear in filenames as a short
   label. The full hash in the JSON is the real ID.
 
@@ -224,7 +231,8 @@ modules/radio/
   quarantine.py       moves bad recordings + their entries out of the catalog
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
-modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga/
+  hashes_pass.py      adds whole-file hashes older entries don't have (md5, sha1...)
+modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py)
 examples/             sample JSON
@@ -324,7 +332,7 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 
 ## Save to GitHub (`tools/update.sh`, Mavrick's script)
 
-- Runs `radio fingerprint` + `radio check` (only new files get work),
+- Runs `radio fingerprint` + `radio hashes` + `radio check` (only new files get work),
   then `git add -A`, commit "update", `git pull --rebase`, `git push`.
   Works from any folder. Relies on `.gitignore` to keep media and
   `mogul.local.toml` out. May become a mogul.py command later.

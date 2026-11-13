@@ -24,7 +24,10 @@ reports = "mogul_reports"
 # Hashes to store for every file. xxh64 is always included: it is
 # the file ID, taken over the audio data only. The others are taken
 # over the whole file. Choices: blake3, sha256, sha512, sha1, md5
-hashes = ["blake3", "sha256", "sha512"]
+# md5 and sha1 are what Internet Archive publishes for every file, so
+# uploads can be checked against IA later. Entries scanned before a hash
+# was added to this list get it with: mogul.py radio hashes
+hashes = ["blake3", "sha256", "sha512", "sha1", "md5"]
 
 [radio]
 # --- Import (mogul.py radio import) ---

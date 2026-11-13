@@ -8,6 +8,7 @@ ACTIONS = {
     "quarantine": "Move bad recordings (default: failed fingerprints) and their entries out for checking",
     "damaged": "List recordings with damaged spots; mark them ok or bad after listening",
     "check": "Read every file looking for damage (mp3val + ffmpeg); writes a readable report",
+    "hashes": "Add whole-file hashes listed in mogul.toml that older entries don't have yet (e.g. md5, sha1)",
 }
 
 
@@ -33,6 +34,9 @@ def run(action, args, config):
     if action == "check":
         from . import check
         return check.run(args, config)
+    if action == "hashes":
+        from . import hashes_pass
+        return hashes_pass.run(args, config)
     raise SystemExit(f"radio has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -92,6 +96,11 @@ def add_arguments(action, parser):
                                  "(default: auto_ok_max_missing in mogul.toml, 0.5)")
         parser.add_argument("--dry-run", action="store_true",
                             help="for --auto-ok: list what would be marked, save nothing")
+    elif action == "hashes":
+        parser.add_argument("--dry-run", action="store_true",
+                            help="list what would be added, change nothing")
+        parser.add_argument("--jobs", type=int, default=0,
+                            help="how many files to read at once (default 4; it's disk-bound)")
     elif action == "check":
         parser.add_argument("--quarantine", action="store_true",
                             help="check the files in quarantine instead of the library")
