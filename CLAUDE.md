@@ -224,6 +224,8 @@ modules/radio/
   quarantine.py       moves bad recordings + their entries out of the catalog
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
+modules/music, tv, anime, movie, audiobooks, tiktok/
+                      placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py)
 examples/             sample JSON
 ```
@@ -659,6 +661,13 @@ banner name.
 - MKA container as a "playable zip": audio + chapters + attachments
   (manifest, cover, original tags).
 - Issues and bounty list (`mogul.py issues --bounty`).
+- **One repo for everything** (decided 2026-11-12): every media type is a
+  folder under `modules/`, sharing `mogul_core/`. No separate mogul-*
+  repos, so there's no merge step later. Placeholder folders hold an
+  `IDEAS.md` for writing ideas down; a module goes into `MEDIA_TYPES` in
+  `mogul.py` when it has code. TikTok harvesting is being built in another
+  session; it moves into `modules/tiktok/` when it's good enough (`git
+  subtree add` if it's in its own repo, keeps history).
 - Other modules: audiobooks (multi-file sets, "unclean" sets where one part
   is encoded differently), music (MusicBrainz), video.
 - Eventual web UI and website, reading only the JSON/DB, never the media
