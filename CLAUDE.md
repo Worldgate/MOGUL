@@ -226,7 +226,7 @@ modules/radio/
   check.py            reads every file for damage; readable worst-first report
 modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh)
 examples/             sample JSON
 ```
 
@@ -313,6 +313,13 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - `mogul_library/`, `mogul_dupes/` and `mogul_quarantine/` are in `.gitignore`.
 - Not built yet: undo, and choosing *which* copy to keep by quality
   (right now the first one scanned wins).
+
+## Save to GitHub (`tools/update.sh`, Mavrick's script)
+
+- Runs `radio fingerprint` + `radio check` (only new files get work),
+  then `git add -A`, commit "update", `git pull --rebase`, `git push`.
+  Works from any folder. Relies on `.gitignore` to keep media and
+  `mogul.local.toml` out. May become a mogul.py command later.
 
 ## Radio verify (`mogul.py radio verify`)
 
@@ -522,7 +529,8 @@ dates, unknown show codes, names that don't match the pattern.
 
 ### Usenet name shapes
 
-`tools/fixnames.sh` (run inside the folder; `-n` = preview) renames
+`tools/fixnames.sh radio` (or a folder path, or no argument = current
+folder; subfolders included; `-n` = preview) renames
 `2008-10-01-O&A-CF64k.mp3`, `2008-10-30 Thu O&A CF64k.mp3`,
 `2008-10-30-O&A CF64K.mp3` and `O&A 2008-08-04 Mon O&A CF64K.mp3` to
 `O&A 2008-10-30 -- CF64k.mp3` (the rest of the name becomes notes).
