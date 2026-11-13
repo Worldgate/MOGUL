@@ -555,8 +555,10 @@ banner name.
 - `O&A 2002-08-21.mp3` (Usenet batch, 2026-11-13) is byte-identical audio
   to `O&A 2002-08-15.mp3`. Mavrick listened: it's the 08-15 Sex for Sam
   show (Thu), so 08-15 is right and the "08-21" file is a mislabeled copy
-  (goes to dupes). The real 2002-08-21 (Wed, second-to-last WNEW show) is
-  still missing: wanted / bounty list.
+  (goes to dupes). The real 2002-08-21 (Wed) was already in the library
+  (mp3 + ogg, imported 2026-11-07), so nothing is missing. Mavrick added
+  the note "Sex for Sam" by hand to the 08-15 entries (naming.notes is
+  safe to edit by hand: not part of the library filename).
 - Gap 2002-08-22 to fall 2004 is expected: off the air (paid to sit out by
   Infinity) until XM / The Virus. Not missing shows.
 
