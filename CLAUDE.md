@@ -224,7 +224,7 @@ modules/radio/
   quarantine.py       moves bad recordings + their entries out of the catalog
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
-modules/music, tv, anime, movie, audiobooks, tiktok/
+modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py)
 examples/             sample JSON
