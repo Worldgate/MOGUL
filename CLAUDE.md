@@ -552,6 +552,13 @@ banner name.
   `O&A 1998-07-01 -- Listed as 1998-06-31`. Date is a guess; on the
   bounty list for anyone who can prove the real date.
 - `O&A 1998-06-27` is a Saturday, which may be legit.
+- `O&A 2002-08-21.mp3` (Usenet batch, 2026-11-13) is byte-identical audio
+  to `O&A 2002-08-15.mp3`. Mavrick listened: it's the 08-15 Sex for Sam
+  show (Thu), so 08-15 is right and the "08-21" file is a mislabeled copy
+  (goes to dupes). The real 2002-08-21 (Wed, second-to-last WNEW show) is
+  still missing: wanted / bounty list.
+- Gap 2002-08-22 to fall 2004 is expected: off the air (paid to sit out by
+  Infinity) until XM / The Virus. Not missing shows.
 
 ## Not built yet
 
