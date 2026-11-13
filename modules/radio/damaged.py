@@ -109,6 +109,21 @@ def found_text(entry, c):
     return "; ".join(parts)
 
 
+def fingerprint_only_text(entry, c):
+    """Flagged when fingerprinting (ffmpeg reported errors) but radio check
+    found the audio itself whole: usually junk bytes before the first or
+    after the last frame, which a player skips."""
+    errors = (damage_of(entry) or {}).get("decode_errors") or 0
+    where = ""
+    for w in c.get("warnings") or []:
+        if "beginning of the file" in w:
+            where = " (junk at the start of the file)"
+        elif "end of the file" in w or "truncated" in w:
+            where = " (junk at the end of the file)"
+    return (f"audio checks out whole (full length, no broken frames); the fingerprinter "
+            f"tripped on {errors} bad spot(s){where}")
+
+
 def fill_found(manifests):
     """Make sure every entry radio check found damage in has status.damaged
     with a `found` line (entries checked before `found` existed, or with only
@@ -119,9 +134,12 @@ def fill_found(manifests):
         for entry in manifest.get("files", []):
             status = entry.get("status") or {}
             c = status.get("check")
-            if not is_damaged_check(c):
+            if is_damaged_check(c):
+                text = found_text(entry, c)
+            elif c and damage_of(entry):
+                text = fingerprint_only_text(entry, c)
+            else:
                 continue
-            text = found_text(entry, c)
             d = status.get("damaged")
             if d and d.get("found") == text:
                 continue
@@ -153,6 +171,8 @@ def auto_ok_reason(entry, max_missing):
         return None
     if ((status.get("damaged") or {}).get("checked")):
         return None                                   # already judged
+    if not is_damaged_check(c) and damage_of(entry) and c.get("tool") == "mp3val":
+        return "audio whole per radio check; only the fingerprinter tripped"
     if not c.get("spots") or c.get("first") is None:
         return None                                   # nothing timed (not mp3val)
     if (c.get("missing_seconds") or 0) > max_missing:

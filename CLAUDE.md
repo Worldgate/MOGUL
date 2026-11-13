@@ -466,6 +466,10 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   lost, real length matching the header, and no empty gap, as ok
   (`checked = {date, verdict: ok, by: auto, rule, note}`), so listening goes to
   the real problems. `--max-missing N` overrides; `--dry-run` lists only.
+  Also covers files flagged only by the fingerprint pass whose check came
+  back whole (full length, no broken frames; 15 of them, mostly 2012:
+  junk before the first / after the last frame); their found line says so.
+  Count on 2026-11-12: 149 damaged = 134 found by check + those 15.
   Why: Mavrick listened to 2009-04-01 at 1:04:31 (4 spots, 0.0 s missing):
   a faint tap, a seam where pieces were joined. Many 2009 files look like
   this. Don't run it while `radio check` is running (both write the
