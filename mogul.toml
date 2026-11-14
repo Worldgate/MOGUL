@@ -70,7 +70,7 @@ auto_ok_max_missing = 0.5
 
 # --- Scan (mogul.py radio scan) ---
 # File types the radio scanner picks up.
-extensions = ["mp3", "ogg", "oga", "opus", "m4a", "aac", "flac", "wma", "wav", "mka"]
+extensions = ["mp3", "ogg", "oga", "opus", "m4a", "aac", "flac", "wma", "wav", "mka", "rm", "ra"]
 
 # Store the short acoustic fingerprint digest for each file.
 # Needs fpcalc (sudo apt install libchromaprint-tools).

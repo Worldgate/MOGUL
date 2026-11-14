@@ -558,6 +558,13 @@ codes disagree (`O&A ... R&F ...`) is LEFT ALONE.
 
 ### Other filename shapes seen (handle later)
 
+- RealMedia, e.g. `20070302rf.rm` (Ron and Fez 2007-03-02): date with no
+  dashes + lowercase show code, not handled by fixnames.sh; rename by hand
+  to `R&F 2007-03-02.rm`. `.rm`/`.ra` added to `[radio] extensions` and to
+  `.gitignore` (2026-11-13). ffmpeg reads RealMedia and decodes the
+  RealAudio codecs (cook, ra_144/288, sipr, atrac3), so hashing,
+  fingerprint and check should work; not yet tested on a real file.
+
 - Hourly parts: `2011-01-17 Mon-O&A-06h00m` (several files = one recording).
   The weekday doubles as a date check.
 
