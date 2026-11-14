@@ -13,6 +13,11 @@
 # (mogul_incoming/radio, later mogul_incoming/audiobooks, ...).
 incoming = "mogul_incoming"
 
+# Where downloads go to be par2-checked first, one subfolder per media type
+# (mogul_validate/radio). `mogul.py radio validate` checks/repairs them and
+# moves the good files to incoming.
+validate = "mogul_validate"
+
 # Where the catalog JSON files live. This is the source of truth:
 # back it up.
 json_store = "mogul_json"

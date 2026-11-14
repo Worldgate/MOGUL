@@ -8,6 +8,7 @@ ACTIONS = {
     "quarantine": "Move bad recordings (default: failed fingerprints) and their entries out for checking",
     "damaged": "List recordings with damaged spots; mark them ok or bad after listening",
     "check": "Read every file looking for damage (mp3val + ffmpeg); writes a readable report",
+    "validate": "par2 check + repair downloads in mogul_validate/radio; good files move to incoming",
     "hashes": "Add whole-file hashes listed in mogul.toml that older entries don't have yet (e.g. md5, sha1)",
 }
 
@@ -34,6 +35,9 @@ def run(action, args, config):
     if action == "check":
         from . import check
         return check.run(args, config)
+    if action == "validate":
+        from . import validate
+        return validate.run(args, config)
     if action == "hashes":
         from . import hashes_pass
         return hashes_pass.run(args, config)
@@ -96,6 +100,13 @@ def add_arguments(action, parser):
                                  "(default: auto_ok_max_missing in mogul.toml, 0.5)")
         parser.add_argument("--dry-run", action="store_true",
                             help="for --auto-ok: list what would be marked, save nothing")
+    elif action == "validate":
+        parser.add_argument("--dry-run", action="store_true",
+                            help="check only: repair, move and delete nothing")
+        parser.add_argument("--extras", action="store_true",
+                            help="also look at the other files in each set's folder "
+                                 "(finds renamed copies; slower)")
+        parser.add_argument("--par2", help="par2 program to use (default: par2)")
     elif action == "hashes":
         parser.add_argument("--dry-run", action="store_true",
                             help="list what would be added, change nothing")

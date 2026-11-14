@@ -57,6 +57,8 @@ else yet.
   e.g. `mogul_json/radio/Opie and Anthony/1999/09 - September.json`
   This folder must be backed up, not regenerated (don't call it a "cache").
 - Folders (set in `mogul.toml` under `[core]`, relative to that file):
+  - `mogul_validate/<media type>/` downloads waiting for a par2 check
+    (`<media> validate`; gitignored)
   - `mogul_incoming/<media type>/` where new files are dropped
   - `mogul_json/` the catalog
   - `mogul_reports/` one report per scan
@@ -221,6 +223,7 @@ mogul_core/           shared code
   store.py            safe JSON read/write (temp file + rename)
   progress.py         "[ 53/194  ~12m05s left]" labels, ETA by bytes not file count
   damage.py           finds damage in a file (mp3val spots -> show times, ffmpeg errors, empty gaps)
+  par2.py             par2 verify/repair, cleanup, safe moves (used by validate + tools/par2check.py)
 modules/radio/
   __init__.py         radio actions
   naming.py           filename pattern parsing
@@ -232,6 +235,7 @@ modules/radio/
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
   hashes_pass.py      adds whole-file hashes older entries don't have (md5, sha1...)
+  validate.py         par2 check/repair of mogul_validate/radio, good files -> incoming
 modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
@@ -240,6 +244,32 @@ examples/             sample JSON
 
 Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 `ffmpeg`, `mediainfo`, `fpcalc` (`libchromaprint-tools`), `mp3val`.
+
+## Radio validate (`mogul.py radio validate`)
+
+- Step before scan, for Usenet downloads: drop them with their .par2 files
+  into `mogul_validate/radio/` (`[core] validate`, default
+  `mogul_validate`), in subfolders or loose. Every main .par2 is run
+  through par2 (repair mode; core code in `mogul_core/par2.py`).
+- Pass 1 checks/repairs every set; only then pass 2 moves, so a second
+  set in the same folder still finds its files.
+- **OK / FIXED** (FIXED re-verified first): the set's audio files (by
+  `[radio] extensions`) move flat into `mogul_incoming/radio/`, then the
+  set's par2 files and par2's `NAME.1` damaged copies are deleted.
+  **COVERED**: a set that couldn't fix its files alone but another set in
+  the same folder checked the same files good (duplicate download
+  `NAME (2).par2` with no .vol files): its par2 files are deleted.
+  **CAN'T FIX / ERROR**: left as is, par2 included (take to MultiPar).
+- Never overwrites: a name already taken in incoming = NOT MOVED, par2
+  files kept. Audio with no par2 set = NO PAR2, left alone. Non-audio
+  files in a set (.nfo) stay; empty folders are removed.
+- `--dry-run` = verify only (no repair, moves or deletes). `--extras` also
+  scans other files in each set's folder (renamed copies get renamed
+  back). `--par2 PROGRAM`. Report: `mogul_reports/radio-validate_*.txt`.
+- Tested 2026-11-14 with par2cmdline built from source: ok, damaged,
+  too damaged, missing, renamed, duplicate (2) set, name taken, loose set,
+  no par2.
+- Flow: `validate` → `scan` → `import`.
 
 ## Radio scanner (`mogul.py radio scan`)
 
@@ -567,6 +597,7 @@ so par2 can repair them. `--exact-only`, `--leave-par2`, `--no-check`,
 `--dest DIR`. Never overwrites. Not part of MOGUL itself; added 2026-11-14,
 tested on a hand-built par2 set.
 
+For the MOGUL flow use `radio validate` (above). The standalone tool:
 `python3 tools/par2check.py [FOLDER] [--verify-only] [--extras]` runs par2
 on every main .par2 under a folder (skips .volNN+NN.par2), repairing what it
 can, and writes `par2check_<date>_<time>.txt` in that folder: OK / FIXED /
@@ -581,7 +612,8 @@ NAME.volNN+NN.par2) and par2's NAME.1 backups of repaired files; a FIXED
 set is re-verified first and nothing is removed if that fails. Never
 touches audio. Note: duplicate downloads like `NAME (2).par2` have no
 matching .vol files, so par2 sees no recovery blocks (shows CAN'T FIX);
-Mavrick removes those before running. MultiPar can salvage chunks from
+Mavrick removes those before running; both now mark such a set COVERED
+when another set in the folder vouched for its files. MultiPar can salvage chunks from
 broken par2 files that par2cmdline can't: use it on the CAN'T FIX leftovers.
 
 ### Other filename shapes seen (handle later)
