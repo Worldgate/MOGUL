@@ -234,7 +234,7 @@ modules/radio/
   hashes_pass.py      adds whole-file hashes older entries don't have (md5, sha1...)
 modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py)
 examples/             sample JSON
 ```
 
@@ -555,6 +555,17 @@ is checked against the date; on a mismatch the file is LEFT ALONE.
 Never overwrites (name taken = skipped). Works for any show code (O&A,
 R&F, HSS, O&A-CBS...): the code is taken from the name; a name whose two
 codes disagree (`O&A ... R&F ...`) is LEFT ALONE.
+
+### Par2 sets (`tools/par2sort.py`, Mavrick's script, one-off use)
+
+`python3 tools/par2sort.py PAR2_PATH SEARCH_FOLDER [--dry-run]` reads the
+file list inside .par2 sets (name, size, MD5 of the first 16 KB), finds
+those files anywhere under SEARCH_FOLDER and moves them, plus the .par2
+files, into a folder named after the set, so MultiPar/par2 sees them.
+Damaged/partial files with the right name are moved too (flagged PARTIAL)
+so par2 can repair them. `--exact-only`, `--leave-par2`, `--no-check`,
+`--dest DIR`. Never overwrites. Not part of MOGUL itself; added 2026-11-14,
+tested on a hand-built par2 set.
 
 ### Other filename shapes seen (handle later)
 
