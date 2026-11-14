@@ -234,7 +234,7 @@ modules/radio/
   hashes_pass.py      adds whole-file hashes older entries don't have (md5, sha1...)
 modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
 examples/             sample JSON
 ```
 
@@ -566,6 +566,16 @@ Damaged/partial files with the right name are moved too (flagged PARTIAL)
 so par2 can repair them. `--exact-only`, `--leave-par2`, `--no-check`,
 `--dest DIR`. Never overwrites. Not part of MOGUL itself; added 2026-11-14,
 tested on a hand-built par2 set.
+
+`python3 tools/par2check.py [FOLDER] [--verify-only] [--extras]` runs par2
+on every main .par2 under a folder (skips .volNN+NN.par2), repairing what it
+can, and writes `par2check_<date>_<time>.txt` in that folder: OK / FIXED /
+REPAIRABLE (verify-only) / CAN'T FIX (blocks short) / ERROR, with each bad
+file's state. Uses par2's exit codes (0 ok, 1 repairable, 2 not). par2
+keeps damaged originals as `NAME.1`. `--extras` also scans the set folder's
+other files, so a renamed copy is found and renamed back. Tested with
+par2cmdline 1.x built from source: ok, damaged, too damaged, missing,
+renamed. Ctrl-C still writes the report.
 
 ### Other filename shapes seen (handle later)
 
