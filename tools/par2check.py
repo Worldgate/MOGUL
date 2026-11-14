@@ -11,6 +11,9 @@ par2 on each set from inside its own folder.
   python3 tools/par2check.py --verify-only   # check only, change nothing
   python3 tools/par2check.py --extras        # also look at other files in each
                                              # set's folder (finds renamed copies)
+  python3 tools/par2check.py --cleanup       # remove the set's .par2 files once
+                                             # it's OK or FIXED (and the NAME.1
+                                             # damaged copies par2 left behind)
 
 Results per set:
   OK          every file is correct
@@ -19,6 +22,11 @@ Results per set:
   REPAIRABLE  damaged, enough recovery data to fix (only with --verify-only)
   CAN'T FIX   damaged and not enough recovery data (says how many blocks short)
   ERROR       par2 itself failed (bad par2 file, read error...)
+
+--cleanup only touches sets that came out OK or FIXED. A FIXED set is
+verified again first; if that second check doesn't pass, nothing is removed.
+It deletes that set's own par2 files (NAME.par2 + NAME.volNN+NN.par2) and,
+for repaired files, the NAME.1 copy par2 kept. Audio files are never touched.
 
 Writes par2check_<date>_<time>.txt in the folder it checked. Ctrl-C stops it
 and still writes the report for the sets done so far.
@@ -101,6 +109,30 @@ def run_set(par2, set_file, verify_only, extras):
     return {"status": status, "files": files, "detail": detail}
 
 
+def cleanup_set(par2, set_file, r):
+    """Remove a finished set's par2 files (+ par2's NAME.1 backups).
+    Returns how many files were removed, or None if the recheck failed."""
+    folder = set_file.parent
+    if r["status"] == "FIXED":
+        recheck = subprocess.run([par2, "v", set_file.name], cwd=folder,
+                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if recheck.returncode != 0:
+            return None
+    base = set_file.name[:-len(".par2")]
+    vol = re.compile(re.escape(base) + r"\.vol\d+[+-]\d+\.par2$", re.IGNORECASE)
+    doomed = [p for p in folder.iterdir() if p.is_file() and (
+        p.name.lower() == set_file.name.lower() or vol.match(p.name))]
+    for name, state in r["files"].items():
+        if state != "found":
+            for n in range(1, 10):
+                backup = folder / f"{name}.{n}"
+                if backup.is_file():
+                    doomed.append(backup)
+    for p in doomed:
+        p.unlink()
+    return len(doomed)
+
+
 def write_report(top, results, verify_only, started, interrupted):
     stamp = started.strftime("%Y-%m-%d_%H%M%S")
     path = top / f"par2check_{stamp}.txt"
@@ -122,12 +154,14 @@ def write_report(top, results, verify_only, started, interrupted):
             out.append(f"  {r['set']}")
             if r["detail"]:
                 out.append(f"      {r['detail']}")
+            if r.get("cleaned"):
+                out.append(f"      cleaned up: {r['cleaned']} par2/backup file(s) removed")
             if status != "OK":
                 for name, state in sorted(r["files"].items()):
                     if state != "found":
                         out.append(f"      {name}: {state}")
         out.append("")
-    if counts["FIXED"]:
+    if counts["FIXED"] and not any(r.get("cleaned") for r in results):
         out.append("Fixed files: par2 kept each damaged original as NAME.1 "
                    "next to the repaired file. Delete those yourself once happy.")
     path.write_text("\n".join(out) + "\n", encoding="utf-8")
@@ -144,6 +178,9 @@ def main():
     ap.add_argument("--extras", action="store_true",
                     help="also scan the other files in each set's folder "
                          "(finds renamed copies; slower)")
+    ap.add_argument("--cleanup", action="store_true",
+                    help="remove a set's par2 files (and par2's NAME.1 backups) "
+                         "once it's OK or FIXED")
     ap.add_argument("--par2", default="par2", help="par2 program to use")
     args = ap.parse_args()
 
@@ -170,10 +207,19 @@ def main():
             print(f"[{i:>{width}}/{len(sets)}] checking  {rel}", end="\r", flush=True)
             r = run_set(par2, set_file, args.verify_only, args.extras)
             r["set"] = str(rel)
+            if args.cleanup and r["status"] in ("OK", "FIXED"):
+                n = cleanup_set(par2, set_file, r)
+                if n is None:
+                    r["status"] = "ERROR"
+                    r["detail"] = "repaired, but the second check failed; nothing removed"
+                else:
+                    r["cleaned"] = n
             results.append(r)
             line = f"[{i:>{width}}/{len(sets)}] {r['status']:<10} {rel}"
             if r["detail"]:
                 line += f"  ({r['detail']})"
+            if r.get("cleaned"):
+                line += f"  [cleaned up {r['cleaned']}]"
             print(line + " " * 10)
     except KeyboardInterrupt:
         interrupted = True

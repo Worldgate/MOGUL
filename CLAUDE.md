@@ -575,7 +575,14 @@ file's state. Uses par2's exit codes (0 ok, 1 repairable, 2 not). par2
 keeps damaged originals as `NAME.1`. `--extras` also scans the set folder's
 other files, so a renamed copy is found and renamed back. Tested with
 par2cmdline 1.x built from source: ok, damaged, too damaged, missing,
-renamed. Ctrl-C still writes the report.
+renamed. Ctrl-C still writes the report. `--cleanup` (added at Mavrick's
+request) deletes an OK/FIXED set's own par2 files (NAME.par2 +
+NAME.volNN+NN.par2) and par2's NAME.1 backups of repaired files; a FIXED
+set is re-verified first and nothing is removed if that fails. Never
+touches audio. Note: duplicate downloads like `NAME (2).par2` have no
+matching .vol files, so par2 sees no recovery blocks (shows CAN'T FIX);
+Mavrick removes those before running. MultiPar can salvage chunks from
+broken par2 files that par2cmdline can't: use it on the CAN'T FIX leftovers.
 
 ### Other filename shapes seen (handle later)
 
