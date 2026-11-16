@@ -225,6 +225,7 @@ mogul_core/           shared code
   progress.py         "[ 53/194  ~12m05s left]" labels, ETA by bytes not file count
   damage.py           finds damage in a file (mp3val spots -> show times, ffmpeg errors, empty gaps)
   par2.py             par2 verify/repair, cleanup, safe moves (used by validate + tools/par2check.py)
+  archives.py         groups + extracts rar/7z/zip sets (partN.rar, .rar+.r00, .7z.001, .zip)
 modules/radio/
   __init__.py         radio actions
   naming.py           filename pattern parsing
@@ -261,6 +262,19 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   the same folder checked the same files good (duplicate download
   `NAME (2).par2` with no .vol files): its par2 files are deleted.
   **CAN'T FIX / ERROR**: left as is, par2 included (take to MultiPar).
+- **Archives** (added 2026-11-16; his sets are `NAME.part01.rar`...): in an
+  OK/FIXED set, archive pieces are grouped (`.partN.rar`, `.rar` +
+  `.r00/.s00`, `.7z.001...`, `.7z`, `.zip`), extracted into
+  `_extracting_<first>/` (its own CRC check), the audio inside moves to
+  incoming (numbered if taken), then the pieces are deleted (Mavrick's
+  default: delete after a good extract). Non-audio files from inside stay
+  in `<first> - other files/`. Extraction fails = **EXTRACT FAILED**:
+  extracted bits removed, archive + par2 kept. Tools: rar = `unrar`, else
+  7-Zip (`7zz`/`7z`/`7za`); 7z = 7-Zip; zip = Python zipfile. Tested with
+  7-Zip 26 built from source + libarchive's multi-volume rar test files
+  (part1-3, one part damaged then par2-fixed), a 7z volume set, a zip, a
+  rar missing a part; unrar's command line not tested (not installed
+  here). Loose archives with no par2 are listed as NO PAR2.
 - Never overwrites: if the name is taken in incoming, the file gets a
   number IN THE NOTES so scan can still parse it (a plain `NAME (2).mp3`
   fails the incoming pattern): `O&A 2008-01-01.mp3` -> `O&A 2008-01-01 --

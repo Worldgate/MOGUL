@@ -25,7 +25,7 @@ TARGET_RE = re.compile(
 MATCH_RE = re.compile(r'File: "(.+?)" - is a match for "(.+?)"')
 NEED_RE = re.compile(r"You need (\d+) more recovery blocks")
 
-ORDER = ["CAN'T FIX", "ERROR", "REPAIRABLE", "FIXED", "OK", "COVERED"]
+ORDER = ["CAN'T FIX", "ERROR", "EXTRACT FAILED", "REPAIRABLE", "FIXED", "OK", "COVERED"]
 GOOD = ("OK", "FIXED", "COVERED")
 
 
