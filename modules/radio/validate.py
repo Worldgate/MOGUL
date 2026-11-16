@@ -1,7 +1,9 @@
 """mogul.py radio validate
 
 par2 check + repair for downloads before they're scanned. Drop downloads
-(with their .par2 files) into mogul_validate/radio/, in subfolders or loose.
+(with their .par2 files) into mogul_monitor/radio/, in subfolders or loose.
+(The folder is `[core] monitor` in mogul.toml; later a watcher will check
+it by itself.)
 
 For every par2 set found there:
   OK / FIXED   the set's audio files move to mogul_incoming/radio/ (flat),
@@ -12,8 +14,11 @@ For every par2 set found there:
   CAN'T FIX    left exactly where it is, par2 files included (try MultiPar).
   ERROR        left where it is.
 Audio files with no par2 set at all are listed as NO PAR2 and left alone.
-A file whose name is already taken in incoming is not moved (and its par2
-files are kept). Nothing is overwritten; audio is never deleted.
+If a file of that name is already in incoming, the new one gets a number
+in its notes so scan can still read the name: "O&A 2008-01-01.mp3" ->
+"O&A 2008-01-01 -- (2).mp3", "O&A 2008-01-01 -- CF64k.mp3" ->
+"O&A 2008-01-01 -- CF64k (2).mp3". Nothing is overwritten; audio is never
+deleted. (If it's really the same audio, scan calls it DUPLICATE.)
 
 --dry-run only checks (no repair, no moves, no deletes).
 Report: mogul_reports/radio-validate_<date>_<time>.txt
@@ -32,7 +37,7 @@ LABEL = {"OK": "OK", "FIXED": "FIXED", "COVERED": "COVERED",
 def run(args, config):
     radio_cfg = config.section("radio")
     exts = {e.lower().lstrip(".") for e in radio_cfg.get("extensions", ["mp3", "ogg", "m4a"])}
-    src = Path(config.folder("validate", "mogul_validate")) / "radio"
+    src = Path(config.folder("monitor", "mogul_monitor")) / "radio"
     dest = Path(config.incoming) / "radio"
     src.mkdir(parents=True, exist_ok=True)
 
@@ -94,15 +99,17 @@ def run(args, config):
                         failed = True
                         not_moved.append((src_file, "not there after the check"))
                     continue
-                why = P.move_file(src_file, dest / name)
+                target = free_name(dest, name)
+                why = P.move_file(src_file, target)
                 if why:
                     failed = True
                     not_moved.append((src_file, why))
                     print(f"NOT MOVED  {src_file.relative_to(src)}  ({why})")
                 else:
                     moved_here.add((folder, name))
-                    moved.append((src_file, dest / name))
-                    print(f"MOVED      {src_file.relative_to(src)}  ->  incoming/radio/{name}")
+                    moved.append((src_file, target))
+                    renamed = "" if target.name == name else "  (name was taken: numbered)"
+                    print(f"MOVED      {src_file.relative_to(src)}  ->  incoming/radio/{target.name}{renamed}")
             if failed:
                 r["detail"] = (r["detail"] + "; " if r["detail"] else "") + \
                     "a file couldn't be moved, par2 files kept"
@@ -135,6 +142,23 @@ def run(args, config):
         print("\nNext: python3 mogul.py radio scan")
 
 
+def free_name(folder, name):
+    """name in folder, or the first free numbered version of it. The number
+    goes in the notes part (after " -- ") so the filename still matches the
+    radio incoming pattern."""
+    target = folder / name
+    if not target.exists() and not target.with_name(name + ".part").exists():
+        return target
+    stem, ext = os.path.splitext(name)
+    lead = f"{stem} (" if " -- " in stem else f"{stem} -- ("
+    n = 2
+    while True:
+        target = folder / f"{lead}{n}){ext}"
+        if not target.exists():
+            return target
+        n += 1
+
+
 def write_report(config, src, dest, results, moved, not_moved, no_par2,
                  dry_run, interrupted, summary):
     os.makedirs(config.reports, exist_ok=True)
@@ -165,7 +189,8 @@ def write_report(config, src, dest, results, moved, not_moved, no_par2,
         out.append("")
     if moved:
         out.append(f"== MOVED to incoming ({len(moved)}) ==")
-        out += [f"  {a.relative_to(src)}" for a, _ in moved]
+        out += [f"  {a.relative_to(src)}" + ("" if a.name == b.name else f"  ->  {b.name}")
+                for a, b in moved]
         out.append("")
     if not_moved:
         out.append(f"== NOT MOVED ({len(not_moved)}) ==")

@@ -8,7 +8,7 @@ ACTIONS = {
     "quarantine": "Move bad recordings (default: failed fingerprints) and their entries out for checking",
     "damaged": "List recordings with damaged spots; mark them ok or bad after listening",
     "check": "Read every file looking for damage (mp3val + ffmpeg); writes a readable report",
-    "validate": "par2 check + repair downloads in mogul_validate/radio; good files move to incoming",
+    "validate": "par2 check + repair downloads in mogul_monitor/radio; good files move to incoming",
     "hashes": "Add whole-file hashes listed in mogul.toml that older entries don't have yet (e.g. md5, sha1)",
 }
 

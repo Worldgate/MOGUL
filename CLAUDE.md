@@ -57,8 +57,9 @@ else yet.
   e.g. `mogul_json/radio/Opie and Anthony/1999/09 - September.json`
   This folder must be backed up, not regenerated (don't call it a "cache").
 - Folders (set in `mogul.toml` under `[core]`, relative to that file):
-  - `mogul_validate/<media type>/` downloads waiting for a par2 check
-    (`<media> validate`; gitignored)
+  - `mogul_monitor/<media type>/` downloads waiting for a par2 check
+    (`<media> validate`; gitignored; later watched automatically).
+    Was `mogul_validate` until 2026-11-16 (renamed by Mavrick).
   - `mogul_incoming/<media type>/` where new files are dropped
   - `mogul_json/` the catalog
   - `mogul_reports/` one report per scan
@@ -235,7 +236,7 @@ modules/radio/
   damaged.py          lists recordings with damaged spots; mark ok/keep/bad after listening
   check.py            reads every file for damage; readable worst-first report
   hashes_pass.py      adds whole-file hashes older entries don't have (md5, sha1...)
-  validate.py         par2 check/repair of mogul_validate/radio, good files -> incoming
+  validate.py         par2 check/repair of mogul_monitor/radio, good files -> incoming
 modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
@@ -248,8 +249,8 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 ## Radio validate (`mogul.py radio validate`)
 
 - Step before scan, for Usenet downloads: drop them with their .par2 files
-  into `mogul_validate/radio/` (`[core] validate`, default
-  `mogul_validate`), in subfolders or loose. Every main .par2 is run
+  into `mogul_monitor/radio/` (`[core] monitor`, default
+  `mogul_monitor`), in subfolders or loose. Every main .par2 is run
   through par2 (repair mode; core code in `mogul_core/par2.py`).
 - Pass 1 checks/repairs every set; only then pass 2 moves, so a second
   set in the same folder still finds its files.
@@ -260,8 +261,12 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   the same folder checked the same files good (duplicate download
   `NAME (2).par2` with no .vol files): its par2 files are deleted.
   **CAN'T FIX / ERROR**: left as is, par2 included (take to MultiPar).
-- Never overwrites: a name already taken in incoming = NOT MOVED, par2
-  files kept. Audio with no par2 set = NO PAR2, left alone. Non-audio
+- Never overwrites: if the name is taken in incoming, the file gets a
+  number IN THE NOTES so scan can still parse it (a plain `NAME (2).mp3`
+  fails the incoming pattern): `O&A 2008-01-01.mp3` -> `O&A 2008-01-01 --
+  (2).mp3`; `O&A 2008-01-02 -- CF64k.mp3` -> `... -- CF64k (2).mp3`
+  (Mavrick's call, 2026-11-16). Same audio is then a DUPLICATE at scan.
+  Audio with no par2 set = NO PAR2, left alone. Non-audio
   files in a set (.nfo) stay; empty folders are removed.
 - `--dry-run` = verify only (no repair, moves or deletes). `--extras` also
   scans other files in each set's folder (renamed copies get renamed
