@@ -9,6 +9,7 @@ Examples:
   mogul.py radio scan               catalog new files in mogul_incoming/radio
   mogul.py radio scan --dry-run     same, but write nothing to the catalog
   mogul.py radio scan --help        options for that action
+  mogul.py movie tmdb 550            download one movie's TMDB info
 """
 
 import argparse
@@ -24,6 +25,7 @@ from mogul_core.config import Config
 
 MEDIA_TYPES = {
     "radio": "modules.radio",
+    "movie": "modules.movie",
 }
 
 

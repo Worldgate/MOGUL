@@ -98,3 +98,49 @@ incoming_pattern = "{code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]"
 "BPS" = "Black Phillip Show"
 "O&J" = "Opie and Jimmy"
 "SNV" = "Saturday Night Virus"
+
+[movie]
+# Where the movie library is. Set the real path in mogul.local.toml.
+# `mogul.py movie tmdb` reads {tmdb-ID} out of the folder/file names here.
+# library = "/media/Movies/movies-validated"
+
+# Video file types (used to list files that have no {tmdb-ID} in the name).
+extensions = ["mkv", "mp4", "m4v", "avi", "mov", "wmv", "mpg", "mpeg", "ts", "m2ts", "vob", "iso", "webm", "flv", "divx", "ogm"]
+
+# --- TMDB (mogul.py movie tmdb) ---
+# The API key goes in secrets.toml, never here (see secrets.toml.example).
+#
+# Where the downloaded TMDB info is kept, one file per movie (550.json).
+# It's a copy of TMDB's data that can always be downloaded again, so it
+# doesn't go to GitHub (mogul_cache/ is in .gitignore).
+tmdb_store = "mogul_cache/tmdb/movie"
+
+# Extras fetched along with the basic details, all in one request per movie
+# (TMDB allows up to 20). What each one is:
+#   credits             full cast (character, billing order) and crew (job, department)
+#   images              posters, backdrops, logos (file paths, sizes, language, votes)
+#   videos              trailers, teasers, clips, featurettes (YouTube/Vimeo keys)
+#   release_dates       every release per country: date, type (theatrical,
+#                       digital, physical, TV...), rating (PG-13, R...), note
+#   external_ids        IMDb, Wikidata, Facebook, Instagram, Twitter IDs
+#   keywords            TMDB's keyword tags ("dual identity", "insomnia"...)
+#   alternative_titles  other titles per country
+#   translations        title/overview/tagline in other languages
+# Also available, left out by default:
+#   recommendations, similar   lists of other movies (change all the time)
+#   reviews                    user reviews
+#   watch/providers            where it's streaming/for rent, per country
+#   lists                      user lists the movie is on
+#   changes                    TMDB's edit history (last 14 days only)
+#   releases                   the old version of release_dates
+tmdb_append = ["credits", "images", "videos", "release_dates", "external_ids", "keywords", "alternative_titles", "translations"]
+
+# Language for titles/overviews. Images and videos are filtered by language
+# too: "en,null" = English plus images with no text (clean posters,
+# backdrops). Add more, e.g. "en,ja,null".
+tmdb_language = "en-US"
+tmdb_image_languages = "en,null"
+tmdb_video_languages = "en,null"
+
+# Requests per second (TMDB's limit is around 40-50).
+tmdb_requests_per_second = 20

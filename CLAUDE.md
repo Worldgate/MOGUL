@@ -20,8 +20,11 @@ music, ebooks and comics come later.
 
 ## Current goal
 
-Scan the radio collection, **dedupe it, rename it, and sort it**. Nothing
-else yet.
+Scan the radio collection, **dedupe it, rename it, and sort it**.
+Movie module started 2026-11-18 (Mavrick's call), first piece only:
+download and keep TMDB info per movie, toward indexing his movies by
+actor, director, etc. Video hashing / movie identification comes later
+(he's looking for his old identifier script).
 
 ## Environment
 
@@ -226,6 +229,7 @@ mogul_core/           shared code
   damage.py           finds damage in a file (mp3val spots -> show times, ffmpeg errors, empty gaps)
   par2.py             par2 verify/repair, cleanup, safe moves (used by validate + tools/par2check.py)
   archives.py         groups + extracts rar/7z/zip sets (partN.rar, .rar+.r00, .7z.001, .zip)
+  tmdb.py             TMDB API client: key from secrets.toml/env, shared rate limit, retries
 modules/radio/
   __init__.py         radio actions
   naming.py           filename pattern parsing
@@ -238,7 +242,10 @@ modules/radio/
   check.py            reads every file for damage; readable worst-first report
   hashes_pass.py      adds whole-file hashes older entries don't have (md5, sha1...)
   validate.py         par2 check/repair of mogul_monitor/radio, good files -> incoming
-modules/music, tv, anime, movie, audiobooks, tiktok, podcasts, comics, manga, youtube/
+modules/movie/
+  __init__.py         movie actions
+  tmdb_fetch.py       `movie tmdb`: download + keep each movie's TMDB info
+modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
 examples/             sample JSON
@@ -378,6 +385,39 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - `mogul_library/`, `mogul_dupes/` and `mogul_quarantine/` are in `.gitignore`.
 - Not built yet: undo, and choosing *which* copy to keep by quality
   (right now the first one scanned wins).
+
+## Movie TMDB (`mogul.py movie tmdb`)
+
+- Downloads each movie's TMDB info in ONE request per movie
+  (`/movie/<id>?append_to_response=...`) and saves the answer untouched in
+  `[movie] tmdb_store` (default `mogul_cache/tmdb/movie/<id>.json`),
+  wrapped as `{"mogul": {schema mogul.tmdb.movie, tmdb_id, fetched,
+  request (address WITHOUT the key), append}, "tmdb": {...}}`.
+- `mogul_cache/` is gitignored: it's a re-downloadable copy of TMDB's data,
+  not the catalog (also keeps TMDB's data out of the public repo).
+- IDs: on the command line (`movie tmdb 550 603`), or read from names
+  under `--path FOLDER` / `[movie] library`: `{tmdb-550}`, `[tmdbid-550]`,
+  `{tmdb=550}` in folder or file names. Read-only on the movie folders.
+  Video files with no ID anywhere in their path are listed in the report.
+- Skips movies already saved; `--refresh` = all again, `--older-than DAYS`
+  = only stale ones. `--jobs N` (default 4), shared limit
+  `tmdb_requests_per_second` (default 20). 429 = wait (Retry-After) and
+  retry; 5xx/network = retry with backoff; 404 = NOT FOUND (in report);
+  401 = stops (bad key). `--dry-run`. Report `mogul_reports/movie-tmdb_*.json`.
+- Settings in `mogul.toml [movie]`: `tmdb_append` (default credits, images,
+  videos, release_dates, external_ids, keywords, alternative_titles,
+  translations; max 20; the old `releases` is replaced by
+  `release_dates`), `tmdb_language` (en-US), `tmdb_image_languages` /
+  `tmdb_video_languages` ("en,null": appended images/videos are filtered
+  by language; null = no-text images).
+- API key: `secrets.toml` `[tmdb] api_key` (or `read_token`), or env
+  `TMDB_API_KEY` / `TMDB_READ_TOKEN`. Template `secrets.toml.example`.
+- Tested 2026-11-18 against a fake local TMDB server (real TMDB isn't
+  reachable from Claude's sandbox): save, skip, refresh, older-than, 429
+  retry, 404, bad key, no key, key never written to files.
+- Next (not built): an index from the saved files, e.g. `movie actor
+  "Name"`, `movie director "Name"`. People details (birthday, bio, photos)
+  are a separate `/person/<id>` request, for later actor pages.
 
 ## Save to GitHub (`tools/update.sh`, Mavrick's script)
 
