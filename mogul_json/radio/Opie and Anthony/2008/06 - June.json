@@ -8,8 +8,8 @@
     "year": 2008,
     "month": 6,
     "created": "2026-11-07T19:22:37+00:00",
-    "updated": "2026-11-18T07:04:00+00:00",
-    "file_count": 40,
+    "updated": "2026-11-18T18:51:28+00:00",
+    "file_count": 41,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -1902,6 +1902,57 @@
             "VBR without a VBR header (seeking may be off)"
           ],
           "empty_percent": 2.1
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2008,
+        "month": 6,
+        "day": 27,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-06-27_O&A_A8F116D1.mp3",
+        "original_filename": "O&A 2008-06-27.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a8f116d13a4ba239",
+          "audio_blake3": "b7d653b396294694e6d7a9a68c7a85778b36a9447475d09aa9db97a00c5db733",
+          "blake3": "b7d653b396294694e6d7a9a68c7a85778b36a9447475d09aa9db97a00c5db733",
+          "sha256": "b659a13390ac434ef920b3d13bcee2e85156ef8c2b7797a1966c31fceb294e49",
+          "sha512": "464b63dbb8b7b724b31163b2932f57f37541676c35adc1218581f55bffd8fda280e9a038d43e2eacdfbc82c7f8ce33b67231f988c080cdb5ce926f4959158176",
+          "sha1": "01aff8a70e3883eca9c05f627d1d7bbf9a80655c",
+          "md5": "3eecaafa2e61f117aa310dea2680fc84"
+        },
+        "size": 119796560,
+        "duration": 14974.57,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-18T18:32:44Z",
+        "added": "2026-11-18T18:50:49+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f47ce426d43ca126f43ea02e743ca02ed43ca02ed43ca006f43ca02ef43ca02e503e8026d43ca00ef63ea02efc38a026d43ca02af42aa02e543ca00e943ca02ef428a02ed47ca1aed47ca0aef038a00ed438a02a743ca08ef43ca00edc18a0ae742e200ad63c200ed43ca02e543880aad43ea026d43ca426f02ca02e543ca22edc3a2826303ca00e7008a00ef43ea006d43ca02e503c200adc3ca00e5028800ed43ca00ef43ca02ef62ca826f43ca02ed43ea02ed63ca02e543ea00ed4bca02edc3aa00ed43ea02ed43c200e543ca0aa543ca0a6543ca02e543ea08e543c2006542ca02ed438a00ed43ca00e743ca02ed43ea0a6d43ca026742a202e542ea02e543ca8a6d63ca006f43ca00e522ca0aef4282806dc38a00e7438a02e543aa02e543aa02e543ea02c547ca02ef43ea08e543ea022f43ea08e3c2ca0a2f43ea006f43ea00e542c202ef42ca026d438a00ed43ca00ed43ca026743ca0a6f43ca02e5c1ea0aeda5ca126f43ea02e543ca026743ea02ed43aa02e761ea02ed47ca02e543ca02e143ea006543e20ae542ca00eb4aca00ed43aa00e543ea02ed43ca08e562ea02e543ea02a542ea026d42ca02cf438202ed428a02e950ca8a6d43ca006542ea02ef03ea022743ca08ef43ca0ae543ca02ef43ca02ef42ca02ed63ca0207c38a02a543c0006547ca02e743ca02ed438a00e543ca02e543ea02ed43ea0a6743c202e743ea02e743ca026dc3aa02e7418a02e2062a82f222cb03f2048a86fe508a56fd42ca00e943aa026d42ca0a0d438a026d43ea026d43ca02ed42ca0acd43ea00ed43ca08c743ca02ef028a02ed42ea00ef43ca826b43ca826f23ea08edc3ea02ed43ea02ed43ca00ef47ea22ef47ce526d43ca00ed43ca026d438a02ef41ca02ed43c200ed43ea026d43ea02ef43ca006d438a02ef438a02cf43ca006f42ca006f638a02ed63ca026562ca02ef42ea02ef438a026f43ca0a2d43ca026f43ca02ef42ca0aef4bca02ef43ea02ed43ea026d438a02ef43ca02ef47ce026f43ca026d43ea08ed43c2426d43ca08eb576e506d43ca522d43ca02ef43ea026d43ca02ee43ca0aed43ca026d43aa00ef43ca086fe3ca02e743ca00ed43ea02ed43ca02ed4b8a02edc3ca026d43ca00ef4bea02ed63ea002542ca022d43ca02ed42ea02e742ea026d43ea02a543ea02e543c200e741ea0aaf42ea02af43ca00ed41c208a522ca02a543ca0265038202af43e20a6f43ca0acd4bca02e503ca026f43ca086d63ca004dc3ca026542aa0ae542ca022543c2026543c2086d60ca00cd47ea0a6d43c8126d43ea0a6d43ca00ed43ca006d43ca026d43ce022d43ca026d438a006f43ca02ed438a020f43c200ef41ca026d42ca026d43ca00ef47ca08ed47ca02cd47ce526dcdce526",
+        "digest_minutes": 251
+      },
+      "status": {
+        "imported": "2026-11-18T18:51:20+00:00",
+        "check": {
+          "date": "2026-11-18T18:51:28+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 15045.1,
+          "empty_percent": 0.7
         }
       }
     },
