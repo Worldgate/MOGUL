@@ -8,8 +8,8 @@
     "year": 2008,
     "month": 6,
     "created": "2026-11-07T19:22:37+00:00",
-    "updated": "2026-11-18T18:51:28+00:00",
-    "file_count": 41,
+    "updated": "2026-11-19T02:28:49+00:00",
+    "file_count": 46,
     "mogul_version": "0.1.0"
   },
   "files": [
@@ -406,6 +406,159 @@
           "spots": 0,
           "real_duration": 15682.7,
           "empty_percent": 0.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2008,
+        "month": 6,
+        "day": 6,
+        "part": null,
+        "notes": "Worst of O&A (FM)",
+        "extension": "mp3",
+        "filename": "2008-06-06_O&A_3331FFD1.mp3",
+        "original_filename": "O&A 2008-06-06 -- Worst of O&A (FM).mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "3331ffd1a8f99e91",
+          "audio_blake3": "9826dbada40e59d9aa4b8358f36165b7b891099b0ee3aaa1a2fed4a3ca69a465",
+          "blake3": "9826dbada40e59d9aa4b8358f36165b7b891099b0ee3aaa1a2fed4a3ca69a465",
+          "sha256": "1bd53c3ca70c887d57e4cc36ce89ab81b7daac8af12b4fc00202916ac496e6e2",
+          "sha512": "b6b62661dfb6d621dcb79d8ac6b138a052e519c77b08373a7511eb9e864316b6327ecbd4c75cc7d79cf7f13afb440c544c372bf3027ad7423e7f8673b333bc6a",
+          "sha1": "810f627ef19fbe08a34447433d73cb96ed1e5831",
+          "md5": "5de4fcd90dedc948f7458d59496689e2"
+        },
+        "size": 26029871,
+        "duration": 3253.734,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-18T19:08:20Z",
+        "added": "2026-11-18T19:40:57+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "953ca12ff41c85265c7ea12ed47ea027f47aa02ed43ca026714ca52efc14a422d43ea026f428a086dc3ca806dc3ca426d63ca006743ca00ed43ca02ed43c802ef43ca026d4bca02efe3c002ed43ca02ed43c2006d43ea00ef63ca02ef47ea026f678a02ed43ea02ede38a022d438a02af47ea026d4782024f47ca02a543ca0aef43ca0aed47a800ef63ea00e7438a02ef43ca02ef43c2006d47aa00ed47ca02ed43ca02ed43c2006d43c802efc762126bc3ca02ef43ea02ed43c2006f63ca02e947ca0aebc78a02e9c7ca026dc3c200efc3ca006f43ca426fc14a5e5",
+        "digest_minutes": 55
+      },
+      "status": {
+        "imported": "2026-11-18T19:44:12+00:00",
+        "check": {
+          "date": "2026-11-19T02:28:33+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 3253.7,
+          "empty_percent": 2.4
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2008,
+        "month": 6,
+        "day": 6,
+        "part": null,
+        "notes": "Worst of O&A (XM) (Part 1)",
+        "extension": "mp3",
+        "filename": "2008-06-06_O&A_2B60EF4E.mp3",
+        "original_filename": "O&A 2008-06-06 -- Worst of O&A (XM) (Part 1).mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "2b60ef4e1106e82b",
+          "audio_blake3": "7e63a09791c7115b4e55857764701af9d1f345d8983ce8cf5955e673ab429ffa",
+          "blake3": "7e63a09791c7115b4e55857764701af9d1f345d8983ce8cf5955e673ab429ffa",
+          "sha256": "1c2645eae9e93bb34fd3eeab8d8ba3d7ad2d2a6cfe61a64b83ebd8aa7d7f39e2",
+          "sha512": "c3ca6119d9492b693def87daaee21b32593dd1b3558915d79ac0281c9cc2b322864689e918ee86eaa0f9e188e3a3b6865f86b96eee5cc96b94e303cca5f1ae38",
+          "sha1": "1eb8b0b604948daaae2671c758a2be52948158be",
+          "md5": "95fa5359fbc94968f6dec85e9be059e0"
+        },
+        "size": 55585437,
+        "duration": 6948.18,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-18T19:08:20Z",
+        "added": "2026-11-18T19:41:08+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "2020282e402828260028a02a0028a8230028b12ad43ca16ed4b8a02ed438a226f638a02ef438a022d438a0a2d4be202ed638a0265574a12e506ca10f546e810fd41ea02ed428a0065024a82ef43ea02ef638a026d42a802ed43ca026fc2a2026f43ca026f4b8a026d438a026fc38a00ef47ca00ed43ea026d47ca02ed63ea026d47ca02ed438802ed438a02ed438a00ed438a08ed43ca02ed62ca006d42ca02af43ea026f428a02ef43c80aedc3ca02cf43ca02ed4bca02ed438a026f42ca0aed438802ed628a0aeb43ca006543ea086d42ca006f428200ef43ca026d638a02af42e20067428200ed428a02ef22e202ad43ca006f43c202ed42e200ed43aa00ed02ea02ef43ca026d42ea02cf43ca426f438a0a6f42ea026542ca2a6d42ca024f43ea02ed428a08ad42ea026dc2ca02ed62ca006f42aa02ed43c202ef46ca02ed42e202ad6bea0a6d42ea00ed438a006f438202e943ca006d428a02ef43ca00ef42ca02ef4baa20e543ca0a6d4382006fc58a00ad62c8022f438a00ef02ca086f428a004f43ca026742ca02a9c28200ed43ca0a2542ea02ed4a822a4f428a026f4bca00ed43ca022fc2ca002f63ca006d438a0065028202a743ea00ad4aca026f428a02ef43ca026f43ca00ad428a0ae",
+        "digest_minutes": 116
+      },
+      "status": {
+        "imported": "2026-11-18T19:44:13+00:00",
+        "check": {
+          "date": "2026-11-19T02:28:43+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 6948.2,
+          "empty_percent": 3.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2008,
+        "month": 6,
+        "day": 6,
+        "part": null,
+        "notes": "Worst of O&A (XM) (Part 2)",
+        "extension": "mp3",
+        "filename": "2008-06-06_O&A_99BD1D42.mp3",
+        "original_filename": "O&A 2008-06-06 -- Worst of O&A (XM) (Part 2).mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "99bd1d424a98b2e1",
+          "audio_blake3": "3ad59327950572d99563afd062eba9fbaac5f1b440cf6704af4cda7f30b91a67",
+          "blake3": "3ad59327950572d99563afd062eba9fbaac5f1b440cf6704af4cda7f30b91a67",
+          "sha256": "2b1d00bee6bd67d4990c80cfccd25eb4b1eeabdb4a6fa275b21c5a2464ea9b33",
+          "sha512": "55ac275d8b3c584627b9b465f04ba8fa776702e3fe82652f8763667aef590d9af5b1582491ebf34f401643a058830af3441a6ce66f4f3962beae722b62bed004",
+          "sha1": "d91eff032f3e89a6fe838fbd7379863a8a11a069",
+          "md5": "d8cb57a000729738ebc1900ad6f9a5bf"
+        },
+        "size": 74704980,
+        "duration": 9338.122,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-18T19:08:20Z",
+        "added": "2026-11-18T19:41:23+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fe38a026d438a022f4382022d43ca026d43ca0a2f428a02cf43c20aef43aa02e541ca02efc3ca0aef438a02ef43ea22e742ca02af43ea02e5438a00c701ea02e5438a02af238a02af43ea02ef43ca22e542ca02ad45ca10e543ea02ed43ea022f428a02ef42ca026f63ca022743ca026f43ca026743ca0aed438a00e543ca0a2d43c2126143ca026d43ea02efc3ea02ed638a02ed43e8026f438a0a6d4bca00ed42e2026d42ca026f428a026fc3aa026f42ca00eb62ca026bc28a8a6f42ea02ed43ea022f4aaa00ed438a0a6fc38a026d42aa004542ca0a65c3ca02e9438a026d438a026d428a026d428a00ef438a084f438a0265628a002942ca02ef43ea00edc38a00afc28a002742aa0aafc3aa026fc28a022f428a006942c28a6fc38a002fc3e20aed43ca02efc38a02ef43aa08ed43ca026f438a02afc3ca026fc280026d438a02ed428a00ec42aa02ed438a026fc38a026d47ca4a6f438a826fc3ca826f42ea02ef638a026dc2a2084d43ca08ed428a026d43ca026d438a00ef43ca026542ca026f43ca026fe2aa0265438a026f4382026f438a026f42ca02ef438a026442ca026f43ca026c4382080f43ca026f438a026dc3aa006743ea02ef62a8020d42e8086f4ac2022d43ea02ed43ca026dc3ca0aef42ca026d43ca026fc3a2006dc382006f63ca006f43ea026f43aa406f42c2026d43a200ed42ca026f42ca02e7c282022b438a08ef42e2026dc3ea024f43ca00ed43ca026d478a026f438a022dc3ea026f438a02ef438a00ed438a026f47aa026f438a02edc38202edc3aa426d43ca02ed43ca02ed43ea02efc38a08ed438a02ef43ca0aed43ea0065478a02ed43ca00ed43ca02ed43c802e563a200a",
+        "digest_minutes": 156
+      },
+      "status": {
+        "imported": "2026-11-18T19:44:14+00:00",
+        "check": {
+          "date": "2026-11-19T02:28:47+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 9338.1,
+          "empty_percent": 3.8
         }
       }
     },
@@ -1504,6 +1657,108 @@
         "code": "O&A",
         "year": 2008,
         "month": 6,
+        "day": 23,
+        "part": null,
+        "notes": "Worst of O&A (XM) (Part 1)",
+        "extension": "mp3",
+        "filename": "2008-06-23_O&A_314F7BC8.mp3",
+        "original_filename": "O&A 2008-06-23 -- Worst of O&A (XM) (Part 1).mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "314f7bc8e59938b4",
+          "audio_blake3": "cc1caddc575220c1c4fab646b5c16e4ce4b98727b93152dab528a8c119c39258",
+          "blake3": "cc1caddc575220c1c4fab646b5c16e4ce4b98727b93152dab528a8c119c39258",
+          "sha256": "a656f732db31a97ab07603590590eda4ae9644392f3785e698949375d75f43e1",
+          "sha512": "12a17ac65e11f05dba64ad46aeefc61ad0d5a410903c87dc134c0235616dd9855e25dfa57dd67c687ad512cb3485d16cd686f93e279041a24dce37c86b150ba0",
+          "sha1": "785516c07f7515b3104be22d3d61a29071cba13a",
+          "md5": "f889be48ca403f462bfc1b4a58af39d3"
+        },
+        "size": 85277952,
+        "duration": 10659.744,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 24000,
+        "mtime": "2026-11-18T19:08:21Z",
+        "added": "2026-11-18T19:41:37+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "3859ec473828ec263848e8277828a426f4ac202ed428a00ed62ea022d428a02ed43ca02ef426a026d428a02e542ea0aed638a02adc3ea0a6d42ca026d428a026d42a200ed628a026d4382026d438a0a2d42e2026f43ca42ed02ca00edcb8a0a2fc3ca006f42c802ef63ea02a340ca00ef43ca0a2d02aa026f42aa02edcbc20a6d42ca026f43c202e7438800ed42ca00af43ca022f42eac26d428a0aef428a086d43ea006f43ea006d4aca002f4282aa6f43ea006543c202efc38a02efc38a02ad428a08ef638a026f42ca026f438202ed628a026d42ca026fc38a026d42aa00e5c2ca02ef43ea026f42ca0aef43ca02ed42ca0a6d41ca02ed438a02ef02ca00ed438a006d63ca02e523ea02ed46ca02ed43ca026f43ea026d43ea026d47ea02ed43ea026d43ca02edc2aa0aed438a02ed438a02ed43ca0aed42aa02ed62ca026542ca02af42ca026f438a02ef43ca0aedc3ca00cf6bca02ed43c202ed43aa0aed428a00edc38a026d62ca0aebc3e2006d43ca08e743ea0aef43ca00a7c2e20aad438a024dc3aa02ef42ca0067c38a006d438a02adc38a00ef438a02cf43e200efc38a02efc3ca02ed638a02ed02ca02ad4b8a00ef63ca02af43aa00edc3ca026d63c802af43ea02ef438a02ed43ea026f4b8a02ef43ca02ef63e000efc3ca026fe38a026f428202694bca026f42ca02ed438a026f43ca00eb42aa006f43ca0aed42ca006f43ca0aef42ca026316cb937542ca926f42ca226de28a02ef428a006dc38a02af62ca0a6f43ca02ef42ca0265c282002f43c200ef43e802ef43e2026f62ca026f438a02ef43ca02cf62ca026f42ca026f42a0006f43ea006f43ca02ef02ca0a6b43c2426b42ca0a6f47ca08ede38a02ed43aa08ed42ea02ef62ea026d43aa086f438a02ed43ca026f43aa026d438a026d63ca0aed43ca024d438a0a6d43a8006dc5ca006d47aa00ed43aa02ef438a02ef43ca026f438a02ed438a00efcbca00e5a0ea02f",
+        "digest_minutes": 178
+      },
+      "status": {
+        "imported": "2026-11-18T19:44:16+00:00",
+        "check": {
+          "date": "2026-11-19T02:28:49+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 10659.7,
+          "empty_percent": 2.5
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2008,
+        "month": 6,
+        "day": 23,
+        "part": null,
+        "notes": "Worst of O&A (XM) (Part 2)",
+        "extension": "mp3",
+        "filename": "2008-06-23_O&A_9606EDD8.mp3",
+        "original_filename": "O&A 2008-06-23 -- Worst of O&A (XM) (Part 2).mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "9606edd8e1242a48",
+          "audio_blake3": "868ecd6f4afa0f710568412eb5b81789dbefb645c7e6a6be278262fd753ccbdb",
+          "blake3": "868ecd6f4afa0f710568412eb5b81789dbefb645c7e6a6be278262fd753ccbdb",
+          "sha256": "21841935ad2aa2a4304f8150cf739d25f6d772d2d0574e6d36694d52fb59b713",
+          "sha512": "f69b5aab0f7be5a0baa6a3e421146353c6190ae9f5a252a2874b3b8c840689a8555e429601fe94936d434063fdfed71e2912ef38a3e75c641921a1b6be7ae087",
+          "sha1": "010c35f3fcd246bd3a63a7272b75995cd036af28",
+          "md5": "50ccf28dc125be757b0813b4c5315345"
+        },
+        "size": 50048313,
+        "duration": 6256.039,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 2,
+        "sample_rate": 44100,
+        "mtime": "2026-11-18T19:08:21Z",
+        "added": "2026-11-18T19:41:47+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "fc28a02e3800a0267840b126fc38a0269c3ca106f62ca022f42ca026f028a02edc28a086d43ca026f42ca0267428a026dca8a022f428a08ef438a026f428a02efc2ca0a6f43c2006f428a0a6f438a026f42ea00a5428202a7028202250a820267028a022542aa0207428a02a562aa08ad42aa022f438a02a742ca022d42ca086502ca0227c38a0287428a02ad42aa022d42a2086fc2aa02af628a026f42ca0a6f43ca02ef43ea406f68aa02adc3ca02ef438a02edc38a006d42ca0027038202ef43ce02efe38a0a6dc38a02efa0e20aed81aa02efe2ca00edc38a026dc3c2426fc38a006fc38a00efe38a0a6d43ca02eb438a00edc38a0267422a824dc38a02e5418a0a6d422a006d430a006d42aa224f43ca026d43ca12e5428aca6542ea02e543ea02efc6ca006d838a02ed42aa02ad638a026d63aa026d428a026543ea02ef43ca02ef438a006943c802ef02ea02e9c3aa826d028a82c9028a926562428a6942428a61028a92e442aa8a61c28a824dc28a0265838a02e9428a0aed438a02ed828a8269e2aa02ed808a00e5e3aa8aed438a02e106ca826dc3aa0241c00a9261e3ca02e",
+        "digest_minutes": 105
+      },
+      "status": {
+        "imported": "2026-11-18T19:44:17+00:00",
+        "check": {
+          "date": "2026-11-19T02:28:45+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 6256.0,
+          "empty_percent": 5.0
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2008,
+        "month": 6,
         "day": 24,
         "notes": null,
         "extension": "mp3",
@@ -1802,6 +2057,57 @@
         "year": 2008,
         "month": 6,
         "day": 27,
+        "part": null,
+        "notes": null,
+        "extension": "mp3",
+        "filename": "2008-06-27_O&A_A8F116D1.mp3",
+        "original_filename": "O&A 2008-06-27.mp3"
+      },
+      "physical": {
+        "hashes": {
+          "xxh64": "a8f116d13a4ba239",
+          "audio_blake3": "b7d653b396294694e6d7a9a68c7a85778b36a9447475d09aa9db97a00c5db733",
+          "blake3": "b7d653b396294694e6d7a9a68c7a85778b36a9447475d09aa9db97a00c5db733",
+          "sha256": "b659a13390ac434ef920b3d13bcee2e85156ef8c2b7797a1966c31fceb294e49",
+          "sha512": "464b63dbb8b7b724b31163b2932f57f37541676c35adc1218581f55bffd8fda280e9a038d43e2eacdfbc82c7f8ce33b67231f988c080cdb5ce926f4959158176",
+          "sha1": "01aff8a70e3883eca9c05f627d1d7bbf9a80655c",
+          "md5": "3eecaafa2e61f117aa310dea2680fc84"
+        },
+        "size": 119796560,
+        "duration": 14974.57,
+        "container": "MPEG Audio",
+        "codec": "mp3",
+        "bitrate": 64000,
+        "bitrate_mode": "CBR",
+        "channels": 1,
+        "sample_rate": 44100,
+        "mtime": "2026-11-18T18:32:44Z",
+        "added": "2026-11-18T18:50:49+00:00"
+      },
+      "fingerprint": {
+        "algorithm": "chromaprint",
+        "digest_version": 1,
+        "digest": "f47ce426d43ca126f43ea02e743ca02ed43ca02ed43ca006f43ca02ef43ca02e503e8026d43ca00ef63ea02efc38a026d43ca02af42aa02e543ca00e943ca02ef428a02ed47ca1aed47ca0aef038a00ed438a02a743ca08ef43ca00edc18a0ae742e200ad63c200ed43ca02e543880aad43ea026d43ca426f02ca02e543ca22edc3a2826303ca00e7008a00ef43ea006d43ca02e503c200adc3ca00e5028800ed43ca00ef43ca02ef62ca826f43ca02ed43ea02ed63ca02e543ea00ed4bca02edc3aa00ed43ea02ed43c200e543ca0aa543ca0a6543ca02e543ea08e543c2006542ca02ed438a00ed43ca00e743ca02ed43ea0a6d43ca026742a202e542ea02e543ca8a6d63ca006f43ca00e522ca0aef4282806dc38a00e7438a02e543aa02e543aa02e543ea02c547ca02ef43ea08e543ea022f43ea08e3c2ca0a2f43ea006f43ea00e542c202ef42ca026d438a00ed43ca00ed43ca026743ca0a6f43ca02e5c1ea0aeda5ca126f43ea02e543ca026743ea02ed43aa02e761ea02ed47ca02e543ca02e143ea006543e20ae542ca00eb4aca00ed43aa00e543ea02ed43ca08e562ea02e543ea02a542ea026d42ca02cf438202ed428a02e950ca8a6d43ca006542ea02ef03ea022743ca08ef43ca0ae543ca02ef43ca02ef42ca02ed63ca0207c38a02a543c0006547ca02e743ca02ed438a00e543ca02e543ea02ed43ea0a6743c202e743ea02e743ca026dc3aa02e7418a02e2062a82f222cb03f2048a86fe508a56fd42ca00e943aa026d42ca0a0d438a026d43ea026d43ca02ed42ca0acd43ea00ed43ca08c743ca02ef028a02ed42ea00ef43ca826b43ca826f23ea08edc3ea02ed43ea02ed43ca00ef47ea22ef47ce526d43ca00ed43ca026d438a02ef41ca02ed43c200ed43ea026d43ea02ef43ca006d438a02ef438a02cf43ca006f42ca006f638a02ed63ca026562ca02ef42ea02ef438a026f43ca0a2d43ca026f43ca02ef42ca0aef4bca02ef43ea02ed43ea026d438a02ef43ca02ef47ce026f43ca026d43ea08ed43c2426d43ca08eb576e506d43ca522d43ca02ef43ea026d43ca02ee43ca0aed43ca026d43aa00ef43ca086fe3ca02e743ca00ed43ea02ed43ca02ed4b8a02edc3ca026d43ca00ef4bea02ed63ea002542ca022d43ca02ed42ea02e742ea026d43ea02a543ea02e543c200e741ea0aaf42ea02af43ca00ed41c208a522ca02a543ca0265038202af43e20a6f43ca0acd4bca02e503ca026f43ca086d63ca004dc3ca026542aa0ae542ca022543c2026543c2086d60ca00cd47ea0a6d43c8126d43ea0a6d43ca00ed43ca006d43ca026d43ce022d43ca026d438a006f43ca02ed438a020f43c200ef41ca026d42ca026d43ca00ef47ca08ed47ca02cd47ce526dcdce526",
+        "digest_minutes": 251
+      },
+      "status": {
+        "imported": "2026-11-18T18:51:20+00:00",
+        "check": {
+          "date": "2026-11-18T18:51:28+00:00",
+          "tool": "mp3val",
+          "spots": 0,
+          "real_duration": 15045.1,
+          "empty_percent": 0.7
+        }
+      }
+    },
+    {
+      "naming": {
+        "show": "Opie and Anthony",
+        "code": "O&A",
+        "year": 2008,
+        "month": 6,
+        "day": 27,
         "notes": null,
         "extension": "ogg",
         "filename": "2008-06-27_O&A_DF7B9BA0.ogg",
@@ -1902,57 +2208,6 @@
             "VBR without a VBR header (seeking may be off)"
           ],
           "empty_percent": 2.1
-        }
-      }
-    },
-    {
-      "naming": {
-        "show": "Opie and Anthony",
-        "code": "O&A",
-        "year": 2008,
-        "month": 6,
-        "day": 27,
-        "part": null,
-        "notes": null,
-        "extension": "mp3",
-        "filename": "2008-06-27_O&A_A8F116D1.mp3",
-        "original_filename": "O&A 2008-06-27.mp3"
-      },
-      "physical": {
-        "hashes": {
-          "xxh64": "a8f116d13a4ba239",
-          "audio_blake3": "b7d653b396294694e6d7a9a68c7a85778b36a9447475d09aa9db97a00c5db733",
-          "blake3": "b7d653b396294694e6d7a9a68c7a85778b36a9447475d09aa9db97a00c5db733",
-          "sha256": "b659a13390ac434ef920b3d13bcee2e85156ef8c2b7797a1966c31fceb294e49",
-          "sha512": "464b63dbb8b7b724b31163b2932f57f37541676c35adc1218581f55bffd8fda280e9a038d43e2eacdfbc82c7f8ce33b67231f988c080cdb5ce926f4959158176",
-          "sha1": "01aff8a70e3883eca9c05f627d1d7bbf9a80655c",
-          "md5": "3eecaafa2e61f117aa310dea2680fc84"
-        },
-        "size": 119796560,
-        "duration": 14974.57,
-        "container": "MPEG Audio",
-        "codec": "mp3",
-        "bitrate": 64000,
-        "bitrate_mode": "CBR",
-        "channels": 1,
-        "sample_rate": 44100,
-        "mtime": "2026-11-18T18:32:44Z",
-        "added": "2026-11-18T18:50:49+00:00"
-      },
-      "fingerprint": {
-        "algorithm": "chromaprint",
-        "digest_version": 1,
-        "digest": "f47ce426d43ca126f43ea02e743ca02ed43ca02ed43ca006f43ca02ef43ca02e503e8026d43ca00ef63ea02efc38a026d43ca02af42aa02e543ca00e943ca02ef428a02ed47ca1aed47ca0aef038a00ed438a02a743ca08ef43ca00edc18a0ae742e200ad63c200ed43ca02e543880aad43ea026d43ca426f02ca02e543ca22edc3a2826303ca00e7008a00ef43ea006d43ca02e503c200adc3ca00e5028800ed43ca00ef43ca02ef62ca826f43ca02ed43ea02ed63ca02e543ea00ed4bca02edc3aa00ed43ea02ed43c200e543ca0aa543ca0a6543ca02e543ea08e543c2006542ca02ed438a00ed43ca00e743ca02ed43ea0a6d43ca026742a202e542ea02e543ca8a6d63ca006f43ca00e522ca0aef4282806dc38a00e7438a02e543aa02e543aa02e543ea02c547ca02ef43ea08e543ea022f43ea08e3c2ca0a2f43ea006f43ea00e542c202ef42ca026d438a00ed43ca00ed43ca026743ca0a6f43ca02e5c1ea0aeda5ca126f43ea02e543ca026743ea02ed43aa02e761ea02ed47ca02e543ca02e143ea006543e20ae542ca00eb4aca00ed43aa00e543ea02ed43ca08e562ea02e543ea02a542ea026d42ca02cf438202ed428a02e950ca8a6d43ca006542ea02ef03ea022743ca08ef43ca0ae543ca02ef43ca02ef42ca02ed63ca0207c38a02a543c0006547ca02e743ca02ed438a00e543ca02e543ea02ed43ea0a6743c202e743ea02e743ca026dc3aa02e7418a02e2062a82f222cb03f2048a86fe508a56fd42ca00e943aa026d42ca0a0d438a026d43ea026d43ca02ed42ca0acd43ea00ed43ca08c743ca02ef028a02ed42ea00ef43ca826b43ca826f23ea08edc3ea02ed43ea02ed43ca00ef47ea22ef47ce526d43ca00ed43ca026d438a02ef41ca02ed43c200ed43ea026d43ea02ef43ca006d438a02ef438a02cf43ca006f42ca006f638a02ed63ca026562ca02ef42ea02ef438a026f43ca0a2d43ca026f43ca02ef42ca0aef4bca02ef43ea02ed43ea026d438a02ef43ca02ef47ce026f43ca026d43ea08ed43c2426d43ca08eb576e506d43ca522d43ca02ef43ea026d43ca02ee43ca0aed43ca026d43aa00ef43ca086fe3ca02e743ca00ed43ea02ed43ca02ed4b8a02edc3ca026d43ca00ef4bea02ed63ea002542ca022d43ca02ed42ea02e742ea026d43ea02a543ea02e543c200e741ea0aaf42ea02af43ca00ed41c208a522ca02a543ca0265038202af43e20a6f43ca0acd4bca02e503ca026f43ca086d63ca004dc3ca026542aa0ae542ca022543c2026543c2086d60ca00cd47ea0a6d43c8126d43ea0a6d43ca00ed43ca006d43ca026d43ce022d43ca026d438a006f43ca02ed438a020f43c200ef41ca026d42ca026d43ca00ef47ca08ed47ca02cd47ce526dcdce526",
-        "digest_minutes": 251
-      },
-      "status": {
-        "imported": "2026-11-18T18:51:20+00:00",
-        "check": {
-          "date": "2026-11-18T18:51:28+00:00",
-          "tool": "mp3val",
-          "spots": 0,
-          "real_duration": 15045.1,
-          "empty_percent": 0.7
         }
       }
     },
