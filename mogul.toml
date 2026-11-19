@@ -107,7 +107,7 @@ incoming_pattern = "{code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]"
 #   1990-1999/Fight Club (1999) {tmdb-550}/Fight Club (1999).mkv
 # `mogul.py movie tmdb` reads {tmdb-ID} out of the folder/file names, at
 # any depth, so the decade folders don't matter.
-# library = "/media/Movies/movies-validated"
+library = "/media/Movies/movies-bulk"
 
 # Video file types (used to list files that have no {tmdb-ID} in the name).
 extensions = ["mkv", "mp4", "m4v", "avi", "mov", "wmv", "mpg", "mpeg", "ts", "m2ts", "vob", "iso", "webm", "flv", "divx", "ogm"]
@@ -138,7 +138,7 @@ tmdb_store = "mogul_cache/tmdb/movie"
 #   lists                      user lists the movie is on
 #   changes                    TMDB's edit history (last 14 days only)
 #   releases                   the old version of release_dates
-tmdb_append = ["credits", "images", "videos", "release_dates", "external_ids", "keywords", "alternative_titles", "translations"]
+tmdb_append = ["credits", "release_dates", "external_ids", "keywords", "alternative_titles", "translations"]
 
 # Language for titles/overviews. Images and videos are filtered by language
 # too: "en,null" = English plus images with no text (clean posters,
