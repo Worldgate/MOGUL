@@ -153,6 +153,7 @@ def run(args, config):
         sub = folders.get(status)
         return os.path.join(target, sub) if sub else None
 
+    print("MOGUL movie verify: starting (loading OCR) ...", flush=True)
     store_dir = config.resolve(mcfg.get("tmdb_store", "mogul_cache/tmdb/movie"))
     cache = config.resolve(mcfg.get("verify_cache", "mogul_cache/tmdb/verify_cache.sqlite"))
     tmdb = TMDBAdapter(config, store_dir, cache)
@@ -168,6 +169,7 @@ def run(args, config):
     print(f"  OCR:     {ocr.name} ({','.join(langs)})")
 
     skip = [target] if moving else []
+    print("  looking for video files ...", flush=True)
     files = list(credits.iter_files(source, skip))
     prior = {} if args.redo else {r["file"]: r for r in credits.load_results(results)}
     # Checked before with --no-move and still here: a moving run reuses that
@@ -187,6 +189,8 @@ def run(args, config):
     with open(results, "a", encoding="utf-8") as fh:
         for i, f in enumerate(todo, 1):
             t0 = time.time()
+            if f not in reuse:
+                print(f"[{i}/{len(todo)}] reading credits: {f.name} ...", flush=True)
             try:
                 if f in reuse:
                     r = {k: v for k, v in prior[str(f)].items() if k not in ("no_move", "moved_to", "move_error")}
