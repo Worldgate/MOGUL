@@ -98,6 +98,14 @@ def run(args, config):
     if missing:
         print(f"  {missing} movie(s) have no saved TMDB info and aren't counted "
               "(run: mogul.py movie tmdb)")
+
+    # same TMDB ID in more than one place = probably two copies of one movie
+    where = {}
+    for tid, root, path in units:
+        where.setdefault(tid, []).append(path)
+    doubles = {tid: paths for tid, paths in where.items() if len(paths) > 1}
+    if doubles:
+        print(f"  {len(doubles)} movie(s) are here more than once (same TMDB ID), listed at the end")
     print()
 
     # tally: kind -> key -> {"name": ..., "movies": set()}
@@ -149,9 +157,25 @@ def run(args, config):
                     lines.append(f"{'':>{width}}      {ti}")
                 w.writerow([kind, name, key, count, " | ".join(titles)])
             lines.append("")
+    if doubles:
+        lines.append(f"== Same TMDB ID in more than one place: {len(doubles)}")
+        for tid in sorted(doubles, key=lambda i: title_of(movies.get(i, {})).casefold()):
+            name = title_of(movies[tid]) if tid in movies else f"(no TMDB info)"
+            lines.append(f"{tid}  {name}")
+            for p in doubles[tid]:
+                lines.append(f"      {p}")
+        lines.append("")
     with open(base + ".txt", "w", encoding="utf-8") as tf:
         tf.write("\n".join(lines) + "\n")
 
+    if doubles:
+        print(f"== More than one copy (same TMDB ID): {len(doubles)}")
+        for tid in sorted(doubles, key=lambda i: title_of(movies.get(i, {})).casefold()):
+            name = title_of(movies[tid]) if tid in movies else "(no TMDB info)"
+            print(f"  {name}  {{tmdb-{tid}}}")
+            for p in doubles[tid]:
+                print(f"      {p}")
+        print()
     print(f"Full lists with every title: {base}.txt")
     print(f"For a spreadsheet:           {base}.csv")
     return 0

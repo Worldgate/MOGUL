@@ -464,6 +464,9 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   per list (default 50, 0 = all).
 - Writes `mogul_reports/movie-count_*.txt` (every entry with its titles)
   and `.csv` (list, name, tmdb_id, count, titles joined with " | ").
+- Also lists every TMDB ID found in more than one place (two copies of
+  one movie, e.g. a 3D and a regular folder), with both paths, on screen
+  and at the end of the .txt (Mavrick spotted some doubles, 2026-11-18).
 - Tested on the fake library: duplicate folder counted once, missing TMDB
   info reported, --by/--min/--top.
 
