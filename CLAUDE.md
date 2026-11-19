@@ -545,6 +545,9 @@ requirements.txt: xxhash, blake3, numpy, opencv-python-headless, pytesseract.
   `mogul_cache/movie-verify_results.jsonl`, resumable; paths inside, so
   not in mogul_json). Report rebuilt each run:
   `mogul_reports/movie-verify_report.html` + `.csv`.
+- A file checked with `--no-move` (result has `no_move: true`) and still
+  in source is NOT re-OCR'd by a later moving run: its saved result is
+  reused and it's just moved (Mavrick's flow: check, read report, move).
 - Options: `--source`, `--target`, `--dry-run` (moves/saves nothing),
   `--no-move`, `--limit N`, `--redo`, `--report-only`, `--ocr`, `--langs`.
 - Tested 2026-11-18 with real Tesseract on generated credit videos:

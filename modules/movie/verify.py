@@ -169,12 +169,16 @@ def run(args, config):
 
     skip = [target] if moving else []
     files = list(credits.iter_files(source, skip))
-    done = set() if args.redo else {r["file"] for r in credits.load_results(results)}
-    todo = [f for f in files if str(f) not in done]
+    prior = {} if args.redo else {r["file"]: r for r in credits.load_results(results)}
+    # Checked before with --no-move and still here: a moving run reuses that
+    # result (no second OCR pass). Anything else already checked is skipped.
+    reuse = {f for f in files if moving and prior.get(str(f), {}).get("no_move")}
+    todo = [f for f in files if str(f) not in prior or f in reuse]
     if args.limit:
         todo = todo[:args.limit]
-    print(f"  files:   {len(files)}   already checked: {len(files) - len([f for f in files if str(f) not in done])}"
-          f"   this run: {len(todo)}")
+    print(f"  files:   {len(files)}   already checked: {len(files) - len([f for f in files if str(f) not in prior])}"
+          f"   this run: {len(todo)}" + (f" ({len([f for f in todo if f in reuse])} checked earlier, "
+                                         "just moving)" if reuse else ""))
     print()
 
     tally = Counter()
@@ -184,7 +188,10 @@ def run(args, config):
         for i, f in enumerate(todo, 1):
             t0 = time.time()
             try:
-                r = credits.identify(f, tmdb=tmdb, ocr=ocr)
+                if f in reuse:
+                    r = {k: v for k, v in prior[str(f)].items() if k not in ("no_move", "moved_to", "move_error")}
+                else:
+                    r = credits.identify(f, tmdb=tmdb, ocr=ocr)
             except KeyboardInterrupt:
                 print("\nStopped. Run the same command again to carry on.")
                 break
@@ -201,8 +208,11 @@ def run(args, config):
                 except Exception as e:
                     r["move_error"] = repr(e)
 
-            r["seconds"] = round(time.time() - t0, 1)
-            r["checked"] = store.now()
+            if f not in reuse:
+                r["seconds"] = round(time.time() - t0, 1)
+                r["checked"] = store.now()
+            if not moving:
+                r["no_move"] = True
             if not dry:
                 fh.write(json.dumps(r, ensure_ascii=False) + "\n")
                 fh.flush()
