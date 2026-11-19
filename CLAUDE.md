@@ -245,6 +245,8 @@ modules/radio/
 modules/movie/
   __init__.py         movie actions
   tmdb_fetch.py       `movie tmdb`: download + keep each movie's TMDB info
+  library.py          finds movie folders ({tmdb-ID} in the name) under the library roots
+  pull.py             `movie pull`: list/move movies by director, cast, studio, genre...
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
@@ -419,9 +421,33 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - Tested 2026-11-18 against a fake local TMDB server (real TMDB isn't
   reachable from Claude's sandbox): save, skip, refresh, older-than, 429
   retry, 404, bad key, no key, key never written to files.
-- Next (not built): an index from the saved files, e.g. `movie actor
-  "Name"`, `movie director "Name"`. People details (birthday, bio, photos)
+- Next (not built): a lookup from the saved files, e.g. `movie actor
+  "Name"` (for now `movie pull --cast NAME` without --to lists them). People details (birthday, bio, photos)
   are a separate `/person/<id>` request, for later actor pages.
+
+## Movie pull (`mogul.py movie pull`)
+
+- Why (Mavrick, 2026-11-18): lighten the library; lots of filler that's
+  basically YouTube videos (six "how The Matrix was made" docs), plus
+  pulling by director / cast / studio.
+- Reads the saved TMDB files (`movie tmdb` first; movies without one are
+  counted as "no saved TMDB info", not checked). Filters: `--director`,
+  `--cast` (`--top N` billing), `--crew` (any job), `--studio`
+  (production_companies), `--genre`, `--title` (title or original title),
+  `--no-studio`, `--max-runtime MIN`, `--max-votes N`. Case- and
+  accent-insensitive, `*` wildcards; same option twice = either, different
+  options = all.
+- Without `--to`: only lists (MATCH + why). With `--to FOLDER`: moves the
+  whole movie folder (the first folder with `{tmdb-ID}` in its name; a
+  loose file with the ID moves alone), keeping its path under the root
+  (`<to>/1990-1999/Title (1999) {tmdb-603}`). `--dry-run`. Never
+  overwrites (SKIP). `--to` inside a library root is refused. Same drive =
+  rename; other drive = copytree to `.part`, compare every file's size,
+  rename, then remove the original. Report `mogul_reports/movie-pull_*.json`
+  with from -> to (no undo command yet).
+- Tested 2026-11-18 on a fake library: wildcards, accents, AND/OR, genre +
+  title + runtime, no-studio, dry run, move to another filesystem
+  (/dev/shm), re-run, --to inside library refused.
 
 ## Save to GitHub (`tools/update.sh`, Mavrick's script)
 
