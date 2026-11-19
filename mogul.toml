@@ -175,11 +175,14 @@ verify_results = "mogul_cache/movie-verify_results.jsonl"
 verify_folders = { confirmed = "confirmed", identified = "identified", mismatch = "mismatch", weak = "weak", unknown = "unknown" }
 
 # Sure ones (confirmed / identified / mismatch) are renamed to what the
-# credits say, into a decade folder like the library:
-#   <target>/confirmed/1990-1999/Fight Club (1999) {tmdb-550}/Fight Club (1999) Bluray-1080p.mkv
+# credits say; weak / unknown keep their names. Layout is flat by default
+# (Radarr would take a decade folder like 1900-1909 for a movie):
+#   <target>/confirmed/Fight Club (1999) {tmdb-550}/Fight Club (1999) Bluray-1080p.mkv
+#   <target>/unknown/Mystery Film (2004)/mystery.mkv
 # {tags} = the release info from the old filename, kept as it was.
 verify_rename = true
-verify_decade_folders = true
+verify_decade_folders = false        # true: <result>/1990-1999/<movie folder>/
+verify_keep_source_path = false      # true: weak/unknown keep their whole path under the source
 verify_folder_per_movie = true
 verify_folder_format = "{title} ({year}) {{tmdb-{tmdb_id}}}"
 verify_name_format = "{title} ({year}) {tags}"

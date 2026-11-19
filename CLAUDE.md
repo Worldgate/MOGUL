@@ -538,9 +538,12 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   if it doesn't).
 - Folders: `verify_source` -> `verify_target/<verify_folders[result]>/`
   (Mavrick asked for source/target in the settings; set in
-  mogul.local.toml). Sure results (confirmed/identified/mismatch) renamed
-  `<decade>/Title (Year) {tmdb-ID}/Title (Year) <tags>.ext`; weak/unknown
-  keep their path under source. Whole movie folder moves (srt, nfo...).
+  mogul.local.toml). Layout FLAT by default (Mavrick 2026-11-18: Radarr
+  takes a decade folder like 1900-1909 for a movie): sure results
+  (confirmed/identified/mismatch) renamed to
+  `<result>/Title (Year) {tmdb-ID}/Title (Year) <tags>.ext`; weak/unknown
+  keep their names: `<result>/<movie folder>/<file>`. Old behaviour via
+  `verify_decade_folders = true` / `verify_keep_source_path = true`. Whole movie folder moves (srt, nfo...).
   Never overwrites ("already have a copy" -> left, shown as not moved).
 - Results: `verify_results` (default
   `mogul_cache/movie-verify_results.jsonl`, resumable; paths inside, so

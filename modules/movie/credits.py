@@ -36,7 +36,9 @@ FOLDER_PER_MOVIE = True
 NAME_FORMAT = "{title} ({year}) {tags}"
 FOLDER_FORMAT = "{title} ({year}) {{tmdb-{tmdb_id}}}"
 ARTICLES_LAST = True
-DECADE_FOLDERS = True       # renamed movies go into <decade>/ like the library (1990-1999)
+DECADE_FOLDERS = False      # True: renamed movies go into <decade>/ (1990-1999)
+KEEP_SOURCE_PATH = False    # True: weak/unknown keep their full path under the source
+                            # (decade folders included); False: just <movie folder>/
 
 
 VIDEO_EXTS ={".mkv", ".mp4", ".avi", ".m4v", ".mov", ".wmv", ".ts", ".m2ts",
@@ -848,11 +850,15 @@ def move_verified(f, scan_dir, verified_dir, match=None, dry_run=False):
         dest_dir = base / new_stem_for(match, f.name, FOLDER_FORMAT)
     elif rename:
         dest_dir = base
-    else:
+    elif KEEP_SOURCE_PATH:
         try:
             dest_dir = verified_dir / parent.relative_to(scan_dir)
         except ValueError:
             dest_dir = verified_dir
+    else:
+        # MOGUL default: flat, <status>/<movie folder>/ (Radarr takes a
+        # decade folder like 1900-1909 for a movie)
+        dest_dir = verified_dir / parent.name if own_folder else verified_dir
 
     def renamed(name):
         if name.startswith(f.stem + ".") or name == f.name:
@@ -1001,6 +1007,7 @@ def configure(mcfg):
     for key, name in [("verify_rename", "RENAME"), ("verify_folder_per_movie", "FOLDER_PER_MOVIE"),
                       ("verify_name_format", "NAME_FORMAT"), ("verify_folder_format", "FOLDER_FORMAT"),
                       ("verify_articles_last", "ARTICLES_LAST"), ("verify_decade_folders", "DECADE_FOLDERS"),
+                      ("verify_keep_source_path", "KEEP_SOURCE_PATH"),
                       ("verify_end_minutes", "END_MINUTES"), ("verify_start_minutes", "START_MINUTES"),
                       ("verify_frame_every", "FRAME_EVERY"), ("verify_confirm_score", "CONFIRM_SCORE"),
                       ("verify_confirm_min_names", "CONFIRM_MIN_NAMES"), ("verify_fuzz", "FUZZ")]:
