@@ -251,7 +251,7 @@ modules/movie/
   compare.py          `movie compare`: library vs. a streaming service's list (TMDB/JustWatch)
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
-tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
+tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py, credits_id.py)
 examples/             sample JSON
 ```
 
@@ -491,6 +491,37 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - Tested against a fake TMDB: service listing, exact vs. wildcard match,
   ambiguous/none, paging, both/only counts, reports, snapshot. Year-split
   path not exercised.
+
+## Credits identifier (`tools/credits_id.py`, Mavrick's older script)
+
+- Found 2026-11-18 in an old chat; saved into the repo as-is so it isn't lost.
+  Standalone (not wired into mogul.py yet). Identifies/verifies a movie
+  file by OCRing its credits and matching names against TMDB cast/crew.
+- How it works: ffprobe length; ffmpeg samples a frame every 2 s over the
+  last 12 min (fallback: first 5 min), scaled to 1280 wide; keeps frames
+  that look like credits (dark, a little bright text, many edges) and
+  skips repeats; OCR with EasyOCR (GPU, his 3090) or Tesseract; names
+  normalized (accents, CJK spacing) and fuzzy-matched (0.86). Candidates:
+  {tmdb-ID}/{imdb-tt} tag in the name, then a filename title search.
+  Score = share of top-15 billed cast found (+ a bit for deeper cast and
+  key crew; crew-only score for documentaries). strong = score >= 0.30 and
+  3+ names. No strong match: opening credits, then a "blind search" (look
+  up OCR'd names on TMDB, find the movie they share), then an Indian CBFC
+  certificate read (title + exact duration). Sequels sharing a cast:
+  filename picks among the tied ones, else runtime decides.
+- Statuses: confirmed / mismatch / identified / weak / unknown. Crew-only
+  matches can't overrule the filename (weak). Moves sure matches to
+  VERIFIED_DIR renamed "Title (Year) {tmdb-ID}" (articles last, release
+  tags from the old name kept), or with SORT_BY_STATUS every file into
+  SORT_DIR/<status>/. Never overwrites. Results in credits_results.jsonl
+  (resumable), report credits_report.html + .csv. --dry-run, --no-move,
+  --redo, --fix-names, --image (screenshot test), --langs en,ja.
+- Own settings at the top (SCAN_DIR etc.), own TMDB client + sqlite cache
+  (~/.credits_id_cache.sqlite), key from TMDB_API_KEY / TMDB_TOKEN env.
+- Fold-in plan (not done): `mogul.py movie verify` reading the claimed ID
+  from the folder and the saved `mogul_cache/tmdb/movie/<id>.json` (no API
+  call for the common case), settings in mogul.toml [movie], key from
+  secrets.toml, results in the movie catalog JSON, reports in mogul_reports.
 
 ## Save to GitHub (`tools/update.sh`, Mavrick's script)
 
