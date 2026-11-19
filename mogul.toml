@@ -149,3 +149,9 @@ tmdb_video_languages = "en,null"
 
 # Requests per second (TMDB's limit is around 40-50).
 tmdb_requests_per_second = 20
+
+# --- Streaming comparison (mogul.py movie compare) ---
+# Country for "where to watch" lists (two-letter code).
+watch_region = "US"
+# Where each service's dated movie list is kept (re-downloadable).
+providers_store = "mogul_cache/tmdb/providers"

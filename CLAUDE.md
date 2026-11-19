@@ -248,6 +248,7 @@ modules/movie/
   library.py          finds movie folders ({tmdb-ID} in the name) under the library roots
   pull.py             `movie pull`: list/move movies by director, cast, studio, genre...
   count.py            `movie count`: how many of your movies each actor/director/studio... is in
+  compare.py          `movie compare`: library vs. a streaming service's list (TMDB/JustWatch)
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
@@ -469,6 +470,27 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   and at the end of the .txt (Mavrick spotted some doubles, 2026-11-18).
 - Tested on the fake library: duplicate folder counted once, missing TMDB
   info reported, --by/--min/--top.
+
+## Movie compare (`mogul.py movie compare`)
+
+- Mavrick's joke: "more movies than Netflix... but maybe not ones you want
+  to see". Settles it: `--service netflix` finds the service in TMDB's
+  `/watch/providers/movie?watch_region=US` list (exact name first, then
+  contains/wildcard; ambiguous = lists the choices), pulls every movie it
+  offers via `/discover/movie?with_watch_providers=ID&watch_region=..&
+  with_watch_monetization_types=flatrate` (20/page, popularity order;
+  over TMDB's 10,000-result cap it goes year by year), matches TMDB IDs
+  against the library folders.
+- Prints them / you / both / only theirs / only yours, plus the top
+  `--show N` (25) popular ones he doesn't have. Writes
+  `mogul_reports/movie-compare_<service>_*.txt/.csv` and a dated snapshot
+  `mogul_cache/tmdb/providers/<CC>/<service>_<kind>_<date>.json`.
+- `--list-services`, `--region CC` (default `[movie] watch_region` = US),
+  `--kind flatrate|free|ads|rent|buy`, `--jobs`, `--path`. Data is
+  JustWatch's via TMDB (credit it if shown publicly). Lists change monthly.
+- Tested against a fake TMDB: service listing, exact vs. wildcard match,
+  ambiguous/none, paging, both/only counts, reports, snapshot. Year-split
+  path not exercised.
 
 ## Save to GitHub (`tools/update.sh`, Mavrick's script)
 

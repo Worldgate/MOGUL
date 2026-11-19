@@ -6,6 +6,7 @@ ACTIONS = {
     "pull": "Find movies by director, cast, studio, genre, title...; list them, or move them "
             "to another folder with --to",
     "count": "Count how many of your movies each actor, director, studio... is in (changes nothing)",
+    "compare": "Compare your library with a streaming service's movie list (Netflix, Prime...)",
 }
 
 
@@ -19,6 +20,9 @@ def run(action, args, config):
     if action == "count":
         from . import count
         return count.run(args, config)
+    if action == "compare":
+        from . import compare
+        return compare.run(args, config)
     raise SystemExit(f"movie has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -79,3 +83,21 @@ def add_arguments(action, parser):
                                  "The report files always have everything")
         parser.add_argument("--path", action="append", metavar="FOLDER",
                             help="count this folder instead of [movie] library (repeatable)")
+    elif action == "compare":
+        parser.add_argument("--service", metavar="NAME",
+                            help='streaming service, e.g. netflix, "amazon prime video", hulu '
+                                 "(see --list-services)")
+        parser.add_argument("--list-services", action="store_true",
+                            help="list the services TMDB knows for your country")
+        parser.add_argument("--region", metavar="CC",
+                            help="country code (default: [movie] watch_region, US)")
+        parser.add_argument("--kind", default="flatrate",
+                            choices=["flatrate", "free", "ads", "rent", "buy"],
+                            help="flatrate = included with the subscription (default); "
+                                 "free / ads / rent / buy")
+        parser.add_argument("--show", type=int, default=25, metavar="N",
+                            help="print the N most popular ones you don't have (default 25; 0 = none)")
+        parser.add_argument("--jobs", type=int, default=4,
+                            help="pages fetched at once (default 4)")
+        parser.add_argument("--path", action="append", metavar="FOLDER",
+                            help="compare this folder instead of [movie] library (repeatable)")
