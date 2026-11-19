@@ -247,6 +247,7 @@ modules/movie/
   tmdb_fetch.py       `movie tmdb`: download + keep each movie's TMDB info
   library.py          finds movie folders ({tmdb-ID} in the name) under the library roots
   pull.py             `movie pull`: list/move movies by director, cast, studio, genre...
+  count.py            `movie count`: how many of your movies each actor/director/studio... is in
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py)
@@ -448,6 +449,23 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 - Tested 2026-11-18 on a fake library: wildcards, accents, AND/OR, genre +
   title + runtime, no-studio, dry run, move to another filesystem
   (/dev/shm), re-run, --to inside library refused.
+
+## Movie count (`mogul.py movie count`)
+
+- Asked for 2026-11-18 after his first full `movie tmdb` run finished.
+  Read-only. Counts, per person/studio/etc., how many of the movies in
+  the library folders (or `--path`) they're in, from the saved TMDB
+  files. Each TMDB ID counts once (two copies = one movie); people and
+  studios are keyed by TMDB ID, not name.
+- `--by` (repeatable; default cast, director, studio): cast, director,
+  studio, writer, composer, producer, cinematographer, genre, keyword,
+  country, collection, decade. `--top N` = only top-N billed cast,
+  `--min N` = drop anyone under N movies, `--show N` = how many to print
+  per list (default 50, 0 = all).
+- Writes `mogul_reports/movie-count_*.txt` (every entry with its titles)
+  and `.csv` (list, name, tmdb_id, count, titles joined with " | ").
+- Tested on the fake library: duplicate folder counted once, missing TMDB
+  info reported, --by/--min/--top.
 
 ## Save to GitHub (`tools/update.sh`, Mavrick's script)
 

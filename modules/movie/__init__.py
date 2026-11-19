@@ -5,6 +5,7 @@ ACTIONS = {
             "into the local TMDB copy",
     "pull": "Find movies by director, cast, studio, genre, title...; list them, or move them "
             "to another folder with --to",
+    "count": "Count how many of your movies each actor, director, studio... is in (changes nothing)",
 }
 
 
@@ -15,6 +16,9 @@ def run(action, args, config):
     if action == "pull":
         from . import pull
         return pull.run(args, config)
+    if action == "count":
+        from . import count
+        return count.run(args, config)
     raise SystemExit(f"movie has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -61,3 +65,17 @@ def add_arguments(action, parser):
                             help="look in this folder instead of [movie] library (repeatable)")
         parser.add_argument("--dry-run", action="store_true",
                             help="with --to: show what would move, move nothing")
+    elif action == "count":
+        from .count import CHOICES
+        parser.add_argument("--by", action="append", choices=CHOICES, metavar="LIST",
+                            help="what to count (repeatable; default: cast, director, studio). "
+                                 "Choices: " + ", ".join(CHOICES))
+        parser.add_argument("--top", type=int, metavar="N",
+                            help="for cast: only count the top N billed actors in each movie")
+        parser.add_argument("--min", type=int, default=1, metavar="N",
+                            help="leave out anyone in fewer than N of your movies (default 1)")
+        parser.add_argument("--show", type=int, default=50, metavar="N",
+                            help="how many of each list to print (default 50; 0 = all). "
+                                 "The report files always have everything")
+        parser.add_argument("--path", action="append", metavar="FOLDER",
+                            help="count this folder instead of [movie] library (repeatable)")
