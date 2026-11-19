@@ -1,0 +1,6 @@
+# For machines with an NVIDIA GPU (e.g. Saturn's 3090):
+#   pip install -r requirements-gpu.txt
+# Everything in requirements.txt, plus EasyOCR (GPU OCR for movie verify).
+# Big download: it pulls in PyTorch. movie verify uses it automatically.
+-r requirements.txt
+easyocr

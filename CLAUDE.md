@@ -261,6 +261,7 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
 `ffmpeg`, `mediainfo`, `fpcalc` (`libchromaprint-tools`), `mp3val`; for
 `movie verify` also `tesseract-ocr` (or `pip install easyocr` for GPU OCR).
 requirements.txt: xxhash, blake3, numpy, opencv-python-headless, pytesseract.
+requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protostar has no GPU).
 
 ## Radio validate (`mogul.py radio validate`)
 

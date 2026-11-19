@@ -9,6 +9,5 @@ numpy
 opencv-python-headless
 pytesseract          # also needs the program: sudo apt install tesseract-ocr
 
-# Optional, much faster OCR on an NVIDIA GPU (big download, pulls in PyTorch):
-#   pip install easyocr
-# movie verify uses it automatically when it's installed.
+# GPU machines (NVIDIA): use requirements-gpu.txt instead, which adds
+# EasyOCR (much faster OCR; big download, pulls in PyTorch).
