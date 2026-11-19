@@ -249,6 +249,8 @@ modules/movie/
   pull.py             `movie pull`: list/move movies by director, cast, studio, genre...
   count.py            `movie count`: how many of your movies each actor/director/studio... is in
   compare.py          `movie compare`: library vs. a streaming service's list (TMDB/JustWatch)
+  credits.py          credits-OCR engine (adapted from tools/credits_id.py)
+  verify.py           `movie verify`: check movies by their credits, sort by how sure
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py, credits_id.py)
@@ -256,7 +258,9 @@ examples/             sample JSON
 ```
 
 Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
-`ffmpeg`, `mediainfo`, `fpcalc` (`libchromaprint-tools`), `mp3val`.
+`ffmpeg`, `mediainfo`, `fpcalc` (`libchromaprint-tools`), `mp3val`; for
+`movie verify` also `tesseract-ocr` (or `pip install easyocr` for GPU OCR).
+requirements.txt: xxhash, blake3, numpy, opencv-python-headless, pytesseract.
 
 ## Radio validate (`mogul.py radio validate`)
 
@@ -518,10 +522,35 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   --redo, --fix-names, --image (screenshot test), --langs en,ja.
 - Own settings at the top (SCAN_DIR etc.), own TMDB client + sqlite cache
   (~/.credits_id_cache.sqlite), key from TMDB_API_KEY / TMDB_TOKEN env.
-- Fold-in plan (not done): `mogul.py movie verify` reading the claimed ID
-  from the folder and the saved `mogul_cache/tmdb/movie/<id>.json` (no API
-  call for the common case), settings in mogul.toml [movie], key from
-  secrets.toml, results in the movie catalog JSON, reports in mogul_reports.
+- Folded in as `mogul.py movie verify` (below); the original stays as-is.
+
+## Movie verify (`mogul.py movie verify`)
+
+- Engine `modules/movie/credits.py` = credits_id.py with: settings from
+  mogul.toml `[movie] verify_*` (`configure()`), TMDB through
+  `verify.TMDBAdapter` (claimed movie's cast from the saved
+  `mogul_cache/tmdb/movie/<id>.json`; searches/person lookups via
+  mogul_core.tmdb with the secrets.toml key, cached in
+  `mogul_cache/tmdb/verify_cache.sqlite`), decade folders for renamed
+  movies, "Matrix, The" read back as "The Matrix" for searches, and the
+  title search skipped when the {tmdb-ID} tag already matches (only tried
+  if it doesn't).
+- Folders: `verify_source` -> `verify_target/<verify_folders[result]>/`
+  (Mavrick asked for source/target in the settings; set in
+  mogul.local.toml). Sure results (confirmed/identified/mismatch) renamed
+  `<decade>/Title (Year) {tmdb-ID}/Title (Year) <tags>.ext`; weak/unknown
+  keep their path under source. Whole movie folder moves (srt, nfo...).
+  Never overwrites ("already have a copy" -> left, shown as not moved).
+- Results: `verify_results` (default
+  `mogul_cache/movie-verify_results.jsonl`, resumable; paths inside, so
+  not in mogul_json). Report rebuilt each run:
+  `mogul_reports/movie-verify_report.html` + `.csv`.
+- Options: `--source`, `--target`, `--dry-run` (moves/saves nothing),
+  `--no-move`, `--limit N`, `--redo`, `--report-only`, `--ocr`, `--langs`.
+- Tested 2026-11-18 with real Tesseract on generated credit videos:
+  confirmed (+ .srt moved along), mislabeled folder -> mismatch renamed to
+  the right movie, no credits -> unknown, existing copy -> not moved,
+  rerun skips checked files, dry run moves nothing. EasyOCR not tested here.
 
 ## Save to GitHub (`tools/update.sh`, Mavrick's script)
 

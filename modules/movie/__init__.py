@@ -7,6 +7,8 @@ ACTIONS = {
             "to another folder with --to",
     "count": "Count how many of your movies each actor, director, studio... is in (changes nothing)",
     "compare": "Compare your library with a streaming service's movie list (Netflix, Prime...)",
+    "verify": "Read each movie's credits (OCR) to check it's really that movie; sort into folders "
+              "by how sure (confirmed / identified / mismatch / weak / unknown)",
 }
 
 
@@ -23,6 +25,9 @@ def run(action, args, config):
     if action == "compare":
         from . import compare
         return compare.run(args, config)
+    if action == "verify":
+        from . import verify
+        return verify.run(args, config)
     raise SystemExit(f"movie has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -101,3 +106,22 @@ def add_arguments(action, parser):
                             help="pages fetched at once (default 4)")
         parser.add_argument("--path", action="append", metavar="FOLDER",
                             help="compare this folder instead of [movie] library (repeatable)")
+    elif action == "verify":
+        parser.add_argument("--source", metavar="FOLDER",
+                            help="folder (or one file) to check (default: [movie] verify_source)")
+        parser.add_argument("--target", metavar="FOLDER",
+                            help="where the result folders go (default: [movie] verify_target)")
+        parser.add_argument("--dry-run", action="store_true",
+                            help="check and show what would move; move and save nothing")
+        parser.add_argument("--no-move", action="store_true",
+                            help="check and save results, but leave every file where it is")
+        parser.add_argument("--limit", type=int, metavar="N",
+                            help="only check the first N files not checked yet (good for a test run)")
+        parser.add_argument("--redo", action="store_true",
+                            help="check files again even if they're in the results already")
+        parser.add_argument("--report-only", action="store_true",
+                            help="just rebuild the report page from the results")
+        parser.add_argument("--ocr", choices=["auto", "easyocr", "tesseract"],
+                            help="OCR engine (default: [movie] verify_ocr, auto = EasyOCR if installed)")
+        parser.add_argument("--langs", metavar="LIST",
+                            help="OCR languages, e.g. en,ja (default: [movie] verify_ocr_langs)")

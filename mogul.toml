@@ -155,3 +155,45 @@ tmdb_requests_per_second = 20
 watch_region = "US"
 # Where each service's dated movie list is kept (re-downloadable).
 providers_store = "mogul_cache/tmdb/providers"
+
+# --- Credits check (mogul.py movie verify) ---
+# Reads each movie's credits (OCR) and checks the names against TMDB, then
+# moves it into <verify_target>/<result>/. Set the real folders in
+# mogul.local.toml:
+#   verify_source = "/media/Movies/to-verify"     # movies to check
+#   verify_target = "/media/Movies/sorted"        # result folders go here
+# Results (resumable): verify_results. Report: mogul_reports/movie-verify_report.html
+verify_results = "mogul_cache/movie-verify_results.jsonl"
+
+# Folder name per result. Two results can share a folder (e.g. both sure
+# ones into "verified"); "" = leave those files where they are.
+#   confirmed   credits back up the name                   (sure)
+#   identified  the name was no help, credits found it     (sure)
+#   mismatch    credits say it's a different movie          (sure it's wrong)
+#   weak        a few names, or fits several movies         (check by hand)
+#   unknown     no credits found / nothing matched          (check by hand)
+verify_folders = { confirmed = "confirmed", identified = "identified", mismatch = "mismatch", weak = "weak", unknown = "unknown" }
+
+# Sure ones (confirmed / identified / mismatch) are renamed to what the
+# credits say, into a decade folder like the library:
+#   <target>/confirmed/1990-1999/Fight Club (1999) {tmdb-550}/Fight Club (1999) Bluray-1080p.mkv
+# {tags} = the release info from the old filename, kept as it was.
+verify_rename = true
+verify_decade_folders = true
+verify_folder_per_movie = true
+verify_folder_format = "{title} ({year}) {{tmdb-{tmdb_id}}}"
+verify_name_format = "{title} ({year}) {tags}"
+verify_articles_last = true          # "The Matrix" -> "Matrix, The"
+
+# OCR: "auto" uses EasyOCR (GPU) when installed, else Tesseract.
+# Languages e.g. "en,ja" for anime / Japanese credits.
+verify_ocr = "auto"
+verify_ocr_langs = "en"
+
+# How it looks (the old script's defaults):
+verify_end_minutes = 12              # how much of the end to read
+verify_start_minutes = 5             # opening credits, if the end isn't enough
+verify_frame_every = 2.0             # seconds between frames
+verify_confirm_score = 0.30          # share of top-billed cast that must be found...
+verify_confirm_min_names = 3         # ...and at least this many names
+verify_fuzz = 0.86                   # how close an OCR'd name must be (0-1)

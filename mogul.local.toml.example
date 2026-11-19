@@ -19,3 +19,6 @@
 [movie]
 # library = "/media/Movies/movies-validated"
 # or several:  library = ["/media/Movies/movies-validated", "/media/Movies/movies-new"]
+# movie verify (credits check): what to check, and where the result folders go
+# verify_source = "/media/Movies/to-verify"
+# verify_target = "/media/Movies/sorted"
