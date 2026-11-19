@@ -101,7 +101,12 @@ incoming_pattern = "{code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]"
 
 [movie]
 # Where the movie library is. Set the real path in mogul.local.toml.
-# `mogul.py movie tmdb` reads {tmdb-ID} out of the folder/file names here.
+# One folder, or a list of them:
+#   library = ["/media/Movies/movies-validated", "/media/Movies/movies-new"]
+# Layout inside: <decade>/<Title (YYYY) {tmdb-ID}>/<movie file>, e.g.
+#   1990-1999/Fight Club (1999) {tmdb-550}/Fight Club (1999).mkv
+# `mogul.py movie tmdb` reads {tmdb-ID} out of the folder/file names, at
+# any depth, so the decade folders don't matter.
 # library = "/media/Movies/movies-validated"
 
 # Video file types (used to list files that have no {tmdb-ID} in the name).

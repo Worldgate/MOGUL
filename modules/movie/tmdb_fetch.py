@@ -103,7 +103,8 @@ def run(args, config):
             sys.exit(f"Not a TMDB ID: {raw} (numbers only, e.g. 550)")
         sources.setdefault(int(raw), "command line")
     if not args.ids:
-        folders = args.path or ([mcfg["library"]] if mcfg.get("library") else [])
+        lib = mcfg.get("library") or []
+        folders = args.path or ([lib] if isinstance(lib, str) else list(lib))
         if not folders:
             sys.exit("Give TMDB IDs (mogul.py movie tmdb 550 603), or --path FOLDER, "
                      "or set [movie] library in mogul.local.toml.")

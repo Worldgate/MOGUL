@@ -395,6 +395,10 @@ Needs on the server: Python 3.11+, `pip install -r requirements.txt`,
   request (address WITHOUT the key), append}, "tmdb": {...}}`.
 - `mogul_cache/` is gitignored: it's a re-downloadable copy of TMDB's data,
   not the catalog (also keeps TMDB's data out of the public repo).
+- Mavrick's movie layout (2026-11-18): `movies-<something>/<decade>/
+  <Title (YYYY) {tmdb-ID}>/<movie>.<ext>`, decade folders like
+  `1900-1909`; several `movies-*` roots. `[movie] library` takes one
+  path or a list.
 - IDs: on the command line (`movie tmdb 550 603`), or read from names
   under `--path FOLDER` / `[movie] library`: `{tmdb-550}`, `[tmdbid-550]`,
   `{tmdb=550}` in folder or file names. Read-only on the movie folders.
