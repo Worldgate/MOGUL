@@ -639,16 +639,24 @@ def identify(path, title=None, year=None, tmdb_id=None, tmdb=None, ocr=None,
     # 2b. (MOGUL) still nothing: credits may be white text over bright video,
     #     which the dark-background check throws away. Read the end again
     #     looking for white text only.
+    #     Same for the opening: many older (e.g. 70s/80s Italian) films have
+    #     all their credits at the start, over the picture, and only "FINE"
+    #     at the end.
     if judge(score, hits) != "strong" and not image:
         end_len = min(END_MINUTES * 60, dur * 0.25)
-        n3, lines3 = read_section(path, ocr, dur - end_len, end_len, w, h, bright=True)
-        if lines3:
-            nframes += n3
-            lines += lines3
-            blob = " " + " ".join(lines) + " "
-            consider(candidates)
-            best, score, hits = top()
-            out["searched"] = out.get("searched", "end") + "+bright"
+        start_len = min(START_MINUTES * 60, dur * 0.1)
+        for label, s0, ln in (("bright-end", dur - end_len, end_len),
+                              ("bright-start", 0, start_len)):
+            n3, lines3 = read_section(path, ocr, s0, ln, w, h, bright=True)
+            if lines3:
+                nframes += n3
+                lines += lines3
+                blob = " " + " ".join(lines) + " "
+                consider(candidates)
+                best, score, hits = top()
+                out["searched"] = out.get("searched", "end") + "+" + label
+            if judge(score, hits) == "strong":
+                break
 
     # 3. still nothing -> blind search from the names themselves
     if judge(score, hits) != "strong" and lines:

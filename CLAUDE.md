@@ -557,7 +557,12 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   the dark-background frame filter threw those frames away. If nothing
   strong after end+start, the end is read again with `white_channel()`
   (min of B/G/R, so only near-white text survives) and
-  `looks_like_bright_credits()`; `searched` gets "+bright".
+  `looks_like_bright_credits()`; `searched` gets "+bright-end". Then the
+  opening the same way ("+bright-start"): first real batch (23 of his
+  70s/80s Italian films, Tesseract) = 16 confirmed, 1 weak, 6 unknown,
+  the unknowns mostly Italian films whose credits are all at the start,
+  over the picture. Also likely: pseudonyms in the credits (D'Amato's
+  crowd) that differ from TMDB's names -> low scores (0.1-0.25).
 - No usable credits: still `unknown`, but the note says whether the file's
   length matches TMDB's runtime for the movie the name claims (within 3
   min), and `runtime_diff_min` is filled in for the report.
