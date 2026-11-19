@@ -176,7 +176,8 @@ def run(args, config):
             return f"[{n:>{width}}/{len(todo)}  {eta:>15}]"
 
         jobs = max(1, args.jobs)
-        with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
+        pool = concurrent.futures.ThreadPoolExecutor(max_workers=jobs)
+        try:
             for tid, result, info in pool.map(fetch, todo):
                 if result == "stopped":
                     continue
@@ -200,6 +201,12 @@ def run(args, config):
                     print(f"{tag} ERROR     {tid}  {info}")
                     report["errors"].append({"tmdb_id": tid, "where": sources[tid],
                                              "error": info})
+        except KeyboardInterrupt:
+            stop.set()
+            report["stopped"] = True
+            print("\nStopped. Movies already saved stay saved; run it again to carry on.")
+        finally:
+            pool.shutdown(wait=True, cancel_futures=True)
 
     # 3. report
     report["finished"] = store.now()
