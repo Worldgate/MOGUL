@@ -549,9 +549,21 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
 - A file checked with `--no-move` (result has `no_move: true`) and still
   in source is NOT re-OCR'd by a later moving run: its saved result is
   reused and it's just moved (Mavrick's flow: check, read report, move).
+- Second pass for credits over bright/colored video (Mavrick's misses,
+  2026-11-18: "white text over bright colored video", "or no credits"):
+  the dark-background frame filter threw those frames away. If nothing
+  strong after end+start, the end is read again with `white_channel()`
+  (min of B/G/R, so only near-white text survives) and
+  `looks_like_bright_credits()`; `searched` gets "+bright".
+- No usable credits: still `unknown`, but the note says whether the file's
+  length matches TMDB's runtime for the movie the name claims (within 3
+  min), and `runtime_diff_min` is filled in for the report.
 - Options: `--source`, `--target`, `--dry-run` (moves/saves nothing),
   `--no-move`, `--limit N`, `--redo`, `--report-only`, `--ocr`, `--langs`.
-- Tested 2026-11-18 with real Tesseract on generated credit videos:
+- Tested 2026-11-18 with real Tesseract on generated credit videos (also:
+  white credits over a moving orange/cyan/yellow gradient -> confirmed
+  via "end+bright"; no-credit 70 s file tagged as a 136 min movie ->
+  unknown + "length does NOT match"):
   confirmed (+ .srt moved along), mislabeled folder -> mismatch renamed to
   the right movie, no credits -> unknown, existing copy -> not moved,
   rerun skips checked files, dry run moves nothing. EasyOCR not tested here.

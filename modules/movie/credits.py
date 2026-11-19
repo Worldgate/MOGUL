@@ -207,12 +207,38 @@ def looks_like_credits(gray):
     return edges.mean() > 1.5
 
 
-def pick_credit_frames(path, start, length, w, h):
+def white_channel(bgr):
+    """(MOGUL) For white text over bright, colorful video: white is bright in
+    all three channels, a colored picture usually isn't, so the darkest of
+    B/G/R per pixel keeps the text and drops most of the background. The
+    result is flipped and stretched to look like normal light-on-dark credits."""
+    v = bgr.min(axis=2).astype(np.float32)
+    # whatever isn't near-white goes dark; near-white stays bright
+    v = np.clip((v - 170) * (255.0 / 85), 0, 255).astype(np.uint8)
+    return v
+
+
+def looks_like_bright_credits(white):
+    """(MOGUL) After white_channel: a modest amount of white text shapes."""
+    bright = (white > 128).mean()
+    if not (0.002 < bright < 0.15):
+        return False
+    return cv2.Canny(white, 80, 200).mean() > 1.0
+
+
+def pick_credit_frames(path, start, length, w, h, bright=False):
+    """bright=False: classic credits (dark background).
+    bright=True (MOGUL second pass): white text over bright/colored video."""
     frames, last = [], None
     for ts, f in grab_frames(path, start, length, w, h):
-        g = text_channel(f)
-        if not looks_like_credits(g):
-            continue
+        if bright:
+            g = white_channel(f)
+            if not looks_like_bright_credits(g):
+                continue
+        else:
+            g = text_channel(f)
+            if not looks_like_credits(g):
+                continue
         small = cv2.resize(g, (160, 90))
         if last is not None and np.abs(small.astype(int) - last).mean() < 2.0:
             continue  # same card as the last one we kept
@@ -499,8 +525,8 @@ def match_certificate(tmdb, cert):
     return found[0][1] if found else None
 
 
-def read_section(path, ocr, start, length, w, h):
-    frames = pick_credit_frames(path, start, length, w, h)
+def read_section(path, ocr, start, length, w, h, bright=False):
+    frames = pick_credit_frames(path, start, length, w, h, bright)
     lines = []
     for _, g in frames:
         lines.extend(ocr.read(g))
@@ -608,6 +634,20 @@ def identify(path, title=None, year=None, tmdb_id=None, tmdb=None, ocr=None,
             best, score, hits = top()
             out["searched"] = "end+start"
 
+    # 2b. (MOGUL) still nothing: credits may be white text over bright video,
+    #     which the dark-background check throws away. Read the end again
+    #     looking for white text only.
+    if judge(score, hits) != "strong" and not image:
+        end_len = min(END_MINUTES * 60, dur * 0.25)
+        n3, lines3 = read_section(path, ocr, dur - end_len, end_len, w, h, bright=True)
+        if lines3:
+            nframes += n3
+            lines += lines3
+            blob = " " + " ".join(lines) + " "
+            consider(candidates)
+            best, score, hits = top()
+            out["searched"] = out.get("searched", "end") + "+bright"
+
     # 3. still nothing -> blind search from the names themselves
     if judge(score, hits) != "strong" and lines:
         before = best["id"] if best else None
@@ -702,6 +742,15 @@ def identify(path, title=None, year=None, tmdb_id=None, tmdb=None, ocr=None,
     rt = (best or {}).get("runtime")
     if rt and out.get("duration_min"):
         out["runtime_diff_min"] = round(out["duration_min"] - rt, 1)
+    # (MOGUL) no usable credits: at least say whether the file's length fits
+    # the movie the name claims, so a likely-right copy stands out
+    if out["status"] == "unknown" and guess and guess.get("runtime") and out.get("duration_min"):
+        diff = round(out["duration_min"] - guess["runtime"], 1)
+        out["runtime_diff_min"] = diff
+        fits = "matches" if abs(diff) <= 3 else "does NOT match"
+        hint = (f"no usable credits; length {fits} {_fmt(describe(guess))} "
+                f"({out['duration_min']} min vs TMDB {guess['runtime']} min)")
+        out["note"] = f"{out['note']}; {hint}" if out.get("note") else hint
     return out
 
 
