@@ -931,8 +931,12 @@ banner name.
   index). Trust rule: "confirmed" has been accurate so far, so confirmed
   = validated, done; everything else (identified, mismatch, weak,
   unknown) waits for Mavrick to confirm by hand, saved as a hand
-  verdict. Still open: what counts as "changed" (likely size + mtime),
-  and whether pulling out is automatic or a separate step.
+  verdict. "Unchanged" check (Mavrick, 2026-11-20): store size + mtime
+  (like rsync) and trust the saved hash/result while both match; only
+  re-read a file when either differs (or on a forced re-check). MOGUL's
+  own cross-drive moves use copy2/copytree, which keep mtime; a plain
+  `cp` without `-p` doesn't, so such a copy just gets re-read once.
+  Still open: whether pulling out is automatic or a separate step.
 
 - **CBS/XM split era (O&A, ~2006-2009):** files come as separate feeds,
   coded `O&A-CBS` and `O&A-XM` in `[radio.shows]` (both map to "Opie and
