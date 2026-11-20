@@ -916,6 +916,19 @@ banner name.
 
 ## Future ideas (not now)
 
+- **Movie library index + background verify (Mavrick, 2026-11-20, "at
+  some point, not immediately"):** grow `movie verify` into a pass over
+  the whole movie library that records each file once (size, mtime,
+  length, codec/resolution, probably a video hash, credits result) and
+  remembers which files are already validated, so a re-run only looks at
+  new or changed files. It flags suspect movies (mismatch, unknown,
+  length doesn't match TMDB), then quietly pulls them out to a folder to
+  verify by hand or replace. Same rules as everywhere: dry run, never
+  delete, nothing overwritten. Open questions for later: where the
+  per-file record lives (catalog JSON like radio, since hand verdicts
+  must survive a rebuild, with SQLite as the index), what counts as
+  "changed", and whether pulling out is automatic or a separate step.
+
 - **CBS/XM split era (O&A, ~2006-2009):** files come as separate feeds,
   coded `O&A-CBS` and `O&A-XM` in `[radio.shows]` (both map to "Opie and
   Anthony"; works today, sorts CBS before XM). Plan: a script to merge the
