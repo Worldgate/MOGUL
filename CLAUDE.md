@@ -924,10 +924,15 @@ banner name.
   new or changed files. It flags suspect movies (mismatch, unknown,
   length doesn't match TMDB), then quietly pulls them out to a folder to
   verify by hand or replace. Same rules as everywhere: dry run, never
-  delete, nothing overwritten. Open questions for later: where the
-  per-file record lives (catalog JSON like radio, since hand verdicts
-  must survive a rebuild, with SQLite as the index), what counts as
-  "changed", and whether pulling out is automatic or a separate step.
+  delete, nothing overwritten. Decided 2026-11-20 (Mavrick): the records
+  live in a local user-data folder that is NOT synced to git (planned
+  name `mogul_userdata/`, gitignored, back it up like mogul_json; JSON
+  as the record so hand verdicts survive a rebuild, SQLite only as an
+  index). Trust rule: "confirmed" has been accurate so far, so confirmed
+  = validated, done; everything else (identified, mismatch, weak,
+  unknown) waits for Mavrick to confirm by hand, saved as a hand
+  verdict. Still open: what counts as "changed" (likely size + mtime),
+  and whether pulling out is automatic or a separate step.
 
 - **CBS/XM split era (O&A, ~2006-2009):** files come as separate feeds,
   coded `O&A-CBS` and `O&A-XM` in `[radio.shows]` (both map to "Opie and
