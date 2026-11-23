@@ -200,3 +200,7 @@ verify_frame_every = 2.0             # seconds between frames
 verify_confirm_score = 0.30          # share of top-billed cast that must be found...
 verify_confirm_min_names = 3         # ...and at least this many names
 verify_fuzz = 0.86                   # how close an OCR'd name must be (0-1)
+
+[radarr]
+radarr_url = "http://192.168.0.20:7878"
+radarr_root_folder = "/qnap/movies-tmdb"
