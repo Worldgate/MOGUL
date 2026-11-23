@@ -22,3 +22,6 @@
 # movie verify (credits check): what to check, and where the result folders go
 # verify_source = "/media/Movies/to-verify"
 # verify_target = "/media/Movies/sorted"
+# movie radarr: Radarr's address and the root folder new movies go in
+# radarr_url = "http://localhost:7878"
+# radarr_root_folder = "/qnap/movies-tmdb"

@@ -201,6 +201,49 @@ verify_confirm_score = 0.30          # share of top-billed cast that must be fou
 verify_confirm_min_names = 3         # ...and at least this many names
 verify_fuzz = 0.86                   # how close an OCR'd name must be (0-1)
 
-[radarr]
-radarr_url = "http://192.168.0.20:7878"
-radarr_root_folder = "/qnap/movies-tmdb"
+# --- Radarr (mogul.py movie radarr) ---
+# Adds a date range's movies from TMDB to Radarr, UNMONITORED and with no
+# search, into one root folder, skipping anything Radarr already has.
+# Radarr's API key goes in secrets.toml [radarr], never here.
+# Set the address and root folder in mogul.local.toml:
+#   radarr_url = "http://192.168.1.10:7878"
+#   radarr_root_folder = "/qnap/movies-tmdb"
+radarr_url = "http://localhost:7878"
+radarr_root_folder = ""
+# Quality profile name as shown in Radarr (or its number).
+radarr_quality_profile = "Any"
+# announced, inCinemas or released
+radarr_minimum_availability = "released"
+# Keep both false so Radarr never downloads these on its own.
+radarr_monitored = false
+radarr_search = false
+# Skip movies on Radarr's import list exclusion list (ones you deleted
+# with "add exclusion").
+radarr_respect_exclusions = true
+
+# Which releases count (--types overrides):
+#   1 premiere, 2 limited theatrical, 3 theatrical, 4 digital,
+#   5 physical (DVD and Blu-ray together; TMDB doesn't split them), 6 TV
+radarr_release_types = [3, 5]
+# Country whose release dates count. "" = use watch_region.
+radarr_region = ""
+# Skip movies with fewer votes on TMDB than this (0 = keep everything).
+radarr_min_votes = 0
+# A theatrical release counts as a "rerelease" (old movie back in
+# theaters, e.g. an anniversary run) if the movie first came out more
+# than this many days earlier. true below = don't add those at all.
+radarr_rerelease_days = 365
+radarr_skip_rereleases = false
+
+# Tags added in Radarr, for browsing by month (Movies > filter by tag):
+#   tmdb  +  tmdb-2026-01 (month of the release that matched)
+#         +  tmdb-theatrical / tmdb-limited / tmdb-disc / tmdb-digital / tmdb-rerelease
+radarr_tags = true
+radarr_tag_base = ["tmdb"]
+radarr_tag_prefix = "tmdb"
+radarr_tag_month = true
+radarr_tag_kind = true
+
+# Each movie's release dates, kept so a re-run is quick (re-downloadable).
+radarr_release_store = "mogul_cache/tmdb/release_dates"
+radarr_release_max_age_days = 7

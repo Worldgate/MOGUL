@@ -10,6 +10,8 @@ Examples:
   mogul.py radio scan --dry-run     same, but write nothing to the catalog
   mogul.py radio scan --help        options for that action
   mogul.py movie tmdb 550            download one movie's TMDB info
+  mogul.py movie radarr --from 2026-01 --dry-run
+                                     January 2026's new movies -> Radarr (unmonitored)
 """
 
 import argparse
