@@ -512,8 +512,12 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   older movies with a January disc release show up too). Over TMDB's
   10,000 cap: month by month (note in output if a month is still over).
 - Skips: anything in Radarr in ANY root folder (`GET movie`), and
-  Radarr's exclusion list (`exclusions`, falls back to
-  `importlistexclusion`) when `radarr_respect_exclusions`.
+  Radarr's exclusion list when `radarr_respect_exclusions` (every page of
+  `exclusions/paged`, else the old unpaged `exclusions` /
+  `importlistexclusion`). If none can be read it STOPS rather than go on
+  without it (Mavrick's list is big, full of movies he whittled out).
+  Radarr's Blocklist is a different thing (failed releases) and doesn't
+  matter here: nothing added is searched.
 - For each remaining movie, `movie/<id>/release_dates` (stored in
   `radarr_release_store`, default `mogul_cache/tmdb/release_dates/<id>.json`,
   re-fetched after `radarr_release_max_age_days`, `--refresh`) to see
