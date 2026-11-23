@@ -114,16 +114,29 @@ class Radarr:
         return {m.get("tmdbId") for m in self.get("movie") or []}
 
     def exclusion_ids(self):
-        for path in ("exclusions", "importlistexclusion"):
+        """Every movie on Radarr's exclusion list (all pages). Stops with a
+        message if Radarr won't give it, so excluded junk never comes back."""
+        ids, page = set(), 1
+        try:
+            while True:  # newer Radarr: paged list
+                data = self.get("exclusions/paged", {"page": page, "pageSize": 1000})
+                records = (data or {}).get("records", [])
+                ids |= {x.get("tmdbId") for x in records}
+                if not records or len(ids) >= (data or {}).get("totalRecords", 0):
+                    return ids
+                page += 1
+        except RadarrError:
+            pass
+        for path in ("exclusions", "importlistexclusion"):  # older Radarr: whole list
             try:
                 data = self.get(path)
             except RadarrError:
                 continue
-            if isinstance(data, dict):
-                data = data.get("records", [])
-            return {x.get("tmdbId") for x in data or []}
-        print("  (couldn't read Radarr's exclusion list; going on without it)")
-        return set()
+            if isinstance(data, list):
+                return {x.get("tmdbId") for x in data}
+        raise SystemExit("Couldn't read Radarr's exclusion list, so stopping (it would re-add "
+                         "movies you excluded).\nTo go ahead without it, set "
+                         "radarr_respect_exclusions = false.")
 
     def quality_profile_id(self, wanted):
         profiles = self.get("qualityprofile") or []
