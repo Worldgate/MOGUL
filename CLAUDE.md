@@ -251,6 +251,7 @@ modules/movie/
   compare.py          `movie compare`: library vs. a streaming service's list (TMDB/JustWatch)
   credits.py          credits-OCR engine (adapted from tools/credits_id.py)
   verify.py           `movie verify`: check movies by their credits, sort by how sure
+  radarr.py           `movie radarr`: a date range's TMDB releases -> Radarr, unmonitored, no search
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py, credits_id.py)
@@ -496,6 +497,48 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
 - Tested against a fake TMDB: service listing, exact vs. wildcard match,
   ambiguous/none, paging, both/only counts, reports, snapshot. Year-split
   path not exercised.
+
+## Movie radarr (`mogul.py movie radarr`)
+
+- Asked for 2026-11-23: pull "new movies from January 2026" (theatrical
+  or Blu-ray) from TMDB and put them into Radarr WITHOUT searching, in one
+  root folder (his: `/qnap/movies-tmdb`), skipping what Radarr already
+  has, so he can browse months/eras in Radarr. Belongs to the movie area;
+  lives here as an action until the rest of that area is worked out.
+- `--from 2026-01 [--to 2026-03]` (also `2026` or `2026-01-15`; --to
+  defaults to --from's span). TMDB `discover/movie` with `region`,
+  `with_release_type` (pipe = OR) and `release_date.gte/lte` (these
+  filter on the region's typed release dates, not the original date, so
+  older movies with a January disc release show up too). Over TMDB's
+  10,000 cap: month by month (note in output if a month is still over).
+- Skips: anything in Radarr in ANY root folder (`GET movie`), and
+  Radarr's exclusion list (`exclusions`, falls back to
+  `importlistexclusion`) when `radarr_respect_exclusions`.
+- For each remaining movie, `movie/<id>/release_dates` (stored in
+  `radarr_release_store`, default `mogul_cache/tmdb/release_dates/<id>.json`,
+  re-fetched after `radarr_release_max_age_days`, `--refresh`) to see
+  what matched: theatrical / limited / disc / digital / premiere / tv,
+  or **rerelease** (theatrical, but first released > `radarr_rerelease_days`
+  earlier; e.g. Madagascar 2005 anniversary run). `radarr_skip_rereleases`.
+  TMDB's "physical" (5) is DVD + Blu-ray together; no way to split them.
+- Adds via Radarr's own lookup (`movie/lookup/tmdb`) then `POST movie`:
+  `monitored: false`, `addOptions {searchForMovie: false, monitor: none}`
+  (unmonitored matters: searchForMovie only skips the first search, RSS
+  sync would still grab a monitored movie). Root folder and quality
+  profile (name or id) checked first, with the list of valid ones on error.
+- Tags (Radarr allows lowercase letters, numbers, dashes): `tmdb`,
+  `tmdb-YYYY-MM` (month of each matched release), `tmdb-<kind>`; created
+  in Radarr if missing. Browse = Radarr movie filter by tag.
+- Settings `[movie] radarr_*` in mogul.toml; `radarr_url` and
+  `radarr_root_folder` go in mogul.local.toml; Radarr key in secrets.toml
+  `[radarr] api_key` or env `RADARR_API_KEY`.
+- Report `mogul_reports/movie-radarr_<from>_<to>_<stamp>[_dryrun].csv`:
+  ADDED / WOULD ADD / ERROR / NO MATCH / RERELEASE / EXCLUDED / IN RADARR,
+  with matched dates, TMDB notes ("Blu-ray", "20th anniversary"), tags.
+- Tested 2026-11-23 against a fake local TMDB + Radarr: dry run, add
+  (fields + tags checked), re-run skips, paging, month split, exclusions,
+  bad root folder, bad TMDB key, no Radarr key. Not run against real
+  Radarr yet (Radarr v5 API assumed).
 
 ## Credits identifier (`tools/credits_id.py`, Mavrick's older script)
 

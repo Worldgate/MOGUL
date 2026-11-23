@@ -9,6 +9,8 @@ ACTIONS = {
     "compare": "Compare your library with a streaming service's movie list (Netflix, Prime...)",
     "verify": "Read each movie's credits (OCR) to check it's really that movie; sort into folders "
               "by how sure (confirmed / identified / mismatch / weak / unknown)",
+    "radarr": "Add a date range's new movies (theatrical, Blu-ray/DVD...) from TMDB to Radarr, "
+              "unmonitored and without searching, skipping ones Radarr already has",
 }
 
 
@@ -28,6 +30,9 @@ def run(action, args, config):
     if action == "verify":
         from . import verify
         return verify.run(args, config)
+    if action == "radarr":
+        from . import radarr
+        return radarr.run(args, config)
     raise SystemExit(f"movie has no action '{action}'. Actions: {', '.join(ACTIONS)}")
 
 
@@ -125,3 +130,24 @@ def add_arguments(action, parser):
                             help="OCR engine (default: [movie] verify_ocr, auto = EasyOCR if installed)")
         parser.add_argument("--langs", metavar="LIST",
                             help="OCR languages, e.g. en,ja (default: [movie] verify_ocr_langs)")
+    elif action == "radarr":
+        parser.add_argument("--from", dest="start", required=True, metavar="DATE",
+                            help="start of the range: 2026, 2026-01 or 2026-01-15")
+        parser.add_argument("--to", dest="end", metavar="DATE",
+                            help="end of the range (same forms; default: same as --from, "
+                                 "so --from 2026-01 alone = all of January)")
+        parser.add_argument("--types", metavar="LIST",
+                            help="release types, e.g. 5 or 3,5 (default: [movie] "
+                                 "radarr_release_types). 1 premiere, 2 limited theatrical, "
+                                 "3 theatrical, 4 digital, 5 physical (DVD/Blu-ray), 6 TV")
+        parser.add_argument("--region", metavar="CC",
+                            help="country whose release dates count (default: [movie] "
+                                 "radarr_region, else watch_region)")
+        parser.add_argument("--min-votes", type=int, metavar="N",
+                            help="skip movies with fewer TMDB votes (default: [movie] radarr_min_votes)")
+        parser.add_argument("--refresh", action="store_true",
+                            help="download release dates again even if stored recently")
+        parser.add_argument("--jobs", type=int, default=4,
+                            help="TMDB requests at once (default 4; the rate limit still applies)")
+        parser.add_argument("--dry-run", action="store_true",
+                            help="show what would be added; add nothing to Radarr")
