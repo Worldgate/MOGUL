@@ -615,9 +615,10 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   TMDB first, refuses duplicates), `watch list`, `watch remove NAME`
   (`--cast` etc. to pick when a name is on twice).
 - `radarr update`: backs up first (`radarr_backup_before_update`; a failed
-  backup stops the run, `--no-backup` skips; `--no-zip` or
-  `radarr_update_zip = false` = export only, since Radarr's zip takes
-  Mavrick's Radarr 10-15 min), then `add.run()` per entry
+  backup stops the run, `--no-backup` skips). By default that backup is
+  the quick export.json only: Radarr's zip takes 10-15 min on Mavrick's
+  Radarr ("15 minutes for the backup then 4 movies appear"), so
+  `radarr_update_zip = false`; `--zip` makes it too. Then `add.run()` per entry
   with a shared ctx (Radarr library, exclusions, on-disk IDs and the TMDB
   client read once; movies added by one entry count as IN RADARR for the
   next). Unreleased movies are skipped until a later run (released_only).
@@ -1214,6 +1215,11 @@ banner name.
   pull top / trending / popular movies (TMDB trending, maybe Trakt,
   Letterboxd, IMDb lists) into `radarr add` with the same junk filter.
   Also "different reports" for the radarr module (not decided yet).
+- **Radarr change report (Mavrick 2026-11-25, "just ideas", may become a
+  different process):** what he meant by "backup" was mainly a list of
+  Radarr's movies as a file. export.json already is that (one per run,
+  dated). Idea: compare two exports for a weekly "new movies / deleted /
+  upgraded (quality changed) / file added" report.
 - **One repo for everything** (decided 2026-11-12): every media type is a
   folder under `modules/`, sharing `mogul_core/`. No separate mogul-*
   repos, so there's no merge step later. Placeholder folders hold an
