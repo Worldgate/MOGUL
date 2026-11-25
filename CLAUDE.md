@@ -251,7 +251,7 @@ modules/movie/
   compare.py          `movie compare`: library vs. a streaming service's list (TMDB/JustWatch)
   credits.py          credits-OCR engine (adapted from tools/credits_id.py)
   verify.py           `movie verify`: check movies by their credits, sort by how sure
-  radarr.py           `movie radarr`: a date range's TMDB releases -> Radarr, unmonitored, no search
+  radarr.py           `movie radarr`: TMDB -> Radarr by dates/cast/director/studio/genre, junk filtered, unmonitored
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py, credits_id.py)
@@ -539,6 +539,51 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   (fields + tags checked), re-run skips, paging, month split, exclusions,
   bad root folder, bad TMDB key, no Radarr key. Not run against real
   Radarr yet (Radarr v5 API assumed).
+
+### Filters + junk filter (added 2026-11-25)
+
+- Why (Mavrick): adding whole years cost him 2-3 hours deleting
+  2-minute shorts and "some guy's school project"; also wanted "every
+  Keanu Reeves movie not in Radarr and not on the blocklist".
+- `--from` is now optional. Also: `--cast`, `--director`, `--crew`
+  (name or TMDB person number; several same-name people = takes one
+  5x more popular, else lists them), `--studio` (`*` wildcard over
+  TMDB's company search: "Warner Bros*" = every Warner company; or a
+  company number), `--genre`. Same option twice = OR, different = AND.
+  People: candidates from `person/<id>/movie_credits` (with --from/--to:
+  the movie's own first release date in range). No people: `discover`
+  with with_companies/with_genres (+ dates/release types when dated;
+  year by year over the 10k cap via compare.discover_all).
+- Per candidate, one `movie/<id>?append_to_response=credits,release_dates`,
+  slimmed and kept in `radarr_details_store`
+  (`mogul_cache/tmdb/radarr_details`, 7 days). Replaces the old
+  release_dates store.
+- Junk filter (settings in mogul.toml, `--no-junk-filter` = off):
+  `radarr_min_runtime` 40 (+ `radarr_skip_no_runtime`),
+  `radarr_require_studio` (no production company = SKIPPED),
+  `radarr_min_votes`, `radarr_skip_genres` ["Documentary"]
+  (`--include-docs`), `radarr_released_only` (no --from: skip unreleased).
+  Discover mode passes runtime/genre/votes to TMDB so junk isn't even
+  downloaded. With --cast: `radarr_cast_top` 10 (`--top`), uncredited
+  skipped, character "Self/Himself/Herself" in `radarr_self_skip_genres`
+  (Documentary, Music, TV Movie) = "appears as himself" SKIPPED; Self in
+  a normal movie is kept and noted "plays himself" (Mavrick: some movies
+  have them play themselves, e.g. Always Be My Maybe).
+- Also skipped: ON DISK = in `[movie] library` by {tmdb-ID} but not in
+  Radarr (`radarr_check_library`, `--no-library-check`). Blocklist =
+  Radarr's own exclusion list (decided: one list, editable in Radarr).
+- `--also ID[,ID]` adds regardless of filters (and exclusions), tag
+  `tmdb-also`. Filter tags `tmdb-cast-keanu-reeves`, `tmdb-studio-...`,
+  `tmdb-genre-...` (`radarr_tag_filters`). `--root`, `--profile`,
+  `--monitor`, `--search` override the defaults (unmonitored, no search).
+- Screen: grouped lists ADDED / SKIPPED (with reason) / ON DISK /
+  BLOCKED / IN RADARR, `--show N` per group (50; 0 = all), NO MATCH
+  as a count. Report CSV adds why, role, runtime, studios, genres.
+- Tested 2026-11-25 against a fake TMDB + Radarr with Keanu-style cases
+  (lead, plays himself, doc, TV special, billed #14, uncredited, 10 min,
+  no studio, on disk, excluded, unreleased, --also, studio wildcard,
+  cast+studio, cast+dates, whole year, studio alone, bad names). Not yet
+  run against real TMDB/Radarr.
 
 ## Credits identifier (`tools/credits_id.py`, Mavrick's older script)
 

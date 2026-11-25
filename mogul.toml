@@ -202,8 +202,9 @@ verify_confirm_min_names = 3         # ...and at least this many names
 verify_fuzz = 0.86                   # how close an OCR'd name must be (0-1)
 
 # --- Radarr (mogul.py movie radarr) ---
-# Adds a date range's movies from TMDB to Radarr, UNMONITORED and with no
-# search, into one root folder, skipping anything Radarr already has.
+# Adds movies from TMDB to Radarr (a date range, an actor, a director, a
+# studio...), UNMONITORED and with no search, into one root folder,
+# skipping anything Radarr already has and the junk (see below).
 # Radarr's API key goes in secrets.toml [radarr], never here.
 # Set the address and root folder in mogul.local.toml:
 #   radarr_url = "http://192.168.1.10:7878"
@@ -228,6 +229,7 @@ radarr_release_types = [3, 5]
 # Country whose release dates count. "" = use watch_region.
 radarr_region = ""
 # Skip movies with fewer votes on TMDB than this (0 = keep everything).
+# Raising it (5-10) is the strongest junk filter for whole years.
 radarr_min_votes = 0
 # A theatrical release counts as a "rerelease" (old movie back in
 # theaters, e.g. an anniversary run) if the movie first came out more
@@ -244,6 +246,29 @@ radarr_tag_prefix = "tmdb"
 radarr_tag_month = true
 radarr_tag_kind = true
 
-# Each movie's release dates, kept so a re-run is quick (re-downloadable).
-radarr_release_store = "mogul_cache/tmdb/release_dates"
-radarr_release_max_age_days = 7
+radarr_tag_filters = true    # also tmdb-cast-keanu-reeves, tmdb-studio-warner-bros...
+
+# Junk filter: what never gets added (--no-junk-filter turns it all off,
+# --also TMDB_ID adds one anyway). Meant for the 2-minute shorts, student
+# films and home videos a whole year of TMDB is full of.
+radarr_min_runtime = 40              # minutes (--min-runtime)
+radarr_skip_no_runtime = true        # TMDB has no runtime at all
+radarr_require_studio = true         # no production company listed at all
+radarr_skip_genres = ["Documentary"] # --include-docs keeps them
+# With --cast: skip their movies where they're billed lower than this
+# (cameos), uncredited bits, and "appears as himself" in these genres
+# (docs about them, concerts, TV specials). Playing himself in a real
+# movie is kept (and noted).
+radarr_cast_top = 10
+radarr_skip_uncredited = true
+radarr_self_skip_genres = ["Documentary", "Music", "TV Movie"]
+# Without --from: skip movies that aren't out yet.
+radarr_released_only = true
+# Skip movies that are already in [movie] library (by {tmdb-ID}) but not
+# in Radarr, listed as ON DISK.
+radarr_check_library = true
+
+# Each movie's details (runtime, studios, genres, credits, release dates),
+# kept so a re-run is quick (re-downloadable).
+radarr_details_store = "mogul_cache/tmdb/radarr_details"
+radarr_details_max_age_days = 7
