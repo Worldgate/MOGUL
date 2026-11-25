@@ -7,6 +7,9 @@ mogul_library/
 mogul_dupes/
 mogul_quarantine/
 
+# Your own lists, verdicts and backups (radarr watch list...): local only, back it up
+mogul_userdata/
+
 # Downloaded copies of outside data (TMDB...): can be downloaded again
 mogul_cache/
 
