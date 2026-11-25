@@ -1,4 +1,4 @@
-"""mogul.py movie radarr: add movies from TMDB to Radarr, unmonitored,
+"""mogul.py radarr add (same as: mogul.py movie radarr): add movies from TMDB to Radarr, unmonitored,
 without the junk.
 
 Three ways to pick movies (they can be mixed):
@@ -54,134 +54,20 @@ import concurrent.futures
 import csv
 import datetime
 import fnmatch
-import json
 import os
 import re
 import time
-import tomllib
-import urllib.error
-import urllib.parse
-import urllib.request
 
 from mogul_core import store, tmdb
+from modules.movie import library
+from modules.movie.compare import TMDB_RESULT_CAP, discover_all, fetch_pages
+from modules.movie.pull import fold
 
-from . import library
-from .compare import TMDB_RESULT_CAP, discover_all, fetch_pages
-from .pull import fold
+from .client import Radarr, RadarrError, radarr_key
 
 TYPE_NAMES = {1: "premiere", 2: "limited", 3: "theatrical", 4: "digital", 5: "disc", 6: "tv"}
 THEATRICAL = {1, 2, 3}
 SELF_RE = re.compile(r"^\s*(self|himself|herself|themselves|themself)\b", re.IGNORECASE)
-
-
-# ------------------------------------------------------------------ Radarr
-
-class RadarrError(Exception):
-    pass
-
-
-def radarr_key(config):
-    key = os.environ.get("RADARR_API_KEY")
-    path = os.path.join(config.base, "secrets.toml")
-    if not key and os.path.isfile(path):
-        with open(path, "rb") as f:
-            key = tomllib.load(f).get("radarr", {}).get("api_key") or None
-    if not key:
-        raise SystemExit(
-            "No Radarr API key found.\n"
-            f"Add it to {path}:\n\n"
-            "  [radarr]\n"
-            '  api_key = "your key here"\n\n'
-            "(Radarr: Settings > General > API Key)\n"
-            "or set the RADARR_API_KEY environment variable.")
-    return key
-
-
-class Radarr:
-    def __init__(self, url, key, timeout=60):
-        self.url = url.rstrip("/")
-        self.key = key
-        self.timeout = timeout
-
-    def call(self, method, path, params=None, body=None):
-        address = f"{self.url}/api/v3/{path.lstrip('/')}"
-        if params:
-            address += "?" + urllib.parse.urlencode(params)
-        data = json.dumps(body).encode("utf-8") if body is not None else None
-        headers = {"X-Api-Key": self.key, "Accept": "application/json"}
-        if data is not None:
-            headers["Content-Type"] = "application/json"
-        for attempt in range(3):
-            try:
-                req = urllib.request.Request(address, data=data, headers=headers, method=method)
-                with urllib.request.urlopen(req, timeout=self.timeout) as resp:
-                    raw = resp.read()
-                    return json.loads(raw) if raw else None
-            except urllib.error.HTTPError as e:
-                detail = e.read().decode("utf-8", "replace")[:500]
-                if e.code == 401:
-                    raise SystemExit("Radarr refused the API key (401). Check secrets.toml [radarr].")
-                if e.code >= 500 and attempt < 2:
-                    time.sleep(2 * (attempt + 1))
-                    continue
-                raise RadarrError(f"HTTP {e.code}: {detail}")
-            except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
-                if attempt < 2:
-                    time.sleep(2 * (attempt + 1))
-                    continue
-                raise SystemExit(f"Can't reach Radarr at {self.url}: {getattr(e, 'reason', e)}\n"
-                                 "Check [movie] radarr_url (mogul.local.toml).")
-
-    def get(self, path, params=None):
-        return self.call("GET", path, params)
-
-    def post(self, path, body):
-        return self.call("POST", path, body=body)
-
-    def movie_ids(self):
-        return {m.get("tmdbId") for m in self.get("movie") or []}
-
-    def exclusion_ids(self):
-        for path in ("exclusions", "importlistexclusion"):
-            try:
-                data = self.get(path)
-            except RadarrError:
-                continue
-            if isinstance(data, dict):
-                data = data.get("records", [])
-            return {x.get("tmdbId") for x in data or []}
-        print("  (couldn't read Radarr's exclusion list; going on without it)")
-        return set()
-
-    def quality_profile_id(self, wanted):
-        profiles = self.get("qualityprofile") or []
-        for p in profiles:
-            if str(p.get("id")) == str(wanted) or p.get("name", "").lower() == str(wanted).lower():
-                return p["id"]
-        names = ", ".join(f"'{p.get('name')}'" for p in profiles)
-        raise SystemExit(f"Radarr has no quality profile '{wanted}'. "
-                         f"Set [movie] radarr_quality_profile (or --profile) to one of: {names}")
-
-    def root_folder(self, path):
-        roots = [r.get("path", "").rstrip("/") for r in self.get("rootfolder") or []]
-        if path.rstrip("/") not in roots:
-            raise SystemExit(f"'{path}' isn't a root folder in Radarr.\n"
-                             "Add it in Radarr: Settings > Media Management > Root Folders.\n"
-                             f"Radarr's root folders: {', '.join(roots) or '(none)'}")
-        return path.rstrip("/")
-
-    def tag_ids(self, labels):
-        have = {t["label"].lower(): t["id"] for t in self.get("tag") or []}
-        for label in labels:
-            if label not in have:
-                have[label] = self.post("tag", {"label": label})["id"]
-        return {label: have[label] for label in labels}
-
-    def lookup(self, tmdb_id):
-        data = self.get("movie/lookup/tmdb", {"tmdbId": tmdb_id})
-        if isinstance(data, list):
-            data = data[0] if data else None
-        return data
 
 
 # ------------------------------------------------------------------ helpers
@@ -425,14 +311,26 @@ def library_ids(config, mcfg):
 
 # ------------------------------------------------------------------ run
 
-def run(args, config):
+DEFAULTS = dict(start=None, end=None, cast=None, director=None, crew=None, studio=None,
+                genre=None, also=None, top=None, min_runtime=None, min_votes=None,
+                include_docs=False, no_junk_filter=False, types=None, region=None, root=None,
+                profile=None, monitor=False, search=False, no_library_check=False, show=50,
+                refresh=False, jobs=4, dry_run=False)
+
+
+def run(args, config, ctx=None):
+    """ctx: a dict shared between several runs (radarr update), so Radarr's
+    library and your folders are read once. Returns 1 if anything errored."""
+    for k, v in DEFAULTS.items():
+        if not hasattr(args, k):
+            setattr(args, k, v)
     try:
-        return _run(args, config)
+        return _run(args, config, ctx if ctx is not None else {})
     except tmdb.BadKey as e:
         raise SystemExit(f"TMDB refused the API key: {e}. Check secrets.toml [tmdb].")
 
 
-def _run(args, config):
+def _run(args, config, ctx):
     mcfg = config.section("movie")
     also = []
     for chunk in args.also or []:
@@ -488,7 +386,7 @@ def _run(args, config):
             what.append(f"{label}: {' or '.join(vals)}")
     if also:
         what.append(f"also: {', '.join(map(str, also))}")
-    print("MOGUL movie radarr: " + "; ".join(what)
+    print("MOGUL radarr add: " + "; ".join(what)
           + ("  (DRY RUN: nothing is added)" if args.dry_run else ""))
     if dated and not people_given:
         print(f"  releases: {region}, {', '.join(TYPE_NAMES.get(t, str(t)) for t in types)}")
@@ -506,24 +404,33 @@ def _run(args, config):
 
     # Radarr first: bad key / wrong folder should stop us before the TMDB work.
     url = mcfg.get("radarr_url", "http://localhost:7878")
-    radarr = Radarr(url, radarr_key(config))
+    if "radarr" not in ctx:
+        ctx["radarr"] = Radarr(url, radarr_key(config))
+    radarr = ctx["radarr"]
     root = args.root or mcfg.get("radarr_root_folder", "")
     if not root:
         raise SystemExit("Set [movie] radarr_root_folder (in mogul.local.toml), "
                          'e.g. radarr_root_folder = "/qnap/movies-tmdb", or use --root')
     root = radarr.root_folder(root)
     profile = radarr.quality_profile_id(args.profile or mcfg.get("radarr_quality_profile", "Any"))
-    print(f"  Radarr {url}: reading the library ...")
-    have = radarr.movie_ids()
-    excluded = radarr.exclusion_ids() if mcfg.get("radarr_respect_exclusions", True) else set()
-    print(f"  {len(have)} movies in Radarr, {len(excluded)} on its exclusion list")
-    on_disk = set()
-    if mcfg.get("radarr_check_library", True) and not args.no_library_check:
-        on_disk, nroots = library_ids(config, mcfg)
-        if nroots:
-            print(f"  {len(on_disk)} movies in your movie folders")
+    if "have" not in ctx:
+        print(f"  Radarr {url}: reading the library ...")
+        ctx["have"] = radarr.movie_ids()
+        ctx["excluded"] = (radarr.exclusion_ids() if mcfg.get("radarr_respect_exclusions", True)
+                           else set())
+        print(f"  {len(ctx['have'])} movies in Radarr, {len(ctx['excluded'])} on its exclusion list")
+    have, excluded = ctx["have"], ctx["excluded"]
+    if "on_disk" not in ctx:
+        ctx["on_disk"] = set()
+        if mcfg.get("radarr_check_library", True) and not args.no_library_check:
+            ctx["on_disk"], nroots = library_ids(config, mcfg)
+            if nroots:
+                print(f"  {len(ctx['on_disk'])} movies in your movie folders")
+    on_disk = ctx["on_disk"]
 
-    client = tmdb.Client(config, per_second=float(mcfg.get("tmdb_requests_per_second", 20)))
+    if "tmdb" not in ctx:
+        ctx["tmdb"] = tmdb.Client(config, per_second=float(mcfg.get("tmdb_requests_per_second", 20)))
+    client = ctx["tmdb"]
 
     # names -> TMDB IDs
     people = {}
@@ -817,6 +724,7 @@ def _run(args, config):
                 movie.pop("folder", None)
                 radarr.post("movie", movie)
                 r["status"] = "ADDED"
+                have.add(r["tmdb_id"])
             except RadarrError as e:
                 if "already been added" in str(e) or "MovieExists" in str(e):
                     r["status"] = "IN RADARR"
@@ -884,4 +792,6 @@ def _run(args, config):
     if groups.get("SKIPPED"):
         print("A skipped one you want anyway: run again with --also <tmdb number>.")
     print(f"Report: {report}")
+    ctx["last"] = {"counts": {k: len(v) for k, v in groups.items()}, "report": report,
+                   "people": {label: dict(p) for label, p in people.items()}}
     return 1 if groups.get("ERROR") else 0

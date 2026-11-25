@@ -28,6 +28,7 @@ from mogul_core.config import Config
 MEDIA_TYPES = {
     "radio": "modules.radio",
     "movie": "modules.movie",
+    "radarr": "modules.radarr",
 }
 
 

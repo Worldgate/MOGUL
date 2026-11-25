@@ -201,7 +201,7 @@ verify_confirm_score = 0.30          # share of top-billed cast that must be fou
 verify_confirm_min_names = 3         # ...and at least this many names
 verify_fuzz = 0.86                   # how close an OCR'd name must be (0-1)
 
-# --- Radarr (mogul.py movie radarr) ---
+# --- Radarr (mogul.py radarr add, same as mogul.py movie radarr) ---
 # Adds movies from TMDB to Radarr (a date range, an actor, a director, a
 # studio...), UNMONITORED and with no search, into one root folder,
 # skipping anything Radarr already has and the junk (see below).
@@ -267,6 +267,15 @@ radarr_released_only = true
 # Skip movies that are already in [movie] library (by {tmdb-ID}) but not
 # in Radarr, listed as ON DISK.
 radarr_check_library = true
+
+# --- Radarr watch list / update / backup (mogul.py radarr ...) ---
+# Your list of actors/directors/studios to follow (mogul.py radarr watch).
+radarr_watchlist = "mogul_userdata/radarr/watchlist.toml"
+# Backups (mogul.py radarr backup): Radarr's own zip + a readable export.
+radarr_backup_folder = "mogul_userdata/radarr/backup"
+radarr_backup_zip = true
+radarr_backup_keep = 12              # newest N kept; 0 = keep all
+radarr_backup_before_update = true   # radarr update backs up first
 
 # Each movie's details (runtime, studios, genres, credits, release dates),
 # kept so a re-run is quick (re-downloadable).
