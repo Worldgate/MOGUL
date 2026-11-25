@@ -17,6 +17,9 @@ music, ebooks and comics come later.
   pick a sensible default, say what you picked, and keep it easy to change
   (usually a config setting).
 - Don't build ahead of the current goal. Note future ideas below instead.
+- **No Claude session links** (`Claude-Session:` lines, claude.ai/code
+  URLs) in commits, PR descriptions or anything pushed (Mavrick's call,
+  2026-11-25: the repo is public). The Co-Authored-By line is fine.
 
 ## Current goal
 
