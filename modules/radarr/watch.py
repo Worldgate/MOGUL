@@ -213,7 +213,7 @@ def update(args, config):
     if not args.dry_run and not args.no_backup and mcfg.get("radarr_backup_before_update", True):
         print("\n=== backing Radarr up first ===")
         try:
-            no_zip = args.no_zip or not mcfg.get("radarr_update_zip", True)
+            no_zip = not (args.zip or mcfg.get("radarr_update_zip", False))
             backup.make(config, ctx=ctx, no_zip=no_zip)
         except SystemExit as e:
             raise SystemExit(f"Backup failed, nothing was added: {e}\n"
