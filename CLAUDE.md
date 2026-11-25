@@ -251,7 +251,13 @@ modules/movie/
   compare.py          `movie compare`: library vs. a streaming service's list (TMDB/JustWatch)
   credits.py          credits-OCR engine (adapted from tools/credits_id.py)
   verify.py           `movie verify`: check movies by their credits, sort by how sure
-  radarr.py           `movie radarr`: TMDB -> Radarr by dates/cast/director/studio/genre, junk filtered, unmonitored
+  (movie radarr = shortcut for `radarr add`, code in modules/radarr/)
+modules/radarr/       everything that talks to Radarr (`mogul.py radarr ...`)
+  __init__.py         radarr actions (add / watch / update / backup)
+  client.py           Radarr API client (key, commands, file download)
+  add.py              `radarr add`: TMDB -> Radarr by dates/cast/director/studio/genre, junk filtered
+  watch.py            `radarr watch` list + `radarr update` (monthly run over the list)
+  backup.py           `radarr backup`: Radarr's own zip + readable export.json
 modules/music, tv, anime, audiobooks, tiktok, podcasts, comics, manga, youtube/
                       placeholders: IDEAS.md only (not in mogul.py MEDIA_TYPES yet)
 tools/                standalone helpers (parsetest.py, fpdigest.py, fixnames.sh, damagemap.py, sameday.py, listen.py, findtags.py, update.sh, filllength.py, par2sort.py, par2check.py, credits_id.py)
@@ -498,7 +504,7 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   ambiguous/none, paging, both/only counts, reports, snapshot. Year-split
   path not exercised.
 
-## Movie radarr (`mogul.py movie radarr`)
+## Radarr add (`mogul.py radarr add`, was `movie radarr`)
 
 - Asked for 2026-11-23: pull "new movies from January 2026" (theatrical
   or Blu-ray) from TMDB and put them into Radarr WITHOUT searching, in one
@@ -539,6 +545,11 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   (fields + tags checked), re-run skips, paging, month split, exclusions,
   bad root folder, bad TMDB key, no Radarr key. Not run against real
   Radarr yet (Radarr v5 API assumed).
+
+- 2026-11-25 (Mavrick): Radarr got its own module, `mogul.py radarr`,
+  "we already know movies are radarr things". `movie radarr` still works
+  (same code, same options). Settings stay `[movie] radarr_*` so
+  existing mogul.local.toml lines keep working.
 
 ### Filters + junk filter (added 2026-11-25)
 
@@ -584,6 +595,62 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   no studio, on disk, excluded, unreleased, --also, studio wildcard,
   cast+studio, cast+dates, whole year, studio alone, bad names). Not yet
   run against real TMDB/Radarr.
+
+## Radarr watch list + update (`mogul.py radarr watch`, `radarr update`)
+
+- Mavrick 2026-11-25: keep a list of actors to check monthly, so new
+  movies get added as they hit theaters.
+- List: `[movie] radarr_watchlist` = `mogul_userdata/radarr/watchlist.toml`
+  (gitignored; `mogul_userdata/` is his local data, back it up). TOML so
+  he can hand-edit: `[[cast]] [[director]] [[crew]] [[studio]]` with
+  `name`, `tmdb_id` (people; looked up once, then used instead of the
+  name), optional `top`, `monitor`, `root`, `profile`, `note`, and
+  `added`, `last_checked`, `last_added` kept by MOGUL. The file is
+  rewritten by MOGUL, so hand comments are lost (header says use note).
+- `radarr watch add --cast/--director/--crew/--studio NAME [--top N]
+  [--monitor] [--root F] [--profile P] [--note T]` (checks the name on
+  TMDB first, refuses duplicates), `watch list`, `watch remove NAME`
+  (`--cast` etc. to pick when a name is on twice).
+- `radarr update`: backs up first (`radarr_backup_before_update`; a failed
+  backup stops the run, `--no-backup` skips), then `add.run()` per entry
+  with a shared ctx (Radarr library, exclusions, on-disk IDs and the TMDB
+  client read once; movies added by one entry count as IN RADARR for the
+  next). Unreleased movies are skipped until a later run (released_only).
+  One entry failing (bad name) doesn't stop the rest. Per-entry CSV +
+  summary `mogul_reports/radarr-update_*.txt`. `--only NAME`, `--show N`
+  (10), `--dry-run` (nothing added, list not saved). Meant for a monthly
+  cron/systemd timer on protostar (not set up yet).
+- Note: Radarr's own Import Lists have a "TMDb Person" list that does the
+  watching by itself; MOGUL's version is for the junk filter (billing,
+  cameos, "himself" docs, shorts, no-studio).
+
+## Radarr backup (`mogul.py radarr backup`)
+
+- Mavrick 2026-11-25: be able to rebuild Radarr if its DB is ever
+  corrupted (he runs it in Docker after losing data before).
+- Into `radarr_backup_folder/<YYYY-MM-DD_HHMMSS>/`
+  (default `mogul_userdata/radarr/backup`):
+  1. Radarr's own zip: `POST command {name: Backup}`, wait, `GET
+     system/backup`, download the newest by its `path` (with `apikey=` in
+     the address). Restore it in Radarr: System > Backup. Failure here is
+     a warning; the export still runs. `radarr_backup_zip`, `--no-zip`.
+  2. `export.json` (schema mogul.radarr.export): movies slimmed to tmdbId,
+     path, rootFolderPath, qualityProfileId, monitored, availability,
+     tags, file (relativePath, size, quality...), plus tags, root folders,
+     quality profiles/definitions, custom formats, delay/release
+     profiles, auto tagging, naming, media management, indexer/download
+     client/ui settings, remote path mappings, import lists, exclusions
+     (the blocklist: Mavrick plans to clear his, so a backup first keeps
+     the old one), indexers, download clients, notifications, metadata.
+     Endpoints Radarr doesn't have go in `errors`. `config/host` left out
+     (Radarr's own API key and login). Radarr masks other passwords.
+- Keeps the newest `radarr_backup_keep` (12; 0 = all), removing only
+  MOGUL's own dated folders.
+- Not built: `radarr restore` from export.json (settings first, then
+  movies re-added with their old paths so Radarr finds the files;
+  profile/tag IDs need remapping). For now: Radarr's zip.
+- Tested 2026-11-25 against a fake Radarr (command, backup list,
+  download, export, rotation). Not yet against a real one.
 
 ## Credits identifier (`tools/credits_id.py`, Mavrick's older script)
 
@@ -1137,6 +1204,10 @@ banner name.
   unknown is left exactly where it is. Same rules as import: never
   deletes, dupes to a folder.
 - Issues and bounty list (`mogul.py issues --bounty`).
+- **Radarr lists from other sites (Mavrick 2026-11-25, "eventually"):**
+  pull top / trending / popular movies (TMDB trending, maybe Trakt,
+  Letterboxd, IMDb lists) into `radarr add` with the same junk filter.
+  Also "different reports" for the radarr module (not decided yet).
 - **One repo for everything** (decided 2026-11-12): every media type is a
   folder under `modules/`, sharing `mogul_core/`. No separate mogul-*
   repos, so there's no merge step later. Placeholder folders hold an
