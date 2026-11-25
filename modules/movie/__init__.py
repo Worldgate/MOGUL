@@ -9,8 +9,9 @@ ACTIONS = {
     "compare": "Compare your library with a streaming service's movie list (Netflix, Prime...)",
     "verify": "Read each movie's credits (OCR) to check it's really that movie; sort into folders "
               "by how sure (confirmed / identified / mismatch / weak / unknown)",
-    "radarr": "Add a date range's new movies (theatrical, Blu-ray/DVD...) from TMDB to Radarr, "
-              "unmonitored and without searching, skipping ones Radarr already has",
+    "radarr": "Add movies from TMDB to Radarr (unmonitored, no search) by date range, actor, "
+              "director, studio or genre, minus the junk (shorts, no-studio, docs...) and "
+              "anything Radarr or your folders already have",
 }
 
 
@@ -131,22 +132,62 @@ def add_arguments(action, parser):
         parser.add_argument("--langs", metavar="LIST",
                             help="OCR languages, e.g. en,ja (default: [movie] verify_ocr_langs)")
     elif action == "radarr":
-        parser.add_argument("--from", dest="start", required=True, metavar="DATE",
-                            help="start of the range: 2026, 2026-01 or 2026-01-15")
+        w = "repeatable; same option twice = either"
+        parser.add_argument("--from", dest="start", metavar="DATE",
+                            help="start of a date range: 2026, 2026-01 or 2026-01-15. Alone: that "
+                                 "range's releases (see --types). With --cast/--director/--crew: "
+                                 "only their movies that first came out in the range")
         parser.add_argument("--to", dest="end", metavar="DATE",
                             help="end of the range (same forms; default: same as --from, "
                                  "so --from 2026-01 alone = all of January)")
+        parser.add_argument("--cast", action="append", metavar="NAME",
+                            help=f'actor, e.g. "Keanu Reeves" or a TMDB person number ({w})')
+        parser.add_argument("--director", action="append", metavar="NAME",
+                            help=f"director, name or TMDB person number ({w})")
+        parser.add_argument("--crew", action="append", metavar="NAME",
+                            help=f"anyone in the crew, any job (writer, composer...) ({w})")
+        parser.add_argument("--studio", action="append", metavar="NAME",
+                            help=f'studio name, * = wildcard ("Warner Bros*" = every Warner '
+                                 f"company on TMDB), or a TMDB company number ({w})")
+        parser.add_argument("--genre", action="append", metavar="NAME",
+                            help=f"TMDB genre, e.g. Horror ({w})")
+        parser.add_argument("--also", action="append", metavar="TMDB_ID",
+                            help="add these TMDB movie numbers no matter what the filters say "
+                                 "(e.g. one from the SKIPPED list); several = 123,456")
+        parser.add_argument("--top", type=int, metavar="N",
+                            help="with --cast: skip movies where they're billed lower than #N "
+                                 "(default: [movie] radarr_cast_top, 10; 0 = any billing)")
+        parser.add_argument("--min-runtime", type=int, metavar="MIN",
+                            help="skip movies shorter than this (default: [movie] radarr_min_runtime, 40)")
+        parser.add_argument("--min-votes", type=int, metavar="N",
+                            help="skip movies with fewer TMDB votes (default: [movie] radarr_min_votes)")
+        parser.add_argument("--include-docs", action="store_true",
+                            help="don't skip documentaries (\"appears as himself\" ones still are)")
+        parser.add_argument("--no-junk-filter", action="store_true",
+                            help="turn off every junk rule (runtime, studio, votes, genres, billing)")
         parser.add_argument("--types", metavar="LIST",
-                            help="release types, e.g. 5 or 3,5 (default: [movie] "
+                            help="date mode: release types, e.g. 5 or 3,5 (default: [movie] "
                                  "radarr_release_types). 1 premiere, 2 limited theatrical, "
                                  "3 theatrical, 4 digital, 5 physical (DVD/Blu-ray), 6 TV")
         parser.add_argument("--region", metavar="CC",
-                            help="country whose release dates count (default: [movie] "
+                            help="date mode: country whose release dates count (default: [movie] "
                                  "radarr_region, else watch_region)")
-        parser.add_argument("--min-votes", type=int, metavar="N",
-                            help="skip movies with fewer TMDB votes (default: [movie] radarr_min_votes)")
+        parser.add_argument("--root", metavar="FOLDER",
+                            help="Radarr root folder to add to, as Radarr sees it "
+                                 "(default: [movie] radarr_root_folder)")
+        parser.add_argument("--profile", metavar="NAME",
+                            help="Radarr quality profile (default: [movie] radarr_quality_profile)")
+        parser.add_argument("--monitor", action="store_true",
+                            help="add them MONITORED (default: unmonitored, Radarr leaves them alone)")
+        parser.add_argument("--search", action="store_true",
+                            help="monitored AND search right away (Radarr starts downloading)")
+        parser.add_argument("--no-library-check", action="store_true",
+                            help="don't look in [movie] library for movies you already have on disk")
+        parser.add_argument("--show", type=int, default=50, metavar="N",
+                            help="how many to print per group (default 50; 0 = all). "
+                                 "The report always has everything")
         parser.add_argument("--refresh", action="store_true",
-                            help="download release dates again even if stored recently")
+                            help="download movie details again even if stored recently")
         parser.add_argument("--jobs", type=int, default=4,
                             help="TMDB requests at once (default 4; the rate limit still applies)")
         parser.add_argument("--dry-run", action="store_true",
