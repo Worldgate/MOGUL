@@ -276,6 +276,8 @@ radarr_backup_folder = "mogul_userdata/radarr/backup"
 radarr_backup_zip = true
 radarr_backup_keep = 12              # newest N kept; 0 = keep all
 radarr_backup_before_update = true   # radarr update backs up first
+radarr_update_zip = true             # false = update makes only the quick export, not Radarr's zip
+radarr_backup_wait_minutes = 30      # how long to wait for Radarr to finish its zip
 
 # Each movie's details (runtime, studios, genres, credits, release dates),
 # kept so a re-run is quick (re-downloadable).

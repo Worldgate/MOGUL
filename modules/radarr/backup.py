@@ -106,7 +106,7 @@ def make(config, ctx=None, no_zip=False, keep=None):
     if not no_zip and mcfg.get("radarr_backup_zip", True):
         try:
             print("  asking Radarr to make its backup zip ...")
-            state = radarr.command("Backup")
+            state = radarr.command("Backup", wait=int(mcfg.get("radarr_backup_wait_minutes", 30)) * 60)
             if state.get("status") != "completed":
                 raise RadarrError(f"Radarr's backup ended as '{state.get('status')}'")
             backups = radarr.get("system/backup") or []

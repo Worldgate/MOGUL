@@ -615,7 +615,9 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   TMDB first, refuses duplicates), `watch list`, `watch remove NAME`
   (`--cast` etc. to pick when a name is on twice).
 - `radarr update`: backs up first (`radarr_backup_before_update`; a failed
-  backup stops the run, `--no-backup` skips), then `add.run()` per entry
+  backup stops the run, `--no-backup` skips; `--no-zip` or
+  `radarr_update_zip = false` = export only, since Radarr's zip takes
+  Mavrick's Radarr 10-15 min), then `add.run()` per entry
   with a shared ctx (Radarr library, exclusions, on-disk IDs and the TMDB
   client read once; movies added by one entry count as IN RADARR for the
   next). Unreleased movies are skipped until a later run (released_only).
@@ -633,7 +635,8 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   corrupted (he runs it in Docker after losing data before).
 - Into `radarr_backup_folder/<YYYY-MM-DD_HHMMSS>/`
   (default `mogul_userdata/radarr/backup`):
-  1. Radarr's own zip: `POST command {name: Backup}`, wait, `GET
+  1. Radarr's own zip: `POST command {name: Backup}`, wait (up to
+     `radarr_backup_wait_minutes`, 30; his takes 10-15 min), `GET
      system/backup`, download the newest by its `path` (with `apikey=` in
      the address). Restore it in Radarr: System > Backup. Failure here is
      a warning; the export still runs. `radarr_backup_zip`, `--no-zip`.

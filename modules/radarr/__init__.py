@@ -120,6 +120,9 @@ def add_arguments(action, parser):
                             help="just this entry of the watch list (name or part of it)")
         parser.add_argument("--no-backup", action="store_true",
                             help="don't back Radarr up first (default: radarr_backup_before_update)")
+        parser.add_argument("--no-zip", action="store_true",
+                            help="back up with the quick export only, skip Radarr's slow zip "
+                                 "(default: radarr_update_zip)")
         parser.add_argument("--show", type=int, default=10, metavar="N",
                             help="how many to print per group for each entry (default 10; 0 = all)")
         parser.add_argument("--refresh", action="store_true",
