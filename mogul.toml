@@ -276,6 +276,10 @@ radarr_backup_folder = "mogul_userdata/radarr/backup"
 radarr_backup_zip = true
 radarr_backup_keep = 12              # newest N kept; 0 = keep all
 radarr_backup_before_update = true   # radarr update backs up first
+# radarr update only checks watch-list entries not checked in this many
+# days (new ones always). 25, not 30, so a monthly run never misses a
+# month (February). 0 = check everyone every time; --all does it once.
+radarr_update_every_days = 25
 radarr_update_zip = false            # true = update also makes Radarr's own zip (slow: 10-15 min)
 radarr_backup_wait_minutes = 30      # how long to wait for Radarr to finish its zip
 

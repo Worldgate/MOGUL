@@ -202,11 +202,29 @@ def update(args, config):
                    if fold(args.only) in fold(e.get("name")) or str(e.get("tmdb_id")) == args.only]
         if not entries:
             raise SystemExit(f"Nothing on the watch list matches '{args.only}'.")
+    every = int(mcfg.get("radarr_update_every_days", 25))
+    waiting = []
+    if every > 0 and not args.all and not args.only:
+        due_before = datetime.date.today() - datetime.timedelta(days=every)
+        due = []
+        for k, e in entries:
+            try:
+                last = datetime.date.fromisoformat(str(e.get("last_checked") or ""))
+            except ValueError:
+                last = None
+            (due if last is None or last <= due_before else waiting).append((k, e))
+        entries = due
+    if waiting and not entries:
+        print(f"Nobody on the watch list is due: all {len(waiting)} were checked in the last "
+              f"{every} days (radarr_update_every_days). --all checks everyone anyway.")
+        return 0
     if not entries:
         print(f"The watch list is empty ({path}).")
         print('Add someone: mogul.py radarr watch add --cast "Keanu Reeves"')
         return 0
-    print(f"MOGUL radarr update: {len(entries)} on the watch list"
+    print(f"MOGUL radarr update: {len(entries)} to check"
+          + (f", {len(waiting)} checked in the last {every} days left for later (--all = everyone)"
+             if waiting else "")
           + ("  (DRY RUN: nothing is added or saved)" if args.dry_run else ""))
 
     ctx = {}

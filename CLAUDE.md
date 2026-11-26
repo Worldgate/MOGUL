@@ -623,7 +623,12 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   client read once; movies added by one entry count as IN RADARR for the
   next). Unreleased movies are skipped until a later run (released_only).
   One entry failing (bad name) doesn't stop the rest. Per-entry CSV +
-  summary `mogul_reports/radarr-update_*.txt`. `--only NAME`, `--show N`
+  summary `mogul_reports/radarr-update_*.txt`. Only entries due are run
+  (Mavrick 2026-11-25: "add 10 people, it only updates those 10"):
+  never checked, or `last_checked` older than `radarr_update_every_days`
+  (25, so a monthly cron never skips February); `--all` = everyone,
+  `--only` ignores it. A dry run doesn't save last_checked, so a dry run
+  then a real run both cover the same people. `--only NAME`, `--show N`
   (10), `--dry-run` (nothing added, list not saved). Meant for a monthly
   cron/systemd timer on protostar (not set up yet).
 - Note: Radarr's own Import Lists have a "TMDb Person" list that does the

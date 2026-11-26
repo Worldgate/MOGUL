@@ -116,6 +116,9 @@ def add_arguments(action, parser):
         parser.add_argument("--profile", metavar="NAME", help="this one's quality profile")
         parser.add_argument("--note", metavar="TEXT", help="your own note, kept in the list")
     elif action == "update":
+        parser.add_argument("--all", action="store_true",
+                            help="check everyone, even those checked in the last "
+                                 "radarr_update_every_days days")
         parser.add_argument("--only", metavar="NAME",
                             help="just this entry of the watch list (name or part of it)")
         parser.add_argument("--no-backup", action="store_true",
