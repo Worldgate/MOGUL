@@ -728,6 +728,13 @@ def _run(args, config, ctx):
             except RadarrError as e:
                 if "already been added" in str(e) or "MovieExists" in str(e):
                     r["status"] = "IN RADARR"
+                elif "UNIQUE constraint failed: MovieMetadata.TmdbId" in str(e):
+                    # Radarr already holds info for this TMDB ID without the movie
+                    # being in its library (left over from a deleted movie, or a
+                    # collection) and its database refuses a second copy.
+                    r["status"], r["why"] = "SKIPPED", (
+                        "Radarr refused it: its database already has info for this TMDB ID "
+                        "(leftover or collection entry). Try adding it in Radarr by hand")
                 else:
                     r["status"], r["why"] = "ERROR", str(e)
             if n % 10 == 0 or n == len(adds):

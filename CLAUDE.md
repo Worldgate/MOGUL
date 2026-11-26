@@ -590,6 +590,10 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   `tmdb-also`. Filter tags `tmdb-cast-keanu-reeves`, `tmdb-studio-...`,
   `tmdb-genre-...` (`radarr_tag_filters`). `--root`, `--profile`,
   `--monitor`, `--search` override the defaults (unmonitored, no search).
+- Radarr answering `HTTP 409 UNIQUE constraint failed: MovieMetadata.TmdbId`
+  (seen 2026-11-25 on Jimmy Timmy Power Hour 2, TMDB 40707, Frank Welker
+  run): Radarr's DB already has a metadata row for that TMDB ID with no
+  movie attached; listed as SKIPPED with that reason, not ERROR.
 - Screen: grouped lists ADDED / SKIPPED (with reason) / ON DISK /
   BLOCKED / IN RADARR, `--show N` per group (50; 0 = all), NO MATCH
   as a count. Report CSV adds why, role, runtime, studios, genres.
