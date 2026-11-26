@@ -107,7 +107,7 @@ incoming_pattern = "{code} {yyyy}-{mm}-{dd}[_{part}][ -- {notes}]"
 #   1990-1999/Fight Club (1999) {tmdb-550}/Fight Club (1999).mkv
 # `mogul.py movie tmdb` reads {tmdb-ID} out of the folder/file names, at
 # any depth, so the decade folders don't matter.
-library = "/media/Movies/movies-bulk"
+library = "/media/Movies/movies-validated"
 
 # Video file types (used to list files that have no {tmdb-ID} in the name).
 extensions = ["mkv", "mp4", "m4v", "avi", "mov", "wmv", "mpg", "mpeg", "ts", "m2ts", "vob", "iso", "webm", "flv", "divx", "ogm"]
