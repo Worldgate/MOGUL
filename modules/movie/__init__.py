@@ -86,6 +86,9 @@ def add_arguments(action, parser):
                                  "Choices: " + ", ".join(CHOICES))
         parser.add_argument("--top", type=int, metavar="N",
                             help="for cast: only count the top N billed actors in each movie")
+        parser.add_argument("--not-watched", action="store_true",
+                            help="hide people/studios already on the Radarr watch list "
+                                 "(mogul.py radarr watch), to see who to add next")
         parser.add_argument("--min", type=int, default=1, metavar="N",
                             help="leave out anyone in fewer than N of your movies (default 1)")
         parser.add_argument("--show", type=int, default=50, metavar="N",

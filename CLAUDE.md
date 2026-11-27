@@ -480,6 +480,12 @@ requirements-gpu.txt = that + easyocr (GPU boxes like Saturn, RTX 3090; protosta
   per list (default 50, 0 = all).
 - Writes `mogul_reports/movie-count_*.txt` (every entry with its titles)
   and `.csv` (list, name, tmdb_id, count, titles joined with " | ").
+- `--not-watched` (Mavrick 2026-11-27: "omit actors I already have in the
+  monitored actors"): hides people/studios already on the Radarr watch
+  list (`radarr watch`), by TMDB ID (name if the entry has none; studio
+  entries by their wildcard pattern); watch-list crew entries hide them
+  from every crew list (writer, composer...). The header says how many
+  were hidden. For picking who to add next.
 - Also lists every TMDB ID found in more than one place (two copies of
   one movie, e.g. a 3D and a regular folder), with both paths, on screen
   and at the end of the .txt (Mavrick spotted some doubles, 2026-11-18).
