@@ -9,12 +9,16 @@ of it (same TMDB ID). People and studios are counted by their TMDB ID,
 so two different actors who share a name stay separate, and a name
 spelled two ways stays one person.
 
+--not-watched hides anyone already on the Radarr watch list
+(mogul.py radarr watch), to see who to add next.
+
 Prints the top of each list and writes the full lists to
 mogul_reports/movie-count_<date>_<time>.txt  (readable, with titles)
 mogul_reports/movie-count_<date>_<time>.csv  (for a spreadsheet)
 """
 
 import csv
+import fnmatch
 import os
 import sys
 import time
@@ -23,6 +27,7 @@ from collections import defaultdict
 from mogul_core import store
 
 from . import library
+from .pull import fold
 
 # What can be counted: name shown, and how to get (id, name) pairs from a movie.
 CREW_JOBS = {
@@ -77,6 +82,35 @@ def title_of(t):
     return f"{t.get('title', '?')}" + (f" ({year})" if year else "")
 
 
+def watched_people(config):
+    """Who's on the Radarr watch list (mogul.py radarr watch), by list."""
+    from modules.radarr import watch
+    data = watch.load(watch.path_of(config))
+    out = {}
+    for kind in ("cast", "director", "crew", "studio"):
+        ids = {e["tmdb_id"] for e in data.get(kind, []) if e.get("tmdb_id")}
+        names = [fold(e.get("name")) for e in data.get(kind, []) if e.get("name")]
+        out[kind] = (ids, names)
+    total = sum(len(v[1]) for v in out.values())
+    print(f"  hiding the {total} on the Radarr watch list ({watch.path_of(config)})")
+    return out
+
+
+def on_watch_list(watched, kind, key, name):
+    """Is this count entry someone already on the watch list?"""
+    group = {"cast": "cast", "director": "director", "studio": "studio"}.get(
+        kind, "crew" if kind in CREW_JOBS else None)
+    if not group:
+        return False
+    ids, names = watched[group]
+    if key in ids:
+        return True
+    n = fold(name)
+    if group == "studio":
+        return any(fnmatch.fnmatchcase(n, pat) for pat in names)
+    return n in names
+
+
 def run(args, config):
     store_dir = config.resolve(config.section("movie").get("tmdb_store", "mogul_cache/tmdb/movie"))
     by = args.by or DEFAULT_BY
@@ -108,6 +142,8 @@ def run(args, config):
         print(f"  {len(doubles)} movie(s) are here more than once (same TMDB ID), listed at the end")
     print()
 
+    watched = watched_people(config) if args.not_watched else None
+
     # tally: kind -> key -> {"name": ..., "movies": set()}
     tally = {k: defaultdict(lambda: {"name": None, "movies": set()}) for k in by}
     for tid, t in movies.items():
@@ -138,6 +174,11 @@ def run(args, config):
                 label += f" (top {args.top} billed)"
             rows = [(len(e["movies"]), e["name"], key, e["movies"]) for key, e in tally[kind].items()
                     if len(e["movies"]) >= args.min]
+            if watched:
+                before = len(rows)
+                rows = [r for r in rows if not on_watch_list(watched, kind, r[2], r[1])]
+                if before != len(rows):
+                    label += f", {before - len(rows)} on the Radarr watch list hidden"
             rows.sort(key=lambda r: (-r[0], (r[1] or "").casefold()))
 
             # screen: the top ones
